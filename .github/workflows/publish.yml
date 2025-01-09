@@ -1,0 +1,41 @@
+name: publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit-hash:
+        description: "COMMIT_HASH"
+        required: false
+        type: string
+        default: "default"
+
+jobs:
+  build-and-optionally-publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build & test (always)
+        run: |
+          if [ "${{ github.event.inputs.commit-hash }}" = "default" ]; then
+            make all
+          else
+            make all COMMIT_HASH=${{ github.event.inputs.commit-hash }}
+          fi
+
+      - name: Publish (optional)
+        if: ${{ github.event.inputs.commit-hash != 'default' }}
+        run: |
+          echo "Publishing changes..."
+          git config --global user.email "robot@umbrella";
+          git config --global user.name "robot";
+          git commit -am "Auto-update with COMMIT_HASH=${{ github.event.inputs.commit-hash }}" || echo "Nothing to commit"
+          git push
+
