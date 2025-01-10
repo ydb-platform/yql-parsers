@@ -1,2 +1,2 @@
-# yql-parser
+# yql-parsers
 YQL parsers
