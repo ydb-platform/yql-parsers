@@ -31,11 +31,12 @@ This project provides different languages code generation of YQL parser using AN
 Supported languages:
 - go
 - python
+- .NET (C#)
 
 - **`{language}`**  
   Generates the YQL parser files for the language you choose.  
   ```bash
-  make go
+  make {language}
   ```
 
 - **`clean_{language}`**  

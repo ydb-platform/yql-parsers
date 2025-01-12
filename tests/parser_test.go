@@ -6,7 +6,7 @@ import (
 	"github.com/antlr4-go/antlr/v4"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ydb-platform/yql-parsers/go"
+	parser "github.com/ydb-platform/yql-parsers/go"
 )
 
 type treeShapeListener struct {
