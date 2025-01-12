@@ -2,18 +2,22 @@ IMAGE_NAME=yql-antlr-parser:latest
 ANTLR_VERSION=4.13.2
 CURRENT_DIR := $(shell pwd)
 
-.PHONY: build-image clean go python all go_clean py_clean build-image
+.PHONY: build-image clean go python dotnet all go_clean py_clean build-image
 
-all: go python
+all: go python dotnet
 
 go: build-image
 	docker run --rm -v "$(CURRENT_DIR)/go":/workspace/go $(IMAGE_NAME) \
-		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=Go -package parser -o go YQL.g4
+		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=Go -package yql_antlr4_parser -o go YQL.g4
 
 python: build-image
 	docker run --rm -v "$(CURRENT_DIR)/python":/workspace/python $(IMAGE_NAME) \
 		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=Python3 -o python YQL.g4
 	printf "from YQLParser import *\nfrom YQLLexer import *\nfrom YQLListener import *\n" > python/__init__.py
+
+dotnet: build-image
+	docker run --rm -v "$(CURRENT_DIR)/dotnet":/workspace/dotnet $(IMAGE_NAME) \
+		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=CSharp -package YQLAntlr4Parser -o dotnet YQL.g4
 
 
 build-image:

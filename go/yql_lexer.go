@@ -1,6 +1,6 @@
 // Code generated from YQL.g4 by ANTLR 4.13.2. DO NOT EDIT.
 
-package parser
+package yql_antlr4_parser
 import (
 	"fmt"
   	"sync"

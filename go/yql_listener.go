@@ -1,6 +1,6 @@
 // Code generated from YQL.g4 by ANTLR 4.13.2. DO NOT EDIT.
 
-package parser // YQL
+package yql_antlr4_parser // YQL
 import "github.com/antlr4-go/antlr/v4"
 
 
