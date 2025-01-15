@@ -2,9 +2,9 @@ IMAGE_NAME=yql-antlr-parser:latest
 ANTLR_VERSION=4.13.2
 CURRENT_DIR := $(shell pwd)
 
-.PHONY: build-image clean go python dotnet all go_clean py_clean build-image
+.PHONY: build-image clean go python dotnet java all go_clean py_clean build-image
 
-all: go python dotnet
+all: go python dotnet java
 
 go: build-image
 	docker run --rm -v "$(CURRENT_DIR)/go":/workspace/go $(IMAGE_NAME) \
@@ -20,10 +20,14 @@ dotnet: build-image
 		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=CSharp -package YQLAntlr4Parser -o dotnet YQL.g4
 
 
+java: build-image
+	docker run --rm -v "$(CURRENT_DIR)/java":/workspace/java $(IMAGE_NAME) \
+		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=Java -package yql.antlr4.parser -o java YQL.g4
+
 build-image:
 	docker build -t $(IMAGE_NAME) .
 
-clean: go_clean python_clean
+clean: go_clean python_clean dotnet_clean java_clean
 
 go_clean:
 	rm -rf go/*.go
@@ -34,3 +38,13 @@ python_clean:
 	rm -rf python/*.py
 	rm -rf python/*.interp
 	rm -rf python/*.tokens
+
+dotnet_clean:
+	rm -rf dotnet/*.cs
+	rm -rf dotnet/*.interp
+	rm -rf dotnet/*.tokens
+
+java_clean:
+	rm -rf java/*.java
+	rm -rf java/*.interp
+	rm -rf java/*.tokens

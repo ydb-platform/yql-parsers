@@ -32,6 +32,7 @@ Supported languages:
 - go
 - python
 - .NET (C#)
+- java
 
 - **`{language}`**  
   Generates the YQL parser files for the language you choose.  
