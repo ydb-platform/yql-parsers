@@ -1,6 +1,8 @@
 IMAGE_NAME=yql-antlr-parser:latest
-ANTLR_VERSION=4.13.2
 CURRENT_DIR := $(shell pwd)
+
+ANTLR_VERSION = 4.13.2
+COMMIT_HASH ?= 99ceb562485efe2cefe47db042606e38259640c6
 
 .PHONY: build-image clean go python dotnet java all go_clean py_clean build-image
 
@@ -19,13 +21,12 @@ dotnet: build-image
 	docker run --rm -v "$(CURRENT_DIR)/dotnet":/workspace/dotnet $(IMAGE_NAME) \
 		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=CSharp -package YQLAntlr4Parser -o dotnet YQL.g4
 
-
 java: build-image
 	docker run --rm -v "$(CURRENT_DIR)/java":/workspace/java $(IMAGE_NAME) \
 		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=Java -package yql.antlr4.parser -o java YQL.g4
 
-build-image:
-	docker build -t $(IMAGE_NAME) .
+build-image: 
+  	docker build --build-arg ANTLR_VERSION=$(ANTLR_VERSION) --build-arg COMMIT_HASH=$(COMMIT_HASH) -t $(IMAGE_NAME) .
 
 clean: go_clean python_clean dotnet_clean java_clean
 
