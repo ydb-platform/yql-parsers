@@ -5,8 +5,11 @@ RUN apt-get update && apt-get install -y \
     sed \
     && rm -rf /var/lib/apt/lists/*
 
-ENV ANTLR_VERSION=4.13.2 
-ENV COMMIT_HASH=99ceb562485efe2cefe47db042606e38259640c6
+ARG ANTLR_VERSION
+ARG COMMIT_HASH
+
+ENV ANTLR_VERSION=$ANTLR_VERSION
+ENV COMMIT_HASH=$COMMIT_HASH
 
 ENV ANTLR_VERSION=4.13.2
 RUN curl -O https://www.antlr.org/download/antlr-${ANTLR_VERSION}-complete.jar
