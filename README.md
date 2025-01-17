@@ -19,6 +19,10 @@ This project provides different languages code generation of YQL parser using AN
   ```bash
   make build-image
   ```
+  _Optional:_ can be generated with prefered COMMIT_HASH from [YDB Repo](https://github.com/ydb-platform/ydb/blob/main/yql/essentials/sql/v1/SQLv1Antlr4.g.in):
+  ```bash
+  make build-image COMMIT_HASH=yourcommithashhere
+  ```
 
 - **`clean`**  
   Cleans all generated files for all languages  
