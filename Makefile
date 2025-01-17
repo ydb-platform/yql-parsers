@@ -4,7 +4,7 @@ CURRENT_DIR := $(shell pwd)
 ANTLR_VERSION = 4.13.2
 COMMIT_HASH ?= 99ceb562485efe2cefe47db042606e38259640c6
 
-.PHONY: build-image clean go python dotnet java all go_clean py_clean build-image
+.PHONY: build-image clean go python dotnet java all go_clean py_clean
 
 all: go python dotnet java
 
@@ -26,7 +26,7 @@ java: build-image
 		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=Java -package yql.antlr4.parser -o java YQL.g4
 
 build-image: 
-  	docker build --build-arg ANTLR_VERSION=$(ANTLR_VERSION) --build-arg COMMIT_HASH=$(COMMIT_HASH) -t $(IMAGE_NAME) .
+	docker build --build-arg ANTLR_VERSION=$(ANTLR_VERSION) --build-arg COMMIT_HASH=$(COMMIT_HASH) -t $(IMAGE_NAME) .
 
 clean: go_clean python_clean dotnet_clean java_clean
 
