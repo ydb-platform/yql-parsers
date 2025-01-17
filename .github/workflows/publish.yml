@@ -25,11 +25,10 @@ jobs:
       - name: Build & test (always)
         run: |
           if [ "${{ github.event.inputs.commit-hash }}" = "default" ]; then
-            make build-image
+            make all
           else
-            make build-image COMMIT_HASH=${{ github.event.inputs.commit-hash }}
+            make all COMMIT_HASH=${{ github.event.inputs.commit-hash }}
           fi
-          make all
 
       - name: Publish (optional)
         if: ${{ github.event.inputs.commit-hash != 'default' }}
