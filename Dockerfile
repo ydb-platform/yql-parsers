@@ -11,7 +11,6 @@ ARG COMMIT_HASH
 ENV ANTLR_VERSION=$ANTLR_VERSION
 ENV COMMIT_HASH=$COMMIT_HASH
 
-ENV ANTLR_VERSION=4.13.2
 RUN curl -O https://www.antlr.org/download/antlr-${ANTLR_VERSION}-complete.jar
 
 ENV CLASSPATH=".:/antlr-${ANTLR_VERSION}-complete.jar:$CLASSPATH"

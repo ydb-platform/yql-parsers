@@ -1,16 +1,24 @@
 IMAGE_NAME=yql-antlr-parser:latest
 CURRENT_DIR := $(shell pwd)
 
-ANTLR_VERSION = 4.13.2
-COMMIT_HASH ?= 99ceb562485efe2cefe47db042606e38259640c6
+ANTLR_VERSION = 4.13.1
+COMMIT_HASH ?= 5aec4caba5b112b6f5e519f465890a784032e05e
 
-.PHONY: build-image clean go python dotnet java all go_clean py_clean
+.PHONY: build-image clean go ts js python dotnet java all go_clean py_clean
 
-all: go python dotnet java
+all: go ts js python dotnet java
 
 go: build-image
 	docker run --rm -v "$(CURRENT_DIR)/go":/workspace/go $(IMAGE_NAME) \
 		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=Go -package yql_antlr4_parser -o go YQL.g4
+
+ts: build-image
+	docker run --rm -v "$(CURRENT_DIR)/ts":/workspace/ts $(IMAGE_NAME) \
+		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=TypeScript -package yql_antlr4_parser -o ts YQL.g4
+
+js: build-image
+	docker run --rm -v "$(CURRENT_DIR)/js":/workspace/js $(IMAGE_NAME) \
+		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=JavaScript -package yql_antlr4_parser -o js YQL.g4
 
 python: build-image
 	docker run --rm -v "$(CURRENT_DIR)/python":/workspace/python $(IMAGE_NAME) \
@@ -32,6 +40,16 @@ clean: go_clean python_clean dotnet_clean java_clean
 
 go_clean:
 	rm -rf go/*.go
+	rm -rf go/*.interp
+	rm -rf go/*.tokens
+
+ts_clean:
+	rm -rf go/*.ts
+	rm -rf go/*.interp
+	rm -rf go/*.tokens
+
+js_clean:
+	rm -rf go/*.ts
 	rm -rf go/*.interp
 	rm -rf go/*.tokens
 
