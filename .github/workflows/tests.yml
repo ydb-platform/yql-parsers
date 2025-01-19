@@ -32,7 +32,9 @@ jobs:
           cache: true
         
       - name: Install dependencies
-        run: go mod download
+        run: | 
+          go get github.com/stretchr/testify@v1.10.0
+          go mod tidy
 
       - name: Run tests
         run: go test ./...
