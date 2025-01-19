@@ -1,7 +1,7 @@
 IMAGE_NAME=yql-antlr-parser:latest
 CURRENT_DIR := $(shell pwd)
 
-ANTLR_VERSION = 4.13.2
+ANTLR_VERSION = 4.13.1
 COMMIT_HASH ?= 99ceb562485efe2cefe47db042606e38259640c6
 
 .PHONY: build-image clean go python dotnet java all go_clean py_clean
