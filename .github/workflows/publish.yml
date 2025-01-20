@@ -22,20 +22,21 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Update COMMIT_HASH in Makefile
+        if: ${{ github.event.inputs.commit-hash != 'default' }}
+        run: |
+            sed -i 's/^COMMIT_HASH ?=.*/COMMIT_HASH ?= '${{ github.event.inputs.commit-hash }}'/' Makefile
+  
       - name: Build & test (always)
         run: |
-          if [ "${{ github.event.inputs.commit-hash }}" = "default" ]; then
-            make all
-          else
-            make all COMMIT_HASH=${{ github.event.inputs.commit-hash }}
-          fi
+          make all
+          git status
 
       - name: Publish (optional)
         if: ${{ github.event.inputs.commit-hash != 'default' }}
         run: |
           echo "Publishing changes..."
-          git config --global user.email "robot@umbrella";
-          git config --global user.name "robot";
+          git config --global user.email "robot@umbrella"
+          git config --global user.name "robot"
           git commit -am "Auto-update with COMMIT_HASH=${{ github.event.inputs.commit-hash }}" || echo "Nothing to commit"
           git push
-
