@@ -31,7 +31,7 @@ jobs:
           go get github.com/stretchr/testify@v1.10.0
           go mod tidy
       - name: Run tests
-        run: go test ./...
+        run: go test ./tests/...
   dotnet:
     concurrency:
       group: dotnet-tests-${{ github.event_name }}-${{ github.ref }}-${{ matrix.os }}-${{ matrix.dotnet-version }}
