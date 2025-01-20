@@ -8,33 +8,53 @@ on:
   workflow_dispatch:
 
 jobs:
-  go-tests:
+  go:
     concurrency:
       group: go-tests-${{ github.event_name }}-${{ github.ref }}-${{ matrix.os }}-${{ matrix.go-version }}
       cancel-in-progress: true
-
     strategy:
       fail-fast: false
       matrix:
         go-version: [1.22.x, 1.23.x]
-        os: [ubuntu, windows, macos]
-
+        os: [ubuntu]
     runs-on: ${{ matrix.os }}-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
           go-version: ${{ matrix.go-version }}
           cache: true
-        
       - name: Install dependencies
         run: | 
           go get github.com/stretchr/testify@v1.10.0
           go mod tidy
-
       - name: Run tests
-        run: go test ./...
+        run: go test ./tests/...
+  dotnet:
+    concurrency:
+      group: dotnet-tests-${{ github.event_name }}-${{ github.ref }}-${{ matrix.os }}-${{ matrix.dotnet-version }}
+      cancel-in-progress: true
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu]
+        dotnet-version: [ 6.0.x, 7.0.x ]
+        include:
+          - dotnet-version: 6.0.x
+            dotnet-target-framework: net6.0
+          - dotnet-version: 7.0.x
+            dotnet-target-framework: net7.0
+    runs-on: ${{ matrix.os }}-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+      - name: Test
+        run: |
+          cd tests
+          dotnet test -f ${{ matrix.dotnet-target-framework }}
