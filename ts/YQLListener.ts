@@ -228,6 +228,7 @@ import { Backup_collection_settingsContext } from "./YQLParser";
 import { Backup_collection_settings_entryContext } from "./YQLParser";
 import { Backup_stmtContext } from "./YQLParser";
 import { Restore_stmtContext } from "./YQLParser";
+import { Alter_database_stmtContext } from "./YQLParser";
 import { Table_inheritsContext } from "./YQLParser";
 import { Table_partition_byContext } from "./YQLParser";
 import { With_table_settingsContext } from "./YQLParser";
@@ -293,8 +294,11 @@ import { Create_group_stmtContext } from "./YQLParser";
 import { Alter_group_stmtContext } from "./YQLParser";
 import { Drop_role_stmtContext } from "./YQLParser";
 import { Role_nameContext } from "./YQLParser";
-import { Create_user_optionContext } from "./YQLParser";
+import { User_optionContext } from "./YQLParser";
+import { Authentication_optionContext } from "./YQLParser";
 import { Password_optionContext } from "./YQLParser";
+import { Password_valueContext } from "./YQLParser";
+import { Hash_optionContext } from "./YQLParser";
 import { Login_optionContext } from "./YQLParser";
 import { Grant_permissions_stmtContext } from "./YQLParser";
 import { Revoke_permissions_stmtContext } from "./YQLParser";
@@ -317,6 +321,15 @@ import { Alter_replication_stmtContext } from "./YQLParser";
 import { Alter_replication_actionContext } from "./YQLParser";
 import { Alter_replication_set_settingContext } from "./YQLParser";
 import { Drop_replication_stmtContext } from "./YQLParser";
+import { Lambda_or_parameterContext } from "./YQLParser";
+import { Create_transfer_stmtContext } from "./YQLParser";
+import { Transfer_settingsContext } from "./YQLParser";
+import { Transfer_settings_entryContext } from "./YQLParser";
+import { Alter_transfer_stmtContext } from "./YQLParser";
+import { Alter_transfer_actionContext } from "./YQLParser";
+import { Alter_transfer_set_settingContext } from "./YQLParser";
+import { Alter_transfer_set_usingContext } from "./YQLParser";
+import { Drop_transfer_stmtContext } from "./YQLParser";
 import { Action_or_subquery_argsContext } from "./YQLParser";
 import { Define_action_or_subquery_stmtContext } from "./YQLParser";
 import { Define_action_or_subquery_bodyContext } from "./YQLParser";
@@ -393,6 +406,7 @@ import { Analyze_table_listContext } from "./YQLParser";
 import { Analyze_stmtContext } from "./YQLParser";
 import { Alter_sequence_stmtContext } from "./YQLParser";
 import { Alter_sequence_actionContext } from "./YQLParser";
+import { Show_create_table_stmtContext } from "./YQLParser";
 import { IdentifierContext } from "./YQLParser";
 import { IdContext } from "./YQLParser";
 import { Id_schemaContext } from "./YQLParser";
@@ -2694,6 +2708,16 @@ export default class YQLListener extends ParseTreeListener {
 	 */
 	exitRestore_stmt?: (ctx: Restore_stmtContext) => void;
 	/**
+	 * Enter a parse tree produced by `YQLParser.alter_database_stmt`.
+	 * @param ctx the parse tree
+	 */
+	enterAlter_database_stmt?: (ctx: Alter_database_stmtContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.alter_database_stmt`.
+	 * @param ctx the parse tree
+	 */
+	exitAlter_database_stmt?: (ctx: Alter_database_stmtContext) => void;
+	/**
 	 * Enter a parse tree produced by `YQLParser.table_inherits`.
 	 * @param ctx the parse tree
 	 */
@@ -3344,15 +3368,25 @@ export default class YQLListener extends ParseTreeListener {
 	 */
 	exitRole_name?: (ctx: Role_nameContext) => void;
 	/**
-	 * Enter a parse tree produced by `YQLParser.create_user_option`.
+	 * Enter a parse tree produced by `YQLParser.user_option`.
 	 * @param ctx the parse tree
 	 */
-	enterCreate_user_option?: (ctx: Create_user_optionContext) => void;
+	enterUser_option?: (ctx: User_optionContext) => void;
 	/**
-	 * Exit a parse tree produced by `YQLParser.create_user_option`.
+	 * Exit a parse tree produced by `YQLParser.user_option`.
 	 * @param ctx the parse tree
 	 */
-	exitCreate_user_option?: (ctx: Create_user_optionContext) => void;
+	exitUser_option?: (ctx: User_optionContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.authentication_option`.
+	 * @param ctx the parse tree
+	 */
+	enterAuthentication_option?: (ctx: Authentication_optionContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.authentication_option`.
+	 * @param ctx the parse tree
+	 */
+	exitAuthentication_option?: (ctx: Authentication_optionContext) => void;
 	/**
 	 * Enter a parse tree produced by `YQLParser.password_option`.
 	 * @param ctx the parse tree
@@ -3363,6 +3397,26 @@ export default class YQLListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitPassword_option?: (ctx: Password_optionContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.password_value`.
+	 * @param ctx the parse tree
+	 */
+	enterPassword_value?: (ctx: Password_valueContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.password_value`.
+	 * @param ctx the parse tree
+	 */
+	exitPassword_value?: (ctx: Password_valueContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.hash_option`.
+	 * @param ctx the parse tree
+	 */
+	enterHash_option?: (ctx: Hash_optionContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.hash_option`.
+	 * @param ctx the parse tree
+	 */
+	exitHash_option?: (ctx: Hash_optionContext) => void;
 	/**
 	 * Enter a parse tree produced by `YQLParser.login_option`.
 	 * @param ctx the parse tree
@@ -3583,6 +3637,96 @@ export default class YQLListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitDrop_replication_stmt?: (ctx: Drop_replication_stmtContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.lambda_or_parameter`.
+	 * @param ctx the parse tree
+	 */
+	enterLambda_or_parameter?: (ctx: Lambda_or_parameterContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.lambda_or_parameter`.
+	 * @param ctx the parse tree
+	 */
+	exitLambda_or_parameter?: (ctx: Lambda_or_parameterContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.create_transfer_stmt`.
+	 * @param ctx the parse tree
+	 */
+	enterCreate_transfer_stmt?: (ctx: Create_transfer_stmtContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.create_transfer_stmt`.
+	 * @param ctx the parse tree
+	 */
+	exitCreate_transfer_stmt?: (ctx: Create_transfer_stmtContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.transfer_settings`.
+	 * @param ctx the parse tree
+	 */
+	enterTransfer_settings?: (ctx: Transfer_settingsContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.transfer_settings`.
+	 * @param ctx the parse tree
+	 */
+	exitTransfer_settings?: (ctx: Transfer_settingsContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.transfer_settings_entry`.
+	 * @param ctx the parse tree
+	 */
+	enterTransfer_settings_entry?: (ctx: Transfer_settings_entryContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.transfer_settings_entry`.
+	 * @param ctx the parse tree
+	 */
+	exitTransfer_settings_entry?: (ctx: Transfer_settings_entryContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.alter_transfer_stmt`.
+	 * @param ctx the parse tree
+	 */
+	enterAlter_transfer_stmt?: (ctx: Alter_transfer_stmtContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.alter_transfer_stmt`.
+	 * @param ctx the parse tree
+	 */
+	exitAlter_transfer_stmt?: (ctx: Alter_transfer_stmtContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.alter_transfer_action`.
+	 * @param ctx the parse tree
+	 */
+	enterAlter_transfer_action?: (ctx: Alter_transfer_actionContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.alter_transfer_action`.
+	 * @param ctx the parse tree
+	 */
+	exitAlter_transfer_action?: (ctx: Alter_transfer_actionContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.alter_transfer_set_setting`.
+	 * @param ctx the parse tree
+	 */
+	enterAlter_transfer_set_setting?: (ctx: Alter_transfer_set_settingContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.alter_transfer_set_setting`.
+	 * @param ctx the parse tree
+	 */
+	exitAlter_transfer_set_setting?: (ctx: Alter_transfer_set_settingContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.alter_transfer_set_using`.
+	 * @param ctx the parse tree
+	 */
+	enterAlter_transfer_set_using?: (ctx: Alter_transfer_set_usingContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.alter_transfer_set_using`.
+	 * @param ctx the parse tree
+	 */
+	exitAlter_transfer_set_using?: (ctx: Alter_transfer_set_usingContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.drop_transfer_stmt`.
+	 * @param ctx the parse tree
+	 */
+	enterDrop_transfer_stmt?: (ctx: Drop_transfer_stmtContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.drop_transfer_stmt`.
+	 * @param ctx the parse tree
+	 */
+	exitDrop_transfer_stmt?: (ctx: Drop_transfer_stmtContext) => void;
 	/**
 	 * Enter a parse tree produced by `YQLParser.action_or_subquery_args`.
 	 * @param ctx the parse tree
@@ -4343,6 +4487,16 @@ export default class YQLListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitAlter_sequence_action?: (ctx: Alter_sequence_actionContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.show_create_table_stmt`.
+	 * @param ctx the parse tree
+	 */
+	enterShow_create_table_stmt?: (ctx: Show_create_table_stmtContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.show_create_table_stmt`.
+	 * @param ctx the parse tree
+	 */
+	exitShow_create_table_stmt?: (ctx: Show_create_table_stmtContext) => void;
 	/**
 	 * Enter a parse tree produced by `YQLParser.identifier`.
 	 * @param ctx the parse tree

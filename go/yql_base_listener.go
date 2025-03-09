@@ -1370,6 +1370,12 @@ func (s *BaseYQLListener) EnterRestore_stmt(ctx *Restore_stmtContext) {}
 // ExitRestore_stmt is called when production restore_stmt is exited.
 func (s *BaseYQLListener) ExitRestore_stmt(ctx *Restore_stmtContext) {}
 
+// EnterAlter_database_stmt is called when production alter_database_stmt is entered.
+func (s *BaseYQLListener) EnterAlter_database_stmt(ctx *Alter_database_stmtContext) {}
+
+// ExitAlter_database_stmt is called when production alter_database_stmt is exited.
+func (s *BaseYQLListener) ExitAlter_database_stmt(ctx *Alter_database_stmtContext) {}
+
 // EnterTable_inherits is called when production table_inherits is entered.
 func (s *BaseYQLListener) EnterTable_inherits(ctx *Table_inheritsContext) {}
 
@@ -1760,17 +1766,35 @@ func (s *BaseYQLListener) EnterRole_name(ctx *Role_nameContext) {}
 // ExitRole_name is called when production role_name is exited.
 func (s *BaseYQLListener) ExitRole_name(ctx *Role_nameContext) {}
 
-// EnterCreate_user_option is called when production create_user_option is entered.
-func (s *BaseYQLListener) EnterCreate_user_option(ctx *Create_user_optionContext) {}
+// EnterUser_option is called when production user_option is entered.
+func (s *BaseYQLListener) EnterUser_option(ctx *User_optionContext) {}
 
-// ExitCreate_user_option is called when production create_user_option is exited.
-func (s *BaseYQLListener) ExitCreate_user_option(ctx *Create_user_optionContext) {}
+// ExitUser_option is called when production user_option is exited.
+func (s *BaseYQLListener) ExitUser_option(ctx *User_optionContext) {}
+
+// EnterAuthentication_option is called when production authentication_option is entered.
+func (s *BaseYQLListener) EnterAuthentication_option(ctx *Authentication_optionContext) {}
+
+// ExitAuthentication_option is called when production authentication_option is exited.
+func (s *BaseYQLListener) ExitAuthentication_option(ctx *Authentication_optionContext) {}
 
 // EnterPassword_option is called when production password_option is entered.
 func (s *BaseYQLListener) EnterPassword_option(ctx *Password_optionContext) {}
 
 // ExitPassword_option is called when production password_option is exited.
 func (s *BaseYQLListener) ExitPassword_option(ctx *Password_optionContext) {}
+
+// EnterPassword_value is called when production password_value is entered.
+func (s *BaseYQLListener) EnterPassword_value(ctx *Password_valueContext) {}
+
+// ExitPassword_value is called when production password_value is exited.
+func (s *BaseYQLListener) ExitPassword_value(ctx *Password_valueContext) {}
+
+// EnterHash_option is called when production hash_option is entered.
+func (s *BaseYQLListener) EnterHash_option(ctx *Hash_optionContext) {}
+
+// ExitHash_option is called when production hash_option is exited.
+func (s *BaseYQLListener) ExitHash_option(ctx *Hash_optionContext) {}
 
 // EnterLogin_option is called when production login_option is entered.
 func (s *BaseYQLListener) EnterLogin_option(ctx *Login_optionContext) {}
@@ -1903,6 +1927,60 @@ func (s *BaseYQLListener) EnterDrop_replication_stmt(ctx *Drop_replication_stmtC
 
 // ExitDrop_replication_stmt is called when production drop_replication_stmt is exited.
 func (s *BaseYQLListener) ExitDrop_replication_stmt(ctx *Drop_replication_stmtContext) {}
+
+// EnterLambda_or_parameter is called when production lambda_or_parameter is entered.
+func (s *BaseYQLListener) EnterLambda_or_parameter(ctx *Lambda_or_parameterContext) {}
+
+// ExitLambda_or_parameter is called when production lambda_or_parameter is exited.
+func (s *BaseYQLListener) ExitLambda_or_parameter(ctx *Lambda_or_parameterContext) {}
+
+// EnterCreate_transfer_stmt is called when production create_transfer_stmt is entered.
+func (s *BaseYQLListener) EnterCreate_transfer_stmt(ctx *Create_transfer_stmtContext) {}
+
+// ExitCreate_transfer_stmt is called when production create_transfer_stmt is exited.
+func (s *BaseYQLListener) ExitCreate_transfer_stmt(ctx *Create_transfer_stmtContext) {}
+
+// EnterTransfer_settings is called when production transfer_settings is entered.
+func (s *BaseYQLListener) EnterTransfer_settings(ctx *Transfer_settingsContext) {}
+
+// ExitTransfer_settings is called when production transfer_settings is exited.
+func (s *BaseYQLListener) ExitTransfer_settings(ctx *Transfer_settingsContext) {}
+
+// EnterTransfer_settings_entry is called when production transfer_settings_entry is entered.
+func (s *BaseYQLListener) EnterTransfer_settings_entry(ctx *Transfer_settings_entryContext) {}
+
+// ExitTransfer_settings_entry is called when production transfer_settings_entry is exited.
+func (s *BaseYQLListener) ExitTransfer_settings_entry(ctx *Transfer_settings_entryContext) {}
+
+// EnterAlter_transfer_stmt is called when production alter_transfer_stmt is entered.
+func (s *BaseYQLListener) EnterAlter_transfer_stmt(ctx *Alter_transfer_stmtContext) {}
+
+// ExitAlter_transfer_stmt is called when production alter_transfer_stmt is exited.
+func (s *BaseYQLListener) ExitAlter_transfer_stmt(ctx *Alter_transfer_stmtContext) {}
+
+// EnterAlter_transfer_action is called when production alter_transfer_action is entered.
+func (s *BaseYQLListener) EnterAlter_transfer_action(ctx *Alter_transfer_actionContext) {}
+
+// ExitAlter_transfer_action is called when production alter_transfer_action is exited.
+func (s *BaseYQLListener) ExitAlter_transfer_action(ctx *Alter_transfer_actionContext) {}
+
+// EnterAlter_transfer_set_setting is called when production alter_transfer_set_setting is entered.
+func (s *BaseYQLListener) EnterAlter_transfer_set_setting(ctx *Alter_transfer_set_settingContext) {}
+
+// ExitAlter_transfer_set_setting is called when production alter_transfer_set_setting is exited.
+func (s *BaseYQLListener) ExitAlter_transfer_set_setting(ctx *Alter_transfer_set_settingContext) {}
+
+// EnterAlter_transfer_set_using is called when production alter_transfer_set_using is entered.
+func (s *BaseYQLListener) EnterAlter_transfer_set_using(ctx *Alter_transfer_set_usingContext) {}
+
+// ExitAlter_transfer_set_using is called when production alter_transfer_set_using is exited.
+func (s *BaseYQLListener) ExitAlter_transfer_set_using(ctx *Alter_transfer_set_usingContext) {}
+
+// EnterDrop_transfer_stmt is called when production drop_transfer_stmt is entered.
+func (s *BaseYQLListener) EnterDrop_transfer_stmt(ctx *Drop_transfer_stmtContext) {}
+
+// ExitDrop_transfer_stmt is called when production drop_transfer_stmt is exited.
+func (s *BaseYQLListener) ExitDrop_transfer_stmt(ctx *Drop_transfer_stmtContext) {}
 
 // EnterAction_or_subquery_args is called when production action_or_subquery_args is entered.
 func (s *BaseYQLListener) EnterAction_or_subquery_args(ctx *Action_or_subquery_argsContext) {}
@@ -2359,6 +2437,12 @@ func (s *BaseYQLListener) EnterAlter_sequence_action(ctx *Alter_sequence_actionC
 
 // ExitAlter_sequence_action is called when production alter_sequence_action is exited.
 func (s *BaseYQLListener) ExitAlter_sequence_action(ctx *Alter_sequence_actionContext) {}
+
+// EnterShow_create_table_stmt is called when production show_create_table_stmt is entered.
+func (s *BaseYQLListener) EnterShow_create_table_stmt(ctx *Show_create_table_stmtContext) {}
+
+// ExitShow_create_table_stmt is called when production show_create_table_stmt is exited.
+func (s *BaseYQLListener) ExitShow_create_table_stmt(ctx *Show_create_table_stmtContext) {}
 
 // EnterIdentifier is called when production identifier is entered.
 func (s *BaseYQLListener) EnterIdentifier(ctx *IdentifierContext) {}

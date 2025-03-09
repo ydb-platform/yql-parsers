@@ -2030,6 +2030,15 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by YQLParser#alter_database_stmt.
+	enterAlter_database_stmt(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#alter_database_stmt.
+	exitAlter_database_stmt(ctx) {
+	}
+
+
 	// Enter a parse tree produced by YQLParser#table_inherits.
 	enterTable_inherits(ctx) {
 	}
@@ -2615,12 +2624,21 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
-	// Enter a parse tree produced by YQLParser#create_user_option.
-	enterCreate_user_option(ctx) {
+	// Enter a parse tree produced by YQLParser#user_option.
+	enterUser_option(ctx) {
 	}
 
-	// Exit a parse tree produced by YQLParser#create_user_option.
-	exitCreate_user_option(ctx) {
+	// Exit a parse tree produced by YQLParser#user_option.
+	exitUser_option(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#authentication_option.
+	enterAuthentication_option(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#authentication_option.
+	exitAuthentication_option(ctx) {
 	}
 
 
@@ -2630,6 +2648,24 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 
 	// Exit a parse tree produced by YQLParser#password_option.
 	exitPassword_option(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#password_value.
+	enterPassword_value(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#password_value.
+	exitPassword_value(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#hash_option.
+	enterHash_option(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#hash_option.
+	exitHash_option(ctx) {
 	}
 
 
@@ -2828,6 +2864,87 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 
 	// Exit a parse tree produced by YQLParser#drop_replication_stmt.
 	exitDrop_replication_stmt(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#lambda_or_parameter.
+	enterLambda_or_parameter(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#lambda_or_parameter.
+	exitLambda_or_parameter(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#create_transfer_stmt.
+	enterCreate_transfer_stmt(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#create_transfer_stmt.
+	exitCreate_transfer_stmt(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#transfer_settings.
+	enterTransfer_settings(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#transfer_settings.
+	exitTransfer_settings(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#transfer_settings_entry.
+	enterTransfer_settings_entry(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#transfer_settings_entry.
+	exitTransfer_settings_entry(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#alter_transfer_stmt.
+	enterAlter_transfer_stmt(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#alter_transfer_stmt.
+	exitAlter_transfer_stmt(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#alter_transfer_action.
+	enterAlter_transfer_action(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#alter_transfer_action.
+	exitAlter_transfer_action(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#alter_transfer_set_setting.
+	enterAlter_transfer_set_setting(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#alter_transfer_set_setting.
+	exitAlter_transfer_set_setting(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#alter_transfer_set_using.
+	enterAlter_transfer_set_using(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#alter_transfer_set_using.
+	exitAlter_transfer_set_using(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#drop_transfer_stmt.
+	enterDrop_transfer_stmt(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#drop_transfer_stmt.
+	exitDrop_transfer_stmt(ctx) {
 	}
 
 
@@ -3512,6 +3629,15 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 
 	// Exit a parse tree produced by YQLParser#alter_sequence_action.
 	exitAlter_sequence_action(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#show_create_table_stmt.
+	enterShow_create_table_stmt(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#show_create_table_stmt.
+	exitShow_create_table_stmt(ctx) {
 	}
 
 

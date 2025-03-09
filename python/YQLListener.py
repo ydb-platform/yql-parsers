@@ -2033,6 +2033,15 @@ class YQLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by YQLParser#alter_database_stmt.
+    def enterAlter_database_stmt(self, ctx:YQLParser.Alter_database_stmtContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#alter_database_stmt.
+    def exitAlter_database_stmt(self, ctx:YQLParser.Alter_database_stmtContext):
+        pass
+
+
     # Enter a parse tree produced by YQLParser#table_inherits.
     def enterTable_inherits(self, ctx:YQLParser.Table_inheritsContext):
         pass
@@ -2618,12 +2627,21 @@ class YQLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by YQLParser#create_user_option.
-    def enterCreate_user_option(self, ctx:YQLParser.Create_user_optionContext):
+    # Enter a parse tree produced by YQLParser#user_option.
+    def enterUser_option(self, ctx:YQLParser.User_optionContext):
         pass
 
-    # Exit a parse tree produced by YQLParser#create_user_option.
-    def exitCreate_user_option(self, ctx:YQLParser.Create_user_optionContext):
+    # Exit a parse tree produced by YQLParser#user_option.
+    def exitUser_option(self, ctx:YQLParser.User_optionContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#authentication_option.
+    def enterAuthentication_option(self, ctx:YQLParser.Authentication_optionContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#authentication_option.
+    def exitAuthentication_option(self, ctx:YQLParser.Authentication_optionContext):
         pass
 
 
@@ -2633,6 +2651,24 @@ class YQLListener(ParseTreeListener):
 
     # Exit a parse tree produced by YQLParser#password_option.
     def exitPassword_option(self, ctx:YQLParser.Password_optionContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#password_value.
+    def enterPassword_value(self, ctx:YQLParser.Password_valueContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#password_value.
+    def exitPassword_value(self, ctx:YQLParser.Password_valueContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#hash_option.
+    def enterHash_option(self, ctx:YQLParser.Hash_optionContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#hash_option.
+    def exitHash_option(self, ctx:YQLParser.Hash_optionContext):
         pass
 
 
@@ -2831,6 +2867,87 @@ class YQLListener(ParseTreeListener):
 
     # Exit a parse tree produced by YQLParser#drop_replication_stmt.
     def exitDrop_replication_stmt(self, ctx:YQLParser.Drop_replication_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#lambda_or_parameter.
+    def enterLambda_or_parameter(self, ctx:YQLParser.Lambda_or_parameterContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#lambda_or_parameter.
+    def exitLambda_or_parameter(self, ctx:YQLParser.Lambda_or_parameterContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#create_transfer_stmt.
+    def enterCreate_transfer_stmt(self, ctx:YQLParser.Create_transfer_stmtContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#create_transfer_stmt.
+    def exitCreate_transfer_stmt(self, ctx:YQLParser.Create_transfer_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#transfer_settings.
+    def enterTransfer_settings(self, ctx:YQLParser.Transfer_settingsContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#transfer_settings.
+    def exitTransfer_settings(self, ctx:YQLParser.Transfer_settingsContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#transfer_settings_entry.
+    def enterTransfer_settings_entry(self, ctx:YQLParser.Transfer_settings_entryContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#transfer_settings_entry.
+    def exitTransfer_settings_entry(self, ctx:YQLParser.Transfer_settings_entryContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#alter_transfer_stmt.
+    def enterAlter_transfer_stmt(self, ctx:YQLParser.Alter_transfer_stmtContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#alter_transfer_stmt.
+    def exitAlter_transfer_stmt(self, ctx:YQLParser.Alter_transfer_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#alter_transfer_action.
+    def enterAlter_transfer_action(self, ctx:YQLParser.Alter_transfer_actionContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#alter_transfer_action.
+    def exitAlter_transfer_action(self, ctx:YQLParser.Alter_transfer_actionContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#alter_transfer_set_setting.
+    def enterAlter_transfer_set_setting(self, ctx:YQLParser.Alter_transfer_set_settingContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#alter_transfer_set_setting.
+    def exitAlter_transfer_set_setting(self, ctx:YQLParser.Alter_transfer_set_settingContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#alter_transfer_set_using.
+    def enterAlter_transfer_set_using(self, ctx:YQLParser.Alter_transfer_set_usingContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#alter_transfer_set_using.
+    def exitAlter_transfer_set_using(self, ctx:YQLParser.Alter_transfer_set_usingContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#drop_transfer_stmt.
+    def enterDrop_transfer_stmt(self, ctx:YQLParser.Drop_transfer_stmtContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#drop_transfer_stmt.
+    def exitDrop_transfer_stmt(self, ctx:YQLParser.Drop_transfer_stmtContext):
         pass
 
 
@@ -3515,6 +3632,15 @@ class YQLListener(ParseTreeListener):
 
     # Exit a parse tree produced by YQLParser#alter_sequence_action.
     def exitAlter_sequence_action(self, ctx:YQLParser.Alter_sequence_actionContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#show_create_table_stmt.
+    def enterShow_create_table_stmt(self, ctx:YQLParser.Show_create_table_stmtContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#show_create_table_stmt.
+    def exitShow_create_table_stmt(self, ctx:YQLParser.Show_create_table_stmtContext):
         pass
 
 

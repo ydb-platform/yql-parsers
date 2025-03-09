@@ -683,6 +683,9 @@ type YQLListener interface {
 	// EnterRestore_stmt is called when entering the restore_stmt production.
 	EnterRestore_stmt(c *Restore_stmtContext)
 
+	// EnterAlter_database_stmt is called when entering the alter_database_stmt production.
+	EnterAlter_database_stmt(c *Alter_database_stmtContext)
+
 	// EnterTable_inherits is called when entering the table_inherits production.
 	EnterTable_inherits(c *Table_inheritsContext)
 
@@ -878,11 +881,20 @@ type YQLListener interface {
 	// EnterRole_name is called when entering the role_name production.
 	EnterRole_name(c *Role_nameContext)
 
-	// EnterCreate_user_option is called when entering the create_user_option production.
-	EnterCreate_user_option(c *Create_user_optionContext)
+	// EnterUser_option is called when entering the user_option production.
+	EnterUser_option(c *User_optionContext)
+
+	// EnterAuthentication_option is called when entering the authentication_option production.
+	EnterAuthentication_option(c *Authentication_optionContext)
 
 	// EnterPassword_option is called when entering the password_option production.
 	EnterPassword_option(c *Password_optionContext)
+
+	// EnterPassword_value is called when entering the password_value production.
+	EnterPassword_value(c *Password_valueContext)
+
+	// EnterHash_option is called when entering the hash_option production.
+	EnterHash_option(c *Hash_optionContext)
 
 	// EnterLogin_option is called when entering the login_option production.
 	EnterLogin_option(c *Login_optionContext)
@@ -949,6 +961,33 @@ type YQLListener interface {
 
 	// EnterDrop_replication_stmt is called when entering the drop_replication_stmt production.
 	EnterDrop_replication_stmt(c *Drop_replication_stmtContext)
+
+	// EnterLambda_or_parameter is called when entering the lambda_or_parameter production.
+	EnterLambda_or_parameter(c *Lambda_or_parameterContext)
+
+	// EnterCreate_transfer_stmt is called when entering the create_transfer_stmt production.
+	EnterCreate_transfer_stmt(c *Create_transfer_stmtContext)
+
+	// EnterTransfer_settings is called when entering the transfer_settings production.
+	EnterTransfer_settings(c *Transfer_settingsContext)
+
+	// EnterTransfer_settings_entry is called when entering the transfer_settings_entry production.
+	EnterTransfer_settings_entry(c *Transfer_settings_entryContext)
+
+	// EnterAlter_transfer_stmt is called when entering the alter_transfer_stmt production.
+	EnterAlter_transfer_stmt(c *Alter_transfer_stmtContext)
+
+	// EnterAlter_transfer_action is called when entering the alter_transfer_action production.
+	EnterAlter_transfer_action(c *Alter_transfer_actionContext)
+
+	// EnterAlter_transfer_set_setting is called when entering the alter_transfer_set_setting production.
+	EnterAlter_transfer_set_setting(c *Alter_transfer_set_settingContext)
+
+	// EnterAlter_transfer_set_using is called when entering the alter_transfer_set_using production.
+	EnterAlter_transfer_set_using(c *Alter_transfer_set_usingContext)
+
+	// EnterDrop_transfer_stmt is called when entering the drop_transfer_stmt production.
+	EnterDrop_transfer_stmt(c *Drop_transfer_stmtContext)
 
 	// EnterAction_or_subquery_args is called when entering the action_or_subquery_args production.
 	EnterAction_or_subquery_args(c *Action_or_subquery_argsContext)
@@ -1177,6 +1216,9 @@ type YQLListener interface {
 
 	// EnterAlter_sequence_action is called when entering the alter_sequence_action production.
 	EnterAlter_sequence_action(c *Alter_sequence_actionContext)
+
+	// EnterShow_create_table_stmt is called when entering the show_create_table_stmt production.
+	EnterShow_create_table_stmt(c *Show_create_table_stmtContext)
 
 	// EnterIdentifier is called when entering the identifier production.
 	EnterIdentifier(c *IdentifierContext)
@@ -1982,6 +2024,9 @@ type YQLListener interface {
 	// ExitRestore_stmt is called when exiting the restore_stmt production.
 	ExitRestore_stmt(c *Restore_stmtContext)
 
+	// ExitAlter_database_stmt is called when exiting the alter_database_stmt production.
+	ExitAlter_database_stmt(c *Alter_database_stmtContext)
+
 	// ExitTable_inherits is called when exiting the table_inherits production.
 	ExitTable_inherits(c *Table_inheritsContext)
 
@@ -2177,11 +2222,20 @@ type YQLListener interface {
 	// ExitRole_name is called when exiting the role_name production.
 	ExitRole_name(c *Role_nameContext)
 
-	// ExitCreate_user_option is called when exiting the create_user_option production.
-	ExitCreate_user_option(c *Create_user_optionContext)
+	// ExitUser_option is called when exiting the user_option production.
+	ExitUser_option(c *User_optionContext)
+
+	// ExitAuthentication_option is called when exiting the authentication_option production.
+	ExitAuthentication_option(c *Authentication_optionContext)
 
 	// ExitPassword_option is called when exiting the password_option production.
 	ExitPassword_option(c *Password_optionContext)
+
+	// ExitPassword_value is called when exiting the password_value production.
+	ExitPassword_value(c *Password_valueContext)
+
+	// ExitHash_option is called when exiting the hash_option production.
+	ExitHash_option(c *Hash_optionContext)
 
 	// ExitLogin_option is called when exiting the login_option production.
 	ExitLogin_option(c *Login_optionContext)
@@ -2248,6 +2302,33 @@ type YQLListener interface {
 
 	// ExitDrop_replication_stmt is called when exiting the drop_replication_stmt production.
 	ExitDrop_replication_stmt(c *Drop_replication_stmtContext)
+
+	// ExitLambda_or_parameter is called when exiting the lambda_or_parameter production.
+	ExitLambda_or_parameter(c *Lambda_or_parameterContext)
+
+	// ExitCreate_transfer_stmt is called when exiting the create_transfer_stmt production.
+	ExitCreate_transfer_stmt(c *Create_transfer_stmtContext)
+
+	// ExitTransfer_settings is called when exiting the transfer_settings production.
+	ExitTransfer_settings(c *Transfer_settingsContext)
+
+	// ExitTransfer_settings_entry is called when exiting the transfer_settings_entry production.
+	ExitTransfer_settings_entry(c *Transfer_settings_entryContext)
+
+	// ExitAlter_transfer_stmt is called when exiting the alter_transfer_stmt production.
+	ExitAlter_transfer_stmt(c *Alter_transfer_stmtContext)
+
+	// ExitAlter_transfer_action is called when exiting the alter_transfer_action production.
+	ExitAlter_transfer_action(c *Alter_transfer_actionContext)
+
+	// ExitAlter_transfer_set_setting is called when exiting the alter_transfer_set_setting production.
+	ExitAlter_transfer_set_setting(c *Alter_transfer_set_settingContext)
+
+	// ExitAlter_transfer_set_using is called when exiting the alter_transfer_set_using production.
+	ExitAlter_transfer_set_using(c *Alter_transfer_set_usingContext)
+
+	// ExitDrop_transfer_stmt is called when exiting the drop_transfer_stmt production.
+	ExitDrop_transfer_stmt(c *Drop_transfer_stmtContext)
 
 	// ExitAction_or_subquery_args is called when exiting the action_or_subquery_args production.
 	ExitAction_or_subquery_args(c *Action_or_subquery_argsContext)
@@ -2476,6 +2557,9 @@ type YQLListener interface {
 
 	// ExitAlter_sequence_action is called when exiting the alter_sequence_action production.
 	ExitAlter_sequence_action(c *Alter_sequence_actionContext)
+
+	// ExitShow_create_table_stmt is called when exiting the show_create_table_stmt production.
+	ExitShow_create_table_stmt(c *Show_create_table_stmtContext)
 
 	// ExitIdentifier is called when exiting the identifier production.
 	ExitIdentifier(c *IdentifierContext)
