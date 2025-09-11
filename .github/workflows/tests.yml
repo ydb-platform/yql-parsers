@@ -67,5 +67,4 @@ jobs:
       - name: Cleanup
         if: always()
         run: |
-          cd ../..
-          rm -rf tempTestProj
+          rm -rf "${{ github.workspace }}/tempTestProj"
