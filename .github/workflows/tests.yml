@@ -58,9 +58,8 @@ jobs:
         run: |
           mkdir tempTestProj
           cd tempTestProj
-          dotnet new nunit -n TempTestProj
+          dotnet new nunit
           cp ../tests/*.cs .
-          cd TempTestProj
           dotnet add package Antlr4.Runtime.Standard --version 4.10.1
           dotnet restore
           dotnet test --logger "trx;LogFileName=test_results.trx"
