@@ -50,7 +50,7 @@ func main() {
 		panic(err)
 	}
 	if regexp.MustCompile(regexp.QuoteMeta(marker)).Match(content) {
-		log.Fatalf("marker already exists in %s, skipping\n", testPath)
+		log.Fatalf("marker already exists in %s, aborting\n", testPath)
 	}
 
 	tf, err := os.OpenFile(testPath, os.O_APPEND|os.O_WRONLY, 0644)
