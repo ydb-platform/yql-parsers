@@ -63,7 +63,7 @@ jobs:
           cd TempTestProj
           dotnet add package Antlr4.Runtime.Standard --version 4.10.1
           dotnet restore
-          dotnet test --logger "trx;LogFileName=test_results.trx
+          dotnet test --logger "trx;LogFileName=test_results.trx"
       - name: Cleanup
         run: |
           cd ../..
