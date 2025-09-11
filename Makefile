@@ -4,7 +4,7 @@ CURRENT_DIR := $(shell pwd)
 ANTLR_VERSION = 4.13.1
 COMMIT_HASH ?= cc84759
 
-.PHONY: build-image clean go ts js python dotnet java all go_clean py_clean
+.PHONY: build-image clean go ts js python dotnet java all go_clean py_clean interface_checks
 
 all: go ts js python dotnet java
 
@@ -36,7 +36,10 @@ java: build-image
 build-image: 
 	docker build --build-arg ANTLR_VERSION=$(ANTLR_VERSION) --build-arg COMMIT_HASH=$(COMMIT_HASH) -t $(IMAGE_NAME) .
 
-clean: go_clean python_clean dotnet_clean java_clean
+clean: go_clean python_clean dotnet_clean java_clean ts_clean js_clean
+
+interface_checks:
+	go run ./scripts/gen_checks.go -- ./go/yql_visitor.go ./tests/parser_test.go
 
 go_clean:
 	rm -rf go/*.go
