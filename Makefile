@@ -10,28 +10,28 @@ all: go ts js python dotnet java
 
 go: build-image
 	docker run --rm -v "$(CURRENT_DIR)/go":/workspace/go $(IMAGE_NAME) \
-		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=Go -package yql_antlr4_parser -o go YQL.g4
+		java -jar /antlr-${ANTLR_VERSION}-complete.jar -visitor  -Dlanguage=Go -package yql_antlr4_parser -o go YQL.g4
 
 ts: build-image
 	docker run --rm -v "$(CURRENT_DIR)/ts":/workspace/ts $(IMAGE_NAME) \
-		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=TypeScript -package yql_antlr4_parser -o ts YQL.g4
+		java -jar /antlr-${ANTLR_VERSION}-complete.jar -visitor -Dlanguage=TypeScript -package yql_antlr4_parser -o ts YQL.g4
 
 js: build-image
 	docker run --rm -v "$(CURRENT_DIR)/js":/workspace/js $(IMAGE_NAME) \
-		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=JavaScript -package yql_antlr4_parser -o js YQL.g4
+		java -jar /antlr-${ANTLR_VERSION}-complete.jar -visitor -Dlanguage=JavaScript -package yql_antlr4_parser -o js YQL.g4
 
 python: build-image
 	docker run --rm -v "$(CURRENT_DIR)/python":/workspace/python $(IMAGE_NAME) \
-		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=Python3 -o python YQL.g4
+		java -jar /antlr-${ANTLR_VERSION}-complete.jar -visitor -Dlanguage=Python3 -o python YQL.g4
 	printf "from YQLParser import *\nfrom YQLLexer import *\nfrom YQLListener import *\n" > python/__init__.py
 
 dotnet: build-image
 	docker run --rm -v "$(CURRENT_DIR)/dotnet":/workspace/dotnet $(IMAGE_NAME) \
-		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=CSharp -package YQLAntlr4Parser -o dotnet YQL.g4
+		java -jar /antlr-${ANTLR_VERSION}-complete.jar -visitor -Dlanguage=CSharp -package YQLAntlr4Parser -o dotnet YQL.g4
 
 java: build-image
 	docker run --rm -v "$(CURRENT_DIR)/java":/workspace/java $(IMAGE_NAME) \
-		java -jar /antlr-${ANTLR_VERSION}-complete.jar -Dlanguage=Java -package yql.antlr4.parser -o java YQL.g4
+		java -jar /antlr-${ANTLR_VERSION}-complete.jar -visitor -Dlanguage=Java -package yql.antlr4.parser -o java YQL.g4
 
 build-image: 
 	docker build --build-arg ANTLR_VERSION=$(ANTLR_VERSION) --build-arg COMMIT_HASH=$(COMMIT_HASH) -t $(IMAGE_NAME) .

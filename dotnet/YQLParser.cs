@@ -486,6 +486,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSql_query(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSql_query(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -555,6 +561,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSql_stmt_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSql_stmt_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -663,6 +675,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAnsi_sql_stmt_list(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAnsi_sql_stmt_list(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -731,6 +749,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitLambda_body(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitLambda_body(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -837,6 +861,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitLambda_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitLambda_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -897,6 +927,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSql_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSql_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -1146,6 +1182,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSql_stmt_core(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSql_stmt_core(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -1633,6 +1675,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitExpr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitExpr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -1715,6 +1763,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitOr_subexpr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitOr_subexpr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -1784,6 +1838,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAnd_subexpr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAnd_subexpr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -1849,6 +1909,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitXor_subexpr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitXor_subexpr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -1902,6 +1968,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDistinct_from_op(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDistinct_from_op(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -2003,6 +2075,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCond_expr(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCond_expr(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -2259,6 +2337,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitMatch_op(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitMatch_op(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -2329,6 +2413,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitEq_subexpr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitEq_subexpr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -2397,6 +2487,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitShift_right(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitShift_right(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -2443,6 +2539,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRot_right(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRot_right(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -2491,6 +2593,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDouble_question(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDouble_question(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -2581,6 +2689,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitNeq_subexpr(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitNeq_subexpr(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -2730,6 +2844,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitBit_subexpr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitBit_subexpr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -2812,6 +2932,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAdd_subexpr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAdd_subexpr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -2886,6 +3012,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitMul_subexpr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitMul_subexpr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -2949,6 +3081,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCon_subexpr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCon_subexpr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -3007,6 +3145,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitUnary_op(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitUnary_op(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -3091,6 +3235,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitUnary_subexpr_suffix(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitUnary_subexpr_suffix(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -3499,6 +3649,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitUnary_casual_subexpr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitUnary_casual_subexpr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -3564,6 +3720,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitIn_unary_casual_subexpr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitIn_unary_casual_subexpr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -3626,6 +3788,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitUnary_subexpr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitUnary_subexpr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -3685,6 +3853,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitIn_unary_subexpr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitIn_unary_subexpr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -3743,6 +3917,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitList_literal(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitList_literal(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -3820,6 +4000,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitExpr_dict_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitExpr_dict_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -3911,6 +4097,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDict_literal(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDict_literal(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -3988,6 +4180,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitExpr_struct_list(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitExpr_struct_list(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -4060,6 +4258,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitStruct_literal(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitStruct_literal(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -4164,6 +4368,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAtom_expr(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAtom_expr(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -4637,6 +4847,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitIn_atom_expr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitIn_atom_expr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -5080,6 +5296,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCast_expr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCast_expr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -5140,6 +5362,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitBitcast_expr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitBitcast_expr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -5198,6 +5426,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitExists_expr(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitExists_expr(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -5280,6 +5514,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCase_expr(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCase_expr(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -5374,6 +5614,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitLambda(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitLambda(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -5454,6 +5700,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitIn_expr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitIn_expr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -5502,6 +5754,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJson_api_expr(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJson_api_expr(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -5566,6 +5824,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJsonpath_spec(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJsonpath_spec(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -5609,6 +5873,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJson_variable_name(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJson_variable_name(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -5903,6 +6173,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJson_variable(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJson_variable(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -5956,6 +6232,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJson_variables(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJson_variables(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -6025,6 +6307,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJson_common_args(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJson_common_args(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -6087,6 +6375,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJson_case_handler(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJson_case_handler(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -6180,6 +6474,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJson_value(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJson_value(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -6272,6 +6572,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJson_exists_handler(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJson_exists_handler(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -6332,6 +6638,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJson_exists(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJson_exists(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -6394,6 +6706,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJson_query_wrapper(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJson_query_wrapper(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -6493,6 +6811,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJson_query_handler(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJson_query_handler(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -6585,6 +6909,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJson_query(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJson_query(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -6679,6 +7009,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSmart_parenthesis(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSmart_parenthesis(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -6752,6 +7088,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitExpr_list(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitExpr_list(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -6823,6 +7165,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitPure_column_list(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitPure_column_list(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -6889,6 +7237,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitPure_column_or_named(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitPure_column_or_named(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -7232,6 +7586,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitPure_column_or_named_list(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitPure_column_or_named_list(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -7299,6 +7659,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitColumn_name(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitColumn_name(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -7350,6 +7716,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWithout_column_name(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWithout_column_name(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -7417,6 +7789,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitColumn_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitColumn_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -7498,6 +7876,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWithout_column_list(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWithout_column_list(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -7575,6 +7959,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitNamed_expr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitNamed_expr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -7637,6 +8027,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitNamed_expr_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitNamed_expr_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -7709,6 +8105,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitInvoke_expr(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitInvoke_expr(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -8098,6 +8500,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitInvoke_expr_tail(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitInvoke_expr_tail(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -8183,6 +8591,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitUsing_call_expr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitUsing_call_expr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -8262,6 +8676,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitKey_expr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitKey_expr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -8313,6 +8733,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWhen_expr(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWhen_expr(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -8375,6 +8801,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitLiteral_value(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitLiteral_value(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -8494,6 +8926,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitBind_parameter(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitBind_parameter(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -8850,6 +9288,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitOpt_bind_parameter(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitOpt_bind_parameter(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -8910,6 +9354,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitBind_parameter_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitBind_parameter_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -8975,6 +9425,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitNamed_bind_parameter(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitNamed_bind_parameter(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -9037,6 +9493,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitNamed_bind_parameter_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitNamed_bind_parameter_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -9102,6 +9564,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSigned_number(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSigned_number(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -9181,6 +9649,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_simple(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_simple(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -9226,6 +9700,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitInteger_or_bind(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitInteger_or_bind(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -9289,6 +9769,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_tag(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_tag(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -9633,6 +10119,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitStruct_arg(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitStruct_arg(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -9685,6 +10177,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitStruct_arg_positional(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitStruct_arg_positional(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -9773,6 +10271,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitVariant_arg(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitVariant_arg(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -9830,6 +10334,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCallable_arg(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCallable_arg(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -9895,6 +10405,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCallable_arg_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCallable_arg_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -9965,6 +10481,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_decimal(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_decimal(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -10020,6 +10542,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_optional(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_optional(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -10080,6 +10608,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_tuple(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_tuple(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -10195,6 +10729,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_struct(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_struct(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -10308,6 +10848,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_variant(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_variant(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -10390,6 +10936,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_list(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_list(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -10442,6 +10994,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_stream(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_stream(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -10493,6 +11051,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_flow(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_flow(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -10550,6 +11114,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_dict(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_dict(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -10605,6 +11175,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_set(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_set(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -10664,6 +11240,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_enum(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_enum(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -10747,6 +11329,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_resource(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_resource(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -10802,6 +11390,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_tagged(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_tagged(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -10870,6 +11464,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_callable(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_callable(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -11000,6 +11600,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_composite(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_composite(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -11151,6 +11757,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -11260,6 +11872,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_name_or_bind(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_name_or_bind(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -11332,6 +11950,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitValue_constructor_literal(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitValue_constructor_literal(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -11386,6 +12010,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitValue_constructor(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitValue_constructor(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -11495,6 +12125,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDeclare_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDeclare_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -11563,6 +12199,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitModule_path(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitModule_path(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -11639,6 +12281,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitImport_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitImport_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -11688,6 +12336,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitExport_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitExport_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -11739,6 +12393,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCall_action(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCall_action(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -11817,6 +12477,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitInline_action(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitInline_action(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -11869,6 +12535,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDo_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDo_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -11948,6 +12620,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitPragma_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitPragma_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -12050,6 +12728,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitPragma_value(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitPragma_value(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -12411,6 +13095,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSort_specification(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSort_specification(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -12478,6 +13168,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSort_specification_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSort_specification_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -12547,6 +13243,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSelect_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSelect_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -12620,6 +13322,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSelect_unparenthesized_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSelect_unparenthesized_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -12681,6 +13389,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSelect_kind_parenthesis(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSelect_kind_parenthesis(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -12748,6 +13462,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSelect_op(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSelect_op(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -12833,6 +13553,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSelect_kind_partial(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSelect_kind_partial(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -12920,6 +13646,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSelect_kind(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSelect_kind(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -13044,6 +13776,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitProcess_core(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitProcess_core(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -13193,6 +13931,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitExternal_call_param(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitExternal_call_param(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -13246,6 +13990,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitExternal_call_settings(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitExternal_call_settings(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -13343,6 +14093,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitReduce_core(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitReduce_core(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -13483,6 +14239,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitOpt_set_quantifier(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitOpt_set_quantifier(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -13586,6 +14348,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSelect_core(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSelect_core(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -13791,6 +14559,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_recognition_clause(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_recognition_clause(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -13887,6 +14661,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_rows_per_match(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_rows_per_match(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -13972,6 +14752,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_empty_match_handling(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_empty_match_handling(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -14050,6 +14836,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_measures(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_measures(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -14101,6 +14893,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_measure_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_measure_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -14166,6 +14964,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_measure_definition(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_measure_definition(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -14230,6 +15034,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_common_syntax(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_common_syntax(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -14325,6 +15135,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_skip_to(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_skip_to(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -14431,6 +15247,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_skip_to_variable_name(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_skip_to_variable_name(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -14472,6 +15294,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_initial_or_seek(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_initial_or_seek(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -14530,6 +15358,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -14594,6 +15428,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_term(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_term(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -14652,6 +15492,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_factor(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_factor(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -14717,6 +15563,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_quantifier(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_quantifier(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -14880,6 +15732,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_primary(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_primary(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -14988,6 +15846,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_primary_variable_name(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_primary_variable_name(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -15040,6 +15904,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_permute(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_permute(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -15108,6 +15978,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_subset_clause(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_subset_clause(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -15159,6 +16035,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_subset_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_subset_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -15226,6 +16108,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_subset_item(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_subset_item(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -15277,6 +16165,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_subset_item_variable_name(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_subset_item_variable_name(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -15326,6 +16220,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_subset_rhs(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_subset_rhs(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -15387,6 +16287,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_subset_rhs_variable_name(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_subset_rhs_variable_name(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -15436,6 +16342,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_definition_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_definition_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -15501,6 +16413,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_definition(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_definition(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -15548,6 +16466,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_definition_variable_name(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_definition_variable_name(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -15590,6 +16514,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_definition_search_condition(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_definition_search_condition(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -15634,6 +16564,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSearch_condition(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSearch_condition(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -15676,6 +16612,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRow_pattern_variable_name(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRow_pattern_variable_name(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -15721,6 +16663,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitOrder_by_clause(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitOrder_by_clause(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -15769,6 +16717,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitExt_order_by_clause(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitExt_order_by_clause(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -15833,6 +16787,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitGroup_by_clause(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitGroup_by_clause(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -15913,6 +16873,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitGrouping_element_list(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitGrouping_element_list(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -15984,6 +16950,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitGrouping_element(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitGrouping_element(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -16062,6 +17034,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitOrdinary_grouping_set(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitOrdinary_grouping_set(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -16111,6 +17089,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitOrdinary_grouping_set_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitOrdinary_grouping_set_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -16175,6 +17159,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRollup_list(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRollup_list(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -16226,6 +17216,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCube_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCube_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -16279,6 +17275,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitGrouping_sets_specification(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitGrouping_sets_specification(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -16340,6 +17342,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitHopping_window_specification(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitHopping_window_specification(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -16412,6 +17420,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitResult_column(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitResult_column(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -16508,6 +17522,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJoin_source(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJoin_source(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -16602,6 +17622,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitNamed_column(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitNamed_column(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -16663,6 +17689,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitFlatten_by_arg(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitFlatten_by_arg(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -17021,6 +18053,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitFlatten_source(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitFlatten_source(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -17133,6 +18171,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitNamed_single_source(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitNamed_single_source(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -17486,6 +18530,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSingle_source(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSingle_source(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -17558,6 +18608,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSample_clause(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSample_clause(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -17611,6 +18667,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTablesample_clause(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTablesample_clause(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -17673,6 +18735,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSampling_mode(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSampling_mode(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -17726,6 +18794,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRepeatable_clause(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRepeatable_clause(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -17784,6 +18858,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJoin_op(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJoin_op(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -17971,6 +19051,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitJoin_constraint(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitJoin_constraint(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -18041,6 +19127,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitReturning_columns_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitReturning_columns_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -18409,6 +19501,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitInto_table_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitInto_table_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -18524,6 +19622,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitInto_values_source(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitInto_values_source(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -18601,6 +19705,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitValues_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitValues_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -18648,6 +19758,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitValues_source(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitValues_source(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -18719,6 +19835,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitValues_source_row_list(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitValues_source_row_list(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -18781,6 +19903,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitValues_source_row(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitValues_source_row(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -18830,6 +19958,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSimple_values_source(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSimple_values_source(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -18898,6 +20032,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_external_data_source_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_external_data_source_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -18993,6 +20133,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_external_data_source_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_external_data_source_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -19069,6 +20215,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_external_data_source_action(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_external_data_source_action(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -19137,6 +20289,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDrop_external_data_source_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDrop_external_data_source_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -19212,6 +20370,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_view_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_view_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -19293,6 +20457,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDrop_view_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDrop_view_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -19362,6 +20532,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitUpsert_object_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitUpsert_object_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -19442,6 +20618,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_object_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_object_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -19524,6 +20706,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_object_features(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_object_features(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -19579,6 +20767,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_object_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_object_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -19638,6 +20832,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_object_features(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_object_features(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -19695,6 +20895,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDrop_object_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDrop_object_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -19775,6 +20981,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDrop_object_features(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDrop_object_features(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -19826,6 +21038,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitObject_feature_value(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitObject_feature_value(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -20190,6 +21408,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitObject_feature_kv(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitObject_feature_kv(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -20237,6 +21461,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitObject_feature_flag(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitObject_feature_flag(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -20282,6 +21512,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitObject_feature(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitObject_feature(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -20347,6 +21583,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitObject_features(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitObject_features(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -20714,6 +21956,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitObject_type_ref(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitObject_type_ref(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -20794,6 +22042,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_table_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_table_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -21009,6 +22263,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_table_entry(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_table_entry(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -21103,6 +22363,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_backup_collection_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_backup_collection_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -21174,6 +22440,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_backup_collection_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_backup_collection_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -21240,6 +22512,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDrop_backup_collection_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDrop_backup_collection_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -21285,6 +22563,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_backup_collection_entries(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_backup_collection_entries(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -21346,6 +22630,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_backup_collection_entries_many(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_backup_collection_entries_many(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -21403,6 +22693,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTable_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTable_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -21475,6 +22771,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_backup_collection_actions(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_backup_collection_actions(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -21537,6 +22839,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_backup_collection_action(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_backup_collection_action(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -21603,6 +22911,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_backup_collection_entries(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_backup_collection_entries(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -21666,6 +22980,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_backup_collection_entry(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_backup_collection_entry(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -21751,6 +23071,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitBackup_collection(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitBackup_collection(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -21804,6 +23130,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitBackup_collection_settings(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitBackup_collection_settings(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -21869,6 +23201,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitBackup_collection_settings_entry(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitBackup_collection_settings_entry(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -21917,6 +23255,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitBackup_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitBackup_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -21976,6 +23320,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRestore_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRestore_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -22042,6 +23392,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_database_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_database_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -22104,6 +23460,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTable_inherits(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTable_inherits(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -22174,6 +23536,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTable_partition_by(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTable_partition_by(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -22232,6 +23600,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWith_table_settings(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWith_table_settings(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -22300,6 +23674,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTable_tablestore(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTable_tablestore(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -22349,6 +23729,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTable_settings_entry(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTable_settings_entry(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -22396,6 +23782,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTable_as_source(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTable_as_source(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -22453,6 +23845,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -22567,6 +23965,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_action(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_action(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -22742,6 +24146,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_external_table_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_external_table_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -22821,6 +24231,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_external_table_action(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_external_table_action(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -22911,6 +24327,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_store_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_store_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -22980,6 +24402,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_store_action(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_store_action(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -23040,6 +24468,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_add_column(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_add_column(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -23097,6 +24531,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_drop_column(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_drop_column(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -23159,6 +24599,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_alter_column(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_alter_column(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -23215,6 +24661,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_alter_column_drop_not_null(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_alter_column_drop_not_null(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -23269,6 +24721,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_add_column_family(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_add_column_family(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -23322,6 +24780,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_alter_column_family(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_alter_column_family(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -23380,6 +24844,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_set_table_setting_uncompat(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_set_table_setting_uncompat(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -23436,6 +24906,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_set_table_setting_compat(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_set_table_setting_compat(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -23513,6 +24989,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_reset_table_setting(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_reset_table_setting(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -23580,6 +25062,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_add_index(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_add_index(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -23626,6 +25114,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_drop_index(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_drop_index(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -23675,6 +25169,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_rename_to(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_rename_to(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -23729,6 +25229,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_rename_index_to(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_rename_index_to(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -23781,6 +25287,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_add_changefeed(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_add_changefeed(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -23830,6 +25342,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_alter_changefeed(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_alter_changefeed(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -23882,6 +25400,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_drop_changefeed(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_drop_changefeed(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -23933,6 +25457,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_alter_index(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_alter_index(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -23991,6 +25521,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitColumn_schema(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitColumn_schema(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -24051,6 +25587,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitFamily_relation(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitFamily_relation(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -24098,6 +25640,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitOpt_column_constraints(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitOpt_column_constraints(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -24174,6 +25722,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitColumn_order_by_specification(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitColumn_order_by_specification(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -24255,6 +25809,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTable_constraint(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTable_constraint(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -24421,6 +25981,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTable_index(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTable_index(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -24542,6 +26108,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTable_index_type(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTable_index_type(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -24615,6 +26187,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitGlobal_index(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitGlobal_index(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -24684,6 +26262,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitLocal_index(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitLocal_index(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -24726,6 +26310,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitIndex_subtype(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitIndex_subtype(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -24779,6 +26369,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWith_index_settings(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWith_index_settings(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -24863,6 +26459,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitIndex_setting_entry(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitIndex_setting_entry(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -24916,6 +26518,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitIndex_setting_value(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitIndex_setting_value(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -25284,6 +26892,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitChangefeed(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitChangefeed(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -25343,6 +26957,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitChangefeed_settings(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitChangefeed_settings(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -25408,6 +27028,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitChangefeed_settings_entry(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitChangefeed_settings_entry(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -25455,6 +27081,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitChangefeed_setting_value(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitChangefeed_setting_value(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -25501,6 +27133,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitChangefeed_alter_settings(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitChangefeed_alter_settings(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -25570,6 +27208,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_setting_entry(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_setting_entry(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -25638,6 +27282,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTable_setting_value(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTable_setting_value(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -25760,6 +27410,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTtl_tier_list(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTtl_tier_list(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -25837,6 +27493,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTtl_tier_action(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTtl_tier_action(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -25907,6 +27569,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitFamily_entry(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitFamily_entry(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -25962,6 +27630,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitFamily_settings(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitFamily_settings(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -26039,6 +27713,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitFamily_settings_entry(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitFamily_settings_entry(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -26086,6 +27766,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitFamily_setting_value(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitFamily_setting_value(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -26154,6 +27840,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSplit_boundaries(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSplit_boundaries(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -26241,6 +27933,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitLiteral_value_list(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitLiteral_value_list(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -26311,6 +28009,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_table_alter_index_action(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_table_alter_index_action(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -26379,6 +28083,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDrop_table_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDrop_table_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -26471,6 +28181,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_user_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_user_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -26546,6 +28262,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_user_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_user_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -26655,6 +28377,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_group_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_group_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -26759,6 +28487,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_group_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_group_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -26883,6 +28617,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDrop_role_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDrop_role_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -26981,6 +28721,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRole_name(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRole_name(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -27330,6 +29076,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitUser_option(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitUser_option(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -27394,6 +29146,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAuthentication_option(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAuthentication_option(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -27455,6 +29213,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitPassword_option(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitPassword_option(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -27510,6 +29274,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitPassword_value(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitPassword_value(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -27560,6 +29330,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitHash_option(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitHash_option(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -27603,6 +29379,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitLogin_option(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitLogin_option(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -27678,6 +29460,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitGrant_permissions_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitGrant_permissions_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -27814,6 +29602,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRevoke_permissions_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRevoke_permissions_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -27934,6 +29728,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitPermission_id(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitPermission_id(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -28147,6 +29947,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitPermission_name(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitPermission_name(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -28228,6 +30034,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitPermission_name_target(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitPermission_name_target(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -28349,6 +30161,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_resource_pool_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_resource_pool_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -28412,6 +30230,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_resource_pool_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_resource_pool_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -28484,6 +30308,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_resource_pool_action(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_resource_pool_action(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -28545,6 +30375,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDrop_resource_pool_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDrop_resource_pool_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -28600,6 +30436,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_resource_pool_classifier_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_resource_pool_classifier_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -28667,6 +30509,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_resource_pool_classifier_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_resource_pool_classifier_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -28741,6 +30589,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_resource_pool_classifier_action(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_resource_pool_classifier_action(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -28802,6 +30656,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDrop_resource_pool_classifier_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDrop_resource_pool_classifier_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -28873,6 +30733,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_replication_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_replication_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -28956,6 +30822,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitReplication_target(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitReplication_target(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -29009,6 +30881,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitReplication_settings(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitReplication_settings(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -29074,6 +30952,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitReplication_settings_entry(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitReplication_settings_entry(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -29133,6 +31017,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_replication_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_replication_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -29202,6 +31092,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_replication_action(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_replication_action(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -29247,6 +31143,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_replication_set_setting(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_replication_set_setting(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -29300,6 +31202,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDrop_replication_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDrop_replication_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -29363,6 +31271,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitLambda_or_parameter(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitLambda_or_parameter(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -29438,6 +31352,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_transfer_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_transfer_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -29522,6 +31442,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTransfer_settings(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTransfer_settings(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -29586,6 +31512,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTransfer_settings_entry(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTransfer_settings_entry(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -29644,6 +31576,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_transfer_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_transfer_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -29714,6 +31652,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_transfer_action(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_transfer_action(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -29773,6 +31717,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_transfer_set_setting(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_transfer_set_setting(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -29824,6 +31774,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_transfer_set_using(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_transfer_set_using(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -29873,6 +31829,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDrop_transfer_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDrop_transfer_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -29938,6 +31900,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAction_or_subquery_args(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAction_or_subquery_args(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -30014,6 +31982,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDefine_action_or_subquery_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDefine_action_or_subquery_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -30098,6 +32072,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDefine_action_or_subquery_body(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDefine_action_or_subquery_body(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -30219,6 +32199,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitIf_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitIf_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -30302,6 +32288,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitFor_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitFor_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -30419,6 +32411,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTable_ref(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTable_ref(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -30597,6 +32595,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTable_key(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTable_key(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -30657,6 +32661,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTable_arg(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTable_arg(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -30733,6 +32743,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTable_hints(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTable_hints(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -31114,6 +33130,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTable_hint(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTable_hint(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -31591,6 +33613,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitObject_ref(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitObject_ref(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -31649,6 +33677,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSimple_table_ref_core(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSimple_table_ref_core(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -31720,6 +33754,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSimple_table_ref(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSimple_table_ref(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -31778,6 +33818,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitInto_simple_table_ref(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitInto_simple_table_ref(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -31850,6 +33896,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDelete_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDelete_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -31963,6 +34015,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitUpdate_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitUpdate_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -32065,6 +34123,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSet_clause_choice(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSet_clause_choice(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -32406,6 +34470,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSet_clause_list(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSet_clause_list(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -32470,6 +34540,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSet_clause(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSet_clause(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -32516,6 +34592,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSet_target(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSet_target(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -32565,6 +34647,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitMultiple_column_assignment(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitMultiple_column_assignment(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -32625,6 +34713,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSet_target_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSet_target_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -32700,6 +34794,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_topic_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_topic_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -32792,6 +34892,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_topic_entries(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_topic_entries(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -32856,6 +34962,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCreate_topic_entry(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCreate_topic_entry(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -32901,6 +35013,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWith_topic_settings(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWith_topic_settings(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -32964,6 +35082,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_topic_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_topic_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -33055,6 +35179,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_topic_action(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_topic_action(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -33135,6 +35265,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_topic_add_consumer(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_topic_add_consumer(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -33183,6 +35319,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTopic_create_consumer_entry(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTopic_create_consumer_entry(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -33245,6 +35387,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_topic_alter_consumer(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_topic_alter_consumer(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -33296,6 +35444,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_topic_alter_consumer_entry(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_topic_alter_consumer_entry(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -33357,6 +35511,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_topic_drop_consumer(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_topic_drop_consumer(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -33406,6 +35566,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTopic_alter_consumer_set(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTopic_alter_consumer_set(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -33465,6 +35631,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTopic_alter_consumer_reset(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTopic_alter_consumer_reset(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -33535,6 +35707,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_topic_set_settings(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_topic_set_settings(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -33596,6 +35774,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_topic_reset_settings(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_topic_reset_settings(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -33667,6 +35851,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitDrop_topic_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDrop_topic_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -33733,6 +35923,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTopic_settings(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTopic_settings(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -33797,6 +35993,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTopic_settings_entry(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTopic_settings_entry(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -33844,6 +36046,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTopic_setting_value(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTopic_setting_value(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -33889,6 +36097,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTopic_consumer_with_settings(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTopic_consumer_with_settings(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -33945,6 +36159,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTopic_consumer_settings(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTopic_consumer_settings(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -34010,6 +36230,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTopic_consumer_settings_entry(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTopic_consumer_settings_entry(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -34057,6 +36283,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTopic_consumer_setting_value(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTopic_consumer_setting_value(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -34103,6 +36335,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTopic_ref(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTopic_ref(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -34159,6 +36397,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitTopic_consumer_ref(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTopic_consumer_ref(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -34201,6 +36445,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitNull_treatment(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitNull_treatment(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -34268,6 +36518,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitFilter_clause(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitFilter_clause(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -34321,6 +36577,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWindow_name_or_specification(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWindow_name_or_specification(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -34652,6 +36914,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWindow_name(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWindow_name(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -34695,6 +36963,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWindow_clause(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWindow_clause(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -34747,6 +37021,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWindow_definition_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWindow_definition_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -34812,6 +37092,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWindow_definition(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWindow_definition(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -34859,6 +37145,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitNew_window_name(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitNew_window_name(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -34903,6 +37195,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWindow_specification(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWindow_specification(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -34959,6 +37257,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWindow_specification_details(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWindow_specification_details(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -35042,6 +37346,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitExisting_window_name(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitExisting_window_name(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -35087,6 +37397,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWindow_partition_clause(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWindow_partition_clause(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -35146,6 +37462,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWindow_order_clause(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWindow_order_clause(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -35194,6 +37516,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWindow_frame_clause(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWindow_frame_clause(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -35251,6 +37579,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWindow_frame_units(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWindow_frame_units(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -35304,6 +37638,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWindow_frame_extent(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWindow_frame_extent(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -35366,6 +37706,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWindow_frame_between(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWindow_frame_between(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -35419,6 +37765,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWindow_frame_bound(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWindow_frame_bound(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -35506,6 +37858,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitWindow_frame_exclusion(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWindow_frame_exclusion(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -35589,6 +37947,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitUse_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitUse_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -35638,6 +38002,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitSubselect_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSubselect_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -35713,6 +38083,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitNamed_nodes_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitNamed_nodes_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -35772,6 +38148,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCommit_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCommit_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -35812,6 +38194,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitRollback_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRollback_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -35860,6 +38248,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAnalyze_table(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAnalyze_table(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -35925,6 +38319,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAnalyze_table_list(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAnalyze_table_list(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -36000,6 +38400,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAnalyze_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAnalyze_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -36054,6 +38460,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_sequence_stmt(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_sequence_stmt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -36133,6 +38545,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAlter_sequence_action(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAlter_sequence_action(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -36244,6 +38662,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitShow_create_table_stmt(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitShow_create_table_stmt(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -36291,6 +38715,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitIdentifier(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitIdentifier(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -36345,6 +38775,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitId(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitId(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -36694,6 +39130,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitId_schema(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitId_schema(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -37067,6 +39509,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitId_expr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitId_expr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -37390,6 +39838,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitId_expr_in(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitId_expr_in(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -37716,6 +40170,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitId_window(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitId_window(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -38099,6 +40559,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitId_table(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitId_table(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -38474,6 +40940,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitId_without(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitId_without(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -38815,6 +41287,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitId_hint(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitId_hint(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -39184,6 +41662,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitId_as_compat(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitId_as_compat(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -39442,6 +41926,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAn_id(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAn_id(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -39775,6 +42265,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAn_id_or_type(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAn_id_or_type(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -40121,6 +42617,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAn_id_schema(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAn_id_schema(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -40450,6 +42952,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAn_id_expr(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAn_id_expr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -40740,6 +43248,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAn_id_expr_in(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAn_id_expr_in(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -41028,6 +43542,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAn_id_window(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAn_id_window(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -41359,6 +43879,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAn_id_table(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAn_id_table(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -41688,6 +44214,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAn_id_without(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAn_id_without(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -41980,6 +44512,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAn_id_hint(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAn_id_hint(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -42312,6 +44850,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAn_id_pure(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAn_id_pure(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -42371,6 +44915,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitAn_id_as_compat(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAn_id_as_compat(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -42633,6 +45183,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitView_name(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitView_name(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -42692,6 +45248,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitOpt_id_prefix(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitOpt_id_prefix(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -42749,6 +45311,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitCluster_expr(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCluster_expr(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -43100,6 +45668,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitId_or_type(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitId_or_type(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -43444,6 +46018,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitOpt_id_prefix_or_type(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitOpt_id_prefix_or_type(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -43497,6 +46077,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitId_or_at(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitId_or_at(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -43554,6 +46140,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitId_table_or_type(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitId_table_or_type(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -43896,6 +46488,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitId_table_or_at(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitId_table_or_at(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -43970,6 +46568,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitKeyword(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitKeyword(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -44362,6 +46966,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitKeyword_expr_uncompat(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitKeyword_expr_uncompat(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -44412,6 +47022,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitKeyword_table_uncompat(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitKeyword_table_uncompat(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -44472,6 +47088,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitKeyword_select_uncompat(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitKeyword_select_uncompat(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -44521,6 +47143,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitKeyword_alter_uncompat(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitKeyword_alter_uncompat(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -44561,6 +47189,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitKeyword_in_uncompat(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitKeyword_in_uncompat(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -44604,6 +47238,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitKeyword_window_uncompat(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitKeyword_window_uncompat(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -44654,6 +47294,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitKeyword_hint_uncompat(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitKeyword_hint_uncompat(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -44902,6 +47548,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitKeyword_as_compat(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitKeyword_as_compat(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -45174,6 +47826,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitKeyword_compat(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitKeyword_compat(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -45234,6 +47892,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitType_id(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitType_id(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -45284,6 +47948,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitBool_value(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitBool_value(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -45333,6 +48003,12 @@ public partial class YQLParser : Parser {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitReal(this);
 		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitReal(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -45374,6 +48050,12 @@ public partial class YQLParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IYQLListener typedListener = listener as IYQLListener;
 			if (typedListener != null) typedListener.ExitInteger(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IYQLVisitor<TResult> typedVisitor = visitor as IYQLVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitInteger(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 

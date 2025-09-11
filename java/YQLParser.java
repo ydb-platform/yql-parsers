@@ -492,6 +492,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSql_query(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSql_query(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Sql_queryContext sql_query() throws RecognitionException {
@@ -558,6 +563,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSql_stmt_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSql_stmt_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -663,6 +673,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAnsi_sql_stmt_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAnsi_sql_stmt_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Ansi_sql_stmt_listContext ansi_sql_stmt_list() throws RecognitionException {
@@ -728,6 +743,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitLambda_body(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitLambda_body(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -831,6 +851,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitLambda_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitLambda_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Lambda_stmtContext lambda_stmt() throws RecognitionException {
@@ -888,6 +913,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSql_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSql_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1134,6 +1164,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSql_stmt_core(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSql_stmt_core(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1618,6 +1653,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitExpr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitExpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ExprContext expr() throws RecognitionException {
@@ -1697,6 +1737,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitOr_subexpr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitOr_subexpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Or_subexprContext or_subexpr() throws RecognitionException {
@@ -1763,6 +1808,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAnd_subexpr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAnd_subexpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final And_subexprContext and_subexpr() throws RecognitionException {
@@ -1825,6 +1875,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitXor_subexpr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitXor_subexpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Xor_subexprContext xor_subexpr() throws RecognitionException {
@@ -1875,6 +1930,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDistinct_from_op(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDistinct_from_op(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1973,6 +2033,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCond_expr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCond_expr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2227,6 +2292,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitMatch_op(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitMatch_op(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Match_opContext match_op() throws RecognitionException {
@@ -2295,6 +2365,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitEq_subexpr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitEq_subexpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Eq_subexprContext eq_subexpr() throws RecognitionException {
@@ -2361,6 +2436,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitShift_right(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitShift_right(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Shift_rightContext shift_right() throws RecognitionException {
@@ -2404,6 +2484,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRot_right(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRot_right(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2449,6 +2534,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDouble_question(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDouble_question(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2536,6 +2626,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitNeq_subexpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitNeq_subexpr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2682,6 +2777,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitBit_subexpr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitBit_subexpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Bit_subexprContext bit_subexpr() throws RecognitionException {
@@ -2762,6 +2862,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAdd_subexpr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAdd_subexpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Add_subexprContext add_subexpr() throws RecognitionException {
@@ -2834,6 +2939,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitMul_subexpr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitMul_subexpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Mul_subexprContext mul_subexpr() throws RecognitionException {
@@ -2894,6 +3004,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCon_subexpr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCon_subexpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Con_subexprContext con_subexpr() throws RecognitionException {
@@ -2949,6 +3064,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitUnary_op(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitUnary_op(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3031,6 +3151,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitUnary_subexpr_suffix(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitUnary_subexpr_suffix(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3436,6 +3561,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitUnary_casual_subexpr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitUnary_casual_subexpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Unary_casual_subexprContext unary_casual_subexpr() throws RecognitionException {
@@ -3498,6 +3628,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitIn_unary_casual_subexpr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitIn_unary_casual_subexpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final In_unary_casual_subexprContext in_unary_casual_subexpr() throws RecognitionException {
@@ -3557,6 +3692,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitUnary_subexpr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitUnary_subexpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Unary_subexprContext unary_subexpr() throws RecognitionException {
@@ -3613,6 +3753,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitIn_unary_subexpr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitIn_unary_subexpr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final In_unary_subexprContext in_unary_subexpr() throws RecognitionException {
@@ -3668,6 +3813,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitList_literal(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitList_literal(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3742,6 +3892,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitExpr_dict_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitExpr_dict_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3830,6 +3985,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDict_literal(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDict_literal(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Dict_literalContext dict_literal() throws RecognitionException {
@@ -3904,6 +4064,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitExpr_struct_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitExpr_struct_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Expr_struct_listContext expr_struct_list() throws RecognitionException {
@@ -3973,6 +4138,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitStruct_literal(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitStruct_literal(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4074,6 +4244,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAtom_expr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAtom_expr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4544,6 +4719,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitIn_atom_expr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitIn_atom_expr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final In_atom_exprContext in_atom_expr() throws RecognitionException {
@@ -4984,6 +5164,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCast_expr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCast_expr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Cast_exprContext cast_expr() throws RecognitionException {
@@ -5041,6 +5226,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitBitcast_expr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitBitcast_expr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Bitcast_exprContext bitcast_expr() throws RecognitionException {
@@ -5096,6 +5286,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitExists_expr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitExists_expr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5175,6 +5370,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCase_expr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCase_expr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5266,6 +5466,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitLambda(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitLambda(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final LambdaContext lambda() throws RecognitionException {
@@ -5343,6 +5548,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitIn_expr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitIn_expr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final In_exprContext in_expr() throws RecognitionException {
@@ -5388,6 +5598,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJson_api_expr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJson_api_expr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5449,6 +5664,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJsonpath_spec(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJsonpath_spec(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Jsonpath_specContext jsonpath_spec() throws RecognitionException {
@@ -5489,6 +5709,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJson_variable_name(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJson_variable_name(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5780,6 +6005,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJson_variable(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJson_variable(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Json_variableContext json_variable() throws RecognitionException {
@@ -5830,6 +6060,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJson_variables(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJson_variables(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5896,6 +6131,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJson_common_args(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJson_common_args(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Json_common_argsContext json_common_args() throws RecognitionException {
@@ -5955,6 +6195,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJson_case_handler(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJson_case_handler(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -6044,6 +6289,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJson_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJson_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -6135,6 +6385,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJson_exists_handler(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJson_exists_handler(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Json_exists_handlerContext json_exists_handler() throws RecognitionException {
@@ -6194,6 +6449,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJson_exists(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJson_exists(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Json_existsContext json_exists() throws RecognitionException {
@@ -6252,6 +6512,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJson_query_wrapper(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJson_query_wrapper(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -6349,6 +6614,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJson_query_handler(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJson_query_handler(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Json_query_handlerContext json_query_handler() throws RecognitionException {
@@ -6438,6 +6708,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJson_query(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJson_query(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -6529,6 +6804,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSmart_parenthesis(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSmart_parenthesis(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Smart_parenthesisContext smart_parenthesis() throws RecognitionException {
@@ -6599,6 +6879,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitExpr_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitExpr_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Expr_listContext expr_list() throws RecognitionException {
@@ -6667,6 +6952,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitPure_column_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitPure_column_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Pure_column_listContext pure_column_list() throws RecognitionException {
@@ -6730,6 +7020,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitPure_column_or_named(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitPure_column_or_named(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -7070,6 +7365,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitPure_column_or_named_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitPure_column_or_named_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Pure_column_or_named_listContext pure_column_or_named_list() throws RecognitionException {
@@ -7134,6 +7434,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitColumn_name(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitColumn_name(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Column_nameContext column_name() throws RecognitionException {
@@ -7182,6 +7487,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWithout_column_name(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWithout_column_name(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -7246,6 +7556,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitColumn_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitColumn_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -7324,6 +7639,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWithout_column_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWithout_column_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Without_column_listContext without_column_list() throws RecognitionException {
@@ -7398,6 +7718,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitNamed_expr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitNamed_expr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Named_exprContext named_expr() throws RecognitionException {
@@ -7457,6 +7782,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitNamed_expr_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitNamed_expr_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -7526,6 +7856,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitInvoke_expr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitInvoke_expr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -7912,6 +8247,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitInvoke_expr_tail(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitInvoke_expr_tail(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Invoke_expr_tailContext invoke_expr_tail() throws RecognitionException {
@@ -7994,6 +8334,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitUsing_call_expr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitUsing_call_expr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Using_call_exprContext using_call_expr() throws RecognitionException {
@@ -8070,6 +8415,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitKey_expr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitKey_expr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Key_exprContext key_expr() throws RecognitionException {
@@ -8118,6 +8468,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWhen_expr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWhen_expr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -8177,6 +8532,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitLiteral_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitLiteral_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -8293,6 +8653,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitBind_parameter(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitBind_parameter(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -8646,6 +9011,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitOpt_bind_parameter(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitOpt_bind_parameter(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Opt_bind_parameterContext opt_bind_parameter() throws RecognitionException {
@@ -8703,6 +9073,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitBind_parameter_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitBind_parameter_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -8765,6 +9140,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitNamed_bind_parameter(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitNamed_bind_parameter(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Named_bind_parameterContext named_bind_parameter() throws RecognitionException {
@@ -8824,6 +9204,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitNamed_bind_parameter_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitNamed_bind_parameter_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -8886,6 +9271,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSigned_number(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSigned_number(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -8963,6 +9353,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_simple(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_simple(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Type_name_simpleContext type_name_simple() throws RecognitionException {
@@ -9005,6 +9400,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitInteger_or_bind(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitInteger_or_bind(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -9065,6 +9465,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_tag(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_tag(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -9406,6 +9811,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitStruct_arg(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitStruct_arg(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Struct_argContext struct_arg() throws RecognitionException {
@@ -9455,6 +9865,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitStruct_arg_positional(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitStruct_arg_positional(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -9540,6 +9955,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitVariant_arg(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitVariant_arg(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Variant_argContext variant_arg() throws RecognitionException {
@@ -9594,6 +10014,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCallable_arg(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCallable_arg(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -9656,6 +10081,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCallable_arg_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCallable_arg_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -9723,6 +10153,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_decimal(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_decimal(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Type_name_decimalContext type_name_decimal() throws RecognitionException {
@@ -9775,6 +10210,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_optional(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_optional(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -9832,6 +10272,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_tuple(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_tuple(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -9944,6 +10389,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_struct(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_struct(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Type_name_structContext type_name_struct() throws RecognitionException {
@@ -10054,6 +10504,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_variant(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_variant(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Type_name_variantContext type_name_variant() throws RecognitionException {
@@ -10133,6 +10588,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Type_name_listContext type_name_list() throws RecognitionException {
@@ -10182,6 +10642,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_stream(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_stream(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Type_name_streamContext type_name_stream() throws RecognitionException {
@@ -10230,6 +10695,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_flow(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_flow(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -10284,6 +10754,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_dict(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_dict(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Type_name_dictContext type_name_dict() throws RecognitionException {
@@ -10336,6 +10811,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_set(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_set(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -10392,6 +10872,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_enum(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_enum(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -10472,6 +10957,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_resource(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_resource(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Type_name_resourceContext type_name_resource() throws RecognitionException {
@@ -10524,6 +11014,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_tagged(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_tagged(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -10589,6 +11084,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_callable(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_callable(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -10716,6 +11216,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_composite(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_composite(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -10864,6 +11369,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Type_nameContext type_name() throws RecognitionException {
@@ -10970,6 +11480,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_name_or_bind(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_name_or_bind(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Type_name_or_bindContext type_name_or_bind() throws RecognitionException {
@@ -11039,6 +11554,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitValue_constructor_literal(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitValue_constructor_literal(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Value_constructor_literalContext value_constructor_literal() throws RecognitionException {
@@ -11090,6 +11610,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitValue_constructor(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitValue_constructor(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -11196,6 +11721,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDeclare_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDeclare_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Declare_stmtContext declare_stmt() throws RecognitionException {
@@ -11261,6 +11791,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitModule_path(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitModule_path(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -11334,6 +11869,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitImport_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitImport_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Import_stmtContext import_stmt() throws RecognitionException {
@@ -11380,6 +11920,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitExport_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitExport_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -11428,6 +11973,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCall_action(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCall_action(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -11503,6 +12053,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitInline_action(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitInline_action(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Inline_actionContext inline_action() throws RecognitionException {
@@ -11552,6 +12107,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDo_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDo_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -11628,6 +12188,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitPragma_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitPragma_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -11727,6 +12292,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitPragma_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitPragma_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -12085,6 +12655,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSort_specification(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSort_specification(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Sort_specificationContext sort_specification() throws RecognitionException {
@@ -12151,6 +12726,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSort_specification_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSort_specification_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Sort_specification_listContext sort_specification_list() throws RecognitionException {
@@ -12216,6 +12796,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSelect_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSelect_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -12286,6 +12871,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSelect_unparenthesized_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSelect_unparenthesized_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Select_unparenthesized_stmtContext select_unparenthesized_stmt() throws RecognitionException {
@@ -12344,6 +12934,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSelect_kind_parenthesis(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSelect_kind_parenthesis(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -12408,6 +13003,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSelect_op(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSelect_op(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -12490,6 +13090,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSelect_kind_partial(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSelect_kind_partial(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -12575,6 +13180,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSelect_kind(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSelect_kind(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -12696,6 +13306,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitProcess_core(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitProcess_core(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -12842,6 +13457,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitExternal_call_param(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitExternal_call_param(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final External_call_paramContext external_call_param() throws RecognitionException {
@@ -12892,6 +13512,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitExternal_call_settings(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitExternal_call_settings(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -12986,6 +13611,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitReduce_core(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitReduce_core(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -13123,6 +13753,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitOpt_set_quantifier(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitOpt_set_quantifier(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Opt_set_quantifierContext opt_set_quantifier() throws RecognitionException {
@@ -13224,6 +13859,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSelect_core(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSelect_core(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -13426,6 +14066,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_recognition_clause(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_recognition_clause(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Row_pattern_recognition_clauseContext row_pattern_recognition_clause() throws RecognitionException {
@@ -13519,6 +14164,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_rows_per_match(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_rows_per_match(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Row_pattern_rows_per_matchContext row_pattern_rows_per_match() throws RecognitionException {
@@ -13601,6 +14251,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_empty_match_handling(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_empty_match_handling(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Row_pattern_empty_match_handlingContext row_pattern_empty_match_handling() throws RecognitionException {
@@ -13676,6 +14331,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_measures(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_measures(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Row_pattern_measuresContext row_pattern_measures() throws RecognitionException {
@@ -13724,6 +14384,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_measure_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_measure_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -13786,6 +14451,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_measure_definition(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_measure_definition(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Row_pattern_measure_definitionContext row_pattern_measure_definition() throws RecognitionException {
@@ -13847,6 +14517,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_common_syntax(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_common_syntax(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -13939,6 +14614,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_skip_to(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_skip_to(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -14042,6 +14722,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_skip_to_variable_name(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_skip_to_variable_name(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Row_pattern_skip_to_variable_nameContext row_pattern_skip_to_variable_name() throws RecognitionException {
@@ -14080,6 +14765,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_initial_or_seek(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_initial_or_seek(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -14136,6 +14826,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -14197,6 +14892,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_term(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_term(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Row_pattern_termContext row_pattern_term() throws RecognitionException {
@@ -14252,6 +14952,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_factor(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_factor(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -14314,6 +15019,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_quantifier(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_quantifier(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -14474,6 +15184,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_primary(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_primary(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Row_pattern_primaryContext row_pattern_primary() throws RecognitionException {
@@ -14579,6 +15294,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_primary_variable_name(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_primary_variable_name(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Row_pattern_primary_variable_nameContext row_pattern_primary_variable_name() throws RecognitionException {
@@ -14628,6 +15348,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_permute(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_permute(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -14693,6 +15418,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_subset_clause(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_subset_clause(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Row_pattern_subset_clauseContext row_pattern_subset_clause() throws RecognitionException {
@@ -14741,6 +15471,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_subset_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_subset_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -14805,6 +15540,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_subset_item(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_subset_item(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Row_pattern_subset_itemContext row_pattern_subset_item() throws RecognitionException {
@@ -14853,6 +15593,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_subset_item_variable_name(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_subset_item_variable_name(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Row_pattern_subset_item_variable_nameContext row_pattern_subset_item_variable_name() throws RecognitionException {
@@ -14899,6 +15644,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_subset_rhs(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_subset_rhs(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -14957,6 +15707,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_subset_rhs_variable_name(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_subset_rhs_variable_name(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Row_pattern_subset_rhs_variable_nameContext row_pattern_subset_rhs_variable_name() throws RecognitionException {
@@ -15003,6 +15758,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_definition_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_definition_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -15065,6 +15825,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_definition(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_definition(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Row_pattern_definitionContext row_pattern_definition() throws RecognitionException {
@@ -15109,6 +15874,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_definition_variable_name(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_definition_variable_name(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Row_pattern_definition_variable_nameContext row_pattern_definition_variable_name() throws RecognitionException {
@@ -15148,6 +15918,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_definition_search_condition(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_definition_search_condition(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -15189,6 +15964,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSearch_condition(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSearch_condition(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Search_conditionContext search_condition() throws RecognitionException {
@@ -15228,6 +16008,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRow_pattern_variable_name(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRow_pattern_variable_name(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -15270,6 +16055,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitOrder_by_clause(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitOrder_by_clause(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -15315,6 +16105,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitExt_order_by_clause(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitExt_order_by_clause(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -15376,6 +16171,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitGroup_by_clause(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitGroup_by_clause(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -15453,6 +16253,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitGrouping_element_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitGrouping_element_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Grouping_element_listContext grouping_element_list() throws RecognitionException {
@@ -15521,6 +16326,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitGrouping_element(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitGrouping_element(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -15596,6 +16406,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitOrdinary_grouping_set(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitOrdinary_grouping_set(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Ordinary_grouping_setContext ordinary_grouping_set() throws RecognitionException {
@@ -15642,6 +16457,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitOrdinary_grouping_set_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitOrdinary_grouping_set_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -15703,6 +16523,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRollup_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRollup_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Rollup_listContext rollup_list() throws RecognitionException {
@@ -15751,6 +16576,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCube_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCube_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -15801,6 +16631,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitGrouping_sets_specification(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitGrouping_sets_specification(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -15859,6 +16694,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitHopping_window_specification(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitHopping_window_specification(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -15928,6 +16768,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitResult_column(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitResult_column(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -16021,6 +16866,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJoin_source(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJoin_source(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Join_sourceContext join_source() throws RecognitionException {
@@ -16112,6 +16962,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitNamed_column(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitNamed_column(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Named_columnContext named_column() throws RecognitionException {
@@ -16170,6 +17025,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitFlatten_by_arg(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitFlatten_by_arg(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -16525,6 +17385,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitFlatten_source(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitFlatten_source(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Flatten_sourceContext flatten_source() throws RecognitionException {
@@ -16635,6 +17500,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitNamed_single_source(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitNamed_single_source(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -16985,6 +17855,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSingle_source(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSingle_source(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Single_sourceContext single_source() throws RecognitionException {
@@ -17054,6 +17929,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSample_clause(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSample_clause(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Sample_clauseContext sample_clause() throws RecognitionException {
@@ -17104,6 +17984,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTablesample_clause(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTablesample_clause(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -17163,6 +18048,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSampling_mode(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSampling_mode(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Sampling_modeContext sampling_mode() throws RecognitionException {
@@ -17214,6 +18104,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRepeatable_clause(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRepeatable_clause(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -17269,6 +18164,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJoin_op(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJoin_op(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -17455,6 +18355,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitJoin_constraint(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitJoin_constraint(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Join_constraintContext join_constraint() throws RecognitionException {
@@ -17522,6 +18427,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitReturning_columns_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitReturning_columns_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -17887,6 +18797,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitInto_table_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitInto_table_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Into_table_stmtContext into_table_stmt() throws RecognitionException {
@@ -17999,6 +18914,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitInto_values_source(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitInto_values_source(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Into_values_sourceContext into_values_source() throws RecognitionException {
@@ -18073,6 +18993,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitValues_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitValues_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Values_stmtContext values_stmt() throws RecognitionException {
@@ -18117,6 +19042,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitValues_source(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitValues_source(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -18185,6 +19115,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitValues_source_row_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitValues_source_row_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Values_source_row_listContext values_source_row_list() throws RecognitionException {
@@ -18244,6 +19179,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitValues_source_row(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitValues_source_row(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Values_source_rowContext values_source_row() throws RecognitionException {
@@ -18290,6 +19230,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSimple_values_source(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSimple_values_source(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -18355,6 +19300,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_external_data_source_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_external_data_source_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -18447,6 +19397,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_external_data_source_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_external_data_source_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_external_data_source_stmtContext alter_external_data_source_stmt() throws RecognitionException {
@@ -18520,6 +19475,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_external_data_source_action(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_external_data_source_action(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_external_data_source_actionContext alter_external_data_source_action() throws RecognitionException {
@@ -18585,6 +19545,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDrop_external_data_source_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDrop_external_data_source_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -18657,6 +19622,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_view_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_view_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -18735,6 +19705,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDrop_view_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDrop_view_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Drop_view_stmtContext drop_view_stmt() throws RecognitionException {
@@ -18801,6 +19776,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitUpsert_object_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitUpsert_object_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -18878,6 +19858,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_object_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_object_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -18957,6 +19942,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_object_features(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_object_features(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Create_object_featuresContext create_object_features() throws RecognitionException {
@@ -19009,6 +19999,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_object_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_object_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -19065,6 +20060,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_object_features(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_object_features(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_object_featuresContext alter_object_features() throws RecognitionException {
@@ -19119,6 +20119,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDrop_object_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDrop_object_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -19196,6 +20201,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDrop_object_features(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDrop_object_features(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Drop_object_featuresContext drop_object_features() throws RecognitionException {
@@ -19244,6 +20254,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitObject_feature_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitObject_feature_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -19605,6 +20620,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitObject_feature_kv(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitObject_feature_kv(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Object_feature_kvContext object_feature_kv() throws RecognitionException {
@@ -19649,6 +20669,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitObject_feature_flag(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitObject_feature_flag(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Object_feature_flagContext object_feature_flag() throws RecognitionException {
@@ -19691,6 +20716,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitObject_feature(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitObject_feature(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -19753,6 +20783,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitObject_features(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitObject_features(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -20117,6 +21152,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitObject_type_ref(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitObject_type_ref(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Object_type_refContext object_type_ref() throws RecognitionException {
@@ -20194,6 +21234,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_table_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_table_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -20406,6 +21451,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_table_entry(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_table_entry(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Create_table_entryContext create_table_entry() throws RecognitionException {
@@ -20497,6 +21547,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_backup_collection_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_backup_collection_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Create_backup_collection_stmtContext create_backup_collection_stmt() throws RecognitionException {
@@ -20565,6 +21620,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_backup_collection_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_backup_collection_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_backup_collection_stmtContext alter_backup_collection_stmt() throws RecognitionException {
@@ -20628,6 +21688,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDrop_backup_collection_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDrop_backup_collection_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Drop_backup_collection_stmtContext drop_backup_collection_stmt() throws RecognitionException {
@@ -20670,6 +21735,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_backup_collection_entries(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_backup_collection_entries(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -20728,6 +21798,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_backup_collection_entries_many(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_backup_collection_entries_many(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Create_backup_collection_entries_manyContext create_backup_collection_entries_many() throws RecognitionException {
@@ -20782,6 +21857,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTable_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTable_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -20851,6 +21931,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_backup_collection_actions(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_backup_collection_actions(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_backup_collection_actionsContext alter_backup_collection_actions() throws RecognitionException {
@@ -20910,6 +21995,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_backup_collection_action(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_backup_collection_action(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -20973,6 +22063,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_backup_collection_entries(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_backup_collection_entries(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_backup_collection_entriesContext alter_backup_collection_entries() throws RecognitionException {
@@ -21033,6 +22128,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_backup_collection_entry(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_backup_collection_entry(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -21115,6 +22215,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitBackup_collection(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitBackup_collection(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Backup_collectionContext backup_collection() throws RecognitionException {
@@ -21165,6 +22270,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitBackup_collection_settings(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitBackup_collection_settings(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -21227,6 +22337,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitBackup_collection_settings_entry(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitBackup_collection_settings_entry(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Backup_collection_settings_entryContext backup_collection_settings_entry() throws RecognitionException {
@@ -21272,6 +22387,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitBackup_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitBackup_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -21328,6 +22448,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRestore_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRestore_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -21391,6 +22516,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_database_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_database_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_database_stmtContext alter_database_stmt() throws RecognitionException {
@@ -21450,6 +22580,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTable_inherits(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTable_inherits(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -21517,6 +22652,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTable_partition_by(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTable_partition_by(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Table_partition_byContext table_partition_by() throws RecognitionException {
@@ -21572,6 +22712,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWith_table_settings(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWith_table_settings(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -21637,6 +22782,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTable_tablestore(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTable_tablestore(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Table_tablestoreContext table_tablestore() throws RecognitionException {
@@ -21683,6 +22833,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTable_settings_entry(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTable_settings_entry(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Table_settings_entryContext table_settings_entry() throws RecognitionException {
@@ -21727,6 +22882,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTable_as_source(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTable_as_source(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -21781,6 +22941,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -21892,6 +23057,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_action(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_action(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -22064,6 +23234,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_external_table_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_external_table_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_external_table_stmtContext alter_external_table_stmt() throws RecognitionException {
@@ -22140,6 +23315,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_external_table_action(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_external_table_action(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -22227,6 +23407,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_store_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_store_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_table_store_stmtContext alter_table_store_stmt() throws RecognitionException {
@@ -22293,6 +23478,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_store_action(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_store_action(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_table_store_actionContext alter_table_store_action() throws RecognitionException {
@@ -22350,6 +23540,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_add_column(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_add_column(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_table_add_columnContext alter_table_add_column() throws RecognitionException {
@@ -22404,6 +23599,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_drop_column(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_drop_column(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -22463,6 +23663,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_alter_column(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_alter_column(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_table_alter_columnContext alter_table_alter_column() throws RecognitionException {
@@ -22516,6 +23721,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_alter_column_drop_not_null(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_alter_column_drop_not_null(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_table_alter_column_drop_not_nullContext alter_table_alter_column_drop_not_null() throws RecognitionException {
@@ -22567,6 +23777,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_add_column_family(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_add_column_family(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_table_add_column_familyContext alter_table_add_column_family() throws RecognitionException {
@@ -22617,6 +23832,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_alter_column_family(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_alter_column_family(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -22672,6 +23892,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_set_table_setting_uncompat(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_set_table_setting_uncompat(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_table_set_table_setting_uncompatContext alter_table_set_table_setting_uncompat() throws RecognitionException {
@@ -22725,6 +23950,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_set_table_setting_compat(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_set_table_setting_compat(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -22799,6 +24029,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_reset_table_setting(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_reset_table_setting(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_table_reset_table_settingContext alter_table_reset_table_setting() throws RecognitionException {
@@ -22863,6 +24098,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_add_index(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_add_index(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_table_add_indexContext alter_table_add_index() throws RecognitionException {
@@ -22906,6 +24146,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_drop_index(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_drop_index(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -22952,6 +24197,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_rename_to(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_rename_to(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -23003,6 +24253,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_rename_index_to(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_rename_index_to(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_table_rename_index_toContext alter_table_rename_index_to() throws RecognitionException {
@@ -23052,6 +24307,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_add_changefeed(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_add_changefeed(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_table_add_changefeedContext alter_table_add_changefeed() throws RecognitionException {
@@ -23098,6 +24358,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_alter_changefeed(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_alter_changefeed(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -23147,6 +24412,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_drop_changefeed(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_drop_changefeed(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_table_drop_changefeedContext alter_table_drop_changefeed() throws RecognitionException {
@@ -23195,6 +24465,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_alter_index(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_alter_index(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -23250,6 +24525,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitColumn_schema(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitColumn_schema(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -23307,6 +24587,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitFamily_relation(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitFamily_relation(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Family_relationContext family_relation() throws RecognitionException {
@@ -23351,6 +24636,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitOpt_column_constraints(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitOpt_column_constraints(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -23424,6 +24714,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitColumn_order_by_specification(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitColumn_order_by_specification(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -23503,6 +24798,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTable_constraint(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTable_constraint(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -23666,6 +24966,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTable_index(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTable_index(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Table_indexContext table_index() throws RecognitionException {
@@ -23784,6 +25089,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTable_index_type(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTable_index_type(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Table_index_typeContext table_index_type() throws RecognitionException {
@@ -23854,6 +25164,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitGlobal_index(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitGlobal_index(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Global_indexContext global_index() throws RecognitionException {
@@ -23921,6 +25236,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitLocal_index(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitLocal_index(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Local_indexContext local_index() throws RecognitionException {
@@ -23960,6 +25280,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitIndex_subtype(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitIndex_subtype(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -24010,6 +25335,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWith_index_settings(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWith_index_settings(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -24091,6 +25421,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitIndex_setting_entry(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitIndex_setting_entry(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Index_setting_entryContext index_setting_entry() throws RecognitionException {
@@ -24141,6 +25476,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitIndex_setting_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitIndex_setting_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -24506,6 +25846,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitChangefeed(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitChangefeed(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ChangefeedContext changefeed() throws RecognitionException {
@@ -24562,6 +25907,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitChangefeed_settings(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitChangefeed_settings(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -24624,6 +25974,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitChangefeed_settings_entry(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitChangefeed_settings_entry(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Changefeed_settings_entryContext changefeed_settings_entry() throws RecognitionException {
@@ -24668,6 +26023,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitChangefeed_setting_value(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitChangefeed_setting_value(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Changefeed_setting_valueContext changefeed_setting_value() throws RecognitionException {
@@ -24711,6 +26071,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitChangefeed_alter_settings(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitChangefeed_alter_settings(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -24777,6 +26142,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_setting_entry(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_setting_entry(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_table_setting_entryContext alter_table_setting_entry() throws RecognitionException {
@@ -24842,6 +26212,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTable_setting_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTable_setting_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -24962,6 +26337,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTtl_tier_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTtl_tier_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Ttl_tier_listContext ttl_tier_list() throws RecognitionException {
@@ -25036,6 +26416,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTtl_tier_action(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTtl_tier_action(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Ttl_tier_actionContext ttl_tier_action() throws RecognitionException {
@@ -25103,6 +26488,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitFamily_entry(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitFamily_entry(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Family_entryContext family_entry() throws RecognitionException {
@@ -25155,6 +26545,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitFamily_settings(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitFamily_settings(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -25229,6 +26624,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitFamily_settings_entry(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitFamily_settings_entry(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Family_settings_entryContext family_settings_entry() throws RecognitionException {
@@ -25273,6 +26673,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitFamily_setting_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitFamily_setting_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -25338,6 +26743,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSplit_boundaries(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSplit_boundaries(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -25422,6 +26832,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitLiteral_value_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitLiteral_value_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Literal_value_listContext literal_value_list() throws RecognitionException {
@@ -25489,6 +26904,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_table_alter_index_action(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_table_alter_index_action(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_table_alter_index_actionContext alter_table_alter_index_action() throws RecognitionException {
@@ -25554,6 +26974,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDrop_table_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDrop_table_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -25643,6 +27068,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_user_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_user_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Create_user_stmtContext create_user_stmt() throws RecognitionException {
@@ -25715,6 +27145,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_user_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_user_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -25821,6 +27256,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_group_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_group_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Create_group_stmtContext create_group_stmt() throws RecognitionException {
@@ -25922,6 +27362,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_group_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_group_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -26044,6 +27489,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDrop_role_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDrop_role_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Drop_role_stmtContext drop_role_stmt() throws RecognitionException {
@@ -26140,6 +27590,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRole_name(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRole_name(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -26486,6 +27941,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitUser_option(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitUser_option(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final User_optionContext user_option() throws RecognitionException {
@@ -26547,6 +28007,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAuthentication_option(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAuthentication_option(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Authentication_optionContext authentication_option() throws RecognitionException {
@@ -26605,6 +28070,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitPassword_option(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitPassword_option(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Password_optionContext password_option() throws RecognitionException {
@@ -26657,6 +28127,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitPassword_value(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitPassword_value(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Password_valueContext password_value() throws RecognitionException {
@@ -26705,6 +28180,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitHash_option(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitHash_option(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Hash_optionContext hash_option() throws RecognitionException {
@@ -26745,6 +28225,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitLogin_option(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitLogin_option(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -26818,6 +28303,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitGrant_permissions_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitGrant_permissions_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -26951,6 +28441,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRevoke_permissions_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRevoke_permissions_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Revoke_permissions_stmtContext revoke_permissions_stmt() throws RecognitionException {
@@ -27068,6 +28563,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitPermission_id(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitPermission_id(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -27284,6 +28784,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitPermission_name(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitPermission_name(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Permission_nameContext permission_name() throws RecognitionException {
@@ -27362,6 +28867,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitPermission_name_target(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitPermission_name_target(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -27480,6 +28990,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_resource_pool_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_resource_pool_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Create_resource_pool_stmtContext create_resource_pool_stmt() throws RecognitionException {
@@ -27540,6 +29055,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_resource_pool_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_resource_pool_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -27609,6 +29129,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_resource_pool_action(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_resource_pool_action(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_resource_pool_actionContext alter_resource_pool_action() throws RecognitionException {
@@ -27667,6 +29192,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDrop_resource_pool_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDrop_resource_pool_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Drop_resource_pool_stmtContext drop_resource_pool_stmt() throws RecognitionException {
@@ -27719,6 +29249,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_resource_pool_classifier_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_resource_pool_classifier_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -27783,6 +29318,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_resource_pool_classifier_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_resource_pool_classifier_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -27854,6 +29394,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_resource_pool_classifier_action(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_resource_pool_classifier_action(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_resource_pool_classifier_actionContext alter_resource_pool_classifier_action() throws RecognitionException {
@@ -27912,6 +29457,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDrop_resource_pool_classifier_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDrop_resource_pool_classifier_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -27980,6 +29530,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_replication_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_replication_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -28060,6 +29615,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitReplication_target(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitReplication_target(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Replication_targetContext replication_target() throws RecognitionException {
@@ -28110,6 +29670,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitReplication_settings(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitReplication_settings(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -28172,6 +29737,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitReplication_settings_entry(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitReplication_settings_entry(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Replication_settings_entryContext replication_settings_entry() throws RecognitionException {
@@ -28228,6 +29798,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_replication_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_replication_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -28294,6 +29869,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_replication_action(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_replication_action(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_replication_actionContext alter_replication_action() throws RecognitionException {
@@ -28336,6 +29916,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_replication_set_setting(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_replication_set_setting(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -28386,6 +29971,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDrop_replication_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDrop_replication_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -28446,6 +30036,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitLambda_or_parameter(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitLambda_or_parameter(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -28518,6 +30113,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_transfer_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_transfer_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -28599,6 +30199,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTransfer_settings(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTransfer_settings(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Transfer_settingsContext transfer_settings() throws RecognitionException {
@@ -28660,6 +30265,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTransfer_settings_entry(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTransfer_settings_entry(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Transfer_settings_entryContext transfer_settings_entry() throws RecognitionException {
@@ -28715,6 +30325,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_transfer_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_transfer_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -28782,6 +30397,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_transfer_action(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_transfer_action(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_transfer_actionContext alter_transfer_action() throws RecognitionException {
@@ -28838,6 +30458,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_transfer_set_setting(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_transfer_set_setting(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_transfer_set_settingContext alter_transfer_set_setting() throws RecognitionException {
@@ -28886,6 +30511,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_transfer_set_using(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_transfer_set_using(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_transfer_set_usingContext alter_transfer_set_using() throws RecognitionException {
@@ -28932,6 +30562,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDrop_transfer_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDrop_transfer_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -28994,6 +30629,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAction_or_subquery_args(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAction_or_subquery_args(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -29067,6 +30707,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDefine_action_or_subquery_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDefine_action_or_subquery_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -29149,6 +30794,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDefine_action_or_subquery_body(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDefine_action_or_subquery_body(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -29267,6 +30917,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitIf_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitIf_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final If_stmtContext if_stmt() throws RecognitionException {
@@ -29347,6 +31002,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitFor_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitFor_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -29461,6 +31121,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTable_ref(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTable_ref(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -29636,6 +31301,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTable_key(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTable_key(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Table_keyContext table_key() throws RecognitionException {
@@ -29693,6 +31363,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTable_arg(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTable_arg(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -29766,6 +31441,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTable_hints(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTable_hints(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -30144,6 +31824,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTable_hint(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTable_hint(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -30619,6 +32304,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitObject_ref(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitObject_ref(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Object_refContext object_ref() throws RecognitionException {
@@ -30674,6 +32364,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSimple_table_ref_core(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSimple_table_ref_core(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -30742,6 +32437,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSimple_table_ref(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSimple_table_ref(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Simple_table_refContext simple_table_ref() throws RecognitionException {
@@ -30797,6 +32497,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitInto_simple_table_ref(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitInto_simple_table_ref(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -30866,6 +32571,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDelete_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDelete_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -30976,6 +32686,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitUpdate_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitUpdate_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Update_stmtContext update_stmt() throws RecognitionException {
@@ -31075,6 +32790,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSet_clause_choice(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSet_clause_choice(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -31413,6 +33133,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSet_clause_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSet_clause_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Set_clause_listContext set_clause_list() throws RecognitionException {
@@ -31474,6 +33199,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSet_clause(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSet_clause(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Set_clauseContext set_clause() throws RecognitionException {
@@ -31517,6 +33247,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSet_target(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSet_target(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -31563,6 +33298,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitMultiple_column_assignment(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitMultiple_column_assignment(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -31620,6 +33360,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSet_target_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSet_target_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -31692,6 +33437,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_topic_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_topic_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -31781,6 +33531,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_topic_entries(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_topic_entries(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Create_topic_entriesContext create_topic_entries() throws RecognitionException {
@@ -31842,6 +33597,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCreate_topic_entry(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCreate_topic_entry(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Create_topic_entryContext create_topic_entry() throws RecognitionException {
@@ -31884,6 +33644,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWith_topic_settings(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWith_topic_settings(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -31944,6 +33709,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_topic_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_topic_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -32032,6 +33802,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_topic_action(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_topic_action(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_topic_actionContext alter_topic_action() throws RecognitionException {
@@ -32109,6 +33884,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_topic_add_consumer(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_topic_add_consumer(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_topic_add_consumerContext alter_topic_add_consumer() throws RecognitionException {
@@ -32154,6 +33934,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTopic_create_consumer_entry(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTopic_create_consumer_entry(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -32213,6 +33998,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_topic_alter_consumer(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_topic_alter_consumer(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_topic_alter_consumerContext alter_topic_alter_consumer() throws RecognitionException {
@@ -32261,6 +34051,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_topic_alter_consumer_entry(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_topic_alter_consumer_entry(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -32319,6 +34114,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_topic_drop_consumer(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_topic_drop_consumer(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_topic_drop_consumerContext alter_topic_drop_consumer() throws RecognitionException {
@@ -32365,6 +34165,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTopic_alter_consumer_set(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTopic_alter_consumer_set(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -32421,6 +34226,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTopic_alter_consumer_reset(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTopic_alter_consumer_reset(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -32488,6 +34298,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_topic_set_settings(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_topic_set_settings(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Alter_topic_set_settingsContext alter_topic_set_settings() throws RecognitionException {
@@ -32546,6 +34361,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_topic_reset_settings(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_topic_reset_settings(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -32614,6 +34434,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitDrop_topic_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitDrop_topic_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Drop_topic_stmtContext drop_topic_stmt() throws RecognitionException {
@@ -32677,6 +34502,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTopic_settings(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTopic_settings(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Topic_settingsContext topic_settings() throws RecognitionException {
@@ -32738,6 +34568,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTopic_settings_entry(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTopic_settings_entry(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Topic_settings_entryContext topic_settings_entry() throws RecognitionException {
@@ -32782,6 +34617,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTopic_setting_value(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTopic_setting_value(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Topic_setting_valueContext topic_setting_value() throws RecognitionException {
@@ -32824,6 +34664,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTopic_consumer_with_settings(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTopic_consumer_with_settings(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -32877,6 +34722,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTopic_consumer_settings(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTopic_consumer_settings(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -32939,6 +34789,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTopic_consumer_settings_entry(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTopic_consumer_settings_entry(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Topic_consumer_settings_entryContext topic_consumer_settings_entry() throws RecognitionException {
@@ -32983,6 +34838,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTopic_consumer_setting_value(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTopic_consumer_setting_value(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Topic_consumer_setting_valueContext topic_consumer_setting_value() throws RecognitionException {
@@ -33026,6 +34886,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTopic_ref(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTopic_ref(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -33079,6 +34944,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitTopic_consumer_ref(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitTopic_consumer_ref(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Topic_consumer_refContext topic_consumer_ref() throws RecognitionException {
@@ -33118,6 +34988,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitNull_treatment(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitNull_treatment(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -33182,6 +35057,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitFilter_clause(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitFilter_clause(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Filter_clauseContext filter_clause() throws RecognitionException {
@@ -33232,6 +35112,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWindow_name_or_specification(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWindow_name_or_specification(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -33560,6 +35445,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWindow_name(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWindow_name(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Window_nameContext window_name() throws RecognitionException {
@@ -33600,6 +35490,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWindow_clause(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWindow_clause(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -33649,6 +35544,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWindow_definition_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWindow_definition_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -33711,6 +35611,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWindow_definition(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWindow_definition(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Window_definitionContext window_definition() throws RecognitionException {
@@ -33755,6 +35660,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitNew_window_name(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitNew_window_name(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final New_window_nameContext new_window_name() throws RecognitionException {
@@ -33796,6 +35706,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWindow_specification(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWindow_specification(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -33849,6 +35764,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWindow_specification_details(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWindow_specification_details(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -33929,6 +35849,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitExisting_window_name(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitExisting_window_name(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Existing_window_nameContext existing_window_name() throws RecognitionException {
@@ -33971,6 +35896,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWindow_partition_clause(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWindow_partition_clause(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -34027,6 +35957,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWindow_order_clause(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWindow_order_clause(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Window_order_clauseContext window_order_clause() throws RecognitionException {
@@ -34072,6 +36007,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWindow_frame_clause(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWindow_frame_clause(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -34126,6 +36066,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWindow_frame_units(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWindow_frame_units(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Window_frame_unitsContext window_frame_units() throws RecognitionException {
@@ -34177,6 +36122,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWindow_frame_extent(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWindow_frame_extent(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -34236,6 +36186,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWindow_frame_between(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWindow_frame_between(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Window_frame_betweenContext window_frame_between() throws RecognitionException {
@@ -34286,6 +36241,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWindow_frame_bound(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWindow_frame_bound(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -34371,6 +36331,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitWindow_frame_exclusion(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitWindow_frame_exclusion(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Window_frame_exclusionContext window_frame_exclusion() throws RecognitionException {
@@ -34451,6 +36416,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitUse_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitUse_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Use_stmtContext use_stmt() throws RecognitionException {
@@ -34497,6 +36467,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitSubselect_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitSubselect_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -34569,6 +36544,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitNamed_nodes_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitNamed_nodes_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Named_nodes_stmtContext named_nodes_stmt() throws RecognitionException {
@@ -34625,6 +36605,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCommit_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCommit_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Commit_stmtContext commit_stmt() throws RecognitionException {
@@ -34662,6 +36647,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitRollback_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitRollback_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -34707,6 +36697,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAnalyze_table(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAnalyze_table(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -34769,6 +36764,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAnalyze_table_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAnalyze_table_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -34841,6 +36841,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAnalyze_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAnalyze_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Analyze_stmtContext analyze_stmt() throws RecognitionException {
@@ -34892,6 +36897,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_sequence_stmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_sequence_stmt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -34968,6 +36978,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAlter_sequence_action(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAlter_sequence_action(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -35076,6 +37091,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitShow_create_table_stmt(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitShow_create_table_stmt(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Show_create_table_stmtContext show_create_table_stmt() throws RecognitionException {
@@ -35120,6 +37140,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitIdentifier(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitIdentifier(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -35172,6 +37197,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitId(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitId(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -35518,6 +37548,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitId_schema(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitId_schema(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -35888,6 +37923,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitId_expr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitId_expr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Id_exprContext id_expr() throws RecognitionException {
@@ -36208,6 +38248,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitId_expr_in(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitId_expr_in(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -36531,6 +38576,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitId_window(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitId_window(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -36911,6 +38961,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitId_table(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitId_table(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Id_tableContext id_table() throws RecognitionException {
@@ -37283,6 +39338,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitId_without(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitId_without(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Id_withoutContext id_without() throws RecognitionException {
@@ -37621,6 +39681,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitId_hint(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitId_hint(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -37987,6 +40052,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitId_as_compat(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitId_as_compat(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Id_as_compatContext id_as_compat() throws RecognitionException {
@@ -38242,6 +40312,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAn_id(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAn_id(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -38572,6 +40647,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAn_id_or_type(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAn_id_or_type(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -38915,6 +40995,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAn_id_schema(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAn_id_schema(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final An_id_schemaContext an_id_schema() throws RecognitionException {
@@ -39241,6 +41326,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAn_id_expr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAn_id_expr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final An_id_exprContext an_id_expr() throws RecognitionException {
@@ -39528,6 +41618,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAn_id_expr_in(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAn_id_expr_in(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final An_id_expr_inContext an_id_expr_in() throws RecognitionException {
@@ -39813,6 +41908,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAn_id_window(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAn_id_window(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -40141,6 +42241,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAn_id_table(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAn_id_table(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final An_id_tableContext an_id_table() throws RecognitionException {
@@ -40467,6 +42572,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAn_id_without(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAn_id_without(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final An_id_withoutContext an_id_without() throws RecognitionException {
@@ -40756,6 +42866,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAn_id_hint(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAn_id_hint(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -41085,6 +43200,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAn_id_pure(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAn_id_pure(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final An_id_pureContext an_id_pure() throws RecognitionException {
@@ -41141,6 +43261,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitAn_id_as_compat(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitAn_id_as_compat(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -41400,6 +43525,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitView_name(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitView_name(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final View_nameContext view_name() throws RecognitionException {
@@ -41456,6 +43586,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitOpt_id_prefix(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitOpt_id_prefix(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Opt_id_prefixContext opt_id_prefix() throws RecognitionException {
@@ -41510,6 +43645,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitCluster_expr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitCluster_expr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -41858,6 +43998,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitId_or_type(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitId_or_type(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Id_or_typeContext id_or_type() throws RecognitionException {
@@ -42199,6 +44344,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitOpt_id_prefix_or_type(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitOpt_id_prefix_or_type(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Opt_id_prefix_or_typeContext opt_id_prefix_or_type() throws RecognitionException {
@@ -42249,6 +44399,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitId_or_at(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitId_or_at(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -42303,6 +44458,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitId_table_or_type(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitId_table_or_type(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -42642,6 +44802,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitId_table_or_at(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitId_table_or_at(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Id_table_or_atContext id_table_or_at() throws RecognitionException {
@@ -42713,6 +44878,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitKeyword(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitKeyword(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -43102,6 +45272,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitKeyword_expr_uncompat(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitKeyword_expr_uncompat(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Keyword_expr_uncompatContext keyword_expr_uncompat() throws RecognitionException {
@@ -43150,6 +45325,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitKeyword_table_uncompat(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitKeyword_table_uncompat(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -43208,6 +45388,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitKeyword_select_uncompat(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitKeyword_select_uncompat(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Keyword_select_uncompatContext keyword_select_uncompat() throws RecognitionException {
@@ -43255,6 +45440,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitKeyword_alter_uncompat(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitKeyword_alter_uncompat(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Keyword_alter_uncompatContext keyword_alter_uncompat() throws RecognitionException {
@@ -43292,6 +45482,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitKeyword_in_uncompat(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitKeyword_in_uncompat(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -43332,6 +45527,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitKeyword_window_uncompat(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitKeyword_window_uncompat(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -43380,6 +45580,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitKeyword_hint_uncompat(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitKeyword_hint_uncompat(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -43626,6 +45831,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitKeyword_as_compat(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitKeyword_as_compat(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -43896,6 +46106,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitKeyword_compat(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitKeyword_compat(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Keyword_compatContext keyword_compat() throws RecognitionException {
@@ -43954,6 +46169,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitType_id(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitType_id(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Type_idContext type_id() throws RecognitionException {
@@ -44002,6 +46222,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitBool_value(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitBool_value(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Bool_valueContext bool_value() throws RecognitionException {
@@ -44049,6 +46274,11 @@ public class YQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitReal(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitReal(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final RealContext real() throws RecognitionException {
@@ -44087,6 +46317,11 @@ public class YQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof YQLListener ) ((YQLListener)listener).exitInteger(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof YQLVisitor ) return ((YQLVisitor<? extends T>)visitor).visitInteger(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 

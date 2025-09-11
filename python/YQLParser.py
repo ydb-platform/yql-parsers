@@ -3070,6 +3070,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitSql_query" ):
                 listener.exitSql_query(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSql_query" ):
+                return visitor.visitSql_query(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3142,6 +3148,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSql_stmt_list" ):
                 listener.exitSql_stmt_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSql_stmt_list" ):
+                return visitor.visitSql_stmt_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3236,6 +3248,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAnsi_sql_stmt_list" ):
                 listener.exitAnsi_sql_stmt_list(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAnsi_sql_stmt_list" ):
+                return visitor.visitAnsi_sql_stmt_list(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3304,6 +3322,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitLambda_body" ):
                 listener.exitLambda_body(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLambda_body" ):
+                return visitor.visitLambda_body(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3396,6 +3420,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitLambda_stmt" ):
                 listener.exitLambda_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLambda_stmt" ):
+                return visitor.visitLambda_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3459,6 +3489,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSql_stmt" ):
                 listener.exitSql_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSql_stmt" ):
+                return visitor.visitSql_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3764,6 +3800,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSql_stmt_core" ):
                 listener.exitSql_stmt_core(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSql_stmt_core" ):
+                return visitor.visitSql_stmt_core(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4193,6 +4235,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitExpr" ):
                 listener.exitExpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr" ):
+                return visitor.visitExpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4270,6 +4318,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitOr_subexpr" ):
                 listener.exitOr_subexpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOr_subexpr" ):
+                return visitor.visitOr_subexpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4334,6 +4388,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAnd_subexpr" ):
                 listener.exitAnd_subexpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAnd_subexpr" ):
+                return visitor.visitAnd_subexpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4393,6 +4453,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitXor_subexpr" ):
                 listener.exitXor_subexpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitXor_subexpr" ):
+                return visitor.visitXor_subexpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4450,6 +4516,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitDistinct_from_op" ):
                 listener.exitDistinct_from_op(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDistinct_from_op" ):
+                return visitor.visitDistinct_from_op(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4583,6 +4655,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCond_expr" ):
                 listener.exitCond_expr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCond_expr" ):
+                return visitor.visitCond_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4809,6 +4887,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitMatch_op" ):
                 listener.exitMatch_op(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMatch_op" ):
+                return visitor.visitMatch_op(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4884,6 +4968,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitEq_subexpr" ):
                 listener.exitEq_subexpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEq_subexpr" ):
+                return visitor.visitEq_subexpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4946,6 +5036,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitShift_right" ):
                 listener.exitShift_right(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitShift_right" ):
+                return visitor.visitShift_right(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4995,6 +5091,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRot_right" ):
                 listener.exitRot_right(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRot_right" ):
+                return visitor.visitRot_right(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5042,6 +5144,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitDouble_question" ):
                 listener.exitDouble_question(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDouble_question" ):
+                return visitor.visitDouble_question(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5147,6 +5255,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitNeq_subexpr" ):
                 listener.exitNeq_subexpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNeq_subexpr" ):
+                return visitor.visitNeq_subexpr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5280,6 +5394,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitBit_subexpr" ):
                 listener.exitBit_subexpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBit_subexpr" ):
+                return visitor.visitBit_subexpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5361,6 +5481,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAdd_subexpr" ):
                 listener.exitAdd_subexpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAdd_subexpr" ):
+                return visitor.visitAdd_subexpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5430,6 +5556,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitMul_subexpr" ):
                 listener.exitMul_subexpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMul_subexpr" ):
+                return visitor.visitMul_subexpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5488,6 +5620,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCon_subexpr" ):
                 listener.exitCon_subexpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCon_subexpr" ):
+                return visitor.visitCon_subexpr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5553,6 +5691,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitUnary_op" ):
                 listener.exitUnary_op(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnary_op" ):
+                return visitor.visitUnary_op(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5644,6 +5788,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitUnary_subexpr_suffix" ):
                 listener.exitUnary_subexpr_suffix(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnary_subexpr_suffix" ):
+                return visitor.visitUnary_subexpr_suffix(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5748,6 +5898,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitUnary_casual_subexpr" ):
                 listener.exitUnary_casual_subexpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnary_casual_subexpr" ):
+                return visitor.visitUnary_casual_subexpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5812,6 +5968,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitIn_unary_casual_subexpr" ):
                 listener.exitIn_unary_casual_subexpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIn_unary_casual_subexpr" ):
+                return visitor.visitIn_unary_casual_subexpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5872,6 +6034,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitUnary_subexpr" ):
                 listener.exitUnary_subexpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnary_subexpr" ):
+                return visitor.visitUnary_subexpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5930,6 +6098,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitIn_unary_subexpr" ):
                 listener.exitIn_unary_subexpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIn_unary_subexpr" ):
+                return visitor.visitIn_unary_subexpr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5994,6 +6168,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitList_literal" ):
                 listener.exitList_literal(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitList_literal" ):
+                return visitor.visitList_literal(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6070,6 +6250,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitExpr_dict_list" ):
                 listener.exitExpr_dict_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_dict_list" ):
+                return visitor.visitExpr_dict_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6156,6 +6342,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitDict_literal" ):
                 listener.exitDict_literal(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDict_literal" ):
+                return visitor.visitDict_literal(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -6232,6 +6424,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitExpr_struct_list" ):
                 listener.exitExpr_struct_list(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_struct_list" ):
+                return visitor.visitExpr_struct_list(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -6303,6 +6501,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitStruct_literal" ):
                 listener.exitStruct_literal(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStruct_literal" ):
+                return visitor.visitStruct_literal(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6418,6 +6622,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAtom_expr" ):
                 listener.exitAtom_expr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAtom_expr" ):
+                return visitor.visitAtom_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6610,6 +6820,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitIn_atom_expr" ):
                 listener.exitIn_atom_expr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIn_atom_expr" ):
+                return visitor.visitIn_atom_expr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -6761,6 +6977,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitCast_expr" ):
                 listener.exitCast_expr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCast_expr" ):
+                return visitor.visitCast_expr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -6829,6 +7051,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitBitcast_expr" ):
                 listener.exitBitcast_expr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBitcast_expr" ):
+                return visitor.visitBitcast_expr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -6893,6 +7121,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitExists_expr" ):
                 listener.exitExists_expr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExists_expr" ):
+                return visitor.visitExists_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6972,6 +7206,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCase_expr" ):
                 listener.exitCase_expr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCase_expr" ):
+                return visitor.visitCase_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7071,6 +7311,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitLambda" ):
                 listener.exitLambda(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLambda" ):
+                return visitor.visitLambda(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -7144,6 +7390,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitIn_expr" ):
                 listener.exitIn_expr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIn_expr" ):
+                return visitor.visitIn_expr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -7193,6 +7445,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitJson_api_expr" ):
                 listener.exitJson_api_expr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJson_api_expr" ):
+                return visitor.visitJson_api_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7253,6 +7511,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitJsonpath_spec" ):
                 listener.exitJsonpath_spec(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJsonpath_spec" ):
+                return visitor.visitJsonpath_spec(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -7297,6 +7561,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitJson_variable_name" ):
                 listener.exitJson_variable_name(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJson_variable_name" ):
+                return visitor.visitJson_variable_name(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7360,6 +7630,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitJson_variable" ):
                 listener.exitJson_variable(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJson_variable" ):
+                return visitor.visitJson_variable(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -7414,6 +7690,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitJson_variables" ):
                 listener.exitJson_variables(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJson_variables" ):
+                return visitor.visitJson_variables(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7484,6 +7766,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitJson_common_args" ):
                 listener.exitJson_common_args(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJson_common_args" ):
+                return visitor.visitJson_common_args(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -7549,6 +7837,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitJson_case_handler" ):
                 listener.exitJson_case_handler(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJson_case_handler" ):
+                return visitor.visitJson_case_handler(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7653,6 +7947,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitJson_value" ):
                 listener.exitJson_value(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJson_value" ):
+                return visitor.visitJson_value(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -7745,6 +8045,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitJson_exists_handler" ):
                 listener.exitJson_exists_handler(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJson_exists_handler" ):
+                return visitor.visitJson_exists_handler(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -7809,6 +8115,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitJson_exists" ):
                 listener.exitJson_exists(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJson_exists" ):
+                return visitor.visitJson_exists(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7877,6 +8189,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitJson_query_wrapper" ):
                 listener.exitJson_query_wrapper(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJson_query_wrapper" ):
+                return visitor.visitJson_query_wrapper(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7973,6 +8291,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitJson_query_handler" ):
                 listener.exitJson_query_handler(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJson_query_handler" ):
+                return visitor.visitJson_query_handler(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -8080,6 +8404,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitJson_query" ):
                 listener.exitJson_query(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJson_query" ):
+                return visitor.visitJson_query(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -8172,6 +8502,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitSmart_parenthesis" ):
                 listener.exitSmart_parenthesis(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSmart_parenthesis" ):
+                return visitor.visitSmart_parenthesis(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -8241,6 +8577,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitExpr_list" ):
                 listener.exitExpr_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_list" ):
+                return visitor.visitExpr_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -8312,6 +8654,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitPure_column_list" ):
                 listener.exitPure_column_list(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPure_column_list" ):
+                return visitor.visitPure_column_list(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -8374,6 +8722,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitPure_column_or_named" ):
                 listener.exitPure_column_or_named(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPure_column_or_named" ):
+                return visitor.visitPure_column_or_named(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -8445,6 +8799,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitPure_column_or_named_list" ):
                 listener.exitPure_column_or_named_list(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPure_column_or_named_list" ):
+                return visitor.visitPure_column_or_named_list(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -8508,6 +8868,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitColumn_name" ):
                 listener.exitColumn_name(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitColumn_name" ):
+                return visitor.visitColumn_name(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -8561,6 +8927,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitWithout_column_name" ):
                 listener.exitWithout_column_name(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWithout_column_name" ):
+                return visitor.visitWithout_column_name(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -8629,6 +9001,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitColumn_list" ):
                 listener.exitColumn_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitColumn_list" ):
+                return visitor.visitColumn_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -8703,6 +9081,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitWithout_column_list" ):
                 listener.exitWithout_column_list(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWithout_column_list" ):
+                return visitor.visitWithout_column_list(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -8774,6 +9158,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitNamed_expr" ):
                 listener.exitNamed_expr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNamed_expr" ):
+                return visitor.visitNamed_expr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -8835,6 +9225,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitNamed_expr_list" ):
                 listener.exitNamed_expr_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNamed_expr_list" ):
+                return visitor.visitNamed_expr_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -8910,6 +9306,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitInvoke_expr" ):
                 listener.exitInvoke_expr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInvoke_expr" ):
+                return visitor.visitInvoke_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -8993,6 +9395,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitInvoke_expr_tail" ):
                 listener.exitInvoke_expr_tail(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInvoke_expr_tail" ):
+                return visitor.visitInvoke_expr_tail(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -9081,6 +9489,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitUsing_call_expr" ):
                 listener.exitUsing_call_expr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUsing_call_expr" ):
+                return visitor.visitUsing_call_expr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -9159,6 +9573,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitKey_expr" ):
                 listener.exitKey_expr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitKey_expr" ):
+                return visitor.visitKey_expr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -9213,6 +9633,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitWhen_expr" ):
                 listener.exitWhen_expr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWhen_expr" ):
+                return visitor.visitWhen_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -9290,6 +9716,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitLiteral_value" ):
                 listener.exitLiteral_value(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLiteral_value" ):
+                return visitor.visitLiteral_value(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -9395,6 +9827,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitBind_parameter" ):
                 listener.exitBind_parameter(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBind_parameter" ):
+                return visitor.visitBind_parameter(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -9458,6 +9896,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitOpt_bind_parameter" ):
                 listener.exitOpt_bind_parameter(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOpt_bind_parameter" ):
+                return visitor.visitOpt_bind_parameter(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -9517,6 +9961,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitBind_parameter_list" ):
                 listener.exitBind_parameter_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBind_parameter_list" ):
+                return visitor.visitBind_parameter_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -9579,6 +10029,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitNamed_bind_parameter" ):
                 listener.exitNamed_bind_parameter(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNamed_bind_parameter" ):
+                return visitor.visitNamed_bind_parameter(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -9640,6 +10096,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitNamed_bind_parameter_list" ):
                 listener.exitNamed_bind_parameter_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNamed_bind_parameter_list" ):
+                return visitor.visitNamed_bind_parameter_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -9705,6 +10167,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSigned_number" ):
                 listener.exitSigned_number(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSigned_number" ):
+                return visitor.visitSigned_number(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -9774,6 +10242,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitType_name_simple" ):
                 listener.exitType_name_simple(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_simple" ):
+                return visitor.visitType_name_simple(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -9819,6 +10293,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitInteger_or_bind" ):
                 listener.exitInteger_or_bind(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInteger_or_bind" ):
+                return visitor.visitInteger_or_bind(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -9881,6 +10361,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitType_name_tag" ):
                 listener.exitType_name_tag(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_tag" ):
+                return visitor.visitType_name_tag(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -9949,6 +10435,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitStruct_arg" ):
                 listener.exitStruct_arg(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStruct_arg" ):
+                return visitor.visitStruct_arg(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -10007,6 +10499,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitStruct_arg_positional" ):
                 listener.exitStruct_arg_positional(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStruct_arg_positional" ):
+                return visitor.visitStruct_arg_positional(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -10093,6 +10591,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitVariant_arg" ):
                 listener.exitVariant_arg(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVariant_arg" ):
+                return visitor.visitVariant_arg(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -10153,6 +10657,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCallable_arg" ):
                 listener.exitCallable_arg(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCallable_arg" ):
+                return visitor.visitCallable_arg(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -10217,6 +10727,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCallable_arg_list" ):
                 listener.exitCallable_arg_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCallable_arg_list" ):
+                return visitor.visitCallable_arg_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -10288,6 +10804,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitType_name_decimal" ):
                 listener.exitType_name_decimal(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_decimal" ):
+                return visitor.visitType_name_decimal(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -10348,6 +10870,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitType_name_optional" ):
                 listener.exitType_name_optional(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_optional" ):
+                return visitor.visitType_name_optional(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -10417,6 +10945,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitType_name_tuple" ):
                 listener.exitType_name_tuple(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_tuple" ):
+                return visitor.visitType_name_tuple(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -10527,6 +11061,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitType_name_struct" ):
                 listener.exitType_name_struct(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_struct" ):
+                return visitor.visitType_name_struct(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -10633,6 +11173,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitType_name_variant" ):
                 listener.exitType_name_variant(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_variant" ):
+                return visitor.visitType_name_variant(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -10712,6 +11258,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitType_name_list" ):
                 listener.exitType_name_list(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_list" ):
+                return visitor.visitType_name_list(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -10769,6 +11321,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitType_name_stream" ):
                 listener.exitType_name_stream(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_stream" ):
+                return visitor.visitType_name_stream(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -10825,6 +11383,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitType_name_flow" ):
                 listener.exitType_name_flow(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_flow" ):
+                return visitor.visitType_name_flow(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -10889,6 +11453,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitType_name_dict" ):
                 listener.exitType_name_dict(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_dict" ):
+                return visitor.visitType_name_dict(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -10949,6 +11519,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitType_name_set" ):
                 listener.exitType_name_set(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_set" ):
+                return visitor.visitType_name_set(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -11015,6 +11591,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitType_name_enum" ):
                 listener.exitType_name_enum(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_enum" ):
+                return visitor.visitType_name_enum(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -11095,6 +11677,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitType_name_resource" ):
                 listener.exitType_name_resource(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_resource" ):
+                return visitor.visitType_name_resource(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -11158,6 +11746,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitType_name_tagged" ):
                 listener.exitType_name_tagged(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_tagged" ):
+                return visitor.visitType_name_tagged(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -11244,6 +11838,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitType_name_callable" ):
                 listener.exitType_name_callable(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_callable" ):
+                return visitor.visitType_name_callable(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -11382,6 +11982,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitType_name_composite" ):
                 listener.exitType_name_composite(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_composite" ):
+                return visitor.visitType_name_composite(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -11505,6 +12111,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitType_name" ):
                 listener.exitType_name(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name" ):
+                return visitor.visitType_name(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -11587,6 +12199,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitType_name_or_bind" ):
                 listener.exitType_name_or_bind(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_name_or_bind" ):
+                return visitor.visitType_name_or_bind(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -11640,6 +12258,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitValue_constructor_literal" ):
                 listener.exitValue_constructor_literal(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitValue_constructor_literal" ):
+                return visitor.visitValue_constructor_literal(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -11706,6 +12330,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitValue_constructor" ):
                 listener.exitValue_constructor(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitValue_constructor" ):
+                return visitor.visitValue_constructor(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -11818,6 +12448,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitDeclare_stmt" ):
                 listener.exitDeclare_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDeclare_stmt" ):
+                return visitor.visitDeclare_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -11885,6 +12521,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitModule_path" ):
                 listener.exitModule_path(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitModule_path" ):
+                return visitor.visitModule_path(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -11959,6 +12601,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitImport_stmt" ):
                 listener.exitImport_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImport_stmt" ):
+                return visitor.visitImport_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -12009,6 +12657,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitExport_stmt" ):
                 listener.exitExport_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExport_stmt" ):
+                return visitor.visitExport_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -12066,6 +12720,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCall_action" ):
                 listener.exitCall_action(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCall_action" ):
+                return visitor.visitCall_action(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -12143,6 +12803,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitInline_action" ):
                 listener.exitInline_action(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInline_action" ):
+                return visitor.visitInline_action(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -12197,6 +12863,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitDo_stmt" ):
                 listener.exitDo_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDo_stmt" ):
+                return visitor.visitDo_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -12282,6 +12954,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitPragma_stmt" ):
                 listener.exitPragma_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPragma_stmt" ):
+                return visitor.visitPragma_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -12378,6 +13056,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitPragma_value" ):
                 listener.exitPragma_value(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPragma_value" ):
+                return visitor.visitPragma_value(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -12454,6 +13138,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitSort_specification" ):
                 listener.exitSort_specification(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSort_specification" ):
+                return visitor.visitSort_specification(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -12519,6 +13209,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitSort_specification_list" ):
                 listener.exitSort_specification_list(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSort_specification_list" ):
+                return visitor.visitSort_specification_list(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -12583,6 +13279,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSelect_stmt" ):
                 listener.exitSelect_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSelect_stmt" ):
+                return visitor.visitSelect_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -12653,6 +13355,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitSelect_unparenthesized_stmt" ):
                 listener.exitSelect_unparenthesized_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSelect_unparenthesized_stmt" ):
+                return visitor.visitSelect_unparenthesized_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -12713,6 +13421,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSelect_kind_parenthesis" ):
                 listener.exitSelect_kind_parenthesis(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSelect_kind_parenthesis" ):
+                return visitor.visitSelect_kind_parenthesis(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -12780,6 +13494,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSelect_op" ):
                 listener.exitSelect_op(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSelect_op" ):
+                return visitor.visitSelect_op(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -12865,6 +13585,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSelect_kind_partial" ):
                 listener.exitSelect_kind_partial(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSelect_kind_partial" ):
+                return visitor.visitSelect_kind_partial(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -12954,6 +13680,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSelect_kind" ):
                 listener.exitSelect_kind(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSelect_kind" ):
+                return visitor.visitSelect_kind(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -13090,6 +13822,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitProcess_core" ):
                 listener.exitProcess_core(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitProcess_core" ):
+                return visitor.visitProcess_core(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -13222,6 +13960,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitExternal_call_param" ):
                 listener.exitExternal_call_param(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExternal_call_param" ):
+                return visitor.visitExternal_call_param(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -13276,6 +14020,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitExternal_call_settings" ):
                 listener.exitExternal_call_settings(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExternal_call_settings" ):
+                return visitor.visitExternal_call_settings(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -13394,6 +14144,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitReduce_core" ):
                 listener.exitReduce_core(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitReduce_core" ):
+                return visitor.visitReduce_core(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -13520,6 +14276,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitOpt_set_quantifier" ):
                 listener.exitOpt_set_quantifier(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOpt_set_quantifier" ):
+                return visitor.visitOpt_set_quantifier(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -13643,6 +14405,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSelect_core" ):
                 listener.exitSelect_core(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSelect_core" ):
+                return visitor.visitSelect_core(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -13829,6 +14597,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRow_pattern_recognition_clause" ):
                 listener.exitRow_pattern_recognition_clause(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_recognition_clause" ):
+                return visitor.visitRow_pattern_recognition_clause(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -13928,6 +14702,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRow_pattern_rows_per_match" ):
                 listener.exitRow_pattern_rows_per_match(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_rows_per_match" ):
+                return visitor.visitRow_pattern_rows_per_match(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -14021,6 +14801,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRow_pattern_empty_match_handling" ):
                 listener.exitRow_pattern_empty_match_handling(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_empty_match_handling" ):
+                return visitor.visitRow_pattern_empty_match_handling(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -14096,6 +14882,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRow_pattern_measures" ):
                 listener.exitRow_pattern_measures(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_measures" ):
+                return visitor.visitRow_pattern_measures(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -14148,6 +14940,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRow_pattern_measure_list" ):
                 listener.exitRow_pattern_measure_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_measure_list" ):
+                return visitor.visitRow_pattern_measure_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -14210,6 +15008,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRow_pattern_measure_definition" ):
                 listener.exitRow_pattern_measure_definition(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_measure_definition" ):
+                return visitor.visitRow_pattern_measure_definition(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -14290,6 +15094,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRow_pattern_common_syntax" ):
                 listener.exitRow_pattern_common_syntax(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_common_syntax" ):
+                return visitor.visitRow_pattern_common_syntax(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -14393,6 +15203,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRow_pattern_skip_to" ):
                 listener.exitRow_pattern_skip_to(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_skip_to" ):
+                return visitor.visitRow_pattern_skip_to(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -14494,6 +15310,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRow_pattern_skip_to_variable_name" ):
                 listener.exitRow_pattern_skip_to_variable_name(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_skip_to_variable_name" ):
+                return visitor.visitRow_pattern_skip_to_variable_name(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -14537,6 +15359,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRow_pattern_initial_or_seek" ):
                 listener.exitRow_pattern_initial_or_seek(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_initial_or_seek" ):
+                return visitor.visitRow_pattern_initial_or_seek(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -14594,6 +15422,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRow_pattern" ):
                 listener.exitRow_pattern(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern" ):
+                return visitor.visitRow_pattern(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -14653,6 +15487,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRow_pattern_term" ):
                 listener.exitRow_pattern_term(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_term" ):
+                return visitor.visitRow_pattern_term(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -14709,6 +15549,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRow_pattern_factor" ):
                 listener.exitRow_pattern_factor(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_factor" ):
+                return visitor.visitRow_pattern_factor(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -14783,6 +15629,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRow_pattern_quantifier" ):
                 listener.exitRow_pattern_quantifier(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_quantifier" ):
+                return visitor.visitRow_pattern_quantifier(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -14946,6 +15798,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRow_pattern_primary" ):
                 listener.exitRow_pattern_primary(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_primary" ):
+                return visitor.visitRow_pattern_primary(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -15040,6 +15898,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRow_pattern_primary_variable_name" ):
                 listener.exitRow_pattern_primary_variable_name(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_primary_variable_name" ):
+                return visitor.visitRow_pattern_primary_variable_name(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -15099,6 +15963,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRow_pattern_permute" ):
                 listener.exitRow_pattern_permute(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_permute" ):
+                return visitor.visitRow_pattern_permute(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -15164,6 +16034,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRow_pattern_subset_clause" ):
                 listener.exitRow_pattern_subset_clause(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_subset_clause" ):
+                return visitor.visitRow_pattern_subset_clause(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -15216,6 +16092,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRow_pattern_subset_list" ):
                 listener.exitRow_pattern_subset_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_subset_list" ):
+                return visitor.visitRow_pattern_subset_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -15285,6 +16167,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRow_pattern_subset_item" ):
                 listener.exitRow_pattern_subset_item(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_subset_item" ):
+                return visitor.visitRow_pattern_subset_item(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -15334,6 +16222,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRow_pattern_subset_item_variable_name" ):
                 listener.exitRow_pattern_subset_item_variable_name(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_subset_item_variable_name" ):
+                return visitor.visitRow_pattern_subset_item_variable_name(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -15385,6 +16279,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRow_pattern_subset_rhs" ):
                 listener.exitRow_pattern_subset_rhs(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_subset_rhs" ):
+                return visitor.visitRow_pattern_subset_rhs(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -15441,6 +16341,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRow_pattern_subset_rhs_variable_name" ):
                 listener.exitRow_pattern_subset_rhs_variable_name(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_subset_rhs_variable_name" ):
+                return visitor.visitRow_pattern_subset_rhs_variable_name(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -15491,6 +16397,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRow_pattern_definition_list" ):
                 listener.exitRow_pattern_definition_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_definition_list" ):
+                return visitor.visitRow_pattern_definition_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -15554,6 +16466,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRow_pattern_definition" ):
                 listener.exitRow_pattern_definition(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_definition" ):
+                return visitor.visitRow_pattern_definition(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -15600,6 +16518,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRow_pattern_definition_variable_name" ):
                 listener.exitRow_pattern_definition_variable_name(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_definition_variable_name" ):
+                return visitor.visitRow_pattern_definition_variable_name(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -15641,6 +16565,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRow_pattern_definition_search_condition" ):
                 listener.exitRow_pattern_definition_search_condition(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_definition_search_condition" ):
+                return visitor.visitRow_pattern_definition_search_condition(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -15684,6 +16614,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitSearch_condition" ):
                 listener.exitSearch_condition(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSearch_condition" ):
+                return visitor.visitSearch_condition(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -15725,6 +16661,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRow_pattern_variable_name" ):
                 listener.exitRow_pattern_variable_name(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow_pattern_variable_name" ):
+                return visitor.visitRow_pattern_variable_name(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -15774,6 +16716,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitOrder_by_clause" ):
                 listener.exitOrder_by_clause(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOrder_by_clause" ):
+                return visitor.visitOrder_by_clause(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -15822,6 +16770,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitExt_order_by_clause" ):
                 listener.exitExt_order_by_clause(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExt_order_by_clause" ):
+                return visitor.visitExt_order_by_clause(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -15893,6 +16847,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitGroup_by_clause" ):
                 listener.exitGroup_by_clause(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitGroup_by_clause" ):
+                return visitor.visitGroup_by_clause(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -15970,6 +16930,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitGrouping_element_list" ):
                 listener.exitGrouping_element_list(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitGrouping_element_list" ):
+                return visitor.visitGrouping_element_list(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -16040,6 +17006,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitGrouping_element" ):
                 listener.exitGrouping_element(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitGrouping_element" ):
+                return visitor.visitGrouping_element(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -16114,6 +17086,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitOrdinary_grouping_set" ):
                 listener.exitOrdinary_grouping_set(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOrdinary_grouping_set" ):
+                return visitor.visitOrdinary_grouping_set(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -16164,6 +17142,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitOrdinary_grouping_set_list" ):
                 listener.exitOrdinary_grouping_set_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOrdinary_grouping_set_list" ):
+                return visitor.visitOrdinary_grouping_set_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -16229,6 +17213,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRollup_list" ):
                 listener.exitRollup_list(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRollup_list" ):
+                return visitor.visitRollup_list(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -16285,6 +17275,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCube_list" ):
                 listener.exitCube_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCube_list" ):
+                return visitor.visitCube_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -16345,6 +17341,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitGrouping_sets_specification" ):
                 listener.exitGrouping_sets_specification(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitGrouping_sets_specification" ):
+                return visitor.visitGrouping_sets_specification(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -16413,6 +17415,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitHopping_window_specification" ):
                 listener.exitHopping_window_specification(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitHopping_window_specification" ):
+                return visitor.visitHopping_window_specification(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -16491,6 +17499,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitResult_column" ):
                 listener.exitResult_column(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitResult_column" ):
+                return visitor.visitResult_column(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -16586,6 +17600,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitJoin_source" ):
                 listener.exitJoin_source(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJoin_source" ):
+                return visitor.visitJoin_source(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -16672,6 +17692,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitNamed_column" ):
                 listener.exitNamed_column(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNamed_column" ):
+                return visitor.visitNamed_column(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -16737,6 +17763,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFlatten_by_arg" ):
                 listener.exitFlatten_by_arg(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFlatten_by_arg" ):
+                return visitor.visitFlatten_by_arg(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -16827,6 +17859,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFlatten_source" ):
                 listener.exitFlatten_source(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFlatten_source" ):
+                return visitor.visitFlatten_source(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -16934,6 +17972,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitNamed_single_source" ):
                 listener.exitNamed_single_source(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNamed_single_source" ):
+                return visitor.visitNamed_single_source(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -17045,6 +18089,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitSingle_source" ):
                 listener.exitSingle_source(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSingle_source" ):
+                return visitor.visitSingle_source(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -17117,6 +18167,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitSample_clause" ):
                 listener.exitSample_clause(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSample_clause" ):
+                return visitor.visitSample_clause(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -17177,6 +18233,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTablesample_clause" ):
                 listener.exitTablesample_clause(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTablesample_clause" ):
+                return visitor.visitTablesample_clause(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -17239,6 +18301,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitSampling_mode" ):
                 listener.exitSampling_mode(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSampling_mode" ):
+                return visitor.visitSampling_mode(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -17295,6 +18363,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRepeatable_clause" ):
                 listener.exitRepeatable_clause(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRepeatable_clause" ):
+                return visitor.visitRepeatable_clause(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -17375,6 +18449,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitJoin_op" ):
                 listener.exitJoin_op(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJoin_op" ):
+                return visitor.visitJoin_op(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -17523,6 +18603,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitJoin_constraint" ):
                 listener.exitJoin_constraint(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitJoin_constraint" ):
+                return visitor.visitJoin_constraint(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -17596,6 +18682,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitReturning_columns_list" ):
                 listener.exitReturning_columns_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitReturning_columns_list" ):
+                return visitor.visitReturning_columns_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -17697,6 +18789,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitInto_table_stmt" ):
                 listener.exitInto_table_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInto_table_stmt" ):
+                return visitor.visitInto_table_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -17809,6 +18907,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitInto_values_source" ):
                 listener.exitInto_values_source(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInto_values_source" ):
+                return visitor.visitInto_values_source(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -17877,6 +18981,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitValues_stmt" ):
                 listener.exitValues_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitValues_stmt" ):
+                return visitor.visitValues_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -17924,6 +19034,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitValues_source" ):
                 listener.exitValues_source(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitValues_source" ):
+                return visitor.visitValues_source(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -17989,6 +19105,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitValues_source_row_list" ):
                 listener.exitValues_source_row_list(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitValues_source_row_list" ):
+                return visitor.visitValues_source_row_list(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -18050,6 +19172,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitValues_source_row" ):
                 listener.exitValues_source_row(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitValues_source_row" ):
+                return visitor.visitValues_source_row(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -18099,6 +19227,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSimple_values_source" ):
                 listener.exitSimple_values_source(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSimple_values_source" ):
+                return visitor.visitSimple_values_source(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -18185,6 +19319,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCreate_external_data_source_stmt" ):
                 listener.exitCreate_external_data_source_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_external_data_source_stmt" ):
+                return visitor.visitCreate_external_data_source_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -18286,6 +19426,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_external_data_source_stmt" ):
                 listener.exitAlter_external_data_source_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_external_data_source_stmt" ):
+                return visitor.visitAlter_external_data_source_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -18358,6 +19504,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_external_data_source_action" ):
                 listener.exitAlter_external_data_source_action(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_external_data_source_action" ):
+                return visitor.visitAlter_external_data_source_action(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -18437,6 +19589,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitDrop_external_data_source_stmt" ):
                 listener.exitDrop_external_data_source_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDrop_external_data_source_stmt" ):
+                return visitor.visitDrop_external_data_source_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -18524,6 +19682,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitCreate_view_stmt" ):
                 listener.exitCreate_view_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_view_stmt" ):
+                return visitor.visitCreate_view_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -18607,6 +19771,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitDrop_view_stmt" ):
                 listener.exitDrop_view_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDrop_view_stmt" ):
+                return visitor.visitDrop_view_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -18685,6 +19855,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitUpsert_object_stmt" ):
                 listener.exitUpsert_object_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUpsert_object_stmt" ):
+                return visitor.visitUpsert_object_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -18781,6 +19957,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitCreate_object_stmt" ):
                 listener.exitCreate_object_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_object_stmt" ):
+                return visitor.visitCreate_object_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -18859,6 +20041,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitCreate_object_features" ):
                 listener.exitCreate_object_features(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_object_features" ):
+                return visitor.visitCreate_object_features(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -18926,6 +20114,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_object_stmt" ):
                 listener.exitAlter_object_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_object_stmt" ):
+                return visitor.visitAlter_object_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -18984,6 +20178,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_object_features" ):
                 listener.exitAlter_object_features(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_object_features" ):
+                return visitor.visitAlter_object_features(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -19057,6 +20257,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitDrop_object_stmt" ):
                 listener.exitDrop_object_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDrop_object_stmt" ):
+                return visitor.visitDrop_object_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -19134,6 +20340,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitDrop_object_features" ):
                 listener.exitDrop_object_features(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDrop_object_features" ):
+                return visitor.visitDrop_object_features(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -19188,6 +20400,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitObject_feature_value" ):
                 listener.exitObject_feature_value(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitObject_feature_value" ):
+                return visitor.visitObject_feature_value(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -19261,6 +20479,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitObject_feature_kv" ):
                 listener.exitObject_feature_kv(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitObject_feature_kv" ):
+                return visitor.visitObject_feature_kv(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -19307,6 +20531,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitObject_feature_flag" ):
                 listener.exitObject_feature_flag(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitObject_feature_flag" ):
+                return visitor.visitObject_feature_flag(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -19352,6 +20582,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitObject_feature" ):
                 listener.exitObject_feature(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitObject_feature" ):
+                return visitor.visitObject_feature(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -19422,6 +20658,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitObject_features" ):
                 listener.exitObject_features(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitObject_features" ):
+                return visitor.visitObject_features(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -19494,6 +20736,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitObject_type_ref" ):
                 listener.exitObject_type_ref(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitObject_type_ref" ):
+                return visitor.visitObject_type_ref(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -19608,6 +20856,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCreate_table_stmt" ):
                 listener.exitCreate_table_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_table_stmt" ):
+                return visitor.visitCreate_table_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -19795,6 +21049,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitCreate_table_entry" ):
                 listener.exitCreate_table_entry(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_table_entry" ):
+                return visitor.visitCreate_table_entry(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -19894,6 +21154,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitCreate_backup_collection_stmt" ):
                 listener.exitCreate_backup_collection_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_backup_collection_stmt" ):
+                return visitor.visitCreate_backup_collection_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -19966,6 +21232,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_backup_collection_stmt" ):
                 listener.exitAlter_backup_collection_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_backup_collection_stmt" ):
+                return visitor.visitAlter_backup_collection_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -20027,6 +21299,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitDrop_backup_collection_stmt" ):
                 listener.exitDrop_backup_collection_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDrop_backup_collection_stmt" ):
+                return visitor.visitDrop_backup_collection_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -20073,6 +21351,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCreate_backup_collection_entries" ):
                 listener.exitCreate_backup_collection_entries(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_backup_collection_entries" ):
+                return visitor.visitCreate_backup_collection_entries(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -20135,6 +21419,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitCreate_backup_collection_entries_many" ):
                 listener.exitCreate_backup_collection_entries_many(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_backup_collection_entries_many" ):
+                return visitor.visitCreate_backup_collection_entries_many(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -20195,6 +21485,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTable_list" ):
                 listener.exitTable_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTable_list" ):
+                return visitor.visitTable_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -20264,6 +21560,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_backup_collection_actions" ):
                 listener.exitAlter_backup_collection_actions(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_backup_collection_actions" ):
+                return visitor.visitAlter_backup_collection_actions(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -20322,6 +21624,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_backup_collection_action" ):
                 listener.exitAlter_backup_collection_action(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_backup_collection_action" ):
+                return visitor.visitAlter_backup_collection_action(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -20386,6 +21694,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_backup_collection_entries" ):
                 listener.exitAlter_backup_collection_entries(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_backup_collection_entries" ):
+                return visitor.visitAlter_backup_collection_entries(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -20453,6 +21767,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_backup_collection_entry" ):
                 listener.exitAlter_backup_collection_entry(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_backup_collection_entry" ):
+                return visitor.visitAlter_backup_collection_entry(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -20539,6 +21859,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitBackup_collection" ):
                 listener.exitBackup_collection(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBackup_collection" ):
+                return visitor.visitBackup_collection(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -20593,6 +21919,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitBackup_collection_settings" ):
                 listener.exitBackup_collection_settings(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBackup_collection_settings" ):
+                return visitor.visitBackup_collection_settings(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -20656,6 +21988,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitBackup_collection_settings_entry" ):
                 listener.exitBackup_collection_settings_entry(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBackup_collection_settings_entry" ):
+                return visitor.visitBackup_collection_settings_entry(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -20707,6 +22045,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitBackup_stmt" ):
                 listener.exitBackup_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBackup_stmt" ):
+                return visitor.visitBackup_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -20769,6 +22113,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRestore_stmt" ):
                 listener.exitRestore_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRestore_stmt" ):
+                return visitor.visitRestore_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -20841,6 +22191,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_database_stmt" ):
                 listener.exitAlter_database_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_database_stmt" ):
+                return visitor.visitAlter_database_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -20910,6 +22266,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTable_inherits" ):
                 listener.exitTable_inherits(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTable_inherits" ):
+                return visitor.visitTable_inherits(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -20981,6 +22343,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitTable_partition_by" ):
                 listener.exitTable_partition_by(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTable_partition_by" ):
+                return visitor.visitTable_partition_by(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -21047,6 +22415,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitWith_table_settings" ):
                 listener.exitWith_table_settings(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWith_table_settings" ):
+                return visitor.visitWith_table_settings(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -21111,6 +22485,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitTable_tablestore" ):
                 listener.exitTable_tablestore(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTable_tablestore" ):
+                return visitor.visitTable_tablestore(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -21162,6 +22542,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitTable_settings_entry" ):
                 listener.exitTable_settings_entry(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTable_settings_entry" ):
+                return visitor.visitTable_settings_entry(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -21210,6 +22596,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTable_as_source" ):
                 listener.exitTable_as_source(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTable_as_source" ):
+                return visitor.visitTable_as_source(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -21273,6 +22665,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_table_stmt" ):
                 listener.exitAlter_table_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_stmt" ):
+                return visitor.visitAlter_table_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -21398,6 +22796,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_table_action" ):
                 listener.exitAlter_table_action(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_action" ):
+                return visitor.visitAlter_table_action(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -21566,6 +22970,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_external_table_stmt" ):
                 listener.exitAlter_external_table_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_external_table_stmt" ):
+                return visitor.visitAlter_external_table_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -21644,6 +23054,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_external_table_action" ):
                 listener.exitAlter_external_table_action(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_external_table_action" ):
+                return visitor.visitAlter_external_table_action(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -21737,6 +23153,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_table_store_stmt" ):
                 listener.exitAlter_table_store_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_store_stmt" ):
+                return visitor.visitAlter_table_store_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -21802,6 +23224,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_table_store_action" ):
                 listener.exitAlter_table_store_action(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_store_action" ):
+                return visitor.visitAlter_table_store_action(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -21863,6 +23291,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_table_add_column" ):
                 listener.exitAlter_table_add_column(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_add_column" ):
+                return visitor.visitAlter_table_add_column(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -21921,6 +23355,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_table_drop_column" ):
                 listener.exitAlter_table_drop_column(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_drop_column" ):
+                return visitor.visitAlter_table_drop_column(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -21987,6 +23427,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_table_alter_column" ):
                 listener.exitAlter_table_alter_column(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_alter_column" ):
+                return visitor.visitAlter_table_alter_column(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -22052,6 +23498,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_table_alter_column_drop_not_null" ):
                 listener.exitAlter_table_alter_column_drop_not_null(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_alter_column_drop_not_null" ):
+                return visitor.visitAlter_table_alter_column_drop_not_null(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -22106,6 +23558,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_table_add_column_family" ):
                 listener.exitAlter_table_add_column_family(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_add_column_family" ):
+                return visitor.visitAlter_table_add_column_family(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -22167,6 +23625,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_table_alter_column_family" ):
                 listener.exitAlter_table_alter_column_family(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_alter_column_family" ):
+                return visitor.visitAlter_table_alter_column_family(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -22225,6 +23689,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_table_set_table_setting_uncompat" ):
                 listener.exitAlter_table_set_table_setting_uncompat(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_set_table_setting_uncompat" ):
+                return visitor.visitAlter_table_set_table_setting_uncompat(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -22289,6 +23759,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_table_set_table_setting_compat" ):
                 listener.exitAlter_table_set_table_setting_compat(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_set_table_setting_compat" ):
+                return visitor.visitAlter_table_set_table_setting_compat(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -22369,6 +23845,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_table_reset_table_setting" ):
                 listener.exitAlter_table_reset_table_setting(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_reset_table_setting" ):
+                return visitor.visitAlter_table_reset_table_setting(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -22433,6 +23915,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_table_add_index" ):
                 listener.exitAlter_table_add_index(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_add_index" ):
+                return visitor.visitAlter_table_add_index(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -22482,6 +23970,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_table_drop_index" ):
                 listener.exitAlter_table_drop_index(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_drop_index" ):
+                return visitor.visitAlter_table_drop_index(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -22534,6 +24028,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_table_rename_to" ):
                 listener.exitAlter_table_rename_to(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_rename_to" ):
+                return visitor.visitAlter_table_rename_to(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -22593,6 +24093,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_table_rename_index_to" ):
                 listener.exitAlter_table_rename_index_to(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_rename_index_to" ):
+                return visitor.visitAlter_table_rename_index_to(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -22645,6 +24151,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_table_add_changefeed" ):
                 listener.exitAlter_table_add_changefeed(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_add_changefeed" ):
+                return visitor.visitAlter_table_add_changefeed(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -22700,6 +24212,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_table_alter_changefeed" ):
                 listener.exitAlter_table_alter_changefeed(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_alter_changefeed" ):
+                return visitor.visitAlter_table_alter_changefeed(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -22753,6 +24271,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_table_drop_changefeed" ):
                 listener.exitAlter_table_drop_changefeed(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_drop_changefeed" ):
+                return visitor.visitAlter_table_drop_changefeed(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -22809,6 +24333,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_table_alter_index" ):
                 listener.exitAlter_table_alter_index(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_alter_index" ):
+                return visitor.visitAlter_table_alter_index(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -22870,6 +24400,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitColumn_schema" ):
                 listener.exitColumn_schema(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitColumn_schema" ):
+                return visitor.visitColumn_schema(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -22928,6 +24464,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitFamily_relation" ):
                 listener.exitFamily_relation(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFamily_relation" ):
+                return visitor.visitFamily_relation(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -22980,6 +24522,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitOpt_column_constraints" ):
                 listener.exitOpt_column_constraints(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOpt_column_constraints" ):
+                return visitor.visitOpt_column_constraints(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -23053,6 +24601,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitColumn_order_by_specification" ):
                 listener.exitColumn_order_by_specification(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitColumn_order_by_specification" ):
+                return visitor.visitColumn_order_by_specification(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -23146,6 +24700,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTable_constraint" ):
                 listener.exitTable_constraint(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTable_constraint" ):
+                return visitor.visitTable_constraint(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -23310,6 +24870,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitTable_index" ):
                 listener.exitTable_index(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTable_index" ):
+                return visitor.visitTable_index(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -23422,6 +24988,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitTable_index_type" ):
                 listener.exitTable_index_type(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTable_index_type" ):
+                return visitor.visitTable_index_type(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -23495,6 +25067,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitGlobal_index" ):
                 listener.exitGlobal_index(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitGlobal_index" ):
+                return visitor.visitGlobal_index(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -23558,6 +25136,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitLocal_index" ):
                 listener.exitLocal_index(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLocal_index" ):
+                return visitor.visitLocal_index(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -23599,6 +25183,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitIndex_subtype" ):
                 listener.exitIndex_subtype(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIndex_subtype" ):
+                return visitor.visitIndex_subtype(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -23659,6 +25249,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitWith_index_settings" ):
                 listener.exitWith_index_settings(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWith_index_settings" ):
+                return visitor.visitWith_index_settings(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -23737,6 +25333,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitIndex_setting_entry" ):
                 listener.exitIndex_setting_entry(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIndex_setting_entry" ):
+                return visitor.visitIndex_setting_entry(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -23793,6 +25395,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitIndex_setting_value" ):
                 listener.exitIndex_setting_value(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIndex_setting_value" ):
+                return visitor.visitIndex_setting_value(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -23875,6 +25483,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitChangefeed" ):
                 listener.exitChangefeed(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitChangefeed" ):
+                return visitor.visitChangefeed(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -23935,6 +25549,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitChangefeed_settings" ):
                 listener.exitChangefeed_settings(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitChangefeed_settings" ):
+                return visitor.visitChangefeed_settings(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -23998,6 +25618,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitChangefeed_settings_entry" ):
                 listener.exitChangefeed_settings_entry(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitChangefeed_settings_entry" ):
+                return visitor.visitChangefeed_settings_entry(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -24043,6 +25669,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitChangefeed_setting_value" ):
                 listener.exitChangefeed_setting_value(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitChangefeed_setting_value" ):
+                return visitor.visitChangefeed_setting_value(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -24097,6 +25729,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitChangefeed_alter_settings" ):
                 listener.exitChangefeed_alter_settings(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitChangefeed_alter_settings" ):
+                return visitor.visitChangefeed_alter_settings(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -24165,6 +25803,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_table_setting_entry" ):
                 listener.exitAlter_table_setting_entry(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_setting_entry" ):
+                return visitor.visitAlter_table_setting_entry(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -24252,6 +25896,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTable_setting_value" ):
                 listener.exitTable_setting_value(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTable_setting_value" ):
+                return visitor.visitTable_setting_value(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -24368,6 +26018,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitTtl_tier_list" ):
                 listener.exitTtl_tier_list(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTtl_tier_list" ):
+                return visitor.visitTtl_tier_list(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -24448,6 +26104,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitTtl_tier_action" ):
                 listener.exitTtl_tier_action(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTtl_tier_action" ):
+                return visitor.visitTtl_tier_action(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -24518,6 +26180,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitFamily_entry" ):
                 listener.exitFamily_entry(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFamily_entry" ):
+                return visitor.visitFamily_entry(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -24578,6 +26246,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFamily_settings" ):
                 listener.exitFamily_settings(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFamily_settings" ):
+                return visitor.visitFamily_settings(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -24651,6 +26325,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitFamily_settings_entry" ):
                 listener.exitFamily_settings_entry(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFamily_settings_entry" ):
+                return visitor.visitFamily_settings_entry(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -24699,6 +26379,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFamily_setting_value" ):
                 listener.exitFamily_setting_value(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFamily_setting_value" ):
+                return visitor.visitFamily_setting_value(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -24769,6 +26455,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSplit_boundaries" ):
                 listener.exitSplit_boundaries(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSplit_boundaries" ):
+                return visitor.visitSplit_boundaries(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -24857,6 +26549,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitLiteral_value_list" ):
                 listener.exitLiteral_value_list(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLiteral_value_list" ):
+                return visitor.visitLiteral_value_list(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -24923,6 +26621,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_table_alter_index_action" ):
                 listener.exitAlter_table_alter_index_action(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_table_alter_index_action" ):
+                return visitor.visitAlter_table_alter_index_action(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -25002,6 +26706,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitDrop_table_stmt" ):
                 listener.exitDrop_table_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDrop_table_stmt" ):
+                return visitor.visitDrop_table_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -25090,6 +26800,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitCreate_user_stmt" ):
                 listener.exitCreate_user_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_user_stmt" ):
+                return visitor.visitCreate_user_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -25171,6 +26887,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_user_stmt" ):
                 listener.exitAlter_user_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_user_stmt" ):
+                return visitor.visitAlter_user_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -25275,6 +26997,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCreate_group_stmt" ):
                 listener.exitCreate_group_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_group_stmt" ):
+                return visitor.visitCreate_group_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -25385,6 +27113,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_group_stmt" ):
                 listener.exitAlter_group_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_group_stmt" ):
+                return visitor.visitAlter_group_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -25505,6 +27239,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitDrop_role_stmt" ):
                 listener.exitDrop_role_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDrop_role_stmt" ):
+                return visitor.visitDrop_role_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -25592,6 +27332,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitRole_name" ):
                 listener.exitRole_name(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRole_name" ):
+                return visitor.visitRole_name(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -25651,6 +27397,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitUser_option" ):
                 listener.exitUser_option(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUser_option" ):
+                return visitor.visitUser_option(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -25709,6 +27461,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAuthentication_option" ):
                 listener.exitAuthentication_option(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAuthentication_option" ):
+                return visitor.visitAuthentication_option(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -25771,6 +27529,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitPassword_option" ):
                 listener.exitPassword_option(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPassword_option" ):
+                return visitor.visitPassword_option(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -25826,6 +27590,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitPassword_value" ):
                 listener.exitPassword_value(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPassword_value" ):
+                return visitor.visitPassword_value(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -25876,6 +27646,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitHash_option" ):
                 listener.exitHash_option(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitHash_option" ):
+                return visitor.visitHash_option(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -25921,6 +27697,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitLogin_option" ):
                 listener.exitLogin_option(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLogin_option" ):
+                return visitor.visitLogin_option(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -26007,6 +27789,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitGrant_permissions_stmt" ):
                 listener.exitGrant_permissions_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitGrant_permissions_stmt" ):
+                return visitor.visitGrant_permissions_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -26143,6 +27931,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRevoke_permissions_stmt" ):
                 listener.exitRevoke_permissions_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRevoke_permissions_stmt" ):
+                return visitor.visitRevoke_permissions_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -26300,6 +28094,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitPermission_id" ):
                 listener.exitPermission_id(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPermission_id" ):
+                return visitor.visitPermission_id(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -26470,6 +28270,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitPermission_name" ):
                 listener.exitPermission_name(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPermission_name" ):
+                return visitor.visitPermission_name(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -26539,6 +28345,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitPermission_name_target" ):
                 listener.exitPermission_name_target(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPermission_name_target" ):
+                return visitor.visitPermission_name_target(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -26638,6 +28450,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitCreate_resource_pool_stmt" ):
                 listener.exitCreate_resource_pool_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_resource_pool_stmt" ):
+                return visitor.visitCreate_resource_pool_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -26710,6 +28528,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_resource_pool_stmt" ):
                 listener.exitAlter_resource_pool_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_resource_pool_stmt" ):
+                return visitor.visitAlter_resource_pool_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -26777,6 +28601,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_resource_pool_action" ):
                 listener.exitAlter_resource_pool_action(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_resource_pool_action" ):
+                return visitor.visitAlter_resource_pool_action(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -26841,6 +28671,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitDrop_resource_pool_stmt" ):
                 listener.exitDrop_resource_pool_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDrop_resource_pool_stmt" ):
+                return visitor.visitDrop_resource_pool_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -26904,6 +28740,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCreate_resource_pool_classifier_stmt" ):
                 listener.exitCreate_resource_pool_classifier_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_resource_pool_classifier_stmt" ):
+                return visitor.visitCreate_resource_pool_classifier_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -26982,6 +28824,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_resource_pool_classifier_stmt" ):
                 listener.exitAlter_resource_pool_classifier_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_resource_pool_classifier_stmt" ):
+                return visitor.visitAlter_resource_pool_classifier_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -27051,6 +28899,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_resource_pool_classifier_action" ):
                 listener.exitAlter_resource_pool_classifier_action(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_resource_pool_classifier_action" ):
+                return visitor.visitAlter_resource_pool_classifier_action(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -27117,6 +28971,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitDrop_resource_pool_classifier_stmt" ):
                 listener.exitDrop_resource_pool_classifier_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDrop_resource_pool_classifier_stmt" ):
+                return visitor.visitDrop_resource_pool_classifier_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -27206,6 +29066,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitCreate_replication_stmt" ):
                 listener.exitCreate_replication_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_replication_stmt" ):
+                return visitor.visitCreate_replication_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -27285,6 +29151,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitReplication_target" ):
                 listener.exitReplication_target(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitReplication_target" ):
+                return visitor.visitReplication_target(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -27339,6 +29211,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitReplication_settings" ):
                 listener.exitReplication_settings(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitReplication_settings" ):
+                return visitor.visitReplication_settings(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -27401,6 +29279,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitReplication_settings_entry" ):
                 listener.exitReplication_settings_entry(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitReplication_settings_entry" ):
+                return visitor.visitReplication_settings_entry(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -27470,6 +29354,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_replication_stmt" ):
                 listener.exitAlter_replication_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_replication_stmt" ):
+                return visitor.visitAlter_replication_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -27533,6 +29423,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_replication_action" ):
                 listener.exitAlter_replication_action(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_replication_action" ):
+                return visitor.visitAlter_replication_action(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -27583,6 +29479,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_replication_set_setting" ):
                 listener.exitAlter_replication_set_setting(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_replication_set_setting" ):
+                return visitor.visitAlter_replication_set_setting(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -27644,6 +29546,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitDrop_replication_stmt" ):
                 listener.exitDrop_replication_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDrop_replication_stmt" ):
+                return visitor.visitDrop_replication_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -27704,6 +29612,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitLambda_or_parameter" ):
                 listener.exitLambda_or_parameter(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLambda_or_parameter" ):
+                return visitor.visitLambda_or_parameter(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -27795,6 +29709,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitCreate_transfer_stmt" ):
                 listener.exitCreate_transfer_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_transfer_stmt" ):
+                return visitor.visitCreate_transfer_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -27877,6 +29797,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitTransfer_settings" ):
                 listener.exitTransfer_settings(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTransfer_settings" ):
+                return visitor.visitTransfer_settings(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -27938,6 +29864,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTransfer_settings_entry" ):
                 listener.exitTransfer_settings_entry(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTransfer_settings_entry" ):
+                return visitor.visitTransfer_settings_entry(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -28004,6 +29936,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_transfer_stmt" ):
                 listener.exitAlter_transfer_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_transfer_stmt" ):
+                return visitor.visitAlter_transfer_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -28069,6 +30007,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_transfer_action" ):
                 listener.exitAlter_transfer_action(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_transfer_action" ):
+                return visitor.visitAlter_transfer_action(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -28133,6 +30077,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_transfer_set_setting" ):
                 listener.exitAlter_transfer_set_setting(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_transfer_set_setting" ):
+                return visitor.visitAlter_transfer_set_setting(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -28186,6 +30136,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_transfer_set_using" ):
                 listener.exitAlter_transfer_set_using(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_transfer_set_using" ):
+                return visitor.visitAlter_transfer_set_using(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -28241,6 +30197,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitDrop_transfer_stmt" ):
                 listener.exitDrop_transfer_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDrop_transfer_stmt" ):
+                return visitor.visitDrop_transfer_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -28305,6 +30267,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAction_or_subquery_args" ):
                 listener.exitAction_or_subquery_args(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAction_or_subquery_args" ):
+                return visitor.visitAction_or_subquery_args(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -28393,6 +30361,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitDefine_action_or_subquery_stmt" ):
                 listener.exitDefine_action_or_subquery_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDefine_action_or_subquery_stmt" ):
+                return visitor.visitDefine_action_or_subquery_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -28473,6 +30447,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitDefine_action_or_subquery_body" ):
                 listener.exitDefine_action_or_subquery_body(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDefine_action_or_subquery_body" ):
+                return visitor.visitDefine_action_or_subquery_body(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -28582,6 +30562,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitIf_stmt" ):
                 listener.exitIf_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIf_stmt" ):
+                return visitor.visitIf_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -28672,6 +30658,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFor_stmt" ):
                 listener.exitFor_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFor_stmt" ):
+                return visitor.visitFor_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -28801,6 +30793,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTable_ref" ):
                 listener.exitTable_ref(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTable_ref" ):
+                return visitor.visitTable_ref(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -28956,6 +30954,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitTable_key" ):
                 listener.exitTable_key(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTable_key" ):
+                return visitor.visitTable_key(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -29018,6 +31022,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTable_arg" ):
                 listener.exitTable_arg(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTable_arg" ):
+                return visitor.visitTable_arg(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -29097,6 +31107,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTable_hints" ):
                 listener.exitTable_hints(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTable_hints" ):
+                return visitor.visitTable_hints(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -29209,6 +31225,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTable_hint" ):
                 listener.exitTable_hint(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTable_hint" ):
+                return visitor.visitTable_hint(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -29382,6 +31404,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitObject_ref" ):
                 listener.exitObject_ref(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitObject_ref" ):
+                return visitor.visitObject_ref(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -29440,6 +31468,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSimple_table_ref_core" ):
                 listener.exitSimple_table_ref_core(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSimple_table_ref_core" ):
+                return visitor.visitSimple_table_ref_core(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -29509,6 +31543,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitSimple_table_ref" ):
                 listener.exitSimple_table_ref(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSimple_table_ref" ):
+                return visitor.visitSimple_table_ref(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -29569,6 +31609,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitInto_simple_table_ref" ):
                 listener.exitInto_simple_table_ref(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInto_simple_table_ref" ):
+                return visitor.visitInto_simple_table_ref(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -29651,6 +31697,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitDelete_stmt" ):
                 listener.exitDelete_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDelete_stmt" ):
+                return visitor.visitDelete_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -29765,6 +31817,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitUpdate_stmt" ):
                 listener.exitUpdate_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUpdate_stmt" ):
+                return visitor.visitUpdate_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -29858,6 +31916,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitSet_clause_choice" ):
                 listener.exitSet_clause_choice(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSet_clause_choice" ):
+                return visitor.visitSet_clause_choice(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -29922,6 +31986,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitSet_clause_list" ):
                 listener.exitSet_clause_list(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSet_clause_list" ):
+                return visitor.visitSet_clause_list(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -29984,6 +32054,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitSet_clause" ):
                 listener.exitSet_clause(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSet_clause" ):
+                return visitor.visitSet_clause(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -30029,6 +32105,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSet_target" ):
                 listener.exitSet_target(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSet_target" ):
+                return visitor.visitSet_target(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -30084,6 +32166,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitMultiple_column_assignment" ):
                 listener.exitMultiple_column_assignment(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMultiple_column_assignment" ):
+                return visitor.visitMultiple_column_assignment(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -30149,6 +32237,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSet_target_list" ):
                 listener.exitSet_target_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSet_target_list" ):
+                return visitor.visitSet_target_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -30231,6 +32325,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCreate_topic_stmt" ):
                 listener.exitCreate_topic_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_topic_stmt" ):
+                return visitor.visitCreate_topic_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -30322,6 +32422,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitCreate_topic_entries" ):
                 listener.exitCreate_topic_entries(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_topic_entries" ):
+                return visitor.visitCreate_topic_entries(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -30381,6 +32487,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitCreate_topic_entry" ):
                 listener.exitCreate_topic_entry(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCreate_topic_entry" ):
+                return visitor.visitCreate_topic_entry(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -30431,6 +32543,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitWith_topic_settings" ):
                 listener.exitWith_topic_settings(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWith_topic_settings" ):
+                return visitor.visitWith_topic_settings(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -30504,6 +32622,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_topic_stmt" ):
                 listener.exitAlter_topic_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_topic_stmt" ):
+                return visitor.visitAlter_topic_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -30592,6 +32716,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_topic_action" ):
                 listener.exitAlter_topic_action(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_topic_action" ):
+                return visitor.visitAlter_topic_action(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -30665,6 +32795,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_topic_add_consumer" ):
                 listener.exitAlter_topic_add_consumer(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_topic_add_consumer" ):
+                return visitor.visitAlter_topic_add_consumer(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -30715,6 +32851,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTopic_create_consumer_entry" ):
                 listener.exitTopic_create_consumer_entry(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTopic_create_consumer_entry" ):
+                return visitor.visitTopic_create_consumer_entry(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -30779,6 +32921,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_topic_alter_consumer" ):
                 listener.exitAlter_topic_alter_consumer(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_topic_alter_consumer" ):
+                return visitor.visitAlter_topic_alter_consumer(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -30830,6 +32978,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_topic_alter_consumer_entry" ):
                 listener.exitAlter_topic_alter_consumer_entry(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_topic_alter_consumer_entry" ):
+                return visitor.visitAlter_topic_alter_consumer_entry(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -30892,6 +33046,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_topic_drop_consumer" ):
                 listener.exitAlter_topic_drop_consumer(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_topic_drop_consumer" ):
+                return visitor.visitAlter_topic_drop_consumer(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -30946,6 +33106,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTopic_alter_consumer_set" ):
                 listener.exitTopic_alter_consumer_set(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTopic_alter_consumer_set" ):
+                return visitor.visitTopic_alter_consumer_set(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -31012,6 +33178,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTopic_alter_consumer_reset" ):
                 listener.exitTopic_alter_consumer_reset(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTopic_alter_consumer_reset" ):
+                return visitor.visitTopic_alter_consumer_reset(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -31083,6 +33255,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAlter_topic_set_settings" ):
                 listener.exitAlter_topic_set_settings(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_topic_set_settings" ):
+                return visitor.visitAlter_topic_set_settings(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -31152,6 +33330,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_topic_reset_settings" ):
                 listener.exitAlter_topic_reset_settings(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_topic_reset_settings" ):
+                return visitor.visitAlter_topic_reset_settings(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -31226,6 +33410,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitDrop_topic_stmt" ):
                 listener.exitDrop_topic_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDrop_topic_stmt" ):
+                return visitor.visitDrop_topic_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -31291,6 +33481,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitTopic_settings" ):
                 listener.exitTopic_settings(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTopic_settings" ):
+                return visitor.visitTopic_settings(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -31353,6 +33549,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitTopic_settings_entry" ):
                 listener.exitTopic_settings_entry(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTopic_settings_entry" ):
+                return visitor.visitTopic_settings_entry(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -31398,6 +33600,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTopic_setting_value" ):
                 listener.exitTopic_setting_value(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTopic_setting_value" ):
+                return visitor.visitTopic_setting_value(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -31449,6 +33657,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTopic_consumer_with_settings" ):
                 listener.exitTopic_consumer_with_settings(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTopic_consumer_with_settings" ):
+                return visitor.visitTopic_consumer_with_settings(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -31506,6 +33720,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTopic_consumer_settings" ):
                 listener.exitTopic_consumer_settings(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTopic_consumer_settings" ):
+                return visitor.visitTopic_consumer_settings(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -31569,6 +33789,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitTopic_consumer_settings_entry" ):
                 listener.exitTopic_consumer_settings_entry(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTopic_consumer_settings_entry" ):
+                return visitor.visitTopic_consumer_settings_entry(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -31614,6 +33840,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTopic_consumer_setting_value" ):
                 listener.exitTopic_consumer_setting_value(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTopic_consumer_setting_value" ):
+                return visitor.visitTopic_consumer_setting_value(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -31663,6 +33895,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTopic_ref" ):
                 listener.exitTopic_ref(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTopic_ref" ):
+                return visitor.visitTopic_ref(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -31716,6 +33954,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitTopic_consumer_ref" ):
                 listener.exitTopic_consumer_ref(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTopic_consumer_ref" ):
+                return visitor.visitTopic_consumer_ref(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -31762,6 +34006,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitNull_treatment" ):
                 listener.exitNull_treatment(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNull_treatment" ):
+                return visitor.visitNull_treatment(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -31834,6 +34084,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitFilter_clause" ):
                 listener.exitFilter_clause(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFilter_clause" ):
+                return visitor.visitFilter_clause(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -31887,6 +34143,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitWindow_name_or_specification" ):
                 listener.exitWindow_name_or_specification(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWindow_name_or_specification" ):
+                return visitor.visitWindow_name_or_specification(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -31943,6 +34205,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitWindow_name" ):
                 listener.exitWindow_name(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWindow_name" ):
+                return visitor.visitWindow_name(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -31987,6 +34255,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitWindow_clause" ):
                 listener.exitWindow_clause(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWindow_clause" ):
+                return visitor.visitWindow_clause(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -32040,6 +34314,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitWindow_definition_list" ):
                 listener.exitWindow_definition_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWindow_definition_list" ):
+                return visitor.visitWindow_definition_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -32103,6 +34383,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitWindow_definition" ):
                 listener.exitWindow_definition(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWindow_definition" ):
+                return visitor.visitWindow_definition(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -32148,6 +34434,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitNew_window_name" ):
                 listener.exitNew_window_name(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNew_window_name" ):
+                return visitor.visitNew_window_name(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -32196,6 +34488,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitWindow_specification" ):
                 listener.exitWindow_specification(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWindow_specification" ):
+                return visitor.visitWindow_specification(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -32254,6 +34552,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitWindow_specification_details" ):
                 listener.exitWindow_specification_details(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWindow_specification_details" ):
+                return visitor.visitWindow_specification_details(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -32328,6 +34632,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitExisting_window_name" ):
                 listener.exitExisting_window_name(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExisting_window_name" ):
+                return visitor.visitExisting_window_name(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -32378,6 +34688,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitWindow_partition_clause" ):
                 listener.exitWindow_partition_clause(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWindow_partition_clause" ):
+                return visitor.visitWindow_partition_clause(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -32434,6 +34750,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitWindow_order_clause" ):
                 listener.exitWindow_order_clause(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWindow_order_clause" ):
+                return visitor.visitWindow_order_clause(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -32483,6 +34805,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitWindow_frame_clause" ):
                 listener.exitWindow_frame_clause(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWindow_frame_clause" ):
+                return visitor.visitWindow_frame_clause(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -32542,6 +34870,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitWindow_frame_units" ):
                 listener.exitWindow_frame_units(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWindow_frame_units" ):
+                return visitor.visitWindow_frame_units(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -32593,6 +34927,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitWindow_frame_extent" ):
                 listener.exitWindow_frame_extent(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWindow_frame_extent" ):
+                return visitor.visitWindow_frame_extent(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -32658,6 +34998,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitWindow_frame_between" ):
                 listener.exitWindow_frame_between(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWindow_frame_between" ):
+                return visitor.visitWindow_frame_between(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -32720,6 +35066,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitWindow_frame_bound" ):
                 listener.exitWindow_frame_bound(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWindow_frame_bound" ):
+                return visitor.visitWindow_frame_bound(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -32815,6 +35167,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitWindow_frame_exclusion" ):
                 listener.exitWindow_frame_exclusion(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWindow_frame_exclusion" ):
+                return visitor.visitWindow_frame_exclusion(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -32897,6 +35255,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitUse_stmt" ):
                 listener.exitUse_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUse_stmt" ):
+                return visitor.visitUse_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -32950,6 +35314,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSubselect_stmt" ):
                 listener.exitSubselect_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSubselect_stmt" ):
+                return visitor.visitSubselect_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -33020,6 +35390,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitNamed_nodes_stmt" ):
                 listener.exitNamed_nodes_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNamed_nodes_stmt" ):
+                return visitor.visitNamed_nodes_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -33077,6 +35453,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitCommit_stmt" ):
                 listener.exitCommit_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCommit_stmt" ):
+                return visitor.visitCommit_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -33117,6 +35499,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRollback_stmt" ):
                 listener.exitRollback_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRollback_stmt" ):
+                return visitor.visitRollback_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -33169,6 +35557,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAnalyze_table" ):
                 listener.exitAnalyze_table(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAnalyze_table" ):
+                return visitor.visitAnalyze_table(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -33233,6 +35627,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAnalyze_table_list" ):
                 listener.exitAnalyze_table_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAnalyze_table_list" ):
+                return visitor.visitAnalyze_table_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -33301,6 +35701,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAnalyze_stmt" ):
                 listener.exitAnalyze_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAnalyze_stmt" ):
+                return visitor.visitAnalyze_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -33363,6 +35769,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_sequence_stmt" ):
                 listener.exitAlter_sequence_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_sequence_stmt" ):
+                return visitor.visitAlter_sequence_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -33447,6 +35859,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAlter_sequence_action" ):
                 listener.exitAlter_sequence_action(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAlter_sequence_action" ):
+                return visitor.visitAlter_sequence_action(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -33555,6 +35973,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitShow_create_table_stmt" ):
                 listener.exitShow_create_table_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitShow_create_table_stmt" ):
+                return visitor.visitShow_create_table_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -33604,6 +36028,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitIdentifier" ):
                 listener.exitIdentifier(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIdentifier" ):
+                return visitor.visitIdentifier(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -33656,6 +36086,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitId" ):
                 listener.exitId(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitId" ):
+                return visitor.visitId(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -33735,6 +36171,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitId_schema" ):
                 listener.exitId_schema(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitId_schema" ):
+                return visitor.visitId_schema(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -33836,6 +36278,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitId_expr" ):
                 listener.exitId_expr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitId_expr" ):
+                return visitor.visitId_expr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -33926,6 +36374,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitId_expr_in" ):
                 listener.exitId_expr_in(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitId_expr_in" ):
+                return visitor.visitId_expr_in(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -34024,6 +36478,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitId_window" ):
                 listener.exitId_window(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitId_window" ):
+                return visitor.visitId_window(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -34134,6 +36594,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitId_table" ):
                 listener.exitId_table(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitId_table" ):
+                return visitor.visitId_table(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -34237,6 +36703,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitId_without" ):
                 listener.exitId_without(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitId_without" ):
+                return visitor.visitId_without(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -34346,6 +36818,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitId_hint" ):
                 listener.exitId_hint(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitId_hint" ):
+                return visitor.visitId_hint(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -34435,6 +36913,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitId_as_compat" ):
                 listener.exitId_as_compat(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitId_as_compat" ):
+                return visitor.visitId_as_compat(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -34492,6 +36976,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAn_id" ):
                 listener.exitAn_id(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAn_id" ):
+                return visitor.visitAn_id(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -34551,6 +37041,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAn_id_or_type" ):
                 listener.exitAn_id_or_type(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAn_id_or_type" ):
+                return visitor.visitAn_id_or_type(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -34608,6 +37104,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAn_id_schema" ):
                 listener.exitAn_id_schema(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAn_id_schema" ):
+                return visitor.visitAn_id_schema(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -34667,6 +37169,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAn_id_expr" ):
                 listener.exitAn_id_expr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAn_id_expr" ):
+                return visitor.visitAn_id_expr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -34724,6 +37232,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAn_id_expr_in" ):
                 listener.exitAn_id_expr_in(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAn_id_expr_in" ):
+                return visitor.visitAn_id_expr_in(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -34783,6 +37297,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAn_id_window" ):
                 listener.exitAn_id_window(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAn_id_window" ):
+                return visitor.visitAn_id_window(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -34840,6 +37360,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAn_id_table" ):
                 listener.exitAn_id_table(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAn_id_table" ):
+                return visitor.visitAn_id_table(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -34899,6 +37425,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAn_id_without" ):
                 listener.exitAn_id_without(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAn_id_without" ):
+                return visitor.visitAn_id_without(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -34956,6 +37488,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAn_id_hint" ):
                 listener.exitAn_id_hint(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAn_id_hint" ):
+                return visitor.visitAn_id_hint(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -35015,6 +37553,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitAn_id_pure" ):
                 listener.exitAn_id_pure(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAn_id_pure" ):
+                return visitor.visitAn_id_pure(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -35072,6 +37616,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAn_id_as_compat" ):
                 listener.exitAn_id_as_compat(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAn_id_as_compat" ):
+                return visitor.visitAn_id_as_compat(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -35134,6 +37684,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitView_name" ):
                 listener.exitView_name(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitView_name" ):
+                return visitor.visitView_name(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -35194,6 +37750,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitOpt_id_prefix" ):
                 listener.exitOpt_id_prefix(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOpt_id_prefix" ):
+                return visitor.visitOpt_id_prefix(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -35253,6 +37815,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCluster_expr" ):
                 listener.exitCluster_expr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCluster_expr" ):
+                return visitor.visitCluster_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -35322,6 +37890,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitId_or_type" ):
                 listener.exitId_or_type(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitId_or_type" ):
+                return visitor.visitId_or_type(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -35380,6 +37954,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitOpt_id_prefix_or_type" ):
                 listener.exitOpt_id_prefix_or_type(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOpt_id_prefix_or_type" ):
+                return visitor.visitOpt_id_prefix_or_type(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -35432,6 +38012,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitId_or_at" ):
                 listener.exitId_or_at(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitId_or_at" ):
+                return visitor.visitId_or_at(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -35487,6 +38073,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitId_table_or_type" ):
                 listener.exitId_table_or_type(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitId_table_or_type" ):
+                return visitor.visitId_table_or_type(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -35545,6 +38137,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitId_table_or_at" ):
                 listener.exitId_table_or_at(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitId_table_or_at" ):
+                return visitor.visitId_table_or_at(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -35624,6 +38222,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitKeyword" ):
                 listener.exitKeyword(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitKeyword" ):
+                return visitor.visitKeyword(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -35793,6 +38397,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitKeyword_expr_uncompat" ):
                 listener.exitKeyword_expr_uncompat(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitKeyword_expr_uncompat" ):
+                return visitor.visitKeyword_expr_uncompat(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -35845,6 +38455,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitKeyword_table_uncompat" ):
                 listener.exitKeyword_table_uncompat(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitKeyword_table_uncompat" ):
+                return visitor.visitKeyword_table_uncompat(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -35923,6 +38539,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitKeyword_select_uncompat" ):
                 listener.exitKeyword_select_uncompat(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitKeyword_select_uncompat" ):
+                return visitor.visitKeyword_select_uncompat(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -35970,6 +38592,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitKeyword_alter_uncompat" ):
                 listener.exitKeyword_alter_uncompat(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitKeyword_alter_uncompat" ):
+                return visitor.visitKeyword_alter_uncompat(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -36010,6 +38638,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitKeyword_in_uncompat" ):
                 listener.exitKeyword_in_uncompat(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitKeyword_in_uncompat" ):
+                return visitor.visitKeyword_in_uncompat(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -36057,6 +38691,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitKeyword_window_uncompat" ):
                 listener.exitKeyword_window_uncompat(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitKeyword_window_uncompat" ):
+                return visitor.visitKeyword_window_uncompat(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -36107,6 +38747,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitKeyword_hint_uncompat" ):
                 listener.exitKeyword_hint_uncompat(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitKeyword_hint_uncompat" ):
+                return visitor.visitKeyword_hint_uncompat(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -36751,6 +39397,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitKeyword_as_compat" ):
                 listener.exitKeyword_as_compat(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitKeyword_as_compat" ):
+                return visitor.visitKeyword_as_compat(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -37465,6 +40117,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitKeyword_compat" ):
                 listener.exitKeyword_compat(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitKeyword_compat" ):
+                return visitor.visitKeyword_compat(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -37545,6 +40203,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitType_id" ):
                 listener.exitType_id(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_id" ):
+                return visitor.visitType_id(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -37595,6 +40259,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitBool_value" ):
                 listener.exitBool_value(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBool_value" ):
+                return visitor.visitBool_value(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -37642,6 +40312,12 @@ class YQLParser ( Parser ):
             if hasattr( listener, "exitReal" ):
                 listener.exitReal(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitReal" ):
+                return visitor.visitReal(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -37685,6 +40361,12 @@ class YQLParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitInteger" ):
                 listener.exitInteger(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInteger" ):
+                return visitor.visitInteger(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
