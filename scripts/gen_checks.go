@@ -47,7 +47,7 @@ func main() {
 
 	content, err := os.ReadFile(testPath)
 	if err != nil {
-		panic(err)
+		log.Fatalf("failed to read test file %s: %v", testPath, err)
 	}
 	if regexp.MustCompile(regexp.QuoteMeta(marker)).Match(content) {
 		log.Fatalf("marker already exists in %s, aborting\n", testPath)
