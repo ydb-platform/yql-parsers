@@ -55,7 +55,7 @@ func main() {
 
 	tf, err := os.OpenFile(testPath, os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
-		panic(err)
+		log.Fatalf("failed to open test file %s for appending: %v", testPath, err)
 	}
 	defer tf.Close()
 
