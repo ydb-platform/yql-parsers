@@ -59,7 +59,7 @@ jobs:
           mkdir tempTestProj
           cd tempTestProj
           dotnet new nunit -n TempTestProj
-          cp ../tests/ParserYQLTests.cs .
+          cp ../tests/parser_test.cs .
           cd TempTestProj
           dotnet add package Antlr4.Runtime.Standard --version 4.10.1
           dotnet restore
