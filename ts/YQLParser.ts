@@ -12,6 +12,8 @@ import {
 	Interval, IntervalSet
 } from 'antlr4';
 import YQLListener from "./YQLListener.js";
+import YQLVisitor from "./YQLVisitor.js";
+
 // for running tests with parameters, TODO: discuss strategy for typed parameters in CI
 // eslint-disable-next-line no-unused-vars
 type int = number;
@@ -36294,6 +36296,14 @@ export class Sql_queryContext extends ParserRuleContext {
 	 		listener.exitSql_query(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSql_query) {
+			return visitor.visitSql_query(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36330,6 +36340,14 @@ export class Sql_stmt_listContext extends ParserRuleContext {
 	 		listener.exitSql_stmt_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSql_stmt_list) {
+			return visitor.visitSql_stmt_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36358,6 +36376,14 @@ export class Ansi_sql_stmt_listContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAnsi_sql_stmt_list) {
 	 		listener.exitAnsi_sql_stmt_list(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAnsi_sql_stmt_list) {
+			return visitor.visitAnsi_sql_stmt_list(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36399,6 +36425,14 @@ export class Lambda_bodyContext extends ParserRuleContext {
 	 		listener.exitLambda_body(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitLambda_body) {
+			return visitor.visitLambda_body(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36424,6 +36458,14 @@ export class Lambda_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitLambda_stmt) {
 	 		listener.exitLambda_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitLambda_stmt) {
+			return visitor.visitLambda_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36457,6 +36499,14 @@ export class Sql_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitSql_stmt) {
 	 		listener.exitSql_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSql_stmt) {
+			return visitor.visitSql_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36666,6 +36716,14 @@ export class Sql_stmt_coreContext extends ParserRuleContext {
 	 		listener.exitSql_stmt_core(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSql_stmt_core) {
+			return visitor.visitSql_stmt_core(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36702,6 +36760,14 @@ export class ExprContext extends ParserRuleContext {
 	 		listener.exitExpr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitExpr) {
+			return visitor.visitExpr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36733,6 +36799,14 @@ export class Or_subexprContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitOr_subexpr) {
 	 		listener.exitOr_subexpr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitOr_subexpr) {
+			return visitor.visitOr_subexpr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36768,6 +36842,14 @@ export class And_subexprContext extends ParserRuleContext {
 	 		listener.exitAnd_subexpr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAnd_subexpr) {
+			return visitor.visitAnd_subexpr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36793,6 +36875,14 @@ export class Xor_subexprContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitXor_subexpr) {
 	 		listener.exitXor_subexpr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitXor_subexpr) {
+			return visitor.visitXor_subexpr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36826,6 +36916,14 @@ export class Distinct_from_opContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitDistinct_from_op) {
 	 		listener.exitDistinct_from_op(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDistinct_from_op) {
+			return visitor.visitDistinct_from_op(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36927,6 +37025,14 @@ export class Cond_exprContext extends ParserRuleContext {
 	 		listener.exitCond_expr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCond_expr) {
+			return visitor.visitCond_expr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36964,6 +37070,14 @@ export class Match_opContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitMatch_op) {
 	 		listener.exitMatch_op(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitMatch_op) {
+			return visitor.visitMatch_op(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37017,6 +37131,14 @@ export class Eq_subexprContext extends ParserRuleContext {
 	 		listener.exitEq_subexpr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitEq_subexpr) {
+			return visitor.visitEq_subexpr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37042,6 +37164,14 @@ export class Shift_rightContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitShift_right) {
 	 		listener.exitShift_right(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitShift_right) {
+			return visitor.visitShift_right(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37074,6 +37204,14 @@ export class Rot_rightContext extends ParserRuleContext {
 	 		listener.exitRot_right(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRot_right) {
+			return visitor.visitRot_right(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37099,6 +37237,14 @@ export class Double_questionContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitDouble_question) {
 	 		listener.exitDouble_question(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDouble_question) {
+			return visitor.visitDouble_question(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37182,6 +37328,14 @@ export class Neq_subexprContext extends ParserRuleContext {
 	 		listener.exitNeq_subexpr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitNeq_subexpr) {
+			return visitor.visitNeq_subexpr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37219,6 +37373,14 @@ export class Bit_subexprContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitBit_subexpr) {
 	 		listener.exitBit_subexpr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitBit_subexpr) {
+			return visitor.visitBit_subexpr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37266,6 +37428,14 @@ export class Add_subexprContext extends ParserRuleContext {
 	 		listener.exitAdd_subexpr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAdd_subexpr) {
+			return visitor.visitAdd_subexpr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37299,6 +37469,14 @@ export class Mul_subexprContext extends ParserRuleContext {
 	 		listener.exitMul_subexpr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitMul_subexpr) {
+			return visitor.visitMul_subexpr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37324,6 +37502,14 @@ export class Con_subexprContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitCon_subexpr) {
 	 		listener.exitCon_subexpr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCon_subexpr) {
+			return visitor.visitCon_subexpr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37357,6 +37543,14 @@ export class Unary_opContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitUnary_op) {
 	 		listener.exitUnary_op(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitUnary_op) {
+			return visitor.visitUnary_op(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37422,6 +37616,14 @@ export class Unary_subexpr_suffixContext extends ParserRuleContext {
 	 		listener.exitUnary_subexpr_suffix(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitUnary_subexpr_suffix) {
+			return visitor.visitUnary_subexpr_suffix(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37450,6 +37652,14 @@ export class Unary_casual_subexprContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitUnary_casual_subexpr) {
 	 		listener.exitUnary_casual_subexpr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitUnary_casual_subexpr) {
+			return visitor.visitUnary_casual_subexpr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37482,6 +37692,14 @@ export class In_unary_casual_subexprContext extends ParserRuleContext {
 	 		listener.exitIn_unary_casual_subexpr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitIn_unary_casual_subexpr) {
+			return visitor.visitIn_unary_casual_subexpr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37509,6 +37727,14 @@ export class Unary_subexprContext extends ParserRuleContext {
 	 		listener.exitUnary_subexpr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitUnary_subexpr) {
+			return visitor.visitUnary_subexpr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37534,6 +37760,14 @@ export class In_unary_subexprContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitIn_unary_subexpr) {
 	 		listener.exitIn_unary_subexpr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitIn_unary_subexpr) {
+			return visitor.visitIn_unary_subexpr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37567,6 +37801,14 @@ export class List_literalContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitList_literal) {
 	 		listener.exitList_literal(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitList_literal) {
+			return visitor.visitList_literal(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37608,6 +37850,14 @@ export class Expr_dict_listContext extends ParserRuleContext {
 	 		listener.exitExpr_dict_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitExpr_dict_list) {
+			return visitor.visitExpr_dict_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37639,6 +37889,14 @@ export class Dict_literalContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitDict_literal) {
 	 		listener.exitDict_literal(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDict_literal) {
+			return visitor.visitDict_literal(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37680,6 +37938,14 @@ export class Expr_struct_listContext extends ParserRuleContext {
 	 		listener.exitExpr_struct_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitExpr_struct_list) {
+			return visitor.visitExpr_struct_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37711,6 +37977,14 @@ export class Struct_literalContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitStruct_literal) {
 	 		listener.exitStruct_literal(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitStruct_literal) {
+			return visitor.visitStruct_literal(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37777,6 +38051,14 @@ export class Atom_exprContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAtom_expr) {
 	 		listener.exitAtom_expr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAtom_expr) {
+			return visitor.visitAtom_expr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37851,6 +38133,14 @@ export class In_atom_exprContext extends ParserRuleContext {
 	 		listener.exitIn_atom_expr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitIn_atom_expr) {
+			return visitor.visitIn_atom_expr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37888,6 +38178,14 @@ export class Cast_exprContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitCast_expr) {
 	 		listener.exitCast_expr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCast_expr) {
+			return visitor.visitCast_expr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37929,6 +38227,14 @@ export class Bitcast_exprContext extends ParserRuleContext {
 	 		listener.exitBitcast_expr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitBitcast_expr) {
+			return visitor.visitBitcast_expr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37963,6 +38269,14 @@ export class Exists_exprContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitExists_expr) {
 	 		listener.exitExists_expr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitExists_expr) {
+			return visitor.visitExists_expr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38005,6 +38319,14 @@ export class Case_exprContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitCase_expr) {
 	 		listener.exitCase_expr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCase_expr) {
+			return visitor.visitCase_expr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38052,6 +38374,14 @@ export class LambdaContext extends ParserRuleContext {
 	 		listener.exitLambda(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitLambda) {
+			return visitor.visitLambda(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -38074,6 +38404,14 @@ export class In_exprContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitIn_expr) {
 	 		listener.exitIn_expr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitIn_expr) {
+			return visitor.visitIn_expr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38106,6 +38444,14 @@ export class Json_api_exprContext extends ParserRuleContext {
 	 		listener.exitJson_api_expr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJson_api_expr) {
+			return visitor.visitJson_api_expr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -38128,6 +38474,14 @@ export class Jsonpath_specContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitJsonpath_spec) {
 	 		listener.exitJsonpath_spec(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJsonpath_spec) {
+			return visitor.visitJsonpath_spec(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38155,6 +38509,14 @@ export class Json_variable_nameContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitJson_variable_name) {
 	 		listener.exitJson_variable_name(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJson_variable_name) {
+			return visitor.visitJson_variable_name(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38185,6 +38547,14 @@ export class Json_variableContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitJson_variable) {
 	 		listener.exitJson_variable(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJson_variable) {
+			return visitor.visitJson_variable(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38218,6 +38588,14 @@ export class Json_variablesContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitJson_variables) {
 	 		listener.exitJson_variables(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJson_variables) {
+			return visitor.visitJson_variables(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38256,6 +38634,14 @@ export class Json_common_argsContext extends ParserRuleContext {
 	 		listener.exitJson_common_args(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJson_common_args) {
+			return visitor.visitJson_common_args(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -38287,6 +38673,14 @@ export class Json_case_handlerContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitJson_case_handler) {
 	 		listener.exitJson_case_handler(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJson_case_handler) {
+			return visitor.visitJson_case_handler(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38352,6 +38746,14 @@ export class Json_valueContext extends ParserRuleContext {
 	 		listener.exitJson_value(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJson_value) {
+			return visitor.visitJson_value(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -38391,6 +38793,14 @@ export class Json_exists_handlerContext extends ParserRuleContext {
 	 		listener.exitJson_exists_handler(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJson_exists_handler) {
+			return visitor.visitJson_exists_handler(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -38425,6 +38835,14 @@ export class Json_existsContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitJson_exists) {
 	 		listener.exitJson_exists(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJson_exists) {
+			return visitor.visitJson_exists(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38463,6 +38881,14 @@ export class Json_query_wrapperContext extends ParserRuleContext {
 	 		listener.exitJson_query_wrapper(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJson_query_wrapper) {
+			return visitor.visitJson_query_wrapper(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -38497,6 +38923,14 @@ export class Json_query_handlerContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitJson_query_handler) {
 	 		listener.exitJson_query_handler(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJson_query_handler) {
+			return visitor.visitJson_query_handler(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38556,6 +38990,14 @@ export class Json_queryContext extends ParserRuleContext {
 	 		listener.exitJson_query(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJson_query) {
+			return visitor.visitJson_query(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -38589,6 +39031,14 @@ export class Smart_parenthesisContext extends ParserRuleContext {
 	 		listener.exitSmart_parenthesis(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSmart_parenthesis) {
+			return visitor.visitSmart_parenthesis(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -38620,6 +39070,14 @@ export class Expr_listContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitExpr_list) {
 	 		listener.exitExpr_list(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitExpr_list) {
+			return visitor.visitExpr_list(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38661,6 +39119,14 @@ export class Pure_column_listContext extends ParserRuleContext {
 	 		listener.exitPure_column_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitPure_column_list) {
+			return visitor.visitPure_column_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -38686,6 +39152,14 @@ export class Pure_column_or_namedContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitPure_column_or_named) {
 	 		listener.exitPure_column_or_named(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitPure_column_or_named) {
+			return visitor.visitPure_column_or_named(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38727,6 +39201,14 @@ export class Pure_column_or_named_listContext extends ParserRuleContext {
 	 		listener.exitPure_column_or_named_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitPure_column_or_named_list) {
+			return visitor.visitPure_column_or_named_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -38752,6 +39234,14 @@ export class Column_nameContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitColumn_name) {
 	 		listener.exitColumn_name(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitColumn_name) {
+			return visitor.visitColumn_name(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38787,6 +39277,14 @@ export class Without_column_nameContext extends ParserRuleContext {
 	 		listener.exitWithout_column_name(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWithout_column_name) {
+			return visitor.visitWithout_column_name(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -38818,6 +39316,14 @@ export class Column_listContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitColumn_list) {
 	 		listener.exitColumn_list(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitColumn_list) {
+			return visitor.visitColumn_list(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38853,6 +39359,14 @@ export class Without_column_listContext extends ParserRuleContext {
 	 		listener.exitWithout_column_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWithout_column_list) {
+			return visitor.visitWithout_column_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -38881,6 +39395,14 @@ export class Named_exprContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitNamed_expr) {
 	 		listener.exitNamed_expr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitNamed_expr) {
+			return visitor.visitNamed_expr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38914,6 +39436,14 @@ export class Named_expr_listContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitNamed_expr_list) {
 	 		listener.exitNamed_expr_list(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitNamed_expr_list) {
+			return visitor.visitNamed_expr_list(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38958,6 +39488,14 @@ export class Invoke_exprContext extends ParserRuleContext {
 	 		listener.exitInvoke_expr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitInvoke_expr) {
+			return visitor.visitInvoke_expr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -38989,6 +39527,14 @@ export class Invoke_expr_tailContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitInvoke_expr_tail) {
 	 		listener.exitInvoke_expr_tail(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitInvoke_expr_tail) {
+			return visitor.visitInvoke_expr_tail(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -39036,6 +39582,14 @@ export class Using_call_exprContext extends ParserRuleContext {
 	 		listener.exitUsing_call_expr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitUsing_call_expr) {
+			return visitor.visitUsing_call_expr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -39064,6 +39618,14 @@ export class Key_exprContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitKey_expr) {
 	 		listener.exitKey_expr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitKey_expr) {
+			return visitor.visitKey_expr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -39097,6 +39659,14 @@ export class When_exprContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitWhen_expr) {
 	 		listener.exitWhen_expr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWhen_expr) {
+			return visitor.visitWhen_expr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -39150,6 +39720,14 @@ export class Literal_valueContext extends ParserRuleContext {
 	 		listener.exitLiteral_value(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitLiteral_value) {
+			return visitor.visitLiteral_value(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -39183,6 +39761,14 @@ export class Bind_parameterContext extends ParserRuleContext {
 	 		listener.exitBind_parameter(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitBind_parameter) {
+			return visitor.visitBind_parameter(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -39208,6 +39794,14 @@ export class Opt_bind_parameterContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitOpt_bind_parameter) {
 	 		listener.exitOpt_bind_parameter(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitOpt_bind_parameter) {
+			return visitor.visitOpt_bind_parameter(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -39243,6 +39837,14 @@ export class Bind_parameter_listContext extends ParserRuleContext {
 	 		listener.exitBind_parameter_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitBind_parameter_list) {
+			return visitor.visitBind_parameter_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -39271,6 +39873,14 @@ export class Named_bind_parameterContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitNamed_bind_parameter) {
 	 		listener.exitNamed_bind_parameter(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitNamed_bind_parameter) {
+			return visitor.visitNamed_bind_parameter(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -39306,6 +39916,14 @@ export class Named_bind_parameter_listContext extends ParserRuleContext {
 	 		listener.exitNamed_bind_parameter_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitNamed_bind_parameter_list) {
+			return visitor.visitNamed_bind_parameter_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -39339,6 +39957,14 @@ export class Signed_numberContext extends ParserRuleContext {
 	 		listener.exitSigned_number(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSigned_number) {
+			return visitor.visitSigned_number(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -39361,6 +39987,14 @@ export class Type_name_simpleContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitType_name_simple) {
 	 		listener.exitType_name_simple(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_simple) {
+			return visitor.visitType_name_simple(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -39388,6 +40022,14 @@ export class Integer_or_bindContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitInteger_or_bind) {
 	 		listener.exitInteger_or_bind(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitInteger_or_bind) {
+			return visitor.visitInteger_or_bind(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -39420,6 +40062,14 @@ export class Type_name_tagContext extends ParserRuleContext {
 	 		listener.exitType_name_tag(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_tag) {
+			return visitor.visitType_name_tag(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -39448,6 +40098,14 @@ export class Struct_argContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitStruct_arg) {
 	 		listener.exitStruct_arg(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitStruct_arg) {
+			return visitor.visitStruct_arg(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -39486,6 +40144,14 @@ export class Struct_arg_positionalContext extends ParserRuleContext {
 	 		listener.exitStruct_arg_positional(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitStruct_arg_positional) {
+			return visitor.visitStruct_arg_positional(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -39514,6 +40180,14 @@ export class Variant_argContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitVariant_arg) {
 	 		listener.exitVariant_arg(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitVariant_arg) {
+			return visitor.visitVariant_arg(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -39549,6 +40223,14 @@ export class Callable_argContext extends ParserRuleContext {
 	 		listener.exitCallable_arg(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCallable_arg) {
+			return visitor.visitCallable_arg(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -39580,6 +40262,14 @@ export class Callable_arg_listContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitCallable_arg_list) {
 	 		listener.exitCallable_arg_list(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCallable_arg_list) {
+			return visitor.visitCallable_arg_list(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -39621,6 +40311,14 @@ export class Type_name_decimalContext extends ParserRuleContext {
 	 		listener.exitType_name_decimal(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_decimal) {
+			return visitor.visitType_name_decimal(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -39652,6 +40350,14 @@ export class Type_name_optionalContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitType_name_optional) {
 	 		listener.exitType_name_optional(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_optional) {
+			return visitor.visitType_name_optional(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -39699,6 +40405,14 @@ export class Type_name_tupleContext extends ParserRuleContext {
 	 		listener.exitType_name_tuple(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_tuple) {
+			return visitor.visitType_name_tuple(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -39744,6 +40458,14 @@ export class Type_name_structContext extends ParserRuleContext {
 	 		listener.exitType_name_struct(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_struct) {
+			return visitor.visitType_name_struct(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -39786,6 +40508,14 @@ export class Type_name_variantContext extends ParserRuleContext {
 	 		listener.exitType_name_variant(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_variant) {
+			return visitor.visitType_name_variant(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -39817,6 +40547,14 @@ export class Type_name_listContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitType_name_list) {
 	 		listener.exitType_name_list(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_list) {
+			return visitor.visitType_name_list(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -39852,6 +40590,14 @@ export class Type_name_streamContext extends ParserRuleContext {
 	 		listener.exitType_name_stream(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_stream) {
+			return visitor.visitType_name_stream(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -39883,6 +40629,14 @@ export class Type_name_flowContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitType_name_flow) {
 	 		listener.exitType_name_flow(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_flow) {
+			return visitor.visitType_name_flow(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -39924,6 +40678,14 @@ export class Type_name_dictContext extends ParserRuleContext {
 	 		listener.exitType_name_dict(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_dict) {
+			return visitor.visitType_name_dict(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -39955,6 +40717,14 @@ export class Type_name_setContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitType_name_set) {
 	 		listener.exitType_name_set(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_set) {
+			return visitor.visitType_name_set(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -39999,6 +40769,14 @@ export class Type_name_enumContext extends ParserRuleContext {
 	 		listener.exitType_name_enum(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_enum) {
+			return visitor.visitType_name_enum(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -40030,6 +40808,14 @@ export class Type_name_resourceContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitType_name_resource) {
 	 		listener.exitType_name_resource(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_resource) {
+			return visitor.visitType_name_resource(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -40069,6 +40855,14 @@ export class Type_name_taggedContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitType_name_tagged) {
 	 		listener.exitType_name_tagged(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_tagged) {
+			return visitor.visitType_name_tagged(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -40126,6 +40920,14 @@ export class Type_name_callableContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitType_name_callable) {
 	 		listener.exitType_name_callable(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_callable) {
+			return visitor.visitType_name_callable(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -40194,6 +40996,14 @@ export class Type_name_compositeContext extends ParserRuleContext {
 	 		listener.exitType_name_composite(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_composite) {
+			return visitor.visitType_name_composite(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -40230,6 +41040,14 @@ export class Type_nameContext extends ParserRuleContext {
 	 		listener.exitType_name(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name) {
+			return visitor.visitType_name(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -40257,6 +41075,14 @@ export class Type_name_or_bindContext extends ParserRuleContext {
 	 		listener.exitType_name_or_bind(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_name_or_bind) {
+			return visitor.visitType_name_or_bind(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -40279,6 +41105,14 @@ export class Value_constructor_literalContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitValue_constructor_literal) {
 	 		listener.exitValue_constructor_literal(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitValue_constructor_literal) {
+			return visitor.visitValue_constructor_literal(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -40329,6 +41163,14 @@ export class Value_constructorContext extends ParserRuleContext {
 	 		listener.exitValue_constructor(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitValue_constructor) {
+			return visitor.visitValue_constructor(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -40368,6 +41210,14 @@ export class Declare_stmtContext extends ParserRuleContext {
 	 		listener.exitDeclare_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDeclare_stmt) {
+			return visitor.visitDeclare_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -40399,6 +41249,14 @@ export class Module_pathContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitModule_path) {
 	 		listener.exitModule_path(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitModule_path) {
+			return visitor.visitModule_path(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -40434,6 +41292,14 @@ export class Import_stmtContext extends ParserRuleContext {
 	 		listener.exitImport_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitImport_stmt) {
+			return visitor.visitImport_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -40459,6 +41325,14 @@ export class Export_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitExport_stmt) {
 	 		listener.exitExport_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitExport_stmt) {
+			return visitor.visitExport_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -40497,6 +41371,14 @@ export class Call_actionContext extends ParserRuleContext {
 	 		listener.exitCall_action(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCall_action) {
+			return visitor.visitCall_action(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -40530,6 +41412,14 @@ export class Inline_actionContext extends ParserRuleContext {
 	 		listener.exitInline_action(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitInline_action) {
+			return visitor.visitInline_action(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -40558,6 +41448,14 @@ export class Do_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitDo_stmt) {
 	 		listener.exitDo_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDo_stmt) {
+			return visitor.visitDo_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -40611,6 +41509,14 @@ export class Pragma_stmtContext extends ParserRuleContext {
 	 		listener.exitPragma_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitPragma_stmt) {
+			return visitor.visitPragma_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -40647,6 +41553,14 @@ export class Pragma_valueContext extends ParserRuleContext {
 	 		listener.exitPragma_value(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitPragma_value) {
+			return visitor.visitPragma_value(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -40675,6 +41589,14 @@ export class Sort_specificationContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitSort_specification) {
 	 		listener.exitSort_specification(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSort_specification) {
+			return visitor.visitSort_specification(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -40710,6 +41632,14 @@ export class Sort_specification_listContext extends ParserRuleContext {
 	 		listener.exitSort_specification_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSort_specification_list) {
+			return visitor.visitSort_specification_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -40741,6 +41671,14 @@ export class Select_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitSelect_stmt) {
 	 		listener.exitSelect_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSelect_stmt) {
+			return visitor.visitSelect_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -40779,6 +41717,14 @@ export class Select_unparenthesized_stmtContext extends ParserRuleContext {
 	 		listener.exitSelect_unparenthesized_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSelect_unparenthesized_stmt) {
+			return visitor.visitSelect_unparenthesized_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -40807,6 +41753,14 @@ export class Select_kind_parenthesisContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitSelect_kind_parenthesis) {
 	 		listener.exitSelect_kind_parenthesis(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSelect_kind_parenthesis) {
+			return visitor.visitSelect_kind_parenthesis(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -40840,6 +41794,14 @@ export class Select_opContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitSelect_op) {
 	 		listener.exitSelect_op(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSelect_op) {
+			return visitor.visitSelect_op(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -40879,6 +41841,14 @@ export class Select_kind_partialContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitSelect_kind_partial) {
 	 		listener.exitSelect_kind_partial(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSelect_kind_partial) {
+			return visitor.visitSelect_kind_partial(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -40921,6 +41891,14 @@ export class Select_kindContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitSelect_kind) {
 	 		listener.exitSelect_kind(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSelect_kind) {
+			return visitor.visitSelect_kind(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -40998,6 +41976,14 @@ export class Process_coreContext extends ParserRuleContext {
 	 		listener.exitProcess_core(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitProcess_core) {
+			return visitor.visitProcess_core(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -41026,6 +42012,14 @@ export class External_call_paramContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitExternal_call_param) {
 	 		listener.exitExternal_call_param(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitExternal_call_param) {
+			return visitor.visitExternal_call_param(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -41059,6 +42053,14 @@ export class External_call_settingsContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitExternal_call_settings) {
 	 		listener.exitExternal_call_settings(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitExternal_call_settings) {
+			return visitor.visitExternal_call_settings(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -41142,6 +42144,14 @@ export class Reduce_coreContext extends ParserRuleContext {
 	 		listener.exitReduce_core(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitReduce_core) {
+			return visitor.visitReduce_core(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -41167,6 +42177,14 @@ export class Opt_set_quantifierContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitOpt_set_quantifier) {
 	 		listener.exitOpt_set_quantifier(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitOpt_set_quantifier) {
+			return visitor.visitOpt_set_quantifier(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -41256,6 +42274,14 @@ export class Select_coreContext extends ParserRuleContext {
 	 		listener.exitSelect_core(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSelect_core) {
+			return visitor.visitSelect_core(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -41301,6 +42327,14 @@ export class Row_pattern_recognition_clauseContext extends ParserRuleContext {
 	 		listener.exitRow_pattern_recognition_clause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_recognition_clause) {
+			return visitor.visitRow_pattern_recognition_clause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -41341,6 +42375,14 @@ export class Row_pattern_rows_per_matchContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRow_pattern_rows_per_match) {
 	 		listener.exitRow_pattern_rows_per_match(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_rows_per_match) {
+			return visitor.visitRow_pattern_rows_per_match(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -41385,6 +42427,14 @@ export class Row_pattern_empty_match_handlingContext extends ParserRuleContext {
 	 		listener.exitRow_pattern_empty_match_handling(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_empty_match_handling) {
+			return visitor.visitRow_pattern_empty_match_handling(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -41410,6 +42460,14 @@ export class Row_pattern_measuresContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRow_pattern_measures) {
 	 		listener.exitRow_pattern_measures(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_measures) {
+			return visitor.visitRow_pattern_measures(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -41445,6 +42503,14 @@ export class Row_pattern_measure_listContext extends ParserRuleContext {
 	 		listener.exitRow_pattern_measure_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_measure_list) {
+			return visitor.visitRow_pattern_measure_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -41473,6 +42539,14 @@ export class Row_pattern_measure_definitionContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRow_pattern_measure_definition) {
 	 		listener.exitRow_pattern_measure_definition(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_measure_definition) {
+			return visitor.visitRow_pattern_measure_definition(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -41529,6 +42603,14 @@ export class Row_pattern_common_syntaxContext extends ParserRuleContext {
 	 		listener.exitRow_pattern_common_syntax(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_common_syntax) {
+			return visitor.visitRow_pattern_common_syntax(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -41574,6 +42656,14 @@ export class Row_pattern_skip_toContext extends ParserRuleContext {
 	 		listener.exitRow_pattern_skip_to(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_skip_to) {
+			return visitor.visitRow_pattern_skip_to(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -41596,6 +42686,14 @@ export class Row_pattern_skip_to_variable_nameContext extends ParserRuleContext 
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRow_pattern_skip_to_variable_name) {
 	 		listener.exitRow_pattern_skip_to_variable_name(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_skip_to_variable_name) {
+			return visitor.visitRow_pattern_skip_to_variable_name(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -41623,6 +42721,14 @@ export class Row_pattern_initial_or_seekContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRow_pattern_initial_or_seek) {
 	 		listener.exitRow_pattern_initial_or_seek(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_initial_or_seek) {
+			return visitor.visitRow_pattern_initial_or_seek(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -41658,6 +42764,14 @@ export class Row_patternContext extends ParserRuleContext {
 	 		listener.exitRow_pattern(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern) {
+			return visitor.visitRow_pattern(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -41685,6 +42799,14 @@ export class Row_pattern_termContext extends ParserRuleContext {
 	 		listener.exitRow_pattern_term(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_term) {
+			return visitor.visitRow_pattern_term(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -41710,6 +42832,14 @@ export class Row_pattern_factorContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRow_pattern_factor) {
 	 		listener.exitRow_pattern_factor(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_factor) {
+			return visitor.visitRow_pattern_factor(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -41758,6 +42888,14 @@ export class Row_pattern_quantifierContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRow_pattern_quantifier) {
 	 		listener.exitRow_pattern_quantifier(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_quantifier) {
+			return visitor.visitRow_pattern_quantifier(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -41814,6 +42952,14 @@ export class Row_pattern_primaryContext extends ParserRuleContext {
 	 		listener.exitRow_pattern_primary(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_primary) {
+			return visitor.visitRow_pattern_primary(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -41836,6 +42982,14 @@ export class Row_pattern_primary_variable_nameContext extends ParserRuleContext 
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRow_pattern_primary_variable_name) {
 	 		listener.exitRow_pattern_primary_variable_name(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_primary_variable_name) {
+			return visitor.visitRow_pattern_primary_variable_name(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -41880,6 +43034,14 @@ export class Row_pattern_permuteContext extends ParserRuleContext {
 	 		listener.exitRow_pattern_permute(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_permute) {
+			return visitor.visitRow_pattern_permute(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -41905,6 +43067,14 @@ export class Row_pattern_subset_clauseContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRow_pattern_subset_clause) {
 	 		listener.exitRow_pattern_subset_clause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_subset_clause) {
+			return visitor.visitRow_pattern_subset_clause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -41938,6 +43108,14 @@ export class Row_pattern_subset_listContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRow_pattern_subset_list) {
 	 		listener.exitRow_pattern_subset_list(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_subset_list) {
+			return visitor.visitRow_pattern_subset_list(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -41976,6 +43154,14 @@ export class Row_pattern_subset_itemContext extends ParserRuleContext {
 	 		listener.exitRow_pattern_subset_item(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_subset_item) {
+			return visitor.visitRow_pattern_subset_item(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -41998,6 +43184,14 @@ export class Row_pattern_subset_item_variable_nameContext extends ParserRuleCont
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRow_pattern_subset_item_variable_name) {
 	 		listener.exitRow_pattern_subset_item_variable_name(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_subset_item_variable_name) {
+			return visitor.visitRow_pattern_subset_item_variable_name(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -42033,6 +43227,14 @@ export class Row_pattern_subset_rhsContext extends ParserRuleContext {
 	 		listener.exitRow_pattern_subset_rhs(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_subset_rhs) {
+			return visitor.visitRow_pattern_subset_rhs(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42055,6 +43257,14 @@ export class Row_pattern_subset_rhs_variable_nameContext extends ParserRuleConte
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRow_pattern_subset_rhs_variable_name) {
 	 		listener.exitRow_pattern_subset_rhs_variable_name(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_subset_rhs_variable_name) {
+			return visitor.visitRow_pattern_subset_rhs_variable_name(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -42090,6 +43300,14 @@ export class Row_pattern_definition_listContext extends ParserRuleContext {
 	 		listener.exitRow_pattern_definition_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_definition_list) {
+			return visitor.visitRow_pattern_definition_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42120,6 +43338,14 @@ export class Row_pattern_definitionContext extends ParserRuleContext {
 	 		listener.exitRow_pattern_definition(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_definition) {
+			return visitor.visitRow_pattern_definition(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42142,6 +43368,14 @@ export class Row_pattern_definition_variable_nameContext extends ParserRuleConte
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRow_pattern_definition_variable_name) {
 	 		listener.exitRow_pattern_definition_variable_name(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_definition_variable_name) {
+			return visitor.visitRow_pattern_definition_variable_name(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -42168,6 +43402,14 @@ export class Row_pattern_definition_search_conditionContext extends ParserRuleCo
 	 		listener.exitRow_pattern_definition_search_condition(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_definition_search_condition) {
+			return visitor.visitRow_pattern_definition_search_condition(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42192,6 +43434,14 @@ export class Search_conditionContext extends ParserRuleContext {
 	 		listener.exitSearch_condition(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSearch_condition) {
+			return visitor.visitSearch_condition(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42214,6 +43464,14 @@ export class Row_pattern_variable_nameContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRow_pattern_variable_name) {
 	 		listener.exitRow_pattern_variable_name(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRow_pattern_variable_name) {
+			return visitor.visitRow_pattern_variable_name(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -42246,6 +43504,14 @@ export class Order_by_clauseContext extends ParserRuleContext {
 	 		listener.exitOrder_by_clause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitOrder_by_clause) {
+			return visitor.visitOrder_by_clause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42271,6 +43537,14 @@ export class Ext_order_by_clauseContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitExt_order_by_clause) {
 	 		listener.exitExt_order_by_clause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitExt_order_by_clause) {
+			return visitor.visitExt_order_by_clause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -42315,6 +43589,14 @@ export class Group_by_clauseContext extends ParserRuleContext {
 	 		listener.exitGroup_by_clause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitGroup_by_clause) {
+			return visitor.visitGroup_by_clause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42346,6 +43628,14 @@ export class Grouping_element_listContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitGrouping_element_list) {
 	 		listener.exitGrouping_element_list(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitGrouping_element_list) {
+			return visitor.visitGrouping_element_list(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -42384,6 +43674,14 @@ export class Grouping_elementContext extends ParserRuleContext {
 	 		listener.exitGrouping_element(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitGrouping_element) {
+			return visitor.visitGrouping_element(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42406,6 +43704,14 @@ export class Ordinary_grouping_setContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitOrdinary_grouping_set) {
 	 		listener.exitOrdinary_grouping_set(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitOrdinary_grouping_set) {
+			return visitor.visitOrdinary_grouping_set(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -42441,6 +43747,14 @@ export class Ordinary_grouping_set_listContext extends ParserRuleContext {
 	 		listener.exitOrdinary_grouping_set_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitOrdinary_grouping_set_list) {
+			return visitor.visitOrdinary_grouping_set_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42474,6 +43788,14 @@ export class Rollup_listContext extends ParserRuleContext {
 	 		listener.exitRollup_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRollup_list) {
+			return visitor.visitRollup_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42505,6 +43827,14 @@ export class Cube_listContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitCube_list) {
 	 		listener.exitCube_list(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCube_list) {
+			return visitor.visitCube_list(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -42541,6 +43871,14 @@ export class Grouping_sets_specificationContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitGrouping_sets_specification) {
 	 		listener.exitGrouping_sets_specification(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitGrouping_sets_specification) {
+			return visitor.visitGrouping_sets_specification(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -42585,6 +43923,14 @@ export class Hopping_window_specificationContext extends ParserRuleContext {
 	 		listener.exitHopping_window_specification(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitHopping_window_specification) {
+			return visitor.visitHopping_window_specification(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42622,6 +43968,14 @@ export class Result_columnContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitResult_column) {
 	 		listener.exitResult_column(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitResult_column) {
+			return visitor.visitResult_column(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -42669,6 +44023,14 @@ export class Join_sourceContext extends ParserRuleContext {
 	 		listener.exitJoin_source(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJoin_source) {
+			return visitor.visitJoin_source(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42697,6 +44059,14 @@ export class Named_columnContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitNamed_column) {
 	 		listener.exitNamed_column(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitNamed_column) {
+			return visitor.visitNamed_column(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -42733,6 +44103,14 @@ export class Flatten_by_argContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitFlatten_by_arg) {
 	 		listener.exitFlatten_by_arg(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitFlatten_by_arg) {
+			return visitor.visitFlatten_by_arg(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -42780,6 +44158,14 @@ export class Flatten_sourceContext extends ParserRuleContext {
 	 		listener.exitFlatten_source(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitFlatten_source) {
+			return visitor.visitFlatten_source(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42825,6 +44211,14 @@ export class Named_single_sourceContext extends ParserRuleContext {
 	 		listener.exitNamed_single_source(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitNamed_single_source) {
+			return visitor.visitNamed_single_source(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42861,6 +44255,14 @@ export class Single_sourceContext extends ParserRuleContext {
 	 		listener.exitSingle_source(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSingle_source) {
+			return visitor.visitSingle_source(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42886,6 +44288,14 @@ export class Sample_clauseContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitSample_clause) {
 	 		listener.exitSample_clause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSample_clause) {
+			return visitor.visitSample_clause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -42927,6 +44337,14 @@ export class Tablesample_clauseContext extends ParserRuleContext {
 	 		listener.exitTablesample_clause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTablesample_clause) {
+			return visitor.visitTablesample_clause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -42952,6 +44370,14 @@ export class Sampling_modeContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitSampling_mode) {
 	 		listener.exitSampling_mode(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSampling_mode) {
+			return visitor.visitSampling_mode(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -42985,6 +44411,14 @@ export class Repeatable_clauseContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRepeatable_clause) {
 	 		listener.exitRepeatable_clause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRepeatable_clause) {
+			return visitor.visitRepeatable_clause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -43044,6 +44478,14 @@ export class Join_opContext extends ParserRuleContext {
 	 		listener.exitJoin_op(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJoin_op) {
+			return visitor.visitJoin_op(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -43075,6 +44517,14 @@ export class Join_constraintContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitJoin_constraint) {
 	 		listener.exitJoin_constraint(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitJoin_constraint) {
+			return visitor.visitJoin_constraint(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -43114,6 +44564,14 @@ export class Returning_columns_listContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitReturning_columns_list) {
 	 		listener.exitReturning_columns_list(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitReturning_columns_list) {
+			return visitor.visitReturning_columns_list(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -43170,6 +44628,14 @@ export class Into_table_stmtContext extends ParserRuleContext {
 	 		listener.exitInto_table_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitInto_table_stmt) {
+			return visitor.visitInto_table_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -43203,6 +44669,14 @@ export class Into_values_sourceContext extends ParserRuleContext {
 	 		listener.exitInto_values_source(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitInto_values_source) {
+			return visitor.visitInto_values_source(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -43230,6 +44704,14 @@ export class Values_stmtContext extends ParserRuleContext {
 	 		listener.exitValues_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitValues_stmt) {
+			return visitor.visitValues_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -43255,6 +44737,14 @@ export class Values_sourceContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitValues_source) {
 	 		listener.exitValues_source(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitValues_source) {
+			return visitor.visitValues_source(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -43290,6 +44780,14 @@ export class Values_source_row_listContext extends ParserRuleContext {
 	 		listener.exitValues_source_row_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitValues_source_row_list) {
+			return visitor.visitValues_source_row_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -43320,6 +44818,14 @@ export class Values_source_rowContext extends ParserRuleContext {
 	 		listener.exitValues_source_row(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitValues_source_row) {
+			return visitor.visitValues_source_row(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -43345,6 +44851,14 @@ export class Simple_values_sourceContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitSimple_values_source) {
 	 		listener.exitSimple_values_source(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSimple_values_source) {
+			return visitor.visitSimple_values_source(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -43401,6 +44915,14 @@ export class Create_external_data_source_stmtContext extends ParserRuleContext {
 	 		listener.exitCreate_external_data_source_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_external_data_source_stmt) {
+			return visitor.visitCreate_external_data_source_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -43449,6 +44971,14 @@ export class Alter_external_data_source_stmtContext extends ParserRuleContext {
 	 		listener.exitAlter_external_data_source_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_external_data_source_stmt) {
+			return visitor.visitAlter_external_data_source_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -43477,6 +45007,14 @@ export class Alter_external_data_source_actionContext extends ParserRuleContext 
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_external_data_source_action) {
 	 		listener.exitAlter_external_data_source_action(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_external_data_source_action) {
+			return visitor.visitAlter_external_data_source_action(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -43519,6 +45057,14 @@ export class Drop_external_data_source_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitDrop_external_data_source_stmt) {
 	 		listener.exitDrop_external_data_source_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDrop_external_data_source_stmt) {
+			return visitor.visitDrop_external_data_source_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -43569,6 +45115,14 @@ export class Create_view_stmtContext extends ParserRuleContext {
 	 		listener.exitCreate_view_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_view_stmt) {
+			return visitor.visitCreate_view_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -43603,6 +45157,14 @@ export class Drop_view_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitDrop_view_stmt) {
 	 		listener.exitDrop_view_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDrop_view_stmt) {
+			return visitor.visitDrop_view_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -43648,6 +45210,14 @@ export class Upsert_object_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitUpsert_object_stmt) {
 	 		listener.exitUpsert_object_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitUpsert_object_stmt) {
+			return visitor.visitUpsert_object_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -43704,6 +45274,14 @@ export class Create_object_stmtContext extends ParserRuleContext {
 	 		listener.exitCreate_object_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_object_stmt) {
+			return visitor.visitCreate_object_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -43729,6 +45307,14 @@ export class Create_object_featuresContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitCreate_object_features) {
 	 		listener.exitCreate_object_features(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_object_features) {
+			return visitor.visitCreate_object_features(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -43776,6 +45362,14 @@ export class Alter_object_stmtContext extends ParserRuleContext {
 	 		listener.exitAlter_object_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_object_stmt) {
+			return visitor.visitAlter_object_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -43801,6 +45395,14 @@ export class Alter_object_featuresContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_object_features) {
 	 		listener.exitAlter_object_features(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_object_features) {
+			return visitor.visitAlter_object_features(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -43854,6 +45456,14 @@ export class Drop_object_stmtContext extends ParserRuleContext {
 	 		listener.exitDrop_object_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDrop_object_stmt) {
+			return visitor.visitDrop_object_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -43879,6 +45489,14 @@ export class Drop_object_featuresContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitDrop_object_features) {
 	 		listener.exitDrop_object_features(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDrop_object_features) {
+			return visitor.visitDrop_object_features(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -43914,6 +45532,14 @@ export class Object_feature_valueContext extends ParserRuleContext {
 	 		listener.exitObject_feature_value(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitObject_feature_value) {
+			return visitor.visitObject_feature_value(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -43944,6 +45570,14 @@ export class Object_feature_kvContext extends ParserRuleContext {
 	 		listener.exitObject_feature_kv(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitObject_feature_kv) {
+			return visitor.visitObject_feature_kv(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -43966,6 +45600,14 @@ export class Object_feature_flagContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitObject_feature_flag) {
 	 		listener.exitObject_feature_flag(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitObject_feature_flag) {
+			return visitor.visitObject_feature_flag(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -43993,6 +45635,14 @@ export class Object_featureContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitObject_feature) {
 	 		listener.exitObject_feature(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitObject_feature) {
+			return visitor.visitObject_feature(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -44034,6 +45684,14 @@ export class Object_featuresContext extends ParserRuleContext {
 	 		listener.exitObject_features(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitObject_features) {
+			return visitor.visitObject_features(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -44056,6 +45714,14 @@ export class Object_type_refContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitObject_type_ref) {
 	 		listener.exitObject_type_ref(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitObject_type_ref) {
+			return visitor.visitObject_type_ref(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -44148,6 +45814,14 @@ export class Create_table_stmtContext extends ParserRuleContext {
 	 		listener.exitCreate_table_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_table_stmt) {
+			return visitor.visitCreate_table_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -44185,6 +45859,14 @@ export class Create_table_entryContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitCreate_table_entry) {
 	 		listener.exitCreate_table_entry(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_table_entry) {
+			return visitor.visitCreate_table_entry(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -44229,6 +45911,14 @@ export class Create_backup_collection_stmtContext extends ParserRuleContext {
 	 		listener.exitCreate_backup_collection_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_backup_collection_stmt) {
+			return visitor.visitCreate_backup_collection_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -44262,6 +45952,14 @@ export class Alter_backup_collection_stmtContext extends ParserRuleContext {
 	 		listener.exitAlter_backup_collection_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_backup_collection_stmt) {
+			return visitor.visitAlter_backup_collection_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -44289,6 +45987,14 @@ export class Drop_backup_collection_stmtContext extends ParserRuleContext {
 	 		listener.exitDrop_backup_collection_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDrop_backup_collection_stmt) {
+			return visitor.visitDrop_backup_collection_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -44314,6 +46020,14 @@ export class Create_backup_collection_entriesContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitCreate_backup_collection_entries) {
 	 		listener.exitCreate_backup_collection_entries(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_backup_collection_entries) {
+			return visitor.visitCreate_backup_collection_entries(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -44344,6 +46058,14 @@ export class Create_backup_collection_entries_manyContext extends ParserRuleCont
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitCreate_backup_collection_entries_many) {
 	 		listener.exitCreate_backup_collection_entries_many(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_backup_collection_entries_many) {
+			return visitor.visitCreate_backup_collection_entries_many(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -44385,6 +46107,14 @@ export class Table_listContext extends ParserRuleContext {
 	 		listener.exitTable_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTable_list) {
+			return visitor.visitTable_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -44418,6 +46148,14 @@ export class Alter_backup_collection_actionsContext extends ParserRuleContext {
 	 		listener.exitAlter_backup_collection_actions(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_backup_collection_actions) {
+			return visitor.visitAlter_backup_collection_actions(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -44443,6 +46181,14 @@ export class Alter_backup_collection_actionContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_backup_collection_action) {
 	 		listener.exitAlter_backup_collection_action(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_backup_collection_action) {
+			return visitor.visitAlter_backup_collection_action(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -44476,6 +46222,14 @@ export class Alter_backup_collection_entriesContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_backup_collection_entries) {
 	 		listener.exitAlter_backup_collection_entries(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_backup_collection_entries) {
+			return visitor.visitAlter_backup_collection_entries(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -44514,6 +46268,14 @@ export class Alter_backup_collection_entryContext extends ParserRuleContext {
 	 		listener.exitAlter_backup_collection_entry(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_backup_collection_entry) {
+			return visitor.visitAlter_backup_collection_entry(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -44542,6 +46304,14 @@ export class Backup_collectionContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitBackup_collection) {
 	 		listener.exitBackup_collection(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitBackup_collection) {
+			return visitor.visitBackup_collection(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -44577,6 +46347,14 @@ export class Backup_collection_settingsContext extends ParserRuleContext {
 	 		listener.exitBackup_collection_settings(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitBackup_collection_settings) {
+			return visitor.visitBackup_collection_settings(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -44607,6 +46385,14 @@ export class Backup_collection_settings_entryContext extends ParserRuleContext {
 	 		listener.exitBackup_collection_settings_entry(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitBackup_collection_settings_entry) {
+			return visitor.visitBackup_collection_settings_entry(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -44635,6 +46421,14 @@ export class Backup_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitBackup_stmt) {
 	 		listener.exitBackup_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitBackup_stmt) {
+			return visitor.visitBackup_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -44668,6 +46462,14 @@ export class Restore_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRestore_stmt) {
 	 		listener.exitRestore_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRestore_stmt) {
+			return visitor.visitRestore_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -44707,6 +46509,14 @@ export class Alter_database_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_database_stmt) {
 	 		listener.exitAlter_database_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_database_stmt) {
+			return visitor.visitAlter_database_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -44751,6 +46561,14 @@ export class Table_inheritsContext extends ParserRuleContext {
 	 		listener.exitTable_inherits(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTable_inherits) {
+			return visitor.visitTable_inherits(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -44782,6 +46600,14 @@ export class Table_partition_byContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitTable_partition_by) {
 	 		listener.exitTable_partition_by(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTable_partition_by) {
+			return visitor.visitTable_partition_by(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -44826,6 +46652,14 @@ export class With_table_settingsContext extends ParserRuleContext {
 	 		listener.exitWith_table_settings(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWith_table_settings) {
+			return visitor.visitWith_table_settings(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -44851,6 +46685,14 @@ export class Table_tablestoreContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitTable_tablestore) {
 	 		listener.exitTable_tablestore(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTable_tablestore) {
+			return visitor.visitTable_tablestore(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -44883,6 +46725,14 @@ export class Table_settings_entryContext extends ParserRuleContext {
 	 		listener.exitTable_settings_entry(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTable_settings_entry) {
+			return visitor.visitTable_settings_entry(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -44908,6 +46758,14 @@ export class Table_as_sourceContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitTable_as_source) {
 	 		listener.exitTable_as_source(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTable_as_source) {
+			return visitor.visitTable_as_source(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -44950,6 +46808,14 @@ export class Alter_table_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_table_stmt) {
 	 		listener.exitAlter_table_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_stmt) {
+			return visitor.visitAlter_table_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -45024,6 +46890,14 @@ export class Alter_table_actionContext extends ParserRuleContext {
 	 		listener.exitAlter_table_action(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_action) {
+			return visitor.visitAlter_table_action(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -45069,6 +46943,14 @@ export class Alter_external_table_stmtContext extends ParserRuleContext {
 	 		listener.exitAlter_external_table_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_external_table_stmt) {
+			return visitor.visitAlter_external_table_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -45103,6 +46985,14 @@ export class Alter_external_table_actionContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_external_table_action) {
 	 		listener.exitAlter_external_table_action(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_external_table_action) {
+			return visitor.visitAlter_external_table_action(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -45147,6 +47037,14 @@ export class Alter_table_store_stmtContext extends ParserRuleContext {
 	 		listener.exitAlter_table_store_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_store_stmt) {
+			return visitor.visitAlter_table_store_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -45172,6 +47070,14 @@ export class Alter_table_store_actionContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_table_store_action) {
 	 		listener.exitAlter_table_store_action(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_store_action) {
+			return visitor.visitAlter_table_store_action(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -45204,6 +47110,14 @@ export class Alter_table_add_columnContext extends ParserRuleContext {
 	 		listener.exitAlter_table_add_column(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_add_column) {
+			return visitor.visitAlter_table_add_column(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -45232,6 +47146,14 @@ export class Alter_table_drop_columnContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_table_drop_column) {
 	 		listener.exitAlter_table_drop_column(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_drop_column) {
+			return visitor.visitAlter_table_drop_column(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -45268,6 +47190,14 @@ export class Alter_table_alter_columnContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_table_alter_column) {
 	 		listener.exitAlter_table_alter_column(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_alter_column) {
+			return visitor.visitAlter_table_alter_column(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -45309,6 +47239,14 @@ export class Alter_table_alter_column_drop_not_nullContext extends ParserRuleCon
 	 		listener.exitAlter_table_alter_column_drop_not_null(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_alter_column_drop_not_null) {
+			return visitor.visitAlter_table_alter_column_drop_not_null(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -45334,6 +47272,14 @@ export class Alter_table_add_column_familyContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_table_add_column_family) {
 	 		listener.exitAlter_table_add_column_family(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_add_column_family) {
+			return visitor.visitAlter_table_add_column_family(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -45375,6 +47321,14 @@ export class Alter_table_alter_column_familyContext extends ParserRuleContext {
 	 		listener.exitAlter_table_alter_column_family(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_alter_column_family) {
+			return visitor.visitAlter_table_alter_column_family(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -45403,6 +47357,14 @@ export class Alter_table_set_table_setting_uncompatContext extends ParserRuleCon
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_table_set_table_setting_uncompat) {
 	 		listener.exitAlter_table_set_table_setting_uncompat(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_set_table_setting_uncompat) {
+			return visitor.visitAlter_table_set_table_setting_uncompat(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -45447,6 +47409,14 @@ export class Alter_table_set_table_setting_compatContext extends ParserRuleConte
 	 		listener.exitAlter_table_set_table_setting_compat(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_set_table_setting_compat) {
+			return visitor.visitAlter_table_set_table_setting_compat(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -45489,6 +47459,14 @@ export class Alter_table_reset_table_settingContext extends ParserRuleContext {
 	 		listener.exitAlter_table_reset_table_setting(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_reset_table_setting) {
+			return visitor.visitAlter_table_reset_table_setting(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -45514,6 +47492,14 @@ export class Alter_table_add_indexContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_table_add_index) {
 	 		listener.exitAlter_table_add_index(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_add_index) {
+			return visitor.visitAlter_table_add_index(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -45546,6 +47532,14 @@ export class Alter_table_drop_indexContext extends ParserRuleContext {
 	 		listener.exitAlter_table_drop_index(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_drop_index) {
+			return visitor.visitAlter_table_drop_index(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -45574,6 +47568,14 @@ export class Alter_table_rename_toContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_table_rename_to) {
 	 		listener.exitAlter_table_rename_to(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_rename_to) {
+			return visitor.visitAlter_table_rename_to(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -45612,6 +47614,14 @@ export class Alter_table_rename_index_toContext extends ParserRuleContext {
 	 		listener.exitAlter_table_rename_index_to(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_rename_index_to) {
+			return visitor.visitAlter_table_rename_index_to(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -45637,6 +47647,14 @@ export class Alter_table_add_changefeedContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_table_add_changefeed) {
 	 		listener.exitAlter_table_add_changefeed(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_add_changefeed) {
+			return visitor.visitAlter_table_add_changefeed(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -45672,6 +47690,14 @@ export class Alter_table_alter_changefeedContext extends ParserRuleContext {
 	 		listener.exitAlter_table_alter_changefeed(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_alter_changefeed) {
+			return visitor.visitAlter_table_alter_changefeed(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -45700,6 +47726,14 @@ export class Alter_table_drop_changefeedContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_table_drop_changefeed) {
 	 		listener.exitAlter_table_drop_changefeed(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_drop_changefeed) {
+			return visitor.visitAlter_table_drop_changefeed(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -45735,6 +47769,14 @@ export class Alter_table_alter_indexContext extends ParserRuleContext {
 	 		listener.exitAlter_table_alter_index(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_alter_index) {
+			return visitor.visitAlter_table_alter_index(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -45768,6 +47810,14 @@ export class Column_schemaContext extends ParserRuleContext {
 	 		listener.exitColumn_schema(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitColumn_schema) {
+			return visitor.visitColumn_schema(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -45793,6 +47843,14 @@ export class Family_relationContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitFamily_relation) {
 	 		listener.exitFamily_relation(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitFamily_relation) {
+			return visitor.visitFamily_relation(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -45828,6 +47886,14 @@ export class Opt_column_constraintsContext extends ParserRuleContext {
 	 		listener.exitOpt_column_constraints(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitOpt_column_constraints) {
+			return visitor.visitOpt_column_constraints(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -45856,6 +47922,14 @@ export class Column_order_by_specificationContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitColumn_order_by_specification) {
 	 		listener.exitColumn_order_by_specification(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitColumn_order_by_specification) {
+			return visitor.visitColumn_order_by_specification(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -45916,6 +47990,14 @@ export class Table_constraintContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitTable_constraint) {
 	 		listener.exitTable_constraint(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTable_constraint) {
+			return visitor.visitTable_constraint(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -45981,6 +48063,14 @@ export class Table_indexContext extends ParserRuleContext {
 	 		listener.exitTable_index(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTable_index) {
+			return visitor.visitTable_index(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46012,6 +48102,14 @@ export class Table_index_typeContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitTable_index_type) {
 	 		listener.exitTable_index_type(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTable_index_type) {
+			return visitor.visitTable_index_type(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -46047,6 +48145,14 @@ export class Global_indexContext extends ParserRuleContext {
 	 		listener.exitGlobal_index(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitGlobal_index) {
+			return visitor.visitGlobal_index(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46071,6 +48177,14 @@ export class Local_indexContext extends ParserRuleContext {
 	 		listener.exitLocal_index(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitLocal_index) {
+			return visitor.visitLocal_index(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46093,6 +48207,14 @@ export class Index_subtypeContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitIndex_subtype) {
 	 		listener.exitIndex_subtype(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitIndex_subtype) {
+			return visitor.visitIndex_subtype(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -46137,6 +48259,14 @@ export class With_index_settingsContext extends ParserRuleContext {
 	 		listener.exitWith_index_settings(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWith_index_settings) {
+			return visitor.visitWith_index_settings(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46165,6 +48295,14 @@ export class Index_setting_entryContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitIndex_setting_entry) {
 	 		listener.exitIndex_setting_entry(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitIndex_setting_entry) {
+			return visitor.visitIndex_setting_entry(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -46198,6 +48336,14 @@ export class Index_setting_valueContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitIndex_setting_value) {
 	 		listener.exitIndex_setting_value(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitIndex_setting_value) {
+			return visitor.visitIndex_setting_value(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -46239,6 +48385,14 @@ export class ChangefeedContext extends ParserRuleContext {
 	 		listener.exitChangefeed(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitChangefeed) {
+			return visitor.visitChangefeed(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46272,6 +48426,14 @@ export class Changefeed_settingsContext extends ParserRuleContext {
 	 		listener.exitChangefeed_settings(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitChangefeed_settings) {
+			return visitor.visitChangefeed_settings(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46302,6 +48464,14 @@ export class Changefeed_settings_entryContext extends ParserRuleContext {
 	 		listener.exitChangefeed_settings_entry(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitChangefeed_settings_entry) {
+			return visitor.visitChangefeed_settings_entry(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46324,6 +48494,14 @@ export class Changefeed_setting_valueContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitChangefeed_setting_value) {
 	 		listener.exitChangefeed_setting_value(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitChangefeed_setting_value) {
+			return visitor.visitChangefeed_setting_value(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -46362,6 +48540,14 @@ export class Changefeed_alter_settingsContext extends ParserRuleContext {
 	 		listener.exitChangefeed_alter_settings(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitChangefeed_alter_settings) {
+			return visitor.visitChangefeed_alter_settings(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46390,6 +48576,14 @@ export class Alter_table_setting_entryContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_table_setting_entry) {
 	 		listener.exitAlter_table_setting_entry(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_setting_entry) {
+			return visitor.visitAlter_table_setting_entry(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -46452,6 +48646,14 @@ export class Table_setting_valueContext extends ParserRuleContext {
 	 		listener.exitTable_setting_value(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTable_setting_value) {
+			return visitor.visitTable_setting_value(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46489,6 +48691,14 @@ export class Ttl_tier_listContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitTtl_tier_list) {
 	 		listener.exitTtl_tier_list(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTtl_tier_list) {
+			return visitor.visitTtl_tier_list(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -46530,6 +48740,14 @@ export class Ttl_tier_actionContext extends ParserRuleContext {
 	 		listener.exitTtl_tier_action(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTtl_tier_action) {
+			return visitor.visitTtl_tier_action(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46558,6 +48776,14 @@ export class Family_entryContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitFamily_entry) {
 	 		listener.exitFamily_entry(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitFamily_entry) {
+			return visitor.visitFamily_entry(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -46599,6 +48825,14 @@ export class Family_settingsContext extends ParserRuleContext {
 	 		listener.exitFamily_settings(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitFamily_settings) {
+			return visitor.visitFamily_settings(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46629,6 +48863,14 @@ export class Family_settings_entryContext extends ParserRuleContext {
 	 		listener.exitFamily_settings_entry(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitFamily_settings_entry) {
+			return visitor.visitFamily_settings_entry(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46654,6 +48896,14 @@ export class Family_setting_valueContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitFamily_setting_value) {
 	 		listener.exitFamily_setting_value(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitFamily_setting_value) {
+			return visitor.visitFamily_setting_value(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -46695,6 +48945,14 @@ export class Split_boundariesContext extends ParserRuleContext {
 	 		listener.exitSplit_boundaries(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSplit_boundaries) {
+			return visitor.visitSplit_boundaries(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46734,6 +48992,14 @@ export class Literal_value_listContext extends ParserRuleContext {
 	 		listener.exitLiteral_value_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitLiteral_value_list) {
+			return visitor.visitLiteral_value_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46762,6 +49028,14 @@ export class Alter_table_alter_index_actionContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_table_alter_index_action) {
 	 		listener.exitAlter_table_alter_index_action(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_table_alter_index_action) {
+			return visitor.visitAlter_table_alter_index_action(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -46806,6 +49080,14 @@ export class Drop_table_stmtContext extends ParserRuleContext {
 	 		listener.exitDrop_table_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDrop_table_stmt) {
+			return visitor.visitDrop_table_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46840,6 +49122,14 @@ export class Create_user_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitCreate_user_stmt) {
 	 		listener.exitCreate_user_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_user_stmt) {
+			return visitor.visitCreate_user_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -46890,6 +49180,14 @@ export class Alter_user_stmtContext extends ParserRuleContext {
 	 		listener.exitAlter_user_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_user_stmt) {
+			return visitor.visitAlter_user_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -46933,6 +49231,14 @@ export class Create_group_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitCreate_group_stmt) {
 	 		listener.exitCreate_group_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_group_stmt) {
+			return visitor.visitCreate_group_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -46989,6 +49295,14 @@ export class Alter_group_stmtContext extends ParserRuleContext {
 	 		listener.exitAlter_group_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_group_stmt) {
+			return visitor.visitAlter_group_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -47037,6 +49351,14 @@ export class Drop_role_stmtContext extends ParserRuleContext {
 	 		listener.exitDrop_role_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDrop_role_stmt) {
+			return visitor.visitDrop_role_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -47062,6 +49384,14 @@ export class Role_nameContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRole_name) {
 	 		listener.exitRole_name(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRole_name) {
+			return visitor.visitRole_name(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -47091,6 +49421,14 @@ export class User_optionContext extends ParserRuleContext {
 	 		listener.exitUser_option(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitUser_option) {
+			return visitor.visitUser_option(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -47116,6 +49454,14 @@ export class Authentication_optionContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAuthentication_option) {
 	 		listener.exitAuthentication_option(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAuthentication_option) {
+			return visitor.visitAuthentication_option(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -47148,6 +49494,14 @@ export class Password_optionContext extends ParserRuleContext {
 	 		listener.exitPassword_option(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitPassword_option) {
+			return visitor.visitPassword_option(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -47173,6 +49527,14 @@ export class Password_valueContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitPassword_value) {
 	 		listener.exitPassword_value(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitPassword_value) {
+			return visitor.visitPassword_value(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -47202,6 +49564,14 @@ export class Hash_optionContext extends ParserRuleContext {
 	 		listener.exitHash_option(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitHash_option) {
+			return visitor.visitHash_option(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -47227,6 +49597,14 @@ export class Login_optionContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitLogin_option) {
 	 		listener.exitLogin_option(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitLogin_option) {
+			return visitor.visitLogin_option(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -47289,6 +49667,14 @@ export class Grant_permissions_stmtContext extends ParserRuleContext {
 	 		listener.exitGrant_permissions_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitGrant_permissions_stmt) {
+			return visitor.visitGrant_permissions_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -47347,6 +49733,14 @@ export class Revoke_permissions_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRevoke_permissions_stmt) {
 	 		listener.exitRevoke_permissions_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRevoke_permissions_stmt) {
+			return visitor.visitRevoke_permissions_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -47442,6 +49836,14 @@ export class Permission_idContext extends ParserRuleContext {
 	 		listener.exitPermission_id(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitPermission_id) {
+			return visitor.visitPermission_id(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -47467,6 +49869,14 @@ export class Permission_nameContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitPermission_name) {
 	 		listener.exitPermission_name(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitPermission_name) {
+			return visitor.visitPermission_name(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -47508,6 +49918,14 @@ export class Permission_name_targetContext extends ParserRuleContext {
 	 		listener.exitPermission_name_target(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitPermission_name_target) {
+			return visitor.visitPermission_name_target(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -47542,6 +49960,14 @@ export class Create_resource_pool_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitCreate_resource_pool_stmt) {
 	 		listener.exitCreate_resource_pool_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_resource_pool_stmt) {
+			return visitor.visitCreate_resource_pool_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -47589,6 +50015,14 @@ export class Alter_resource_pool_stmtContext extends ParserRuleContext {
 	 		listener.exitAlter_resource_pool_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_resource_pool_stmt) {
+			return visitor.visitAlter_resource_pool_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -47614,6 +50048,14 @@ export class Alter_resource_pool_actionContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_resource_pool_action) {
 	 		listener.exitAlter_resource_pool_action(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_resource_pool_action) {
+			return visitor.visitAlter_resource_pool_action(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -47647,6 +50089,14 @@ export class Drop_resource_pool_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitDrop_resource_pool_stmt) {
 	 		listener.exitDrop_resource_pool_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDrop_resource_pool_stmt) {
+			return visitor.visitDrop_resource_pool_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -47686,6 +50136,14 @@ export class Create_resource_pool_classifier_stmtContext extends ParserRuleConte
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitCreate_resource_pool_classifier_stmt) {
 	 		listener.exitCreate_resource_pool_classifier_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_resource_pool_classifier_stmt) {
+			return visitor.visitCreate_resource_pool_classifier_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -47736,6 +50194,14 @@ export class Alter_resource_pool_classifier_stmtContext extends ParserRuleContex
 	 		listener.exitAlter_resource_pool_classifier_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_resource_pool_classifier_stmt) {
+			return visitor.visitAlter_resource_pool_classifier_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -47761,6 +50227,14 @@ export class Alter_resource_pool_classifier_actionContext extends ParserRuleCont
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_resource_pool_classifier_action) {
 	 		listener.exitAlter_resource_pool_classifier_action(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_resource_pool_classifier_action) {
+			return visitor.visitAlter_resource_pool_classifier_action(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -47797,6 +50271,14 @@ export class Drop_resource_pool_classifier_stmtContext extends ParserRuleContext
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitDrop_resource_pool_classifier_stmt) {
 	 		listener.exitDrop_resource_pool_classifier_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDrop_resource_pool_classifier_stmt) {
+			return visitor.visitDrop_resource_pool_classifier_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -47859,6 +50341,14 @@ export class Create_replication_stmtContext extends ParserRuleContext {
 	 		listener.exitCreate_replication_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_replication_stmt) {
+			return visitor.visitCreate_replication_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -47887,6 +50377,14 @@ export class Replication_targetContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitReplication_target) {
 	 		listener.exitReplication_target(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitReplication_target) {
+			return visitor.visitReplication_target(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -47922,6 +50420,14 @@ export class Replication_settingsContext extends ParserRuleContext {
 	 		listener.exitReplication_settings(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitReplication_settings) {
+			return visitor.visitReplication_settings(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -47950,6 +50456,14 @@ export class Replication_settings_entryContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitReplication_settings_entry) {
 	 		listener.exitReplication_settings_entry(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitReplication_settings_entry) {
+			return visitor.visitReplication_settings_entry(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -47997,6 +50511,14 @@ export class Alter_replication_stmtContext extends ParserRuleContext {
 	 		listener.exitAlter_replication_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_replication_stmt) {
+			return visitor.visitAlter_replication_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -48019,6 +50541,14 @@ export class Alter_replication_actionContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_replication_action) {
 	 		listener.exitAlter_replication_action(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_replication_action) {
+			return visitor.visitAlter_replication_action(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -48052,6 +50582,14 @@ export class Alter_replication_set_settingContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_replication_set_setting) {
 	 		listener.exitAlter_replication_set_setting(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_replication_set_setting) {
+			return visitor.visitAlter_replication_set_setting(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -48090,6 +50628,14 @@ export class Drop_replication_stmtContext extends ParserRuleContext {
 	 		listener.exitDrop_replication_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDrop_replication_stmt) {
+			return visitor.visitDrop_replication_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -48115,6 +50661,14 @@ export class Lambda_or_parameterContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitLambda_or_parameter) {
 	 		listener.exitLambda_or_parameter(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitLambda_or_parameter) {
+			return visitor.visitLambda_or_parameter(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -48174,6 +50728,14 @@ export class Create_transfer_stmtContext extends ParserRuleContext {
 	 		listener.exitCreate_transfer_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_transfer_stmt) {
+			return visitor.visitCreate_transfer_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -48207,6 +50769,14 @@ export class Transfer_settingsContext extends ParserRuleContext {
 	 		listener.exitTransfer_settings(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTransfer_settings) {
+			return visitor.visitTransfer_settings(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -48235,6 +50805,14 @@ export class Transfer_settings_entryContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitTransfer_settings_entry) {
 	 		listener.exitTransfer_settings_entry(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTransfer_settings_entry) {
+			return visitor.visitTransfer_settings_entry(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -48279,6 +50857,14 @@ export class Alter_transfer_stmtContext extends ParserRuleContext {
 	 		listener.exitAlter_transfer_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_transfer_stmt) {
+			return visitor.visitAlter_transfer_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -48304,6 +50890,14 @@ export class Alter_transfer_actionContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_transfer_action) {
 	 		listener.exitAlter_transfer_action(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_transfer_action) {
+			return visitor.visitAlter_transfer_action(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -48339,6 +50933,14 @@ export class Alter_transfer_set_settingContext extends ParserRuleContext {
 	 		listener.exitAlter_transfer_set_setting(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_transfer_set_setting) {
+			return visitor.visitAlter_transfer_set_setting(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -48367,6 +50969,14 @@ export class Alter_transfer_set_usingContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_transfer_set_using) {
 	 		listener.exitAlter_transfer_set_using(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_transfer_set_using) {
+			return visitor.visitAlter_transfer_set_using(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -48402,6 +51012,14 @@ export class Drop_transfer_stmtContext extends ParserRuleContext {
 	 		listener.exitDrop_transfer_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDrop_transfer_stmt) {
+			return visitor.visitDrop_transfer_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -48433,6 +51051,14 @@ export class Action_or_subquery_argsContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAction_or_subquery_args) {
 	 		listener.exitAction_or_subquery_args(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAction_or_subquery_args) {
+			return visitor.visitAction_or_subquery_args(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -48489,6 +51115,14 @@ export class Define_action_or_subquery_stmtContext extends ParserRuleContext {
 	 		listener.exitDefine_action_or_subquery_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDefine_action_or_subquery_stmt) {
+			return visitor.visitDefine_action_or_subquery_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -48520,6 +51154,14 @@ export class Define_action_or_subquery_bodyContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitDefine_action_or_subquery_body) {
 	 		listener.exitDefine_action_or_subquery_body(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDefine_action_or_subquery_body) {
+			return visitor.visitDefine_action_or_subquery_body(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -48559,6 +51201,14 @@ export class If_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitIf_stmt) {
 	 		listener.exitIf_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitIf_stmt) {
+			return visitor.visitIf_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -48607,6 +51257,14 @@ export class For_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitFor_stmt) {
 	 		listener.exitFor_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitFor_stmt) {
+			return visitor.visitFor_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -48678,6 +51336,14 @@ export class Table_refContext extends ParserRuleContext {
 	 		listener.exitTable_ref(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTable_ref) {
+			return visitor.visitTable_ref(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -48706,6 +51372,14 @@ export class Table_keyContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitTable_key) {
 	 		listener.exitTable_key(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTable_key) {
+			return visitor.visitTable_key(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -48739,6 +51413,14 @@ export class Table_argContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitTable_arg) {
 	 		listener.exitTable_arg(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTable_arg) {
+			return visitor.visitTable_arg(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -48781,6 +51463,14 @@ export class Table_hintsContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitTable_hints) {
 	 		listener.exitTable_hints(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTable_hints) {
+			return visitor.visitTable_hints(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -48843,6 +51533,14 @@ export class Table_hintContext extends ParserRuleContext {
 	 		listener.exitTable_hint(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTable_hint) {
+			return visitor.visitTable_hint(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -48871,6 +51569,14 @@ export class Object_refContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitObject_ref) {
 	 		listener.exitObject_ref(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitObject_ref) {
+			return visitor.visitObject_ref(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -48903,6 +51609,14 @@ export class Simple_table_ref_coreContext extends ParserRuleContext {
 	 		listener.exitSimple_table_ref_core(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSimple_table_ref_core) {
+			return visitor.visitSimple_table_ref_core(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -48928,6 +51642,14 @@ export class Simple_table_refContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitSimple_table_ref) {
 	 		listener.exitSimple_table_ref(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSimple_table_ref) {
+			return visitor.visitSimple_table_ref(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -48961,6 +51683,14 @@ export class Into_simple_table_refContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitInto_simple_table_ref) {
 	 		listener.exitInto_simple_table_ref(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitInto_simple_table_ref) {
+			return visitor.visitInto_simple_table_ref(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -49009,6 +51739,14 @@ export class Delete_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitDelete_stmt) {
 	 		listener.exitDelete_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDelete_stmt) {
+			return visitor.visitDelete_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -49062,6 +51800,14 @@ export class Update_stmtContext extends ParserRuleContext {
 	 		listener.exitUpdate_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitUpdate_stmt) {
+			return visitor.visitUpdate_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -49087,6 +51833,14 @@ export class Set_clause_choiceContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitSet_clause_choice) {
 	 		listener.exitSet_clause_choice(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSet_clause_choice) {
+			return visitor.visitSet_clause_choice(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -49122,6 +51876,14 @@ export class Set_clause_listContext extends ParserRuleContext {
 	 		listener.exitSet_clause_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSet_clause_list) {
+			return visitor.visitSet_clause_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -49152,6 +51914,14 @@ export class Set_clauseContext extends ParserRuleContext {
 	 		listener.exitSet_clause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSet_clause) {
+			return visitor.visitSet_clause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -49174,6 +51944,14 @@ export class Set_targetContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitSet_target) {
 	 		listener.exitSet_target(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSet_target) {
+			return visitor.visitSet_target(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -49210,6 +51988,14 @@ export class Multiple_column_assignmentContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitMultiple_column_assignment) {
 	 		listener.exitMultiple_column_assignment(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitMultiple_column_assignment) {
+			return visitor.visitMultiple_column_assignment(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -49249,6 +52035,14 @@ export class Set_target_listContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitSet_target_list) {
 	 		listener.exitSet_target_list(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSet_target_list) {
+			return visitor.visitSet_target_list(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -49296,6 +52090,14 @@ export class Create_topic_stmtContext extends ParserRuleContext {
 	 		listener.exitCreate_topic_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_topic_stmt) {
+			return visitor.visitCreate_topic_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -49335,6 +52137,14 @@ export class Create_topic_entriesContext extends ParserRuleContext {
 	 		listener.exitCreate_topic_entries(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_topic_entries) {
+			return visitor.visitCreate_topic_entries(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -49357,6 +52167,14 @@ export class Create_topic_entryContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitCreate_topic_entry) {
 	 		listener.exitCreate_topic_entry(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCreate_topic_entry) {
+			return visitor.visitCreate_topic_entry(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -49390,6 +52208,14 @@ export class With_topic_settingsContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitWith_topic_settings) {
 	 		listener.exitWith_topic_settings(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWith_topic_settings) {
+			return visitor.visitWith_topic_settings(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -49440,6 +52266,14 @@ export class Alter_topic_stmtContext extends ParserRuleContext {
 	 		listener.exitAlter_topic_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_topic_stmt) {
+			return visitor.visitAlter_topic_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -49476,6 +52310,14 @@ export class Alter_topic_actionContext extends ParserRuleContext {
 	 		listener.exitAlter_topic_action(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_topic_action) {
+			return visitor.visitAlter_topic_action(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -49501,6 +52343,14 @@ export class Alter_topic_add_consumerContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_topic_add_consumer) {
 	 		listener.exitAlter_topic_add_consumer(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_topic_add_consumer) {
+			return visitor.visitAlter_topic_add_consumer(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -49531,6 +52381,14 @@ export class Topic_create_consumer_entryContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitTopic_create_consumer_entry) {
 	 		listener.exitTopic_create_consumer_entry(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTopic_create_consumer_entry) {
+			return visitor.visitTopic_create_consumer_entry(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -49566,6 +52424,14 @@ export class Alter_topic_alter_consumerContext extends ParserRuleContext {
 	 		listener.exitAlter_topic_alter_consumer(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_topic_alter_consumer) {
+			return visitor.visitAlter_topic_alter_consumer(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -49591,6 +52457,14 @@ export class Alter_topic_alter_consumer_entryContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_topic_alter_consumer_entry) {
 	 		listener.exitAlter_topic_alter_consumer_entry(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_topic_alter_consumer_entry) {
+			return visitor.visitAlter_topic_alter_consumer_entry(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -49621,6 +52495,14 @@ export class Alter_topic_drop_consumerContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_topic_drop_consumer) {
 	 		listener.exitAlter_topic_drop_consumer(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_topic_drop_consumer) {
+			return visitor.visitAlter_topic_drop_consumer(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -49654,6 +52536,14 @@ export class Topic_alter_consumer_setContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitTopic_alter_consumer_set) {
 	 		listener.exitTopic_alter_consumer_set(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTopic_alter_consumer_set) {
+			return visitor.visitTopic_alter_consumer_set(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -49698,6 +52588,14 @@ export class Topic_alter_consumer_resetContext extends ParserRuleContext {
 	 		listener.exitTopic_alter_consumer_reset(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTopic_alter_consumer_reset) {
+			return visitor.visitTopic_alter_consumer_reset(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -49729,6 +52627,14 @@ export class Alter_topic_set_settingsContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAlter_topic_set_settings) {
 	 		listener.exitAlter_topic_set_settings(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_topic_set_settings) {
+			return visitor.visitAlter_topic_set_settings(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -49776,6 +52682,14 @@ export class Alter_topic_reset_settingsContext extends ParserRuleContext {
 	 		listener.exitAlter_topic_reset_settings(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_topic_reset_settings) {
+			return visitor.visitAlter_topic_reset_settings(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -49812,6 +52726,14 @@ export class Drop_topic_stmtContext extends ParserRuleContext {
 	 		listener.exitDrop_topic_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitDrop_topic_stmt) {
+			return visitor.visitDrop_topic_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -49845,6 +52767,14 @@ export class Topic_settingsContext extends ParserRuleContext {
 	 		listener.exitTopic_settings(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTopic_settings) {
+			return visitor.visitTopic_settings(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -49875,6 +52805,14 @@ export class Topic_settings_entryContext extends ParserRuleContext {
 	 		listener.exitTopic_settings_entry(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTopic_settings_entry) {
+			return visitor.visitTopic_settings_entry(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -49897,6 +52835,14 @@ export class Topic_setting_valueContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitTopic_setting_value) {
 	 		listener.exitTopic_setting_value(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTopic_setting_value) {
+			return visitor.visitTopic_setting_value(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -49932,6 +52878,14 @@ export class Topic_consumer_with_settingsContext extends ParserRuleContext {
 	 		listener.exitTopic_consumer_with_settings(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTopic_consumer_with_settings) {
+			return visitor.visitTopic_consumer_with_settings(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -49965,6 +52919,14 @@ export class Topic_consumer_settingsContext extends ParserRuleContext {
 	 		listener.exitTopic_consumer_settings(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTopic_consumer_settings) {
+			return visitor.visitTopic_consumer_settings(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -49995,6 +52957,14 @@ export class Topic_consumer_settings_entryContext extends ParserRuleContext {
 	 		listener.exitTopic_consumer_settings_entry(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTopic_consumer_settings_entry) {
+			return visitor.visitTopic_consumer_settings_entry(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50017,6 +52987,14 @@ export class Topic_consumer_setting_valueContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitTopic_consumer_setting_value) {
 	 		listener.exitTopic_consumer_setting_value(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTopic_consumer_setting_value) {
+			return visitor.visitTopic_consumer_setting_value(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -50049,6 +53027,14 @@ export class Topic_refContext extends ParserRuleContext {
 	 		listener.exitTopic_ref(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTopic_ref) {
+			return visitor.visitTopic_ref(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50071,6 +53057,14 @@ export class Topic_consumer_refContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitTopic_consumer_ref) {
 	 		listener.exitTopic_consumer_ref(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitTopic_consumer_ref) {
+			return visitor.visitTopic_consumer_ref(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -50101,6 +53095,14 @@ export class Null_treatmentContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitNull_treatment) {
 	 		listener.exitNull_treatment(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitNull_treatment) {
+			return visitor.visitNull_treatment(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -50139,6 +53141,14 @@ export class Filter_clauseContext extends ParserRuleContext {
 	 		listener.exitFilter_clause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitFilter_clause) {
+			return visitor.visitFilter_clause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50166,6 +53176,14 @@ export class Window_name_or_specificationContext extends ParserRuleContext {
 	 		listener.exitWindow_name_or_specification(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWindow_name_or_specification) {
+			return visitor.visitWindow_name_or_specification(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50188,6 +53206,14 @@ export class Window_nameContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitWindow_name) {
 	 		listener.exitWindow_name(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWindow_name) {
+			return visitor.visitWindow_name(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -50215,6 +53241,14 @@ export class Window_clauseContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitWindow_clause) {
 	 		listener.exitWindow_clause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWindow_clause) {
+			return visitor.visitWindow_clause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -50250,6 +53284,14 @@ export class Window_definition_listContext extends ParserRuleContext {
 	 		listener.exitWindow_definition_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWindow_definition_list) {
+			return visitor.visitWindow_definition_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50280,6 +53322,14 @@ export class Window_definitionContext extends ParserRuleContext {
 	 		listener.exitWindow_definition(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWindow_definition) {
+			return visitor.visitWindow_definition(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50302,6 +53352,14 @@ export class New_window_nameContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitNew_window_name) {
 	 		listener.exitNew_window_name(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitNew_window_name) {
+			return visitor.visitNew_window_name(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -50332,6 +53390,14 @@ export class Window_specificationContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitWindow_specification) {
 	 		listener.exitWindow_specification(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWindow_specification) {
+			return visitor.visitWindow_specification(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -50367,6 +53433,14 @@ export class Window_specification_detailsContext extends ParserRuleContext {
 	 		listener.exitWindow_specification_details(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWindow_specification_details) {
+			return visitor.visitWindow_specification_details(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50389,6 +53463,14 @@ export class Existing_window_nameContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitExisting_window_name) {
 	 		listener.exitExisting_window_name(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitExisting_window_name) {
+			return visitor.visitExisting_window_name(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -50424,6 +53506,14 @@ export class Window_partition_clauseContext extends ParserRuleContext {
 	 		listener.exitWindow_partition_clause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWindow_partition_clause) {
+			return visitor.visitWindow_partition_clause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50446,6 +53536,14 @@ export class Window_order_clauseContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitWindow_order_clause) {
 	 		listener.exitWindow_order_clause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWindow_order_clause) {
+			return visitor.visitWindow_order_clause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -50478,6 +53576,14 @@ export class Window_frame_clauseContext extends ParserRuleContext {
 	 		listener.exitWindow_frame_clause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWindow_frame_clause) {
+			return visitor.visitWindow_frame_clause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50508,6 +53614,14 @@ export class Window_frame_unitsContext extends ParserRuleContext {
 	 		listener.exitWindow_frame_units(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWindow_frame_units) {
+			return visitor.visitWindow_frame_units(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50533,6 +53647,14 @@ export class Window_frame_extentContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitWindow_frame_extent) {
 	 		listener.exitWindow_frame_extent(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWindow_frame_extent) {
+			return visitor.visitWindow_frame_extent(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -50566,6 +53688,14 @@ export class Window_frame_betweenContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitWindow_frame_between) {
 	 		listener.exitWindow_frame_between(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWindow_frame_between) {
+			return visitor.visitWindow_frame_between(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -50605,6 +53735,14 @@ export class Window_frame_boundContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitWindow_frame_bound) {
 	 		listener.exitWindow_frame_bound(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWindow_frame_bound) {
+			return visitor.visitWindow_frame_bound(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -50649,6 +53787,14 @@ export class Window_frame_exclusionContext extends ParserRuleContext {
 	 		listener.exitWindow_frame_exclusion(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitWindow_frame_exclusion) {
+			return visitor.visitWindow_frame_exclusion(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50674,6 +53820,14 @@ export class Use_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitUse_stmt) {
 	 		listener.exitUse_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitUse_stmt) {
+			return visitor.visitUse_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -50709,6 +53863,14 @@ export class Subselect_stmtContext extends ParserRuleContext {
 	 		listener.exitSubselect_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitSubselect_stmt) {
+			return visitor.visitSubselect_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50742,6 +53904,14 @@ export class Named_nodes_stmtContext extends ParserRuleContext {
 	 		listener.exitNamed_nodes_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitNamed_nodes_stmt) {
+			return visitor.visitNamed_nodes_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50766,6 +53936,14 @@ export class Commit_stmtContext extends ParserRuleContext {
 	 		listener.exitCommit_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCommit_stmt) {
+			return visitor.visitCommit_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50788,6 +53966,14 @@ export class Rollback_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitRollback_stmt) {
 	 		listener.exitRollback_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitRollback_stmt) {
+			return visitor.visitRollback_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -50823,6 +54009,14 @@ export class Analyze_tableContext extends ParserRuleContext {
 	 		listener.exitAnalyze_table(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAnalyze_table) {
+			return visitor.visitAnalyze_table(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50856,6 +54050,14 @@ export class Analyze_table_listContext extends ParserRuleContext {
 	 		listener.exitAnalyze_table_list(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAnalyze_table_list) {
+			return visitor.visitAnalyze_table_list(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50881,6 +54083,14 @@ export class Analyze_stmtContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAnalyze_stmt) {
 	 		listener.exitAnalyze_stmt(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAnalyze_stmt) {
+			return visitor.visitAnalyze_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -50925,6 +54135,14 @@ export class Alter_sequence_stmtContext extends ParserRuleContext {
 	 		listener.exitAlter_sequence_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_sequence_stmt) {
+			return visitor.visitAlter_sequence_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50964,6 +54182,14 @@ export class Alter_sequence_actionContext extends ParserRuleContext {
 	 		listener.exitAlter_sequence_action(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAlter_sequence_action) {
+			return visitor.visitAlter_sequence_action(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -50997,6 +54223,14 @@ export class Show_create_table_stmtContext extends ParserRuleContext {
 	 		listener.exitShow_create_table_stmt(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitShow_create_table_stmt) {
+			return visitor.visitShow_create_table_stmt(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51024,6 +54258,14 @@ export class IdentifierContext extends ParserRuleContext {
 	 		listener.exitIdentifier(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitIdentifier) {
+			return visitor.visitIdentifier(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51049,6 +54291,14 @@ export class IdContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitId) {
 	 		listener.exitId(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitId) {
+			return visitor.visitId(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -51093,6 +54343,14 @@ export class Id_schemaContext extends ParserRuleContext {
 	 		listener.exitId_schema(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitId_schema) {
+			return visitor.visitId_schema(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51132,6 +54390,14 @@ export class Id_exprContext extends ParserRuleContext {
 	 		listener.exitId_expr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitId_expr) {
+			return visitor.visitId_expr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51166,6 +54432,14 @@ export class Id_expr_inContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitId_expr_in) {
 	 		listener.exitId_expr_in(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitId_expr_in) {
+			return visitor.visitId_expr_in(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -51213,6 +54487,14 @@ export class Id_windowContext extends ParserRuleContext {
 	 		listener.exitId_window(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitId_window) {
+			return visitor.visitId_window(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51255,6 +54537,14 @@ export class Id_tableContext extends ParserRuleContext {
 	 		listener.exitId_table(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitId_table) {
+			return visitor.visitId_table(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51295,6 +54585,14 @@ export class Id_withoutContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitId_without) {
 	 		listener.exitId_without(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitId_without) {
+			return visitor.visitId_without(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -51342,6 +54640,14 @@ export class Id_hintContext extends ParserRuleContext {
 	 		listener.exitId_hint(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitId_hint) {
+			return visitor.visitId_hint(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51367,6 +54673,14 @@ export class Id_as_compatContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitId_as_compat) {
 	 		listener.exitId_as_compat(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitId_as_compat) {
+			return visitor.visitId_as_compat(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -51396,6 +54710,14 @@ export class An_idContext extends ParserRuleContext {
 	 		listener.exitAn_id(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAn_id) {
+			return visitor.visitAn_id(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51421,6 +54743,14 @@ export class An_id_or_typeContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAn_id_or_type) {
 	 		listener.exitAn_id_or_type(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAn_id_or_type) {
+			return visitor.visitAn_id_or_type(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -51450,6 +54780,14 @@ export class An_id_schemaContext extends ParserRuleContext {
 	 		listener.exitAn_id_schema(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAn_id_schema) {
+			return visitor.visitAn_id_schema(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51475,6 +54813,14 @@ export class An_id_exprContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAn_id_expr) {
 	 		listener.exitAn_id_expr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAn_id_expr) {
+			return visitor.visitAn_id_expr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -51504,6 +54850,14 @@ export class An_id_expr_inContext extends ParserRuleContext {
 	 		listener.exitAn_id_expr_in(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAn_id_expr_in) {
+			return visitor.visitAn_id_expr_in(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51529,6 +54883,14 @@ export class An_id_windowContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAn_id_window) {
 	 		listener.exitAn_id_window(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAn_id_window) {
+			return visitor.visitAn_id_window(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -51558,6 +54920,14 @@ export class An_id_tableContext extends ParserRuleContext {
 	 		listener.exitAn_id_table(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAn_id_table) {
+			return visitor.visitAn_id_table(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51583,6 +54953,14 @@ export class An_id_withoutContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAn_id_without) {
 	 		listener.exitAn_id_without(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAn_id_without) {
+			return visitor.visitAn_id_without(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -51612,6 +54990,14 @@ export class An_id_hintContext extends ParserRuleContext {
 	 		listener.exitAn_id_hint(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAn_id_hint) {
+			return visitor.visitAn_id_hint(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51639,6 +55025,14 @@ export class An_id_pureContext extends ParserRuleContext {
 	 		listener.exitAn_id_pure(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAn_id_pure) {
+			return visitor.visitAn_id_pure(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51664,6 +55058,14 @@ export class An_id_as_compatContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitAn_id_as_compat) {
 	 		listener.exitAn_id_as_compat(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitAn_id_as_compat) {
+			return visitor.visitAn_id_as_compat(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -51696,6 +55098,14 @@ export class View_nameContext extends ParserRuleContext {
 	 		listener.exitView_name(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitView_name) {
+			return visitor.visitView_name(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51721,6 +55131,14 @@ export class Opt_id_prefixContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitOpt_id_prefix) {
 	 		listener.exitOpt_id_prefix(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitOpt_id_prefix) {
+			return visitor.visitOpt_id_prefix(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -51756,6 +55174,14 @@ export class Cluster_exprContext extends ParserRuleContext {
 	 		listener.exitCluster_expr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitCluster_expr) {
+			return visitor.visitCluster_expr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51781,6 +55207,14 @@ export class Id_or_typeContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitId_or_type) {
 	 		listener.exitId_or_type(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitId_or_type) {
+			return visitor.visitId_or_type(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -51810,6 +55244,14 @@ export class Opt_id_prefix_or_typeContext extends ParserRuleContext {
 	 		listener.exitOpt_id_prefix_or_type(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitOpt_id_prefix_or_type) {
+			return visitor.visitOpt_id_prefix_or_type(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51835,6 +55277,14 @@ export class Id_or_atContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitId_or_at) {
 	 		listener.exitId_or_at(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitId_or_at) {
+			return visitor.visitId_or_at(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -51864,6 +55314,14 @@ export class Id_table_or_typeContext extends ParserRuleContext {
 	 		listener.exitId_table_or_type(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitId_table_or_type) {
+			return visitor.visitId_table_or_type(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -51889,6 +55347,14 @@ export class Id_table_or_atContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitId_table_or_at) {
 	 		listener.exitId_table_or_at(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitId_table_or_at) {
+			return visitor.visitId_table_or_at(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -51934,6 +55400,14 @@ export class KeywordContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitKeyword) {
 	 		listener.exitKeyword(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitKeyword) {
+			return visitor.visitKeyword(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -52044,6 +55518,14 @@ export class Keyword_expr_uncompatContext extends ParserRuleContext {
 	 		listener.exitKeyword_expr_uncompat(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitKeyword_expr_uncompat) {
+			return visitor.visitKeyword_expr_uncompat(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -52072,6 +55554,14 @@ export class Keyword_table_uncompatContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitKeyword_table_uncompat) {
 	 		listener.exitKeyword_table_uncompat(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitKeyword_table_uncompat) {
+			return visitor.visitKeyword_table_uncompat(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -52128,6 +55618,14 @@ export class Keyword_select_uncompatContext extends ParserRuleContext {
 	 		listener.exitKeyword_select_uncompat(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitKeyword_select_uncompat) {
+			return visitor.visitKeyword_select_uncompat(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -52152,6 +55650,14 @@ export class Keyword_alter_uncompatContext extends ParserRuleContext {
 	 		listener.exitKeyword_alter_uncompat(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitKeyword_alter_uncompat) {
+			return visitor.visitKeyword_alter_uncompat(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -52174,6 +55680,14 @@ export class Keyword_in_uncompatContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitKeyword_in_uncompat) {
 	 		listener.exitKeyword_in_uncompat(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitKeyword_in_uncompat) {
+			return visitor.visitKeyword_in_uncompat(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -52206,6 +55720,14 @@ export class Keyword_window_uncompatContext extends ParserRuleContext {
 	 		listener.exitKeyword_window_uncompat(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitKeyword_window_uncompat) {
+			return visitor.visitKeyword_window_uncompat(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -52231,6 +55753,14 @@ export class Keyword_hint_uncompatContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitKeyword_hint_uncompat) {
 	 		listener.exitKeyword_hint_uncompat(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitKeyword_hint_uncompat) {
+			return visitor.visitKeyword_hint_uncompat(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -52852,6 +56382,14 @@ export class Keyword_as_compatContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitKeyword_as_compat) {
 	 		listener.exitKeyword_as_compat(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitKeyword_as_compat) {
+			return visitor.visitKeyword_as_compat(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -53544,6 +57082,14 @@ export class Keyword_compatContext extends ParserRuleContext {
 	 		listener.exitKeyword_compat(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitKeyword_compat) {
+			return visitor.visitKeyword_compat(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -53601,6 +57147,14 @@ export class Type_idContext extends ParserRuleContext {
 	 		listener.exitType_id(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitType_id) {
+			return visitor.visitType_id(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -53628,6 +57182,14 @@ export class Bool_valueContext extends ParserRuleContext {
 	 		listener.exitBool_value(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitBool_value) {
+			return visitor.visitBool_value(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -53650,6 +57212,14 @@ export class RealContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitReal) {
 	 		listener.exitReal(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitReal) {
+			return visitor.visitReal(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -53677,6 +57247,14 @@ export class IntegerContext extends ParserRuleContext {
 	public exitRule(listener: YQLListener): void {
 	    if(listener.exitInteger) {
 	 		listener.exitInteger(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: YQLVisitor<Result>): Result {
+		if (visitor.visitInteger) {
+			return visitor.visitInteger(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }

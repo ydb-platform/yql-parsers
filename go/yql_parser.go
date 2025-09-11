@@ -3523,6 +3523,16 @@ func (s *Sql_queryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Sql_queryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSql_query(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -3715,6 +3725,16 @@ func (s *Sql_stmt_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Sql_stmt_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitSql_stmt_list(s)
+	}
+}
+
+func (s *Sql_stmt_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSql_stmt_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -3945,6 +3965,16 @@ func (s *Ansi_sql_stmt_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Ansi_sql_stmt_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAnsi_sql_stmt_list(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -4143,6 +4173,16 @@ func (s *Lambda_bodyContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Lambda_bodyContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitLambda_body(s)
+	}
+}
+
+func (s *Lambda_bodyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitLambda_body(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -4384,6 +4424,16 @@ func (s *Lambda_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Lambda_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitLambda_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -4529,6 +4579,16 @@ func (s *Sql_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Sql_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitSql_stmt(s)
+	}
+}
+
+func (s *Sql_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSql_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -5728,6 +5788,16 @@ func (s *Sql_stmt_coreContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Sql_stmt_coreContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSql_stmt_core(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -6391,6 +6461,16 @@ func (s *ExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitExpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -6595,6 +6675,16 @@ func (s *Or_subexprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Or_subexprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitOr_subexpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -6780,6 +6870,16 @@ func (s *And_subexprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *And_subexprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAnd_subexpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -6946,6 +7046,16 @@ func (s *Xor_subexprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Xor_subexprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitXor_subexpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -7070,6 +7180,16 @@ func (s *Distinct_from_opContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Distinct_from_opContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitDistinct_from_op(s)
+	}
+}
+
+func (s *Distinct_from_opContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDistinct_from_op(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -7425,6 +7545,16 @@ func (s *Cond_exprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Cond_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitCond_expr(s)
+	}
+}
+
+func (s *Cond_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCond_expr(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -7918,6 +8048,16 @@ func (s *Match_opContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Match_opContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitMatch_op(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -8104,6 +8244,16 @@ func (s *Eq_subexprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Eq_subexprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitEq_subexpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -8243,6 +8393,16 @@ func (s *Shift_rightContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Shift_rightContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitShift_right(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -8361,6 +8521,16 @@ func (s *Rot_rightContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Rot_rightContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRot_right(s)
+	}
+}
+
+func (s *Rot_rightContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRot_right(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -8485,6 +8655,16 @@ func (s *Double_questionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Double_questionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitDouble_question(s)
+	}
+}
+
+func (s *Double_questionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDouble_question(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -8817,6 +8997,16 @@ func (s *Neq_subexprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Neq_subexprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitNeq_subexpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -9130,6 +9320,16 @@ func (s *Bit_subexprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Bit_subexprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitBit_subexpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -9332,6 +9532,16 @@ func (s *Add_subexprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Add_subexprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAdd_subexpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -9514,6 +9724,16 @@ func (s *Mul_subexprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Mul_subexprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitMul_subexpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -9674,6 +9894,16 @@ func (s *Con_subexprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Con_subexprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCon_subexpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -9808,6 +10038,16 @@ func (s *Unary_opContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Unary_opContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitUnary_op(s)
+	}
+}
+
+func (s *Unary_opContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitUnary_op(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -10128,6 +10368,16 @@ func (s *Unary_subexpr_suffixContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
+func (s *Unary_subexpr_suffixContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitUnary_subexpr_suffix(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -10386,6 +10636,16 @@ func (s *Unary_casual_subexprContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
+func (s *Unary_casual_subexprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitUnary_casual_subexpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -10554,6 +10814,16 @@ func (s *In_unary_casual_subexprContext) ExitRule(listener antlr.ParseTreeListen
 	}
 }
 
+func (s *In_unary_casual_subexprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitIn_unary_casual_subexpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -10705,6 +10975,16 @@ func (s *Unary_subexprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Unary_subexprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitUnary_subexpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -10852,6 +11132,16 @@ func (s *In_unary_subexprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *In_unary_subexprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitIn_unary_subexpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -10994,6 +11284,16 @@ func (s *List_literalContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *List_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitList_literal(s)
+	}
+}
+
+func (s *List_literalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitList_literal(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -11199,6 +11499,16 @@ func (s *Expr_dict_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Expr_dict_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitExpr_dict_list(s)
+	}
+}
+
+func (s *Expr_dict_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitExpr_dict_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -11414,6 +11724,16 @@ func (s *Dict_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Dict_literalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDict_literal(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -11619,6 +11939,16 @@ func (s *Expr_struct_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Expr_struct_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitExpr_struct_list(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -11804,6 +12134,16 @@ func (s *Struct_literalContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Struct_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitStruct_literal(s)
+	}
+}
+
+func (s *Struct_literalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitStruct_literal(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -12177,6 +12517,16 @@ func (s *Atom_exprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Atom_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAtom_expr(s)
+	}
+}
+
+func (s *Atom_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAtom_expr(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -12652,6 +13002,16 @@ func (s *In_atom_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *In_atom_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitIn_atom_expr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -12953,6 +13313,16 @@ func (s *Cast_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Cast_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCast_expr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -13137,6 +13507,16 @@ func (s *Bitcast_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Bitcast_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitBitcast_expr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -13313,6 +13693,16 @@ func (s *Exists_exprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Exists_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitExists_expr(s)
+	}
+}
+
+func (s *Exists_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitExists_expr(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -13554,6 +13944,16 @@ func (s *Case_exprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Case_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitCase_expr(s)
+	}
+}
+
+func (s *Case_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCase_expr(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -13799,6 +14199,16 @@ func (s *LambdaContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *LambdaContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitLambda(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -13989,6 +14399,16 @@ func (s *In_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *In_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitIn_expr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -14134,6 +14554,16 @@ func (s *Json_api_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Json_api_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJson_api_expr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -14263,6 +14693,16 @@ func (s *Jsonpath_specContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Jsonpath_specContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJsonpath_spec(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -14380,6 +14820,16 @@ func (s *Json_variable_nameContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Json_variable_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitJson_variable_name(s)
+	}
+}
+
+func (s *Json_variable_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJson_variable_name(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -14542,6 +14992,16 @@ func (s *Json_variableContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Json_variableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJson_variable(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -14698,6 +15158,16 @@ func (s *Json_variablesContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Json_variablesContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitJson_variables(s)
+	}
+}
+
+func (s *Json_variablesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJson_variables(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -14888,6 +15358,16 @@ func (s *Json_common_argsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Json_common_argsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJson_common_args(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -15048,6 +15528,16 @@ func (s *Json_case_handlerContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Json_case_handlerContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitJson_case_handler(s)
+	}
+}
+
+func (s *Json_case_handlerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJson_case_handler(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -15318,6 +15808,16 @@ func (s *Json_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Json_valueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJson_value(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -15532,6 +16032,16 @@ func (s *Json_exists_handlerContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
+func (s *Json_exists_handlerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJson_exists_handler(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -15700,6 +16210,16 @@ func (s *Json_existsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Json_existsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJson_exists(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -15857,6 +16377,16 @@ func (s *Json_query_wrapperContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Json_query_wrapperContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitJson_query_wrapper(s)
+	}
+}
+
+func (s *Json_query_wrapperContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJson_query_wrapper(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -16068,6 +16598,16 @@ func (s *Json_query_handlerContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Json_query_handlerContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitJson_query_handler(s)
+	}
+}
+
+func (s *Json_query_handlerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJson_query_handler(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -16349,6 +16889,16 @@ func (s *Json_queryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Json_queryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJson_query(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -16584,6 +17134,16 @@ func (s *Smart_parenthesisContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Smart_parenthesisContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSmart_parenthesis(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -16776,6 +17336,16 @@ func (s *Expr_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Expr_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitExpr_list(s)
+	}
+}
+
+func (s *Expr_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitExpr_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -16974,6 +17544,16 @@ func (s *Pure_column_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Pure_column_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitPure_column_list(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -17147,6 +17727,16 @@ func (s *Pure_column_or_namedContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Pure_column_or_namedContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitPure_column_or_named(s)
+	}
+}
+
+func (s *Pure_column_or_namedContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitPure_column_or_named(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -17329,6 +17919,16 @@ func (s *Pure_column_or_named_listContext) ExitRule(listener antlr.ParseTreeList
 	}
 }
 
+func (s *Pure_column_or_named_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitPure_column_or_named_list(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -17505,6 +18105,16 @@ func (s *Column_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Column_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitColumn_name(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -17665,6 +18275,16 @@ func (s *Without_column_nameContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Without_column_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitWithout_column_name(s)
+	}
+}
+
+func (s *Without_column_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWithout_column_name(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -17843,6 +18463,16 @@ func (s *Column_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Column_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitColumn_list(s)
+	}
+}
+
+func (s *Column_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitColumn_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -18052,6 +18682,16 @@ func (s *Without_column_listContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
+func (s *Without_column_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWithout_column_list(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -18244,6 +18884,16 @@ func (s *Named_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Named_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitNamed_expr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -18413,6 +19063,16 @@ func (s *Named_expr_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Named_expr_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitNamed_expr_list(s)
+	}
+}
+
+func (s *Named_expr_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitNamed_expr_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -18616,6 +19276,16 @@ func (s *Invoke_exprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Invoke_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitInvoke_expr(s)
+	}
+}
+
+func (s *Invoke_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitInvoke_expr(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -18837,6 +19507,16 @@ func (s *Invoke_expr_tailContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Invoke_expr_tailContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitInvoke_expr_tail(s)
+	}
+}
+
+func (s *Invoke_expr_tailContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitInvoke_expr_tail(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -19084,6 +19764,16 @@ func (s *Using_call_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Using_call_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitUsing_call_expr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -19266,6 +19956,16 @@ func (s *Key_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Key_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitKey_expr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -19426,6 +20126,16 @@ func (s *When_exprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *When_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitWhen_expr(s)
+	}
+}
+
+func (s *When_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWhen_expr(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -19626,6 +20336,16 @@ func (s *Literal_valueContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Literal_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitLiteral_value(s)
+	}
+}
+
+func (s *Literal_valueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitLiteral_value(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -19869,6 +20589,16 @@ func (s *Bind_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Bind_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitBind_parameter(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -20027,6 +20757,16 @@ func (s *Opt_bind_parameterContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Opt_bind_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitOpt_bind_parameter(s)
+	}
+}
+
+func (s *Opt_bind_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitOpt_bind_parameter(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -20195,6 +20935,16 @@ func (s *Bind_parameter_listContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Bind_parameter_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitBind_parameter_list(s)
+	}
+}
+
+func (s *Bind_parameter_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitBind_parameter_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -20372,6 +21122,16 @@ func (s *Named_bind_parameterContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
+func (s *Named_bind_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitNamed_bind_parameter(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -20541,6 +21301,16 @@ func (s *Named_bind_parameter_listContext) EnterRule(listener antlr.ParseTreeLis
 func (s *Named_bind_parameter_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitNamed_bind_parameter_list(s)
+	}
+}
+
+func (s *Named_bind_parameter_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitNamed_bind_parameter_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -20714,6 +21484,16 @@ func (s *Signed_numberContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Signed_numberContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSigned_number(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -20871,6 +21651,16 @@ func (s *Type_name_simpleContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Type_name_simpleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_simple(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -20996,6 +21786,16 @@ func (s *Integer_or_bindContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Integer_or_bindContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitInteger_or_bind(s)
+	}
+}
+
+func (s *Integer_or_bindContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitInteger_or_bind(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -21151,6 +21951,16 @@ func (s *Type_name_tagContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Type_name_tagContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitType_name_tag(s)
+	}
+}
+
+func (s *Type_name_tagContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_tag(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -21321,6 +22131,16 @@ func (s *Struct_argContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Struct_argContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitStruct_arg(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -21473,6 +22293,16 @@ func (s *Struct_arg_positionalContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Struct_arg_positionalContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitStruct_arg_positional(s)
+	}
+}
+
+func (s *Struct_arg_positionalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitStruct_arg_positional(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -21684,6 +22514,16 @@ func (s *Variant_argContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Variant_argContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitVariant_arg(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -21828,6 +22668,16 @@ func (s *Callable_argContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Callable_argContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitCallable_arg(s)
+	}
+}
+
+func (s *Callable_argContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCallable_arg(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -22012,6 +22862,16 @@ func (s *Callable_arg_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Callable_arg_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitCallable_arg_list(s)
+	}
+}
+
+func (s *Callable_arg_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCallable_arg_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -22210,6 +23070,16 @@ func (s *Type_name_decimalContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Type_name_decimalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_decimal(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -22369,6 +23239,16 @@ func (s *Type_name_optionalContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Type_name_optionalContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitType_name_optional(s)
+	}
+}
+
+func (s *Type_name_optionalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_optional(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -22560,6 +23440,16 @@ func (s *Type_name_tupleContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Type_name_tupleContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitType_name_tuple(s)
+	}
+}
+
+func (s *Type_name_tupleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_tuple(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -22850,6 +23740,16 @@ func (s *Type_name_structContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Type_name_structContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_struct(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -23132,6 +24032,16 @@ func (s *Type_name_variantContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Type_name_variantContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_variant(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -23341,6 +24251,16 @@ func (s *Type_name_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Type_name_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_list(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -23491,6 +24411,16 @@ func (s *Type_name_streamContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Type_name_streamContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_stream(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -23638,6 +24568,16 @@ func (s *Type_name_flowContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Type_name_flowContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitType_name_flow(s)
+	}
+}
+
+func (s *Type_name_flowContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_flow(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -23822,6 +24762,16 @@ func (s *Type_name_dictContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Type_name_dictContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_dict(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -23981,6 +24931,16 @@ func (s *Type_name_setContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Type_name_setContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitType_name_set(s)
+	}
+}
+
+func (s *Type_name_setContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_set(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -24167,6 +25127,16 @@ func (s *Type_name_enumContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Type_name_enumContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitType_name_enum(s)
+	}
+}
+
+func (s *Type_name_enumContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_enum(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -24379,6 +25349,16 @@ func (s *Type_name_resourceContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Type_name_resourceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_resource(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -24548,6 +25528,16 @@ func (s *Type_name_taggedContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Type_name_taggedContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitType_name_tagged(s)
+	}
+}
+
+func (s *Type_name_taggedContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_tagged(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -24783,6 +25773,16 @@ func (s *Type_name_callableContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Type_name_callableContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitType_name_callable(s)
+	}
+}
+
+func (s *Type_name_callableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_callable(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -25226,6 +26226,16 @@ func (s *Type_name_compositeContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
+func (s *Type_name_compositeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_composite(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -25508,6 +26518,16 @@ func (s *Type_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Type_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -25708,6 +26728,16 @@ func (s *Type_name_or_bindContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Type_name_or_bindContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_name_or_bind(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -25826,6 +26856,16 @@ func (s *Value_constructor_literalContext) EnterRule(listener antlr.ParseTreeLis
 func (s *Value_constructor_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitValue_constructor_literal(s)
+	}
+}
+
+func (s *Value_constructor_literalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitValue_constructor_literal(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -26002,6 +27042,16 @@ func (s *Value_constructorContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Value_constructorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitValue_constructor(s)
+	}
+}
+
+func (s *Value_constructorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitValue_constructor(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -26315,6 +27365,16 @@ func (s *Declare_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Declare_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDeclare_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -26507,6 +27567,16 @@ func (s *Module_pathContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Module_pathContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitModule_path(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -26696,6 +27766,16 @@ func (s *Import_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Import_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitImport_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -26829,6 +27909,16 @@ func (s *Export_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Export_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitExport_stmt(s)
+	}
+}
+
+func (s *Export_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitExport_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -26980,6 +28070,16 @@ func (s *Call_actionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Call_actionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitCall_action(s)
+	}
+}
+
+func (s *Call_actionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCall_action(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -27168,6 +28268,16 @@ func (s *Inline_actionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Inline_actionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitInline_action(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -27322,6 +28432,16 @@ func (s *Do_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Do_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitDo_stmt(s)
+	}
+}
+
+func (s *Do_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDo_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -27553,6 +28673,16 @@ func (s *Pragma_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Pragma_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitPragma_stmt(s)
+	}
+}
+
+func (s *Pragma_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitPragma_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -27817,6 +28947,16 @@ func (s *Pragma_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Pragma_valueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitPragma_value(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -27988,6 +29128,16 @@ func (s *Sort_specificationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Sort_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSort_specification(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -28156,6 +29306,16 @@ func (s *Sort_specification_listContext) EnterRule(listener antlr.ParseTreeListe
 func (s *Sort_specification_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitSort_specification_list(s)
+	}
+}
+
+func (s *Sort_specification_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSort_specification_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -28368,6 +29528,16 @@ func (s *Select_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Select_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitSelect_stmt(s)
+	}
+}
+
+func (s *Select_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSelect_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -28596,6 +29766,16 @@ func (s *Select_unparenthesized_stmtContext) ExitRule(listener antlr.ParseTreeLi
 	}
 }
 
+func (s *Select_unparenthesized_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSelect_unparenthesized_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -28742,6 +29922,16 @@ func (s *Select_kind_parenthesisContext) EnterRule(listener antlr.ParseTreeListe
 func (s *Select_kind_parenthesisContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitSelect_kind_parenthesis(s)
+	}
+}
+
+func (s *Select_kind_parenthesisContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSelect_kind_parenthesis(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -28894,6 +30084,16 @@ func (s *Select_opContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Select_opContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitSelect_op(s)
+	}
+}
+
+func (s *Select_opContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSelect_op(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -29129,6 +30329,16 @@ func (s *Select_kind_partialContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
+func (s *Select_kind_partialContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSelect_kind_partial(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -29354,6 +30564,16 @@ func (s *Select_kindContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Select_kindContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitSelect_kind(s)
+	}
+}
+
+func (s *Select_kindContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSelect_kind(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -29736,6 +30956,16 @@ func (s *Process_coreContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Process_coreContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitProcess_core(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -30064,6 +31294,16 @@ func (s *External_call_paramContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
+func (s *External_call_paramContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitExternal_call_param(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -30220,6 +31460,16 @@ func (s *External_call_settingsContext) EnterRule(listener antlr.ParseTreeListen
 func (s *External_call_settingsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitExternal_call_settings(s)
+	}
+}
+
+func (s *External_call_settingsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitExternal_call_settings(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -30575,6 +31825,16 @@ func (s *Reduce_coreContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Reduce_coreContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitReduce_core(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -30872,6 +32132,16 @@ func (s *Opt_set_quantifierContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Opt_set_quantifierContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitOpt_set_quantifier(s)
+	}
+}
+
+func (s *Opt_set_quantifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitOpt_set_quantifier(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -31253,6 +32523,16 @@ func (s *Select_coreContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Select_coreContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitSelect_core(s)
+	}
+}
+
+func (s *Select_coreContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSelect_core(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -31723,6 +33003,16 @@ func (s *Row_pattern_recognition_clauseContext) ExitRule(listener antlr.ParseTre
 	}
 }
 
+func (s *Row_pattern_recognition_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_recognition_clause(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -31950,6 +33240,16 @@ func (s *Row_pattern_rows_per_matchContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
+func (s *Row_pattern_rows_per_matchContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_rows_per_match(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -32174,6 +33474,16 @@ func (s *Row_pattern_empty_match_handlingContext) ExitRule(listener antlr.ParseT
 	}
 }
 
+func (s *Row_pattern_empty_match_handlingContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_empty_match_handling(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -32380,6 +33690,16 @@ func (s *Row_pattern_measuresContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
+func (s *Row_pattern_measuresContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_measures(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -32532,6 +33852,16 @@ func (s *Row_pattern_measure_listContext) EnterRule(listener antlr.ParseTreeList
 func (s *Row_pattern_measure_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRow_pattern_measure_list(s)
+	}
+}
+
+func (s *Row_pattern_measure_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_measure_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -32697,6 +34027,16 @@ func (s *Row_pattern_measure_definitionContext) EnterRule(listener antlr.ParseTr
 func (s *Row_pattern_measure_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRow_pattern_measure_definition(s)
+	}
+}
+
+func (s *Row_pattern_measure_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_measure_definition(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -32918,6 +34258,16 @@ func (s *Row_pattern_common_syntaxContext) EnterRule(listener antlr.ParseTreeLis
 func (s *Row_pattern_common_syntaxContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRow_pattern_common_syntax(s)
+	}
+}
+
+func (s *Row_pattern_common_syntaxContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_common_syntax(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -33163,6 +34513,16 @@ func (s *Row_pattern_skip_toContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Row_pattern_skip_toContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRow_pattern_skip_to(s)
+	}
+}
+
+func (s *Row_pattern_skip_toContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_skip_to(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -33440,6 +34800,16 @@ func (s *Row_pattern_skip_to_variable_nameContext) ExitRule(listener antlr.Parse
 	}
 }
 
+func (s *Row_pattern_skip_to_variable_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_skip_to_variable_name(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -33541,6 +34911,16 @@ func (s *Row_pattern_initial_or_seekContext) EnterRule(listener antlr.ParseTreeL
 func (s *Row_pattern_initial_or_seekContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRow_pattern_initial_or_seek(s)
+	}
+}
+
+func (s *Row_pattern_initial_or_seekContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_initial_or_seek(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -33697,6 +35077,16 @@ func (s *Row_patternContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Row_patternContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRow_pattern(s)
+	}
+}
+
+func (s *Row_patternContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -33869,6 +35259,16 @@ func (s *Row_pattern_termContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Row_pattern_termContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_term(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -34014,6 +35414,16 @@ func (s *Row_pattern_factorContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Row_pattern_factorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRow_pattern_factor(s)
+	}
+}
+
+func (s *Row_pattern_factorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_factor(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -34199,6 +35609,16 @@ func (s *Row_pattern_quantifierContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Row_pattern_quantifierContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRow_pattern_quantifier(s)
+	}
+}
+
+func (s *Row_pattern_quantifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_quantifier(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -34586,6 +36006,16 @@ func (s *Row_pattern_primaryContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
+func (s *Row_pattern_primaryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_primary(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -34820,6 +36250,16 @@ func (s *Row_pattern_primary_variable_nameContext) ExitRule(listener antlr.Parse
 	}
 }
 
+func (s *Row_pattern_primary_variable_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_primary_variable_name(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -34979,6 +36419,16 @@ func (s *Row_pattern_permuteContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Row_pattern_permuteContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRow_pattern_permute(s)
+	}
+}
+
+func (s *Row_pattern_permuteContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_permute(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -35154,6 +36604,16 @@ func (s *Row_pattern_subset_clauseContext) ExitRule(listener antlr.ParseTreeList
 	}
 }
 
+func (s *Row_pattern_subset_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_subset_clause(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -35306,6 +36766,16 @@ func (s *Row_pattern_subset_listContext) EnterRule(listener antlr.ParseTreeListe
 func (s *Row_pattern_subset_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRow_pattern_subset_list(s)
+	}
+}
+
+func (s *Row_pattern_subset_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_subset_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -35484,6 +36954,16 @@ func (s *Row_pattern_subset_itemContext) ExitRule(listener antlr.ParseTreeListen
 	}
 }
 
+func (s *Row_pattern_subset_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_subset_item(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -35620,6 +37100,16 @@ func (s *Row_pattern_subset_item_variable_nameContext) EnterRule(listener antlr.
 func (s *Row_pattern_subset_item_variable_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRow_pattern_subset_item_variable_name(s)
+	}
+}
+
+func (s *Row_pattern_subset_item_variable_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_subset_item_variable_name(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -35770,6 +37260,16 @@ func (s *Row_pattern_subset_rhsContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
+func (s *Row_pattern_subset_rhsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_subset_rhs(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -35910,6 +37410,16 @@ func (s *Row_pattern_subset_rhs_variable_nameContext) EnterRule(listener antlr.P
 func (s *Row_pattern_subset_rhs_variable_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRow_pattern_subset_rhs_variable_name(s)
+	}
+}
+
+func (s *Row_pattern_subset_rhs_variable_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_subset_rhs_variable_name(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -36057,6 +37567,16 @@ func (s *Row_pattern_definition_listContext) EnterRule(listener antlr.ParseTreeL
 func (s *Row_pattern_definition_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRow_pattern_definition_list(s)
+	}
+}
+
+func (s *Row_pattern_definition_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_definition_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -36225,6 +37745,16 @@ func (s *Row_pattern_definitionContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
+func (s *Row_pattern_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_definition(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -36348,6 +37878,16 @@ func (s *Row_pattern_definition_variable_nameContext) ExitRule(listener antlr.Pa
 	}
 }
 
+func (s *Row_pattern_definition_variable_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_definition_variable_name(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -36456,6 +37996,16 @@ func (s *Row_pattern_definition_search_conditionContext) EnterRule(listener antl
 func (s *Row_pattern_definition_search_conditionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRow_pattern_definition_search_condition(s)
+	}
+}
+
+func (s *Row_pattern_definition_search_conditionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_definition_search_condition(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -36570,6 +38120,16 @@ func (s *Search_conditionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Search_conditionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSearch_condition(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -36678,6 +38238,16 @@ func (s *Row_pattern_variable_nameContext) EnterRule(listener antlr.ParseTreeLis
 func (s *Row_pattern_variable_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRow_pattern_variable_name(s)
+	}
+}
+
+func (s *Row_pattern_variable_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRow_pattern_variable_name(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -36799,6 +38369,16 @@ func (s *Order_by_clauseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Order_by_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitOrder_by_clause(s)
+	}
+}
+
+func (s *Order_by_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitOrder_by_clause(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -36931,6 +38511,16 @@ func (s *Ext_order_by_clauseContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Ext_order_by_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitExt_order_by_clause(s)
+	}
+}
+
+func (s *Ext_order_by_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitExt_order_by_clause(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -37117,6 +38707,16 @@ func (s *Group_by_clauseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Group_by_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitGroup_by_clause(s)
+	}
+}
+
+func (s *Group_by_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitGroup_by_clause(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -37331,6 +38931,16 @@ func (s *Grouping_element_listContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
+func (s *Grouping_element_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitGrouping_element_list(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -37542,6 +39152,16 @@ func (s *Grouping_elementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Grouping_elementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitGrouping_element(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -37696,6 +39316,16 @@ func (s *Ordinary_grouping_setContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
+func (s *Ordinary_grouping_setContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitOrdinary_grouping_set(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -37840,6 +39470,16 @@ func (s *Ordinary_grouping_set_listContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Ordinary_grouping_set_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitOrdinary_grouping_set_list(s)
+	}
+}
+
+func (s *Ordinary_grouping_set_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitOrdinary_grouping_set_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -38001,6 +39641,16 @@ func (s *Rollup_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Rollup_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRollup_list(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -38148,6 +39798,16 @@ func (s *Cube_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Cube_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitCube_list(s)
+	}
+}
+
+func (s *Cube_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCube_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -38303,6 +39963,16 @@ func (s *Grouping_sets_specificationContext) EnterRule(listener antlr.ParseTreeL
 func (s *Grouping_sets_specificationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitGrouping_sets_specification(s)
+	}
+}
+
+func (s *Grouping_sets_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitGrouping_sets_specification(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -38497,6 +40167,16 @@ func (s *Hopping_window_specificationContext) EnterRule(listener antlr.ParseTree
 func (s *Hopping_window_specificationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitHopping_window_specification(s)
+	}
+}
+
+func (s *Hopping_window_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitHopping_window_specification(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -38729,6 +40409,16 @@ func (s *Result_columnContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Result_columnContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitResult_column(s)
+	}
+}
+
+func (s *Result_columnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitResult_column(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -39020,6 +40710,16 @@ func (s *Join_sourceContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Join_sourceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJoin_source(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -39230,6 +40930,16 @@ func (s *Named_columnContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Named_columnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitNamed_column(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -39395,6 +41105,16 @@ func (s *Flatten_by_argContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Flatten_by_argContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitFlatten_by_arg(s)
+	}
+}
+
+func (s *Flatten_by_argContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitFlatten_by_arg(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -39612,6 +41332,16 @@ func (s *Flatten_sourceContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Flatten_sourceContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitFlatten_source(s)
+	}
+}
+
+func (s *Flatten_sourceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitFlatten_source(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -39914,6 +41644,16 @@ func (s *Named_single_sourceContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
+func (s *Named_single_sourceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitNamed_single_source(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -40168,6 +41908,16 @@ func (s *Single_sourceContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Single_sourceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSingle_source(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -40343,6 +42093,16 @@ func (s *Sample_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Sample_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSample_clause(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -40511,6 +42271,16 @@ func (s *Tablesample_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Tablesample_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTablesample_clause(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -40660,6 +42430,16 @@ func (s *Sampling_modeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Sampling_modeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSampling_mode(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -40792,6 +42572,16 @@ func (s *Repeatable_clauseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Repeatable_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRepeatable_clause(s)
+	}
+}
+
+func (s *Repeatable_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRepeatable_clause(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -40970,6 +42760,16 @@ func (s *Join_opContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Join_opContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitJoin_op(s)
+	}
+}
+
+func (s *Join_opContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJoin_op(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -41318,6 +43118,16 @@ func (s *Join_constraintContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Join_constraintContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitJoin_constraint(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -41510,6 +43320,16 @@ func (s *Returning_columns_listContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Returning_columns_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitReturning_columns_list(s)
+	}
+}
+
+func (s *Returning_columns_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitReturning_columns_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -41761,6 +43581,16 @@ func (s *Into_table_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Into_table_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitInto_table_stmt(s)
+	}
+}
+
+func (s *Into_table_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitInto_table_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -42054,6 +43884,16 @@ func (s *Into_values_sourceContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Into_values_sourceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitInto_values_source(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -42217,6 +44057,16 @@ func (s *Values_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Values_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitValues_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -42350,6 +44200,16 @@ func (s *Values_sourceContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Values_sourceContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitValues_source(s)
+	}
+}
+
+func (s *Values_sourceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitValues_source(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -42522,6 +44382,16 @@ func (s *Values_source_row_listContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
+func (s *Values_source_row_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitValues_source_row_list(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -42675,6 +44545,16 @@ func (s *Values_source_rowContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Values_source_rowContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitValues_source_row(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -42816,6 +44696,16 @@ func (s *Simple_values_sourceContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Simple_values_sourceContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitSimple_values_source(s)
+	}
+}
+
+func (s *Simple_values_sourceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSimple_values_source(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -43008,6 +44898,16 @@ func (s *Create_external_data_source_stmtContext) EnterRule(listener antlr.Parse
 func (s *Create_external_data_source_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitCreate_external_data_source_stmt(s)
+	}
+}
+
+func (s *Create_external_data_source_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_external_data_source_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -43293,6 +45193,16 @@ func (s *Alter_external_data_source_stmtContext) ExitRule(listener antlr.ParseTr
 	}
 }
 
+func (s *Alter_external_data_source_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_external_data_source_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -43506,6 +45416,16 @@ func (s *Alter_external_data_source_actionContext) ExitRule(listener antlr.Parse
 	}
 }
 
+func (s *Alter_external_data_source_actionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_external_data_source_action(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -43671,6 +45591,16 @@ func (s *Drop_external_data_source_stmtContext) EnterRule(listener antlr.ParseTr
 func (s *Drop_external_data_source_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitDrop_external_data_source_stmt(s)
+	}
+}
+
+func (s *Drop_external_data_source_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDrop_external_data_source_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -43906,6 +45836,16 @@ func (s *Create_view_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Create_view_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_view_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -44112,6 +46052,16 @@ func (s *Drop_view_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Drop_view_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitDrop_view_stmt(s)
+	}
+}
+
+func (s *Drop_view_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDrop_view_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -44323,6 +46273,16 @@ func (s *Upsert_object_stmtContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Upsert_object_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitUpsert_object_stmt(s)
+	}
+}
+
+func (s *Upsert_object_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitUpsert_object_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -44572,6 +46532,16 @@ func (s *Create_object_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Create_object_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_object_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -44782,6 +46752,16 @@ func (s *Create_object_featuresContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
+func (s *Create_object_featuresContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_object_features(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -44960,6 +46940,16 @@ func (s *Alter_object_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Alter_object_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_object_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -45121,6 +47111,16 @@ func (s *Alter_object_featuresContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Alter_object_featuresContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_object_features(s)
+	}
+}
+
+func (s *Alter_object_featuresContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_object_features(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -45309,6 +47309,16 @@ func (s *Drop_object_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Drop_object_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitDrop_object_stmt(s)
+	}
+}
+
+func (s *Drop_object_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDrop_object_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -45514,6 +47524,16 @@ func (s *Drop_object_featuresContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
+func (s *Drop_object_featuresContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDrop_object_features(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -45669,6 +47689,16 @@ func (s *Object_feature_valueContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Object_feature_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitObject_feature_value(s)
+	}
+}
+
+func (s *Object_feature_valueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitObject_feature_value(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -45847,6 +47877,16 @@ func (s *Object_feature_kvContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Object_feature_kvContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitObject_feature_kv(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -45967,6 +48007,16 @@ func (s *Object_feature_flagContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Object_feature_flagContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitObject_feature_flag(s)
+	}
+}
+
+func (s *Object_feature_flagContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitObject_feature_flag(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -46095,6 +48145,16 @@ func (s *Object_featureContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Object_featureContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitObject_feature(s)
+	}
+}
+
+func (s *Object_featureContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitObject_feature(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -46271,6 +48331,16 @@ func (s *Object_featuresContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Object_featuresContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitObject_features(s)
+	}
+}
+
+func (s *Object_featuresContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitObject_features(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -46452,6 +48522,16 @@ func (s *Object_type_refContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Object_type_refContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitObject_type_ref(s)
+	}
+}
+
+func (s *Object_type_refContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitObject_type_ref(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -46766,6 +48846,16 @@ func (s *Create_table_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Create_table_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitCreate_table_stmt(s)
+	}
+}
+
+func (s *Create_table_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_table_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -47278,6 +49368,16 @@ func (s *Create_table_entryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Create_table_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_table_entry(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -47494,6 +49594,16 @@ func (s *Create_backup_collection_stmtContext) ExitRule(listener antlr.ParseTree
 	}
 }
 
+func (s *Create_backup_collection_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_backup_collection_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -47697,6 +49807,16 @@ func (s *Alter_backup_collection_stmtContext) ExitRule(listener antlr.ParseTreeL
 	}
 }
 
+func (s *Alter_backup_collection_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_backup_collection_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -47847,6 +49967,16 @@ func (s *Drop_backup_collection_stmtContext) ExitRule(listener antlr.ParseTreeLi
 	}
 }
 
+func (s *Drop_backup_collection_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDrop_backup_collection_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -47968,6 +50098,16 @@ func (s *Create_backup_collection_entriesContext) EnterRule(listener antlr.Parse
 func (s *Create_backup_collection_entriesContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitCreate_backup_collection_entries(s)
+	}
+}
+
+func (s *Create_backup_collection_entriesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_backup_collection_entries(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -48115,6 +50255,16 @@ func (s *Create_backup_collection_entries_manyContext) EnterRule(listener antlr.
 func (s *Create_backup_collection_entries_manyContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitCreate_backup_collection_entries_many(s)
+	}
+}
+
+func (s *Create_backup_collection_entries_manyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_backup_collection_entries_many(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -48288,6 +50438,16 @@ func (s *Table_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Table_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitTable_list(s)
+	}
+}
+
+func (s *Table_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTable_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -48486,6 +50646,16 @@ func (s *Alter_backup_collection_actionsContext) ExitRule(listener antlr.ParseTr
 	}
 }
 
+func (s *Alter_backup_collection_actionsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_backup_collection_actions(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -48643,6 +50813,16 @@ func (s *Alter_backup_collection_actionContext) EnterRule(listener antlr.ParseTr
 func (s *Alter_backup_collection_actionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_backup_collection_action(s)
+	}
+}
+
+func (s *Alter_backup_collection_actionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_backup_collection_action(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -48815,6 +50995,16 @@ func (s *Alter_backup_collection_entriesContext) ExitRule(listener antlr.ParseTr
 	}
 }
 
+func (s *Alter_backup_collection_entriesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_backup_collection_entries(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -48975,6 +51165,16 @@ func (s *Alter_backup_collection_entryContext) EnterRule(listener antlr.ParseTre
 func (s *Alter_backup_collection_entryContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_backup_collection_entry(s)
+	}
+}
+
+func (s *Alter_backup_collection_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_backup_collection_entry(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -49190,6 +51390,16 @@ func (s *Backup_collectionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Backup_collectionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitBackup_collection(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -49350,6 +51560,16 @@ func (s *Backup_collection_settingsContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Backup_collection_settingsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitBackup_collection_settings(s)
+	}
+}
+
+func (s *Backup_collection_settingsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitBackup_collection_settings(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -49518,6 +51738,16 @@ func (s *Backup_collection_settings_entryContext) ExitRule(listener antlr.ParseT
 	}
 }
 
+func (s *Backup_collection_settings_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitBackup_collection_settings_entry(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -49648,6 +51878,16 @@ func (s *Backup_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Backup_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitBackup_stmt(s)
+	}
+}
+
+func (s *Backup_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitBackup_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -49803,6 +52043,16 @@ func (s *Restore_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Restore_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRestore_stmt(s)
+	}
+}
+
+func (s *Restore_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRestore_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -49988,6 +52238,16 @@ func (s *Alter_database_stmtContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Alter_database_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_database_stmt(s)
+	}
+}
+
+func (s *Alter_database_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_database_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -50189,6 +52449,16 @@ func (s *Table_inheritsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Table_inheritsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTable_inherits(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -50368,6 +52638,16 @@ func (s *Table_partition_byContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Table_partition_byContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitTable_partition_by(s)
+	}
+}
+
+func (s *Table_partition_byContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTable_partition_by(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -50557,6 +52837,16 @@ func (s *With_table_settingsContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
+func (s *With_table_settingsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWith_table_settings(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -50729,6 +53019,16 @@ func (s *Table_tablestoreContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Table_tablestoreContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTable_tablestore(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -50870,6 +53170,16 @@ func (s *Table_settings_entryContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
+func (s *Table_settings_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTable_settings_entry(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -50995,6 +53305,16 @@ func (s *Table_as_sourceContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Table_as_sourceContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitTable_as_source(s)
+	}
+}
+
+func (s *Table_as_sourceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTable_as_source(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -51177,6 +53497,16 @@ func (s *Alter_table_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Alter_table_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_table_stmt(s)
+	}
+}
+
+func (s *Alter_table_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -51615,6 +53945,16 @@ func (s *Alter_table_actionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Alter_table_actionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_action(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -51933,6 +54273,16 @@ func (s *Alter_external_table_stmtContext) ExitRule(listener antlr.ParseTreeList
 	}
 }
 
+func (s *Alter_external_table_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_external_table_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -52172,6 +54522,16 @@ func (s *Alter_external_table_actionContext) ExitRule(listener antlr.ParseTreeLi
 	}
 }
 
+func (s *Alter_external_table_actionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_external_table_action(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -52389,6 +54749,16 @@ func (s *Alter_table_store_stmtContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
+func (s *Alter_table_store_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_store_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -52569,6 +54939,16 @@ func (s *Alter_table_store_actionContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
+func (s *Alter_table_store_actionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_store_action(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -52709,6 +55089,16 @@ func (s *Alter_table_add_columnContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Alter_table_add_columnContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_table_add_column(s)
+	}
+}
+
+func (s *Alter_table_add_columnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_add_column(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -52859,6 +55249,16 @@ func (s *Alter_table_drop_columnContext) EnterRule(listener antlr.ParseTreeListe
 func (s *Alter_table_drop_columnContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_table_drop_column(s)
+	}
+}
+
+func (s *Alter_table_drop_columnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_drop_column(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -53030,6 +55430,16 @@ func (s *Alter_table_alter_columnContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
+func (s *Alter_table_alter_columnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_alter_column(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -53194,6 +55604,16 @@ func (s *Alter_table_alter_column_drop_not_nullContext) ExitRule(listener antlr.
 	}
 }
 
+func (s *Alter_table_alter_column_drop_not_nullContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_alter_column_drop_not_null(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -53347,6 +55767,16 @@ func (s *Alter_table_add_column_familyContext) EnterRule(listener antlr.ParseTre
 func (s *Alter_table_add_column_familyContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_table_add_column_family(s)
+	}
+}
+
+func (s *Alter_table_add_column_familyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_add_column_family(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -53527,6 +55957,16 @@ func (s *Alter_table_alter_column_familyContext) ExitRule(listener antlr.ParseTr
 	}
 }
 
+func (s *Alter_table_alter_column_familyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_alter_column_family(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -53689,6 +56129,16 @@ func (s *Alter_table_set_table_setting_uncompatContext) EnterRule(listener antlr
 func (s *Alter_table_set_table_setting_uncompatContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_table_set_table_setting_uncompat(s)
+	}
+}
+
+func (s *Alter_table_set_table_setting_uncompatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_set_table_setting_uncompat(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -53863,6 +56313,16 @@ func (s *Alter_table_set_table_setting_compatContext) EnterRule(listener antlr.P
 func (s *Alter_table_set_table_setting_compatContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_table_set_table_setting_compat(s)
+	}
+}
+
+func (s *Alter_table_set_table_setting_compatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_set_table_setting_compat(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -54084,6 +56544,16 @@ func (s *Alter_table_reset_table_settingContext) ExitRule(listener antlr.ParseTr
 	}
 }
 
+func (s *Alter_table_reset_table_settingContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_reset_table_setting(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -54256,6 +56726,16 @@ func (s *Alter_table_add_indexContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
+func (s *Alter_table_add_indexContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_add_index(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -54382,6 +56862,16 @@ func (s *Alter_table_drop_indexContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Alter_table_drop_indexContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_table_drop_index(s)
+	}
+}
+
+func (s *Alter_table_drop_indexContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_drop_index(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -54519,6 +57009,16 @@ func (s *Alter_table_rename_toContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Alter_table_rename_toContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_table_rename_to(s)
+	}
+}
+
+func (s *Alter_table_rename_toContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_rename_to(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -54690,6 +57190,16 @@ func (s *Alter_table_rename_index_toContext) ExitRule(listener antlr.ParseTreeLi
 	}
 }
 
+func (s *Alter_table_rename_index_toContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_rename_index_to(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -54831,6 +57341,16 @@ func (s *Alter_table_add_changefeedContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Alter_table_add_changefeedContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_table_add_changefeed(s)
+	}
+}
+
+func (s *Alter_table_add_changefeedContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_add_changefeed(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -54980,6 +57500,16 @@ func (s *Alter_table_alter_changefeedContext) ExitRule(listener antlr.ParseTreeL
 	}
 }
 
+func (s *Alter_table_alter_changefeedContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_alter_changefeed(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -55118,6 +57648,16 @@ func (s *Alter_table_drop_changefeedContext) EnterRule(listener antlr.ParseTreeL
 func (s *Alter_table_drop_changefeedContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_table_drop_changefeed(s)
+	}
+}
+
+func (s *Alter_table_drop_changefeedContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_drop_changefeed(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -55272,6 +57812,16 @@ func (s *Alter_table_alter_indexContext) EnterRule(listener antlr.ParseTreeListe
 func (s *Alter_table_alter_indexContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_table_alter_index(s)
+	}
+}
+
+func (s *Alter_table_alter_indexContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_alter_index(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -55457,6 +58007,16 @@ func (s *Column_schemaContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Column_schemaContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitColumn_schema(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -55598,6 +58158,16 @@ func (s *Family_relationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Family_relationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitFamily_relation(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -55729,6 +58299,16 @@ func (s *Opt_column_constraintsContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Opt_column_constraintsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitOpt_column_constraints(s)
+	}
+}
+
+func (s *Opt_column_constraintsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitOpt_column_constraints(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -55909,6 +58489,16 @@ func (s *Column_order_by_specificationContext) EnterRule(listener antlr.ParseTre
 func (s *Column_order_by_specificationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitColumn_order_by_specification(s)
+	}
+}
+
+func (s *Column_order_by_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitColumn_order_by_specification(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -56158,6 +58748,16 @@ func (s *Table_constraintContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Table_constraintContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitTable_constraint(s)
+	}
+}
+
+func (s *Table_constraintContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTable_constraint(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -56612,6 +59212,16 @@ func (s *Table_indexContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Table_indexContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTable_index(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -56918,6 +59528,16 @@ func (s *Table_index_typeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Table_index_typeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTable_index_type(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -57079,6 +59699,16 @@ func (s *Global_indexContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Global_indexContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitGlobal_index(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -57225,6 +59855,16 @@ func (s *Local_indexContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Local_indexContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitLocal_index(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -57337,6 +59977,16 @@ func (s *Index_subtypeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Index_subtypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitIndex_subtype(s)
+	}
+}
+
+func (s *Index_subtypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitIndex_subtype(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -57499,6 +60149,16 @@ func (s *With_index_settingsContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *With_index_settingsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitWith_index_settings(s)
+	}
+}
+
+func (s *With_index_settingsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWith_index_settings(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -57718,6 +60378,16 @@ func (s *Index_setting_entryContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
+func (s *Index_setting_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitIndex_setting_entry(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -57877,6 +60547,16 @@ func (s *Index_setting_valueContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Index_setting_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitIndex_setting_value(s)
+	}
+}
+
+func (s *Index_setting_valueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitIndex_setting_value(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -58070,6 +60750,16 @@ func (s *ChangefeedContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ChangefeedContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitChangefeed(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -58253,6 +60943,16 @@ func (s *Changefeed_settingsContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
+func (s *Changefeed_settingsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitChangefeed_settings(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -58418,6 +61118,16 @@ func (s *Changefeed_settings_entryContext) ExitRule(listener antlr.ParseTreeList
 	}
 }
 
+func (s *Changefeed_settings_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitChangefeed_settings_entry(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -58538,6 +61248,16 @@ func (s *Changefeed_setting_valueContext) EnterRule(listener antlr.ParseTreeList
 func (s *Changefeed_setting_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitChangefeed_setting_value(s)
+	}
+}
+
+func (s *Changefeed_setting_valueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitChangefeed_setting_value(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -58669,6 +61389,16 @@ func (s *Changefeed_alter_settingsContext) EnterRule(listener antlr.ParseTreeLis
 func (s *Changefeed_alter_settingsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitChangefeed_alter_settings(s)
+	}
+}
+
+func (s *Changefeed_alter_settingsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitChangefeed_alter_settings(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -58852,6 +61582,16 @@ func (s *Alter_table_setting_entryContext) EnterRule(listener antlr.ParseTreeLis
 func (s *Alter_table_setting_entryContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_table_setting_entry(s)
+	}
+}
+
+func (s *Alter_table_setting_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_setting_entry(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -59095,6 +61835,16 @@ func (s *Table_setting_valueContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Table_setting_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitTable_setting_value(s)
+	}
+}
+
+func (s *Table_setting_valueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTable_setting_value(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -59387,6 +62137,16 @@ func (s *Ttl_tier_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Ttl_tier_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTtl_tier_list(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -59571,6 +62331,16 @@ func (s *Ttl_tier_actionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Ttl_tier_actionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitTtl_tier_action(s)
+	}
+}
+
+func (s *Ttl_tier_actionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTtl_tier_action(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -59765,6 +62535,16 @@ func (s *Family_entryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Family_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitFamily_entry(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -59931,6 +62711,16 @@ func (s *Family_settingsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Family_settingsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitFamily_settings(s)
+	}
+}
+
+func (s *Family_settingsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitFamily_settings(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -60126,6 +62916,16 @@ func (s *Family_settings_entryContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
+func (s *Family_settings_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitFamily_settings_entry(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -60251,6 +63051,16 @@ func (s *Family_setting_valueContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Family_setting_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitFamily_setting_value(s)
+	}
+}
+
+func (s *Family_setting_valueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitFamily_setting_value(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -60434,6 +63244,16 @@ func (s *Split_boundariesContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Split_boundariesContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitSplit_boundaries(s)
+	}
+}
+
+func (s *Split_boundariesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSplit_boundaries(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -60661,6 +63481,16 @@ func (s *Literal_value_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Literal_value_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitLiteral_value_list(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -60854,6 +63684,16 @@ func (s *Alter_table_alter_index_actionContext) ExitRule(listener antlr.ParseTre
 	}
 }
 
+func (s *Alter_table_alter_index_actionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_table_alter_index_action(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -61019,6 +63859,16 @@ func (s *Drop_table_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Drop_table_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitDrop_table_stmt(s)
+	}
+}
+
+func (s *Drop_table_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDrop_table_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -61272,6 +64122,16 @@ func (s *Create_user_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Create_user_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_user_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -61514,6 +64374,16 @@ func (s *Alter_user_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Alter_user_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_user_stmt(s)
+	}
+}
+
+func (s *Alter_user_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_user_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -61778,6 +64648,16 @@ func (s *Create_group_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Create_group_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitCreate_group_stmt(s)
+	}
+}
+
+func (s *Create_group_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_group_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -62066,6 +64946,16 @@ func (s *Alter_group_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Alter_group_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_group_stmt(s)
+	}
+}
+
+func (s *Alter_group_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_group_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -62377,6 +65267,16 @@ func (s *Drop_role_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Drop_role_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDrop_role_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -62608,6 +65508,16 @@ func (s *Role_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Role_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRole_name(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -62755,6 +65665,16 @@ func (s *User_optionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *User_optionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitUser_option(s)
+	}
+}
+
+func (s *User_optionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitUser_option(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -62908,6 +65828,16 @@ func (s *Authentication_optionContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
+func (s *Authentication_optionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAuthentication_option(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -63051,6 +65981,16 @@ func (s *Password_optionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Password_optionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitPassword_option(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -63184,6 +66124,16 @@ func (s *Password_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Password_valueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitPassword_value(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -63294,6 +66244,16 @@ func (s *Hash_optionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Hash_optionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitHash_option(s)
+	}
+}
+
+func (s *Hash_optionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitHash_option(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -63410,6 +66370,16 @@ func (s *Login_optionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Login_optionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitLogin_option(s)
+	}
+}
+
+func (s *Login_optionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitLogin_option(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -63656,6 +66626,16 @@ func (s *Grant_permissions_stmtContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Grant_permissions_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitGrant_permissions_stmt(s)
+	}
+}
+
+func (s *Grant_permissions_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitGrant_permissions_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -64052,6 +67032,16 @@ func (s *Revoke_permissions_stmtContext) ExitRule(listener antlr.ParseTreeListen
 	}
 }
 
+func (s *Revoke_permissions_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRevoke_permissions_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -64390,6 +67380,16 @@ func (s *Permission_idContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Permission_idContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitPermission_id(s)
+	}
+}
+
+func (s *Permission_idContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitPermission_id(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -64760,6 +67760,16 @@ func (s *Permission_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Permission_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitPermission_name(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -64940,6 +67950,16 @@ func (s *Permission_name_targetContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Permission_name_targetContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitPermission_name_target(s)
+	}
+}
+
+func (s *Permission_name_targetContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitPermission_name_target(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -65190,6 +68210,16 @@ func (s *Create_resource_pool_stmtContext) ExitRule(listener antlr.ParseTreeList
 	}
 }
 
+func (s *Create_resource_pool_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_resource_pool_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -65397,6 +68427,16 @@ func (s *Alter_resource_pool_stmtContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
+func (s *Alter_resource_pool_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_resource_pool_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -65585,6 +68625,16 @@ func (s *Alter_resource_pool_actionContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
+func (s *Alter_resource_pool_actionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_resource_pool_action(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -65730,6 +68780,16 @@ func (s *Drop_resource_pool_stmtContext) EnterRule(listener antlr.ParseTreeListe
 func (s *Drop_resource_pool_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitDrop_resource_pool_stmt(s)
+	}
+}
+
+func (s *Drop_resource_pool_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDrop_resource_pool_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -65902,6 +68962,16 @@ func (s *Create_resource_pool_classifier_stmtContext) EnterRule(listener antlr.P
 func (s *Create_resource_pool_classifier_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitCreate_resource_pool_classifier_stmt(s)
+	}
+}
+
+func (s *Create_resource_pool_classifier_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_resource_pool_classifier_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -66125,6 +69195,16 @@ func (s *Alter_resource_pool_classifier_stmtContext) ExitRule(listener antlr.Par
 	}
 }
 
+func (s *Alter_resource_pool_classifier_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_resource_pool_classifier_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -66321,6 +69401,16 @@ func (s *Alter_resource_pool_classifier_actionContext) ExitRule(listener antlr.P
 	}
 }
 
+func (s *Alter_resource_pool_classifier_actionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_resource_pool_classifier_action(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -66471,6 +69561,16 @@ func (s *Drop_resource_pool_classifier_stmtContext) EnterRule(listener antlr.Par
 func (s *Drop_resource_pool_classifier_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitDrop_resource_pool_classifier_stmt(s)
+	}
+}
+
+func (s *Drop_resource_pool_classifier_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDrop_resource_pool_classifier_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -66722,6 +69822,16 @@ func (s *Create_replication_stmtContext) ExitRule(listener antlr.ParseTreeListen
 	}
 }
 
+func (s *Create_replication_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_replication_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -66960,6 +70070,16 @@ func (s *Replication_targetContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Replication_targetContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitReplication_target(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -67116,6 +70236,16 @@ func (s *Replication_settingsContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Replication_settingsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitReplication_settings(s)
+	}
+}
+
+func (s *Replication_settingsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitReplication_settings(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -67281,6 +70411,16 @@ func (s *Replication_settings_entryContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Replication_settings_entryContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitReplication_settings_entry(s)
+	}
+}
+
+func (s *Replication_settings_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitReplication_settings_entry(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -67475,6 +70615,16 @@ func (s *Alter_replication_stmtContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
+func (s *Alter_replication_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_replication_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -67646,6 +70796,16 @@ func (s *Alter_replication_actionContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
+func (s *Alter_replication_actionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_replication_action(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -67769,6 +70929,16 @@ func (s *Alter_replication_set_settingContext) EnterRule(listener antlr.ParseTre
 func (s *Alter_replication_set_settingContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_replication_set_setting(s)
+	}
+}
+
+func (s *Alter_replication_set_settingContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_replication_set_setting(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -67924,6 +71094,16 @@ func (s *Drop_replication_stmtContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Drop_replication_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitDrop_replication_stmt(s)
+	}
+}
+
+func (s *Drop_replication_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDrop_replication_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -68097,6 +71277,16 @@ func (s *Lambda_or_parameterContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Lambda_or_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitLambda_or_parameter(s)
+	}
+}
+
+func (s *Lambda_or_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitLambda_or_parameter(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -68330,6 +71520,16 @@ func (s *Create_transfer_stmtContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Create_transfer_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitCreate_transfer_stmt(s)
+	}
+}
+
+func (s *Create_transfer_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_transfer_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -68573,6 +71773,16 @@ func (s *Transfer_settingsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Transfer_settingsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTransfer_settings(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -68735,6 +71945,16 @@ func (s *Transfer_settings_entryContext) EnterRule(listener antlr.ParseTreeListe
 func (s *Transfer_settings_entryContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitTransfer_settings_entry(s)
+	}
+}
+
+func (s *Transfer_settings_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTransfer_settings_entry(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -68924,6 +72144,16 @@ func (s *Alter_transfer_stmtContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
+func (s *Alter_transfer_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_transfer_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -69104,6 +72334,16 @@ func (s *Alter_transfer_actionContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
+func (s *Alter_transfer_actionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_transfer_action(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -69246,6 +72486,16 @@ func (s *Alter_transfer_set_settingContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Alter_transfer_set_settingContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_transfer_set_setting(s)
+	}
+}
+
+func (s *Alter_transfer_set_settingContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_transfer_set_setting(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -69394,6 +72644,16 @@ func (s *Alter_transfer_set_usingContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
+func (s *Alter_transfer_set_usingContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_transfer_set_using(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -69533,6 +72793,16 @@ func (s *Drop_transfer_stmtContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Drop_transfer_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitDrop_transfer_stmt(s)
+	}
+}
+
+func (s *Drop_transfer_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDrop_transfer_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -69717,6 +72987,16 @@ func (s *Action_or_subquery_argsContext) EnterRule(listener antlr.ParseTreeListe
 func (s *Action_or_subquery_argsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAction_or_subquery_args(s)
+	}
+}
+
+func (s *Action_or_subquery_argsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAction_or_subquery_args(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -69934,6 +73214,16 @@ func (s *Define_action_or_subquery_stmtContext) EnterRule(listener antlr.ParseTr
 func (s *Define_action_or_subquery_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitDefine_action_or_subquery_stmt(s)
+	}
+}
+
+func (s *Define_action_or_subquery_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDefine_action_or_subquery_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -70161,6 +73451,16 @@ func (s *Define_action_or_subquery_bodyContext) EnterRule(listener antlr.ParseTr
 func (s *Define_action_or_subquery_bodyContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitDefine_action_or_subquery_body(s)
+	}
+}
+
+func (s *Define_action_or_subquery_bodyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDefine_action_or_subquery_body(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -70454,6 +73754,16 @@ func (s *If_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *If_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitIf_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -70703,6 +74013,16 @@ func (s *For_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *For_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitFor_stmt(s)
+	}
+}
+
+func (s *For_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitFor_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -71084,6 +74404,16 @@ func (s *Table_refContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Table_refContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTable_ref(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -71453,6 +74783,16 @@ func (s *Table_keyContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Table_keyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTable_key(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -71613,6 +74953,16 @@ func (s *Table_argContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Table_argContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitTable_arg(s)
+	}
+}
+
+func (s *Table_argContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTable_arg(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -71819,6 +75169,16 @@ func (s *Table_hintsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Table_hintsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitTable_hints(s)
+	}
+}
+
+func (s *Table_hintsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTable_hints(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -72146,6 +75506,16 @@ func (s *Table_hintContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Table_hintContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitTable_hint(s)
+	}
+}
+
+func (s *Table_hintContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTable_hint(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -72568,6 +75938,16 @@ func (s *Object_refContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Object_refContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitObject_ref(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -72719,6 +76099,16 @@ func (s *Simple_table_ref_coreContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Simple_table_ref_coreContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitSimple_table_ref_core(s)
+	}
+}
+
+func (s *Simple_table_ref_coreContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSimple_table_ref_core(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -72890,6 +76280,16 @@ func (s *Simple_table_refContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Simple_table_refContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSimple_table_ref(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -73042,6 +76442,16 @@ func (s *Into_simple_table_refContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Into_simple_table_refContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitInto_simple_table_ref(s)
+	}
+}
+
+func (s *Into_simple_table_refContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitInto_simple_table_ref(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -73262,6 +76672,16 @@ func (s *Delete_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Delete_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitDelete_stmt(s)
+	}
+}
+
+func (s *Delete_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDelete_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -73563,6 +76983,16 @@ func (s *Update_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Update_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitUpdate_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -73800,6 +77230,16 @@ func (s *Set_clause_choiceContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Set_clause_choiceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSet_clause_choice(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -73969,6 +77409,16 @@ func (s *Set_clause_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Set_clause_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSet_clause_list(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -74134,6 +77584,16 @@ func (s *Set_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Set_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSet_clause(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -74254,6 +77714,16 @@ func (s *Set_targetContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Set_targetContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitSet_target(s)
+	}
+}
+
+func (s *Set_targetContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSet_target(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -74397,6 +77867,16 @@ func (s *Multiple_column_assignmentContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Multiple_column_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitMultiple_column_assignment(s)
+	}
+}
+
+func (s *Multiple_column_assignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitMultiple_column_assignment(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -74582,6 +78062,16 @@ func (s *Set_target_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Set_target_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitSet_target_list(s)
+	}
+}
+
+func (s *Set_target_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSet_target_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -74800,6 +78290,16 @@ func (s *Create_topic_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Create_topic_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitCreate_topic_stmt(s)
+	}
+}
+
+func (s *Create_topic_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_topic_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -75041,6 +78541,16 @@ func (s *Create_topic_entriesContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
+func (s *Create_topic_entriesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_topic_entries(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -75200,6 +78710,16 @@ func (s *Create_topic_entryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Create_topic_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCreate_topic_entry(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -75323,6 +78843,16 @@ func (s *With_topic_settingsContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *With_topic_settingsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitWith_topic_settings(s)
+	}
+}
+
+func (s *With_topic_settingsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWith_topic_settings(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -75531,6 +79061,16 @@ func (s *Alter_topic_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Alter_topic_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_topic_stmt(s)
+	}
+}
+
+func (s *Alter_topic_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_topic_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -75790,6 +79330,16 @@ func (s *Alter_topic_actionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Alter_topic_actionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_topic_action(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -75952,6 +79502,16 @@ func (s *Alter_topic_add_consumerContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
+func (s *Alter_topic_add_consumerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_topic_add_consumer(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -76090,6 +79650,16 @@ func (s *Topic_create_consumer_entryContext) EnterRule(listener antlr.ParseTreeL
 func (s *Topic_create_consumer_entryContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitTopic_create_consumer_entry(s)
+	}
+}
+
+func (s *Topic_create_consumer_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTopic_create_consumer_entry(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -76256,6 +79826,16 @@ func (s *Alter_topic_alter_consumerContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
+func (s *Alter_topic_alter_consumerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_topic_alter_consumer(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -76404,6 +79984,16 @@ func (s *Alter_topic_alter_consumer_entryContext) ExitRule(listener antlr.ParseT
 	}
 }
 
+func (s *Alter_topic_alter_consumer_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_topic_alter_consumer_entry(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -76547,6 +80137,16 @@ func (s *Alter_topic_drop_consumerContext) ExitRule(listener antlr.ParseTreeList
 	}
 }
 
+func (s *Alter_topic_drop_consumerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_topic_drop_consumer(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -76686,6 +80286,16 @@ func (s *Topic_alter_consumer_setContext) EnterRule(listener antlr.ParseTreeList
 func (s *Topic_alter_consumer_setContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitTopic_alter_consumer_set(s)
+	}
+}
+
+func (s *Topic_alter_consumer_setContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTopic_alter_consumer_set(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -76875,6 +80485,16 @@ func (s *Topic_alter_consumer_resetContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
+func (s *Topic_alter_consumer_resetContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTopic_alter_consumer_reset(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -77054,6 +80674,16 @@ func (s *Alter_topic_set_settingsContext) EnterRule(listener antlr.ParseTreeList
 func (s *Alter_topic_set_settingsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_topic_set_settings(s)
+	}
+}
+
+func (s *Alter_topic_set_settingsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_topic_set_settings(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -77260,6 +80890,16 @@ func (s *Alter_topic_reset_settingsContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
+func (s *Alter_topic_reset_settingsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_topic_reset_settings(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -77444,6 +81084,16 @@ func (s *Drop_topic_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Drop_topic_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitDrop_topic_stmt(s)
+	}
+}
+
+func (s *Drop_topic_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitDrop_topic_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -77635,6 +81285,16 @@ func (s *Topic_settingsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Topic_settingsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTopic_settings(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -77800,6 +81460,16 @@ func (s *Topic_settings_entryContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
+func (s *Topic_settings_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTopic_settings_entry(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -77920,6 +81590,16 @@ func (s *Topic_setting_valueContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Topic_setting_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitTopic_setting_value(s)
+	}
+}
+
+func (s *Topic_setting_valueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTopic_setting_value(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -78046,6 +81726,16 @@ func (s *Topic_consumer_with_settingsContext) EnterRule(listener antlr.ParseTree
 func (s *Topic_consumer_with_settingsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitTopic_consumer_with_settings(s)
+	}
+}
+
+func (s *Topic_consumer_with_settingsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTopic_consumer_with_settings(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -78220,6 +81910,16 @@ func (s *Topic_consumer_settingsContext) ExitRule(listener antlr.ParseTreeListen
 	}
 }
 
+func (s *Topic_consumer_settingsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTopic_consumer_settings(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -78385,6 +82085,16 @@ func (s *Topic_consumer_settings_entryContext) ExitRule(listener antlr.ParseTree
 	}
 }
 
+func (s *Topic_consumer_settings_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTopic_consumer_settings_entry(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -78505,6 +82215,16 @@ func (s *Topic_consumer_setting_valueContext) EnterRule(listener antlr.ParseTree
 func (s *Topic_consumer_setting_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitTopic_consumer_setting_value(s)
+	}
+}
+
+func (s *Topic_consumer_setting_valueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTopic_consumer_setting_value(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -78641,6 +82361,16 @@ func (s *Topic_refContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Topic_refContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTopic_ref(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -78773,6 +82503,16 @@ func (s *Topic_consumer_refContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Topic_consumer_refContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitTopic_consumer_ref(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -78879,6 +82619,16 @@ func (s *Null_treatmentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Null_treatmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitNull_treatment(s)
+	}
+}
+
+func (s *Null_treatmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitNull_treatment(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -79059,6 +82809,16 @@ func (s *Filter_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Filter_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitFilter_clause(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -79219,6 +82979,16 @@ func (s *Window_name_or_specificationContext) ExitRule(listener antlr.ParseTreeL
 	}
 }
 
+func (s *Window_name_or_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWindow_name_or_specification(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -79352,6 +83122,16 @@ func (s *Window_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Window_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWindow_name(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -79465,6 +83245,16 @@ func (s *Window_clauseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Window_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitWindow_clause(s)
+	}
+}
+
+func (s *Window_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWindow_clause(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -79620,6 +83410,16 @@ func (s *Window_definition_listContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Window_definition_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitWindow_definition_list(s)
+	}
+}
+
+func (s *Window_definition_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWindow_definition_list(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -79788,6 +83588,16 @@ func (s *Window_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Window_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWindow_definition(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -79911,6 +83721,16 @@ func (s *New_window_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *New_window_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitNew_window_name(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -80029,6 +83849,16 @@ func (s *Window_specificationContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Window_specificationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitWindow_specification(s)
+	}
+}
+
+func (s *Window_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWindow_specification(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -80210,6 +84040,16 @@ func (s *Window_specification_detailsContext) ExitRule(listener antlr.ParseTreeL
 	}
 }
 
+func (s *Window_specification_detailsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWindow_specification_details(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -80377,6 +84217,16 @@ func (s *Existing_window_nameContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
+func (s *Existing_window_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitExisting_window_name(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -80500,6 +84350,16 @@ func (s *Window_partition_clauseContext) EnterRule(listener antlr.ParseTreeListe
 func (s *Window_partition_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitWindow_partition_clause(s)
+	}
+}
+
+func (s *Window_partition_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWindow_partition_clause(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -80651,6 +84511,16 @@ func (s *Window_order_clauseContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
+func (s *Window_order_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWindow_order_clause(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -80796,6 +84666,16 @@ func (s *Window_frame_clauseContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
+func (s *Window_frame_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWindow_frame_clause(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -80923,6 +84803,16 @@ func (s *Window_frame_unitsContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Window_frame_unitsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitWindow_frame_units(s)
+	}
+}
+
+func (s *Window_frame_unitsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWindow_frame_units(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -81060,6 +84950,16 @@ func (s *Window_frame_extentContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Window_frame_extentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitWindow_frame_extent(s)
+	}
+}
+
+func (s *Window_frame_extentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWindow_frame_extent(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -81229,6 +85129,16 @@ func (s *Window_frame_betweenContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
+func (s *Window_frame_betweenContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWindow_frame_between(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -81382,6 +85292,16 @@ func (s *Window_frame_boundContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Window_frame_boundContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitWindow_frame_bound(s)
+	}
+}
+
+func (s *Window_frame_boundContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWindow_frame_bound(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -81578,6 +85498,16 @@ func (s *Window_frame_exclusionContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Window_frame_exclusionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitWindow_frame_exclusion(s)
+	}
+}
+
+func (s *Window_frame_exclusionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitWindow_frame_exclusion(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -81796,6 +85726,16 @@ func (s *Use_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Use_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitUse_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -81939,6 +85879,16 @@ func (s *Subselect_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Subselect_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitSubselect_stmt(s)
+	}
+}
+
+func (s *Subselect_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitSubselect_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -82130,6 +86080,16 @@ func (s *Named_nodes_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Named_nodes_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitNamed_nodes_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -82260,6 +86220,16 @@ func (s *Commit_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Commit_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCommit_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -82360,6 +86330,16 @@ func (s *Rollback_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Rollback_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitRollback_stmt(s)
+	}
+}
+
+func (s *Rollback_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitRollback_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -82502,6 +86482,16 @@ func (s *Analyze_tableContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Analyze_tableContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAnalyze_table(s)
+	}
+}
+
+func (s *Analyze_tableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAnalyze_table(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -82685,6 +86675,16 @@ func (s *Analyze_table_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Analyze_table_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAnalyze_table_list(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -82857,6 +86857,16 @@ func (s *Analyze_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Analyze_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAnalyze_stmt(s)
+	}
+}
+
+func (s *Analyze_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAnalyze_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -83039,6 +87049,16 @@ func (s *Alter_sequence_stmtContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Alter_sequence_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_sequence_stmt(s)
+	}
+}
+
+func (s *Alter_sequence_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_sequence_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -83240,6 +87260,16 @@ func (s *Alter_sequence_actionContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Alter_sequence_actionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAlter_sequence_action(s)
+	}
+}
+
+func (s *Alter_sequence_actionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAlter_sequence_action(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -83491,6 +87521,16 @@ func (s *Show_create_table_stmtContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
+func (s *Show_create_table_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitShow_create_table_stmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -83616,6 +87656,16 @@ func (s *IdentifierContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitIdentifier(s)
+	}
+}
+
+func (s *IdentifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitIdentifier(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -83753,6 +87803,16 @@ func (s *IdContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IdContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitId(s)
+	}
+}
+
+func (s *IdContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitId(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -83988,6 +88048,16 @@ func (s *Id_schemaContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Id_schemaContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitId_schema(s)
+	}
+}
+
+func (s *Id_schemaContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitId_schema(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -84249,6 +88319,16 @@ func (s *Id_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Id_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitId_expr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -84479,6 +88559,16 @@ func (s *Id_expr_inContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Id_expr_inContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitId_expr_in(s)
+	}
+}
+
+func (s *Id_expr_inContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitId_expr_in(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -84755,6 +88845,16 @@ func (s *Id_windowContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Id_windowContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitId_window(s)
+	}
+}
+
+func (s *Id_windowContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitId_window(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -85041,6 +89141,16 @@ func (s *Id_tableContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Id_tableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitId_table(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -85313,6 +89423,16 @@ func (s *Id_withoutContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Id_withoutContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitId_without(s)
+	}
+}
+
+func (s *Id_withoutContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitId_without(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -85608,6 +89728,16 @@ func (s *Id_hintContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Id_hintContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitId_hint(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -85806,6 +89936,16 @@ func (s *Id_as_compatContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Id_as_compatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitId_as_compat(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -85941,6 +90081,16 @@ func (s *An_idContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *An_idContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAn_id(s)
+	}
+}
+
+func (s *An_idContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAn_id(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -86086,6 +90236,16 @@ func (s *An_id_or_typeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *An_id_or_typeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAn_id_or_type(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -86225,6 +90385,16 @@ func (s *An_id_schemaContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *An_id_schemaContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAn_id_schema(s)
+	}
+}
+
+func (s *An_id_schemaContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAn_id_schema(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -86370,6 +90540,16 @@ func (s *An_id_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *An_id_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAn_id_expr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -86509,6 +90689,16 @@ func (s *An_id_expr_inContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *An_id_expr_inContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAn_id_expr_in(s)
+	}
+}
+
+func (s *An_id_expr_inContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAn_id_expr_in(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -86654,6 +90844,16 @@ func (s *An_id_windowContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *An_id_windowContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAn_id_window(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -86793,6 +90993,16 @@ func (s *An_id_tableContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *An_id_tableContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAn_id_table(s)
+	}
+}
+
+func (s *An_id_tableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAn_id_table(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -86938,6 +91148,16 @@ func (s *An_id_withoutContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *An_id_withoutContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAn_id_without(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -87077,6 +91297,16 @@ func (s *An_id_hintContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *An_id_hintContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAn_id_hint(s)
+	}
+}
+
+func (s *An_id_hintContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAn_id_hint(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -87222,6 +91452,16 @@ func (s *An_id_pureContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *An_id_pureContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAn_id_pure(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -87361,6 +91601,16 @@ func (s *An_id_as_compatContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *An_id_as_compatContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitAn_id_as_compat(s)
+	}
+}
+
+func (s *An_id_as_compatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitAn_id_as_compat(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -87511,6 +91761,16 @@ func (s *View_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *View_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitView_name(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -87655,6 +91915,16 @@ func (s *Opt_id_prefixContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Opt_id_prefixContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitOpt_id_prefix(s)
+	}
+}
+
+func (s *Opt_id_prefixContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitOpt_id_prefix(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -87810,6 +92080,16 @@ func (s *Cluster_exprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Cluster_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitCluster_expr(s)
+	}
+}
+
+func (s *Cluster_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitCluster_expr(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -87988,6 +92268,16 @@ func (s *Id_or_typeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Id_or_typeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitId_or_type(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -88126,6 +92416,16 @@ func (s *Opt_id_prefix_or_typeContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
+func (s *Opt_id_prefix_or_typeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitOpt_id_prefix_or_type(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -88256,6 +92556,16 @@ func (s *Id_or_atContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Id_or_atContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitId_or_at(s)
+	}
+}
+
+func (s *Id_or_atContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitId_or_at(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -88408,6 +92718,16 @@ func (s *Id_table_or_typeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Id_table_or_typeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitId_table_or_type(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -88543,6 +92863,16 @@ func (s *Id_table_or_atContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Id_table_or_atContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitId_table_or_at(s)
+	}
+}
+
+func (s *Id_table_or_atContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitId_table_or_at(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -88794,6 +93124,16 @@ func (s *KeywordContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *KeywordContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitKeyword(s)
+	}
+}
+
+func (s *KeywordContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitKeyword(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -89106,6 +93446,16 @@ func (s *Keyword_expr_uncompatContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
+func (s *Keyword_expr_uncompatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitKeyword_expr_uncompat(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -89221,6 +93571,16 @@ func (s *Keyword_table_uncompatContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Keyword_table_uncompatContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitKeyword_table_uncompat(s)
+	}
+}
+
+func (s *Keyword_table_uncompatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitKeyword_table_uncompat(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -89382,6 +93742,16 @@ func (s *Keyword_select_uncompatContext) ExitRule(listener antlr.ParseTreeListen
 	}
 }
 
+func (s *Keyword_select_uncompatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitKeyword_select_uncompat(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -89490,6 +93860,16 @@ func (s *Keyword_alter_uncompatContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
+func (s *Keyword_alter_uncompatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitKeyword_alter_uncompat(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -89590,6 +93970,16 @@ func (s *Keyword_in_uncompatContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Keyword_in_uncompatContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitKeyword_in_uncompat(s)
+	}
+}
+
+func (s *Keyword_in_uncompatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitKeyword_in_uncompat(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -89706,6 +94096,16 @@ func (s *Keyword_window_uncompatContext) ExitRule(listener antlr.ParseTreeListen
 	}
 }
 
+func (s *Keyword_window_uncompatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitKeyword_window_uncompat(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -89816,6 +94216,16 @@ func (s *Keyword_hint_uncompatContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Keyword_hint_uncompatContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitKeyword_hint_uncompat(s)
+	}
+}
+
+func (s *Keyword_hint_uncompatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitKeyword_hint_uncompat(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -90919,6 +95329,16 @@ func (s *Keyword_as_compatContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Keyword_as_compatContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitKeyword_as_compat(s)
+	}
+}
+
+func (s *Keyword_as_compatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitKeyword_as_compat(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -92140,6 +96560,16 @@ func (s *Keyword_compatContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Keyword_compatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitKeyword_compat(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -92303,6 +96733,16 @@ func (s *Type_idContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Type_idContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitType_id(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -92416,6 +96856,16 @@ func (s *Bool_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *Bool_valueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitBool_value(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -92524,6 +96974,16 @@ func (s *RealContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *RealContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitReal(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 
 
 
@@ -92629,6 +97089,16 @@ func (s *IntegerContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IntegerContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(YQLListener); ok {
 		listenerT.ExitInteger(s)
+	}
+}
+
+func (s *IntegerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case YQLVisitor:
+		return t.VisitInteger(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 

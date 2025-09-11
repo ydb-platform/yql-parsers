@@ -2,6 +2,8 @@
 // jshint ignore: start
 import antlr4 from 'antlr4';
 import YQLListener from './YQLListener.js';
+import YQLVisitor from './YQLVisitor.js';
+
 const serializedATN = [4,1,335,4694,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,
 7,4,2,5,7,5,2,6,7,6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,
 2,13,7,13,2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,
@@ -33665,6 +33667,14 @@ class Sql_queryContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSql_query(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -33723,6 +33733,14 @@ class Sql_stmt_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSql_stmt_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -33768,6 +33786,14 @@ class Ansi_sql_stmt_listContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAnsi_sql_stmt_list(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAnsi_sql_stmt_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -33832,6 +33858,14 @@ class Lambda_bodyContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitLambda_body(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -33869,6 +33903,14 @@ class Lambda_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitLambda_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitLambda_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -33916,6 +33958,14 @@ class Sql_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitSql_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSql_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -34197,6 +34247,14 @@ class Sql_stmt_coreContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSql_stmt_core(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -34255,6 +34313,14 @@ class ExprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitExpr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -34307,6 +34373,14 @@ class Or_subexprContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitOr_subexpr(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitOr_subexpr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -34363,6 +34437,14 @@ class And_subexprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAnd_subexpr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -34400,6 +34482,14 @@ class Xor_subexprContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitXor_subexpr(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitXor_subexpr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -34447,6 +34537,14 @@ class Distinct_from_opContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitDistinct_from_op(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDistinct_from_op(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -34606,6 +34704,14 @@ class Cond_exprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCond_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -34659,6 +34765,14 @@ class Match_opContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitMatch_op(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitMatch_op(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -34751,6 +34865,14 @@ class Eq_subexprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitEq_subexpr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -34792,6 +34914,14 @@ class Shift_rightContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitShift_right(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitShift_right(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -34841,6 +34971,14 @@ class Rot_rightContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRot_right(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -34882,6 +35020,14 @@ class Double_questionContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitDouble_question(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDouble_question(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -35028,6 +35174,14 @@ class Neq_subexprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitNeq_subexpr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -35092,6 +35246,14 @@ class Bit_subexprContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitBit_subexpr(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitBit_subexpr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -35172,6 +35334,14 @@ class Add_subexprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAdd_subexpr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -35226,6 +35396,14 @@ class Mul_subexprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitMul_subexpr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -35263,6 +35441,14 @@ class Con_subexprContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitCon_subexpr(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCon_subexpr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -35310,6 +35496,14 @@ class Unary_opContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitUnary_op(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitUnary_op(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -35419,6 +35613,14 @@ class Unary_subexpr_suffixContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitUnary_subexpr_suffix(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -35460,6 +35662,14 @@ class Unary_casual_subexprContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitUnary_casual_subexpr(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitUnary_casual_subexpr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -35505,6 +35715,14 @@ class In_unary_casual_subexprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitIn_unary_casual_subexpr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -35544,6 +35762,14 @@ class Unary_subexprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitUnary_subexpr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -35581,6 +35807,14 @@ class In_unary_subexprContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitIn_unary_subexpr(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitIn_unary_subexpr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -35628,6 +35862,14 @@ class List_literalContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitList_literal(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitList_literal(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -35696,6 +35938,14 @@ class Expr_dict_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitExpr_dict_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -35741,6 +35991,14 @@ class Dict_literalContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitDict_literal(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDict_literal(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -35809,6 +36067,14 @@ class Expr_struct_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitExpr_struct_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -35854,6 +36120,14 @@ class Struct_literalContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitStruct_literal(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitStruct_literal(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -35945,6 +36219,14 @@ class Atom_exprContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAtom_expr(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAtom_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -36046,6 +36328,14 @@ class In_atom_exprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitIn_atom_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -36099,6 +36389,14 @@ class Cast_exprContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitCast_expr(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCast_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -36156,6 +36454,14 @@ class Bitcast_exprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitBitcast_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -36205,6 +36511,14 @@ class Exists_exprContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitExists_expr(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitExists_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -36272,6 +36586,14 @@ class Case_exprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCase_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -36335,6 +36657,14 @@ class LambdaContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitLambda(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -36368,6 +36698,14 @@ class In_exprContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitIn_expr(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitIn_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -36413,6 +36751,14 @@ class Json_api_exprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJson_api_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -36446,6 +36792,14 @@ class Jsonpath_specContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitJsonpath_spec(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJsonpath_spec(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -36485,6 +36839,14 @@ class Json_variable_nameContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitJson_variable_name(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJson_variable_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -36528,6 +36890,14 @@ class Json_variableContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitJson_variable(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJson_variable(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -36584,6 +36954,14 @@ class Json_variablesContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJson_variables(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -36635,6 +37013,14 @@ class Json_common_argsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJson_common_args(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -36680,6 +37066,14 @@ class Json_case_handlerContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitJson_case_handler(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJson_case_handler(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -36784,6 +37178,14 @@ class Json_valueContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJson_value(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -36843,6 +37245,14 @@ class Json_exists_handlerContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJson_exists_handler(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -36892,6 +37302,14 @@ class Json_existsContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitJson_exists(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJson_exists(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -36945,6 +37363,14 @@ class Json_query_wrapperContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJson_query_wrapper(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -36994,6 +37420,14 @@ class Json_query_handlerContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitJson_query_handler(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJson_query_handler(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -37082,6 +37516,14 @@ class Json_queryContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJson_query(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -37127,6 +37569,14 @@ class Smart_parenthesisContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitSmart_parenthesis(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSmart_parenthesis(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -37181,6 +37631,14 @@ class Expr_listContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitExpr_list(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitExpr_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -37245,6 +37703,14 @@ class Pure_column_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitPure_column_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -37282,6 +37748,14 @@ class Pure_column_or_namedContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitPure_column_or_named(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitPure_column_or_named(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -37346,6 +37820,14 @@ class Pure_column_or_named_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitPure_column_or_named_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -37383,6 +37865,14 @@ class Column_nameContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitColumn_name(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitColumn_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -37433,6 +37923,14 @@ class Without_column_nameContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitWithout_column_name(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWithout_column_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -37489,6 +37987,14 @@ class Column_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitColumn_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -37543,6 +38049,14 @@ class Without_column_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWithout_column_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -37584,6 +38098,14 @@ class Named_exprContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitNamed_expr(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitNamed_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -37638,6 +38160,14 @@ class Named_expr_listContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitNamed_expr_list(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitNamed_expr_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -37699,6 +38229,14 @@ class Invoke_exprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitInvoke_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -37744,6 +38282,14 @@ class Invoke_expr_tailContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitInvoke_expr_tail(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitInvoke_expr_tail(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -37812,6 +38358,14 @@ class Using_call_exprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitUsing_call_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -37853,6 +38407,14 @@ class Key_exprContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitKey_expr(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitKey_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -37903,6 +38465,14 @@ class When_exprContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitWhen_expr(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWhen_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -37976,6 +38546,14 @@ class Literal_valueContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitLiteral_value(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -38023,6 +38601,14 @@ class Bind_parameterContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitBind_parameter(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -38060,6 +38646,14 @@ class Opt_bind_parameterContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitOpt_bind_parameter(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitOpt_bind_parameter(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -38116,6 +38710,14 @@ class Bind_parameter_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitBind_parameter_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -38160,6 +38762,14 @@ class Named_bind_parameterContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitNamed_bind_parameter(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitNamed_bind_parameter(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -38216,6 +38826,14 @@ class Named_bind_parameter_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitNamed_bind_parameter_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -38263,6 +38881,14 @@ class Signed_numberContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSigned_number(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -38296,6 +38922,14 @@ class Type_name_simpleContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitType_name_simple(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_simple(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -38335,6 +38969,14 @@ class Integer_or_bindContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitInteger_or_bind(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitInteger_or_bind(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -38380,6 +39022,14 @@ class Type_name_tagContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_tag(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -38421,6 +39071,14 @@ class Struct_argContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitStruct_arg(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitStruct_arg(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -38474,6 +39132,14 @@ class Struct_arg_positionalContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitStruct_arg_positional(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -38515,6 +39181,14 @@ class Variant_argContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitVariant_arg(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitVariant_arg(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -38562,6 +39236,14 @@ class Callable_argContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitCallable_arg(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCallable_arg(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -38616,6 +39298,14 @@ class Callable_arg_listContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitCallable_arg_list(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCallable_arg_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -38676,6 +39366,14 @@ class Type_name_decimalContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_decimal(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -38721,6 +39419,14 @@ class Type_name_optionalContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitType_name_optional(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_optional(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -38793,6 +39499,14 @@ class Type_name_tupleContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_tuple(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -38863,6 +39577,14 @@ class Type_name_structContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_struct(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -38929,6 +39651,14 @@ class Type_name_variantContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_variant(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -38974,6 +39704,14 @@ class Type_name_listContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitType_name_list(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -39023,6 +39761,14 @@ class Type_name_streamContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_stream(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -39068,6 +39814,14 @@ class Type_name_flowContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitType_name_flow(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_flow(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -39128,6 +39882,14 @@ class Type_name_dictContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_dict(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -39173,6 +39935,14 @@ class Type_name_setContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitType_name_set(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_set(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -39241,6 +40011,14 @@ class Type_name_enumContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_enum(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -39286,6 +40064,14 @@ class Type_name_resourceContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitType_name_resource(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_resource(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -39341,6 +40127,14 @@ class Type_name_taggedContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitType_name_tagged(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_tagged(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -39423,6 +40217,14 @@ class Type_name_callableContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitType_name_callable(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_callable(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -39520,6 +40322,14 @@ class Type_name_compositeContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_composite(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -39575,6 +40385,14 @@ class Type_nameContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -39614,6 +40432,14 @@ class Type_name_or_bindContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_name_or_bind(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -39647,6 +40473,14 @@ class Value_constructor_literalContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitValue_constructor_literal(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitValue_constructor_literal(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -39723,6 +40557,14 @@ class Value_constructorContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitValue_constructor(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -39776,6 +40618,14 @@ class Declare_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitDeclare_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDeclare_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -39832,6 +40682,14 @@ class Module_pathContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitModule_path(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -39879,6 +40737,14 @@ class Import_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitImport_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -39916,6 +40782,14 @@ class Export_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitExport_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitExport_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -39969,6 +40843,14 @@ class Call_actionContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCall_action(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -40016,6 +40898,14 @@ class Inline_actionContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitInline_action(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -40057,6 +40947,14 @@ class Do_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitDo_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDo_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -40137,6 +41035,14 @@ class Pragma_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitPragma_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -40188,6 +41094,14 @@ class Pragma_valueContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitPragma_value(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -40229,6 +41143,14 @@ class Sort_specificationContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitSort_specification(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSort_specification(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -40285,6 +41207,14 @@ class Sort_specification_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSort_specification_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -40336,6 +41266,14 @@ class Select_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitSelect_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSelect_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -40395,6 +41333,14 @@ class Select_unparenthesized_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSelect_unparenthesized_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -40436,6 +41382,14 @@ class Select_kind_parenthesisContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitSelect_kind_parenthesis(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSelect_kind_parenthesis(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -40483,6 +41437,14 @@ class Select_opContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitSelect_op(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSelect_op(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -40543,6 +41505,14 @@ class Select_kind_partialContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSelect_kind_partial(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -40600,6 +41570,14 @@ class Select_kindContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitSelect_kind(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSelect_kind(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -40715,6 +41693,14 @@ class Process_coreContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitProcess_core(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -40756,6 +41742,14 @@ class External_call_paramContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitExternal_call_param(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitExternal_call_param(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -40810,6 +41804,14 @@ class External_call_settingsContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitExternal_call_settings(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitExternal_call_settings(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -40933,6 +41935,14 @@ class Reduce_coreContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitReduce_core(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -40970,6 +41980,14 @@ class Opt_set_quantifierContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitOpt_set_quantifier(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitOpt_set_quantifier(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -41108,6 +42126,14 @@ class Select_coreContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSelect_core(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -41171,6 +42197,14 @@ class Row_pattern_recognition_clauseContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_recognition_clause(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -41228,6 +42262,14 @@ class Row_pattern_rows_per_matchContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRow_pattern_rows_per_match(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_rows_per_match(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -41289,6 +42331,14 @@ class Row_pattern_empty_match_handlingContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_empty_match_handling(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -41326,6 +42376,14 @@ class Row_pattern_measuresContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRow_pattern_measures(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_measures(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -41382,6 +42440,14 @@ class Row_pattern_measure_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_measure_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -41423,6 +42489,14 @@ class Row_pattern_measure_definitionContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRow_pattern_measure_definition(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_measure_definition(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -41500,6 +42574,14 @@ class Row_pattern_common_syntaxContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_common_syntax(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -41563,6 +42645,14 @@ class Row_pattern_skip_toContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_skip_to(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -41596,6 +42686,14 @@ class Row_pattern_skip_to_variable_nameContext extends antlr4.ParserRuleContext 
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRow_pattern_skip_to_variable_name(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_skip_to_variable_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -41635,6 +42733,14 @@ class Row_pattern_initial_or_seekContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRow_pattern_initial_or_seek(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_initial_or_seek(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -41691,6 +42797,14 @@ class Row_patternContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -41733,6 +42847,14 @@ class Row_pattern_termContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_term(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -41770,6 +42892,14 @@ class Row_pattern_factorContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRow_pattern_factor(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_factor(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -41844,6 +42974,14 @@ class Row_pattern_quantifierContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRow_pattern_quantifier(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_quantifier(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -41925,6 +43063,14 @@ class Row_pattern_primaryContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_primary(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -41958,6 +43104,14 @@ class Row_pattern_primary_variable_nameContext extends antlr4.ParserRuleContext 
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRow_pattern_primary_variable_name(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_primary_variable_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -42026,6 +43180,14 @@ class Row_pattern_permuteContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_permute(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -42063,6 +43225,14 @@ class Row_pattern_subset_clauseContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRow_pattern_subset_clause(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_subset_clause(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -42119,6 +43289,14 @@ class Row_pattern_subset_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_subset_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -42170,6 +43348,14 @@ class Row_pattern_subset_itemContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_subset_item(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -42203,6 +43389,14 @@ class Row_pattern_subset_item_variable_nameContext extends antlr4.ParserRuleCont
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRow_pattern_subset_item_variable_name(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_subset_item_variable_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -42259,6 +43453,14 @@ class Row_pattern_subset_rhsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_subset_rhs(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -42292,6 +43494,14 @@ class Row_pattern_subset_rhs_variable_nameContext extends antlr4.ParserRuleConte
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRow_pattern_subset_rhs_variable_name(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_subset_rhs_variable_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -42348,6 +43558,14 @@ class Row_pattern_definition_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_definition_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -42391,6 +43609,14 @@ class Row_pattern_definitionContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_definition(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -42424,6 +43650,14 @@ class Row_pattern_definition_variable_nameContext extends antlr4.ParserRuleConte
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRow_pattern_definition_variable_name(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_definition_variable_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -42461,6 +43695,14 @@ class Row_pattern_definition_search_conditionContext extends antlr4.ParserRuleCo
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_definition_search_condition(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -42496,6 +43738,14 @@ class Search_conditionContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSearch_condition(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -42529,6 +43779,14 @@ class Row_pattern_variable_nameContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRow_pattern_variable_name(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRow_pattern_variable_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -42574,6 +43832,14 @@ class Order_by_clauseContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitOrder_by_clause(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -42611,6 +43877,14 @@ class Ext_order_by_clauseContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitExt_order_by_clause(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitExt_order_by_clause(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -42672,6 +43946,14 @@ class Group_by_clauseContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitGroup_by_clause(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -42726,6 +44008,14 @@ class Grouping_element_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitGrouping_element_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -42777,6 +44067,14 @@ class Grouping_elementContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitGrouping_element(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -42810,6 +44108,14 @@ class Ordinary_grouping_setContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitOrdinary_grouping_set(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitOrdinary_grouping_set(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -42866,6 +44172,14 @@ class Ordinary_grouping_set_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitOrdinary_grouping_set_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -42913,6 +44227,14 @@ class Rollup_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRollup_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -42958,6 +44280,14 @@ class Cube_listContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitCube_list(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCube_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -43009,6 +44339,14 @@ class Grouping_sets_specificationContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitGrouping_sets_specification(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitGrouping_sets_specification(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -43077,6 +44415,14 @@ class Hopping_window_specificationContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitHopping_window_specification(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -43130,6 +44476,14 @@ class Result_columnContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitResult_column(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitResult_column(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -43208,6 +44562,14 @@ class Join_sourceContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJoin_source(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -43249,6 +44611,14 @@ class Named_columnContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitNamed_column(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitNamed_column(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -43300,6 +44670,14 @@ class Flatten_by_argContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitFlatten_by_arg(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitFlatten_by_arg(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -43365,6 +44743,14 @@ class Flatten_sourceContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitFlatten_source(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -43428,6 +44814,14 @@ class Named_single_sourceContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitNamed_single_source(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -43479,6 +44873,14 @@ class Single_sourceContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSingle_source(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -43516,6 +44918,14 @@ class Sample_clauseContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitSample_clause(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSample_clause(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -43573,6 +44983,14 @@ class Tablesample_clauseContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTablesample_clause(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -43610,6 +45028,14 @@ class Sampling_modeContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitSampling_mode(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSampling_mode(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -43657,6 +45083,14 @@ class Repeatable_clauseContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRepeatable_clause(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRepeatable_clause(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -43738,6 +45172,14 @@ class Join_opContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJoin_op(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -43783,6 +45225,14 @@ class Join_constraintContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitJoin_constraint(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitJoin_constraint(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -43845,6 +45295,14 @@ class Returning_columns_listContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitReturning_columns_list(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitReturning_columns_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -43922,6 +45380,14 @@ class Into_table_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitInto_table_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -43969,6 +45435,14 @@ class Into_values_sourceContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitInto_values_source(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -44008,6 +45482,14 @@ class Values_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitValues_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -44045,6 +45527,14 @@ class Values_sourceContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitValues_source(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitValues_source(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -44101,6 +45591,14 @@ class Values_source_row_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitValues_source_row_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -44144,6 +45642,14 @@ class Values_source_rowContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitValues_source_row(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -44181,6 +45687,14 @@ class Simple_values_sourceContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitSimple_values_source(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSimple_values_source(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -44258,6 +45772,14 @@ class Create_external_data_source_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_external_data_source_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -44332,6 +45854,14 @@ class Alter_external_data_source_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_external_data_source_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -44373,6 +45903,14 @@ class Alter_external_data_source_actionContext extends antlr4.ParserRuleContext 
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_external_data_source_action(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_external_data_source_action(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -44432,6 +45970,14 @@ class Drop_external_data_source_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitDrop_external_data_source_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDrop_external_data_source_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -44501,6 +46047,14 @@ class Create_view_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_view_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -44550,6 +46104,14 @@ class Drop_view_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitDrop_view_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDrop_view_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -44613,6 +46175,14 @@ class Upsert_object_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitUpsert_object_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitUpsert_object_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -44690,6 +46260,14 @@ class Create_object_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_object_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -44727,6 +46305,14 @@ class Create_object_featuresContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitCreate_object_features(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_object_features(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -44792,6 +46378,14 @@ class Alter_object_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_object_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -44829,6 +46423,14 @@ class Alter_object_featuresContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_object_features(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_object_features(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -44902,6 +46504,14 @@ class Drop_object_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDrop_object_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -44939,6 +46549,14 @@ class Drop_object_featuresContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitDrop_object_features(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDrop_object_features(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -44988,6 +46606,14 @@ class Object_feature_valueContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitObject_feature_value(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -45031,6 +46657,14 @@ class Object_feature_kvContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitObject_feature_kv(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -45064,6 +46698,14 @@ class Object_feature_flagContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitObject_feature_flag(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitObject_feature_flag(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -45103,6 +46745,14 @@ class Object_featureContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitObject_feature(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitObject_feature(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -45167,6 +46817,14 @@ class Object_featuresContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitObject_features(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -45200,6 +46858,14 @@ class Object_type_refContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitObject_type_ref(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitObject_type_ref(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -45332,6 +46998,14 @@ class Create_table_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_table_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -45385,6 +47059,14 @@ class Create_table_entryContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitCreate_table_entry(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_table_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -45446,6 +47128,14 @@ class Create_backup_collection_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_backup_collection_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -45493,6 +47183,14 @@ class Alter_backup_collection_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_backup_collection_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -45532,6 +47230,14 @@ class Drop_backup_collection_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDrop_backup_collection_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -45569,6 +47275,14 @@ class Create_backup_collection_entriesContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitCreate_backup_collection_entries(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_backup_collection_entries(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -45612,6 +47326,14 @@ class Create_backup_collection_entries_manyContext extends antlr4.ParserRuleCont
 	    if(listener instanceof YQLListener ) {
 	        listener.exitCreate_backup_collection_entries_many(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_backup_collection_entries_many(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -45680,6 +47402,14 @@ class Table_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTable_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -45734,6 +47464,14 @@ class Alter_backup_collection_actionsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_backup_collection_actions(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -45771,6 +47509,14 @@ class Alter_backup_collection_actionContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_backup_collection_action(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_backup_collection_action(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -45827,6 +47573,14 @@ class Alter_backup_collection_entriesContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_backup_collection_entries(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -45878,6 +47632,14 @@ class Alter_backup_collection_entryContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_backup_collection_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -45919,6 +47681,14 @@ class Backup_collectionContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitBackup_collection(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitBackup_collection(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -45975,6 +47745,14 @@ class Backup_collection_settingsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitBackup_collection_settings(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -46018,6 +47796,14 @@ class Backup_collection_settings_entryContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitBackup_collection_settings_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -46059,6 +47845,14 @@ class Backup_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitBackup_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitBackup_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -46106,6 +47900,14 @@ class Restore_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRestore_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRestore_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -46161,6 +47963,14 @@ class Alter_database_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_database_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_database_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -46229,6 +48039,14 @@ class Table_inheritsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTable_inherits(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -46274,6 +48092,14 @@ class Table_partition_byContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitTable_partition_by(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTable_partition_by(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -46342,6 +48168,14 @@ class With_table_settingsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWith_table_settings(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -46379,6 +48213,14 @@ class Table_tablestoreContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitTable_tablestore(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTable_tablestore(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -46424,6 +48266,14 @@ class Table_settings_entryContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTable_settings_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -46461,6 +48311,14 @@ class Table_as_sourceContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitTable_as_source(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTable_as_source(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -46527,6 +48385,14 @@ class Alter_table_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_table_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -46628,6 +48494,14 @@ class Alter_table_actionContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_action(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -46698,6 +48572,14 @@ class Alter_external_table_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_external_table_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -46747,6 +48629,14 @@ class Alter_external_table_actionContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_external_table_action(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_external_table_action(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -46815,6 +48705,14 @@ class Alter_table_store_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_store_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -46852,6 +48750,14 @@ class Alter_table_store_actionContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_table_store_action(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_store_action(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -46897,6 +48803,14 @@ class Alter_table_add_columnContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_add_column(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -46938,6 +48852,14 @@ class Alter_table_drop_columnContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_table_drop_column(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_drop_column(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -46989,6 +48911,14 @@ class Alter_table_alter_columnContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_table_alter_column(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_alter_column(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -47046,6 +48976,14 @@ class Alter_table_alter_column_drop_not_nullContext extends antlr4.ParserRuleCon
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_alter_column_drop_not_null(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -47083,6 +49021,14 @@ class Alter_table_add_column_familyContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_table_add_column_family(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_add_column_family(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -47143,6 +49089,14 @@ class Alter_table_alter_column_familyContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_alter_column_family(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -47184,6 +49138,14 @@ class Alter_table_set_table_setting_uncompatContext extends antlr4.ParserRuleCon
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_table_set_table_setting_uncompat(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_set_table_setting_uncompat(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -47252,6 +49214,14 @@ class Alter_table_set_table_setting_compatContext extends antlr4.ParserRuleConte
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_set_table_setting_compat(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -47318,6 +49288,14 @@ class Alter_table_reset_table_settingContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_reset_table_setting(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -47355,6 +49333,14 @@ class Alter_table_add_indexContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_table_add_index(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_add_index(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -47400,6 +49386,14 @@ class Alter_table_drop_indexContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_drop_index(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -47441,6 +49435,14 @@ class Alter_table_rename_toContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_table_rename_to(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_rename_to(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -47497,6 +49499,14 @@ class Alter_table_rename_index_toContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_rename_index_to(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -47534,6 +49544,14 @@ class Alter_table_add_changefeedContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_table_add_changefeed(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_add_changefeed(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -47583,6 +49601,14 @@ class Alter_table_alter_changefeedContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_alter_changefeed(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -47624,6 +49650,14 @@ class Alter_table_drop_changefeedContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_table_drop_changefeed(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_drop_changefeed(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -47673,6 +49707,14 @@ class Alter_table_alter_indexContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_alter_index(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -47720,6 +49762,14 @@ class Column_schemaContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitColumn_schema(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -47757,6 +49807,14 @@ class Family_relationContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitFamily_relation(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitFamily_relation(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -47806,6 +49864,14 @@ class Opt_column_constraintsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitOpt_column_constraints(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -47847,6 +49913,14 @@ class Column_order_by_specificationContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitColumn_order_by_specification(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitColumn_order_by_specification(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -47940,6 +50014,14 @@ class Table_constraintContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitTable_constraint(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTable_constraint(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -48044,6 +50126,14 @@ class Table_indexContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTable_index(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -48089,6 +50179,14 @@ class Table_index_typeContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitTable_index_type(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTable_index_type(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -48138,6 +50236,14 @@ class Global_indexContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitGlobal_index(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -48173,6 +50279,14 @@ class Local_indexContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitLocal_index(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -48206,6 +50320,14 @@ class Index_subtypeContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitIndex_subtype(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitIndex_subtype(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -48274,6 +50396,14 @@ class With_index_settingsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWith_index_settings(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -48315,6 +50445,14 @@ class Index_setting_entryContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitIndex_setting_entry(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitIndex_setting_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -48362,6 +50500,14 @@ class Index_setting_valueContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitIndex_setting_value(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitIndex_setting_value(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -48419,6 +50565,14 @@ class ChangefeedContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitChangefeed(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -48473,6 +50627,14 @@ class Changefeed_settingsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitChangefeed_settings(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -48516,6 +50678,14 @@ class Changefeed_settings_entryContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitChangefeed_settings_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -48549,6 +50719,14 @@ class Changefeed_setting_valueContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitChangefeed_setting_value(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitChangefeed_setting_value(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -48602,6 +50780,14 @@ class Changefeed_alter_settingsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitChangefeed_alter_settings(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -48643,6 +50829,14 @@ class Alter_table_setting_entryContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_table_setting_entry(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_setting_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -48728,6 +50922,14 @@ class Table_setting_valueContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTable_setting_value(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -48793,6 +50995,14 @@ class Ttl_tier_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTtl_tier_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -48848,6 +51058,14 @@ class Ttl_tier_actionContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTtl_tier_action(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -48889,6 +51107,14 @@ class Family_entryContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitFamily_entry(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitFamily_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -48953,6 +51179,14 @@ class Family_settingsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitFamily_settings(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -48996,6 +51230,14 @@ class Family_settings_entryContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitFamily_settings_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -49033,6 +51275,14 @@ class Family_setting_valueContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitFamily_setting_value(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitFamily_setting_value(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -49097,6 +51347,14 @@ class Split_boundariesContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSplit_boundaries(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -49159,6 +51417,14 @@ class Literal_value_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitLiteral_value_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -49200,6 +51466,14 @@ class Alter_table_alter_index_actionContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_table_alter_index_action(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_table_alter_index_action(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -49261,6 +51535,14 @@ class Drop_table_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDrop_table_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -49313,6 +51595,14 @@ class Create_user_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitCreate_user_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_user_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -49388,6 +51678,14 @@ class Alter_user_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_user_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -49456,6 +51754,14 @@ class Create_group_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitCreate_group_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_group_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -49540,6 +51846,14 @@ class Alter_group_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_group_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -49614,6 +51928,14 @@ class Drop_role_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDrop_role_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -49651,6 +51973,14 @@ class Role_nameContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRole_name(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRole_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -49692,6 +52022,14 @@ class User_optionContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitUser_option(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -49729,6 +52067,14 @@ class Authentication_optionContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAuthentication_option(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAuthentication_option(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -49774,6 +52120,14 @@ class Password_optionContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitPassword_option(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -49811,6 +52165,14 @@ class Password_valueContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitPassword_value(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitPassword_value(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -49852,6 +52214,14 @@ class Hash_optionContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitHash_option(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -49889,6 +52259,14 @@ class Login_optionContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitLogin_option(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitLogin_option(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -49988,6 +52366,14 @@ class Grant_permissions_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitGrant_permissions_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -50079,6 +52465,14 @@ class Revoke_permissions_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRevoke_permissions_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRevoke_permissions_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -50208,6 +52602,14 @@ class Permission_idContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitPermission_id(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -50245,6 +52647,14 @@ class Permission_nameContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitPermission_name(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitPermission_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -50309,6 +52719,14 @@ class Permission_name_targetContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitPermission_name_target(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -50358,6 +52776,14 @@ class Create_resource_pool_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitCreate_resource_pool_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_resource_pool_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -50430,6 +52856,14 @@ class Alter_resource_pool_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_resource_pool_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -50467,6 +52901,14 @@ class Alter_resource_pool_actionContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_resource_pool_action(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_resource_pool_action(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -50514,6 +52956,14 @@ class Drop_resource_pool_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitDrop_resource_pool_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDrop_resource_pool_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -50569,6 +53019,14 @@ class Create_resource_pool_classifier_stmtContext extends antlr4.ParserRuleConte
 	    if(listener instanceof YQLListener ) {
 	        listener.exitCreate_resource_pool_classifier_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_resource_pool_classifier_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -50645,6 +53103,14 @@ class Alter_resource_pool_classifier_stmtContext extends antlr4.ParserRuleContex
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_resource_pool_classifier_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -50682,6 +53148,14 @@ class Alter_resource_pool_classifier_actionContext extends antlr4.ParserRuleCont
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_resource_pool_classifier_action(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_resource_pool_classifier_action(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -50733,6 +53207,14 @@ class Drop_resource_pool_classifier_stmtContext extends antlr4.ParserRuleContext
 	    if(listener instanceof YQLListener ) {
 	        listener.exitDrop_resource_pool_classifier_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDrop_resource_pool_classifier_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -50825,6 +53307,14 @@ class Create_replication_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_replication_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -50869,6 +53359,14 @@ class Replication_targetContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitReplication_target(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitReplication_target(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -50925,6 +53423,14 @@ class Replication_settingsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitReplication_settings(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -50966,6 +53472,14 @@ class Replication_settings_entryContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitReplication_settings_entry(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitReplication_settings_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -51038,6 +53552,14 @@ class Alter_replication_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_replication_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -51071,6 +53593,14 @@ class Alter_replication_actionContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_replication_action(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_replication_action(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -51118,6 +53648,14 @@ class Alter_replication_set_settingContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_replication_set_setting(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_replication_set_setting(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -51171,6 +53709,14 @@ class Drop_replication_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDrop_replication_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -51208,6 +53754,14 @@ class Lambda_or_parameterContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitLambda_or_parameter(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitLambda_or_parameter(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -51292,6 +53846,14 @@ class Create_transfer_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_transfer_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -51346,6 +53908,14 @@ class Transfer_settingsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTransfer_settings(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -51387,6 +53957,14 @@ class Transfer_settings_entryContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitTransfer_settings_entry(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTransfer_settings_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -51455,6 +54033,14 @@ class Alter_transfer_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_transfer_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -51492,6 +54078,14 @@ class Alter_transfer_actionContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_transfer_action(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_transfer_action(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -51541,6 +54135,14 @@ class Alter_transfer_set_settingContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_transfer_set_setting(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -51582,6 +54184,14 @@ class Alter_transfer_set_usingContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_transfer_set_using(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_transfer_set_using(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -51629,6 +54239,14 @@ class Drop_transfer_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitDrop_transfer_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDrop_transfer_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -51683,6 +54301,14 @@ class Action_or_subquery_argsContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAction_or_subquery_args(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAction_or_subquery_args(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -51764,6 +54390,14 @@ class Define_action_or_subquery_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDefine_action_or_subquery_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -51816,6 +54450,14 @@ class Define_action_or_subquery_bodyContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitDefine_action_or_subquery_body(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDefine_action_or_subquery_body(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -51874,6 +54516,14 @@ class If_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitIf_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitIf_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -51944,6 +54594,14 @@ class For_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitFor_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitFor_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -52048,6 +54706,14 @@ class Table_refContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTable_ref(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -52089,6 +54755,14 @@ class Table_keyContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitTable_key(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTable_key(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -52136,6 +54810,14 @@ class Table_argContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitTable_arg(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTable_arg(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -52202,6 +54884,14 @@ class Table_hintsContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitTable_hints(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTable_hints(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -52297,6 +54987,14 @@ class Table_hintContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTable_hint(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -52338,6 +55036,14 @@ class Object_refContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitObject_ref(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitObject_ref(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -52383,6 +55089,14 @@ class Simple_table_ref_coreContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSimple_table_ref_core(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -52420,6 +55134,14 @@ class Simple_table_refContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitSimple_table_ref(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSimple_table_ref(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -52467,6 +55189,14 @@ class Into_simple_table_refContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitInto_simple_table_ref(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitInto_simple_table_ref(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -52534,6 +55264,14 @@ class Delete_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitDelete_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDelete_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -52607,6 +55345,14 @@ class Update_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitUpdate_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -52644,6 +55390,14 @@ class Set_clause_choiceContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitSet_clause_choice(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSet_clause_choice(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -52700,6 +55454,14 @@ class Set_clause_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSet_clause_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -52743,6 +55505,14 @@ class Set_clauseContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSet_clause(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -52776,6 +55546,14 @@ class Set_targetContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitSet_target(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSet_target(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -52827,6 +55605,14 @@ class Multiple_column_assignmentContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitMultiple_column_assignment(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitMultiple_column_assignment(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -52889,6 +55675,14 @@ class Set_target_listContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitSet_target_list(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSet_target_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -52954,6 +55748,14 @@ class Create_topic_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_topic_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -53016,6 +55818,14 @@ class Create_topic_entriesContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_topic_entries(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -53049,6 +55859,14 @@ class Create_topic_entryContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitCreate_topic_entry(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCreate_topic_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -53096,6 +55914,14 @@ class With_topic_settingsContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitWith_topic_settings(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWith_topic_settings(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -53172,6 +55998,14 @@ class Alter_topic_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_topic_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -53223,6 +56057,14 @@ class Alter_topic_actionContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_topic_action(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -53260,6 +56102,14 @@ class Alter_topic_add_consumerContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_topic_add_consumer(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_topic_add_consumer(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -53303,6 +56153,14 @@ class Topic_create_consumer_entryContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitTopic_create_consumer_entry(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTopic_create_consumer_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -53352,6 +56210,14 @@ class Alter_topic_alter_consumerContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_topic_alter_consumer(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -53389,6 +56255,14 @@ class Alter_topic_alter_consumer_entryContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_topic_alter_consumer_entry(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_topic_alter_consumer_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -53432,6 +56306,14 @@ class Alter_topic_drop_consumerContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_topic_drop_consumer(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_topic_drop_consumer(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -53479,6 +56361,14 @@ class Topic_alter_consumer_setContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitTopic_alter_consumer_set(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTopic_alter_consumer_set(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -53547,6 +56437,14 @@ class Topic_alter_consumer_resetContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTopic_alter_consumer_reset(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -53592,6 +56490,14 @@ class Alter_topic_set_settingsContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAlter_topic_set_settings(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_topic_set_settings(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -53664,6 +56570,14 @@ class Alter_topic_reset_settingsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_topic_reset_settings(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -53713,6 +56627,14 @@ class Drop_topic_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitDrop_topic_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitDrop_topic_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -53769,6 +56691,14 @@ class Topic_settingsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTopic_settings(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -53812,6 +56742,14 @@ class Topic_settings_entryContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTopic_settings_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -53845,6 +56783,14 @@ class Topic_setting_valueContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitTopic_setting_value(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTopic_setting_value(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -53892,6 +56838,14 @@ class Topic_consumer_with_settingsContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitTopic_consumer_with_settings(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTopic_consumer_with_settings(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -53948,6 +56902,14 @@ class Topic_consumer_settingsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTopic_consumer_settings(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -53991,6 +56953,14 @@ class Topic_consumer_settings_entryContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTopic_consumer_settings_entry(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -54024,6 +56994,14 @@ class Topic_consumer_setting_valueContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitTopic_consumer_setting_value(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTopic_consumer_setting_value(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -54069,6 +57047,14 @@ class Topic_refContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTopic_ref(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -54102,6 +57088,14 @@ class Topic_consumer_refContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitTopic_consumer_ref(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitTopic_consumer_ref(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -54145,6 +57139,14 @@ class Null_treatmentContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitNull_treatment(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitNull_treatment(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -54198,6 +57200,14 @@ class Filter_clauseContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitFilter_clause(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -54237,6 +57247,14 @@ class Window_name_or_specificationContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWindow_name_or_specification(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -54270,6 +57288,14 @@ class Window_nameContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitWindow_name(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWindow_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -54309,6 +57335,14 @@ class Window_clauseContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitWindow_clause(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWindow_clause(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -54365,6 +57399,14 @@ class Window_definition_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWindow_definition_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -54408,6 +57450,14 @@ class Window_definitionContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWindow_definition(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -54441,6 +57491,14 @@ class New_window_nameContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitNew_window_name(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitNew_window_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -54484,6 +57542,14 @@ class Window_specificationContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitWindow_specification(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWindow_specification(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -54533,6 +57599,14 @@ class Window_specification_detailsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWindow_specification_details(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -54566,6 +57640,14 @@ class Existing_window_nameContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitExisting_window_name(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitExisting_window_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -54615,6 +57697,14 @@ class Window_partition_clauseContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWindow_partition_clause(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -54648,6 +57738,14 @@ class Window_order_clauseContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitWindow_order_clause(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWindow_order_clause(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -54693,6 +57791,14 @@ class Window_frame_clauseContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWindow_frame_clause(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -54736,6 +57842,14 @@ class Window_frame_unitsContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWindow_frame_units(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -54773,6 +57887,14 @@ class Window_frame_extentContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitWindow_frame_extent(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWindow_frame_extent(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -54823,6 +57945,14 @@ class Window_frame_betweenContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitWindow_frame_between(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWindow_frame_between(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -54878,6 +58008,14 @@ class Window_frame_boundContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitWindow_frame_bound(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWindow_frame_bound(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -54939,6 +58077,14 @@ class Window_frame_exclusionContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitWindow_frame_exclusion(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -54976,6 +58122,14 @@ class Use_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitUse_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitUse_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -55025,6 +58179,14 @@ class Subselect_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitSubselect_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -55072,6 +58234,14 @@ class Named_nodes_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitNamed_nodes_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -55107,6 +58277,14 @@ class Commit_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCommit_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -55140,6 +58318,14 @@ class Rollback_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitRollback_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitRollback_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -55187,6 +58373,14 @@ class Analyze_tableContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAnalyze_table(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAnalyze_table(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -55243,6 +58437,14 @@ class Analyze_table_listContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAnalyze_table_list(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -55280,6 +58482,14 @@ class Analyze_stmtContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAnalyze_stmt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAnalyze_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -55344,6 +58554,14 @@ class Alter_sequence_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_sequence_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -55399,6 +58617,14 @@ class Alter_sequence_actionContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAlter_sequence_action(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -55446,6 +58672,14 @@ class Show_create_table_stmtContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitShow_create_table_stmt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -55485,6 +58719,14 @@ class IdentifierContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitIdentifier(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -55522,6 +58764,14 @@ class IdContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitId(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitId(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -55583,6 +58833,14 @@ class Id_schemaContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitId_schema(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -55638,6 +58896,14 @@ class Id_exprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitId_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -55687,6 +58953,14 @@ class Id_expr_inContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitId_expr_in(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitId_expr_in(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -55752,6 +59026,14 @@ class Id_windowContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitId_window(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -55811,6 +59093,14 @@ class Id_tableContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitId_table(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -55868,6 +59158,14 @@ class Id_withoutContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitId_without(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitId_without(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -55933,6 +59231,14 @@ class Id_hintContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitId_hint(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -55970,6 +59276,14 @@ class Id_as_compatContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitId_as_compat(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitId_as_compat(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -56011,6 +59325,14 @@ class An_idContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAn_id(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -56048,6 +59370,14 @@ class An_id_or_typeContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAn_id_or_type(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAn_id_or_type(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -56089,6 +59419,14 @@ class An_id_schemaContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAn_id_schema(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -56126,6 +59464,14 @@ class An_id_exprContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAn_id_expr(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAn_id_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -56167,6 +59513,14 @@ class An_id_expr_inContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAn_id_expr_in(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -56204,6 +59558,14 @@ class An_id_windowContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAn_id_window(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAn_id_window(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -56245,6 +59607,14 @@ class An_id_tableContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAn_id_table(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -56282,6 +59652,14 @@ class An_id_withoutContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAn_id_without(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAn_id_without(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -56323,6 +59701,14 @@ class An_id_hintContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAn_id_hint(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -56362,6 +59748,14 @@ class An_id_pureContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAn_id_pure(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -56399,6 +59793,14 @@ class An_id_as_compatContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitAn_id_as_compat(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitAn_id_as_compat(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -56444,6 +59846,14 @@ class View_nameContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitView_name(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -56481,6 +59891,14 @@ class Opt_id_prefixContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitOpt_id_prefix(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitOpt_id_prefix(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -56530,6 +59948,14 @@ class Cluster_exprContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitCluster_expr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -56567,6 +59993,14 @@ class Id_or_typeContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitId_or_type(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitId_or_type(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -56608,6 +60042,14 @@ class Opt_id_prefix_or_typeContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitOpt_id_prefix_or_type(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -56645,6 +60087,14 @@ class Id_or_atContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitId_or_at(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitId_or_at(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -56686,6 +60136,14 @@ class Id_table_or_typeContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitId_table_or_type(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -56723,6 +60181,14 @@ class Id_table_or_atContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitId_table_or_at(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitId_table_or_at(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -56786,6 +60252,14 @@ class KeywordContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitKeyword(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitKeyword(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -56935,6 +60409,14 @@ class Keyword_expr_uncompatContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitKeyword_expr_uncompat(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -56976,6 +60458,14 @@ class Keyword_table_uncompatContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitKeyword_table_uncompat(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitKeyword_table_uncompat(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -57053,6 +60543,14 @@ class Keyword_select_uncompatContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitKeyword_select_uncompat(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -57088,6 +60586,14 @@ class Keyword_alter_uncompatContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitKeyword_alter_uncompat(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -57121,6 +60627,14 @@ class Keyword_in_uncompatContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitKeyword_in_uncompat(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitKeyword_in_uncompat(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -57166,6 +60680,14 @@ class Keyword_window_uncompatContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitKeyword_window_uncompat(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -57203,6 +60725,14 @@ class Keyword_hint_uncompatContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitKeyword_hint_uncompat(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitKeyword_hint_uncompat(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -58034,6 +61564,14 @@ class Keyword_as_compatContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitKeyword_as_compat(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitKeyword_as_compat(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -58959,6 +62497,14 @@ class Keyword_compatContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitKeyword_compat(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -59038,6 +62584,14 @@ class Type_idContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitType_id(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -59077,6 +62631,14 @@ class Bool_valueContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitBool_value(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -59110,6 +62672,14 @@ class RealContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitReal(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitReal(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -59149,6 +62719,14 @@ class IntegerContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof YQLListener ) {
 	        listener.exitInteger(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof YQLVisitor ) {
+	        return visitor.visitInteger(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
