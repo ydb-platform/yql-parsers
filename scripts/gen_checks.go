@@ -31,7 +31,7 @@ func main() {
 
 	f, err := os.Open(visitorPath)
 	if err != nil {
-		panic(err)
+		log.Fatalf("failed to open visitor file %s: %v", visitorPath, err)
 	}
 	defer f.Close()
 
