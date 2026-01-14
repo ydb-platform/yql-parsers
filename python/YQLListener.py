@@ -503,6 +503,42 @@ class YQLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by YQLParser#select_subexpr.
+    def enterSelect_subexpr(self, ctx:YQLParser.Select_subexprContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#select_subexpr.
+    def exitSelect_subexpr(self, ctx:YQLParser.Select_subexprContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#select_subexpr_intersect.
+    def enterSelect_subexpr_intersect(self, ctx:YQLParser.Select_subexpr_intersectContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#select_subexpr_intersect.
+    def exitSelect_subexpr_intersect(self, ctx:YQLParser.Select_subexpr_intersectContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#select_or_expr.
+    def enterSelect_or_expr(self, ctx:YQLParser.Select_or_exprContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#select_or_expr.
+    def exitSelect_or_expr(self, ctx:YQLParser.Select_or_exprContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#tuple_or_expr.
+    def enterTuple_or_expr(self, ctx:YQLParser.Tuple_or_exprContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#tuple_or_expr.
+    def exitTuple_or_expr(self, ctx:YQLParser.Tuple_or_exprContext):
+        pass
+
+
     # Enter a parse tree produced by YQLParser#smart_parenthesis.
     def enterSmart_parenthesis(self, ctx:YQLParser.Smart_parenthesisContext):
         pass
@@ -908,6 +944,24 @@ class YQLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by YQLParser#type_name_linear.
+    def enterType_name_linear(self, ctx:YQLParser.Type_name_linearContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#type_name_linear.
+    def exitType_name_linear(self, ctx:YQLParser.Type_name_linearContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#type_name_dynamiclinear.
+    def enterType_name_dynamiclinear(self, ctx:YQLParser.Type_name_dynamiclinearContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#type_name_dynamiclinear.
+    def exitType_name_dynamiclinear(self, ctx:YQLParser.Type_name_dynamiclinearContext):
+        pass
+
+
     # Enter a parse tree produced by YQLParser#type_name_composite.
     def enterType_name_composite(self, ctx:YQLParser.Type_name_compositeContext):
         pass
@@ -1061,12 +1115,30 @@ class YQLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by YQLParser#select_stmt_intersect.
+    def enterSelect_stmt_intersect(self, ctx:YQLParser.Select_stmt_intersectContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#select_stmt_intersect.
+    def exitSelect_stmt_intersect(self, ctx:YQLParser.Select_stmt_intersectContext):
+        pass
+
+
     # Enter a parse tree produced by YQLParser#select_unparenthesized_stmt.
     def enterSelect_unparenthesized_stmt(self, ctx:YQLParser.Select_unparenthesized_stmtContext):
         pass
 
     # Exit a parse tree produced by YQLParser#select_unparenthesized_stmt.
     def exitSelect_unparenthesized_stmt(self, ctx:YQLParser.Select_unparenthesized_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#select_unparenthesized_stmt_intersect.
+    def enterSelect_unparenthesized_stmt_intersect(self, ctx:YQLParser.Select_unparenthesized_stmt_intersectContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#select_unparenthesized_stmt_intersect.
+    def exitSelect_unparenthesized_stmt_intersect(self, ctx:YQLParser.Select_unparenthesized_stmt_intersectContext):
         pass
 
 
@@ -1079,12 +1151,21 @@ class YQLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by YQLParser#select_op.
-    def enterSelect_op(self, ctx:YQLParser.Select_opContext):
+    # Enter a parse tree produced by YQLParser#union_op.
+    def enterUnion_op(self, ctx:YQLParser.Union_opContext):
         pass
 
-    # Exit a parse tree produced by YQLParser#select_op.
-    def exitSelect_op(self, ctx:YQLParser.Select_opContext):
+    # Exit a parse tree produced by YQLParser#union_op.
+    def exitUnion_op(self, ctx:YQLParser.Union_opContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#intersect_op.
+    def enterIntersect_op(self, ctx:YQLParser.Intersect_opContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#intersect_op.
+    def exitIntersect_op(self, ctx:YQLParser.Intersect_opContext):
         pass
 
 
@@ -1700,15 +1781,6 @@ class YQLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by YQLParser#simple_values_source.
-    def enterSimple_values_source(self, ctx:YQLParser.Simple_values_sourceContext):
-        pass
-
-    # Exit a parse tree produced by YQLParser#simple_values_source.
-    def exitSimple_values_source(self, ctx:YQLParser.Simple_values_sourceContext):
-        pass
-
-
     # Enter a parse tree produced by YQLParser#create_external_data_source_stmt.
     def enterCreate_external_data_source_stmt(self, ctx:YQLParser.Create_external_data_source_stmtContext):
         pass
@@ -1742,6 +1814,96 @@ class YQLListener(ParseTreeListener):
 
     # Exit a parse tree produced by YQLParser#drop_external_data_source_stmt.
     def exitDrop_external_data_source_stmt(self, ctx:YQLParser.Drop_external_data_source_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#create_streaming_query_stmt.
+    def enterCreate_streaming_query_stmt(self, ctx:YQLParser.Create_streaming_query_stmtContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#create_streaming_query_stmt.
+    def exitCreate_streaming_query_stmt(self, ctx:YQLParser.Create_streaming_query_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#create_streaming_query_features.
+    def enterCreate_streaming_query_features(self, ctx:YQLParser.Create_streaming_query_featuresContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#create_streaming_query_features.
+    def exitCreate_streaming_query_features(self, ctx:YQLParser.Create_streaming_query_featuresContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#alter_streaming_query_stmt.
+    def enterAlter_streaming_query_stmt(self, ctx:YQLParser.Alter_streaming_query_stmtContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#alter_streaming_query_stmt.
+    def exitAlter_streaming_query_stmt(self, ctx:YQLParser.Alter_streaming_query_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#alter_streaming_query_action.
+    def enterAlter_streaming_query_action(self, ctx:YQLParser.Alter_streaming_query_actionContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#alter_streaming_query_action.
+    def exitAlter_streaming_query_action(self, ctx:YQLParser.Alter_streaming_query_actionContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#alter_streaming_query_set_settings.
+    def enterAlter_streaming_query_set_settings(self, ctx:YQLParser.Alter_streaming_query_set_settingsContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#alter_streaming_query_set_settings.
+    def exitAlter_streaming_query_set_settings(self, ctx:YQLParser.Alter_streaming_query_set_settingsContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#streaming_query_settings.
+    def enterStreaming_query_settings(self, ctx:YQLParser.Streaming_query_settingsContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#streaming_query_settings.
+    def exitStreaming_query_settings(self, ctx:YQLParser.Streaming_query_settingsContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#streaming_query_setting.
+    def enterStreaming_query_setting(self, ctx:YQLParser.Streaming_query_settingContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#streaming_query_setting.
+    def exitStreaming_query_setting(self, ctx:YQLParser.Streaming_query_settingContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#streaming_query_setting_value.
+    def enterStreaming_query_setting_value(self, ctx:YQLParser.Streaming_query_setting_valueContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#streaming_query_setting_value.
+    def exitStreaming_query_setting_value(self, ctx:YQLParser.Streaming_query_setting_valueContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#streaming_query_definition.
+    def enterStreaming_query_definition(self, ctx:YQLParser.Streaming_query_definitionContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#streaming_query_definition.
+    def exitStreaming_query_definition(self, ctx:YQLParser.Streaming_query_definitionContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#drop_streaming_query_stmt.
+    def enterDrop_streaming_query_stmt(self, ctx:YQLParser.Drop_streaming_query_stmtContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#drop_streaming_query_stmt.
+    def exitDrop_streaming_query_stmt(self, ctx:YQLParser.Drop_streaming_query_stmtContext):
         pass
 
 
@@ -2042,6 +2204,69 @@ class YQLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by YQLParser#alter_database_action.
+    def enterAlter_database_action(self, ctx:YQLParser.Alter_database_actionContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#alter_database_action.
+    def exitAlter_database_action(self, ctx:YQLParser.Alter_database_actionContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#set_database_settings.
+    def enterSet_database_settings(self, ctx:YQLParser.Set_database_settingsContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#set_database_settings.
+    def exitSet_database_settings(self, ctx:YQLParser.Set_database_settingsContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#database_settings.
+    def enterDatabase_settings(self, ctx:YQLParser.Database_settingsContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#database_settings.
+    def exitDatabase_settings(self, ctx:YQLParser.Database_settingsContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#database_setting.
+    def enterDatabase_setting(self, ctx:YQLParser.Database_settingContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#database_setting.
+    def exitDatabase_setting(self, ctx:YQLParser.Database_settingContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#database_setting_value.
+    def enterDatabase_setting_value(self, ctx:YQLParser.Database_setting_valueContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#database_setting_value.
+    def exitDatabase_setting_value(self, ctx:YQLParser.Database_setting_valueContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#truncate_table_stmt.
+    def enterTruncate_table_stmt(self, ctx:YQLParser.Truncate_table_stmtContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#truncate_table_stmt.
+    def exitTruncate_table_stmt(self, ctx:YQLParser.Truncate_table_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#with_truncate_table_settings.
+    def enterWith_truncate_table_settings(self, ctx:YQLParser.With_truncate_table_settingsContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#with_truncate_table_settings.
+    def exitWith_truncate_table_settings(self, ctx:YQLParser.With_truncate_table_settingsContext):
+        pass
+
+
     # Enter a parse tree produced by YQLParser#table_inherits.
     def enterTable_inherits(self, ctx:YQLParser.Table_inheritsContext):
         pass
@@ -2186,6 +2411,24 @@ class YQLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by YQLParser#alter_table_alter_column_set_not_null.
+    def enterAlter_table_alter_column_set_not_null(self, ctx:YQLParser.Alter_table_alter_column_set_not_nullContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#alter_table_alter_column_set_not_null.
+    def exitAlter_table_alter_column_set_not_null(self, ctx:YQLParser.Alter_table_alter_column_set_not_nullContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#alter_table_alter_column_set_compression.
+    def enterAlter_table_alter_column_set_compression(self, ctx:YQLParser.Alter_table_alter_column_set_compressionContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#alter_table_alter_column_set_compression.
+    def exitAlter_table_alter_column_set_compression(self, ctx:YQLParser.Alter_table_alter_column_set_compressionContext):
+        pass
+
+
     # Enter a parse tree produced by YQLParser#alter_table_add_column_family.
     def enterAlter_table_add_column_family(self, ctx:YQLParser.Alter_table_add_column_familyContext):
         pass
@@ -2312,6 +2555,69 @@ class YQLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by YQLParser#column_option_list.
+    def enterColumn_option_list(self, ctx:YQLParser.Column_option_listContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#column_option_list.
+    def exitColumn_option_list(self, ctx:YQLParser.Column_option_listContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#column_option_list_space.
+    def enterColumn_option_list_space(self, ctx:YQLParser.Column_option_list_spaceContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#column_option_list_space.
+    def exitColumn_option_list_space(self, ctx:YQLParser.Column_option_list_spaceContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#column_option_list_comma.
+    def enterColumn_option_list_comma(self, ctx:YQLParser.Column_option_list_commaContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#column_option_list_comma.
+    def exitColumn_option_list_comma(self, ctx:YQLParser.Column_option_list_commaContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#column_option.
+    def enterColumn_option(self, ctx:YQLParser.Column_optionContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#column_option.
+    def exitColumn_option(self, ctx:YQLParser.Column_optionContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#compression.
+    def enterCompression(self, ctx:YQLParser.CompressionContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#compression.
+    def exitCompression(self, ctx:YQLParser.CompressionContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#compression_setting_entry.
+    def enterCompression_setting_entry(self, ctx:YQLParser.Compression_setting_entryContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#compression_setting_entry.
+    def exitCompression_setting_entry(self, ctx:YQLParser.Compression_setting_entryContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#compression_setting_value.
+    def enterCompression_setting_value(self, ctx:YQLParser.Compression_setting_valueContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#compression_setting_value.
+    def exitCompression_setting_value(self, ctx:YQLParser.Compression_setting_valueContext):
+        pass
+
+
     # Enter a parse tree produced by YQLParser#family_relation.
     def enterFamily_relation(self, ctx:YQLParser.Family_relationContext):
         pass
@@ -2321,12 +2627,21 @@ class YQLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by YQLParser#opt_column_constraints.
-    def enterOpt_column_constraints(self, ctx:YQLParser.Opt_column_constraintsContext):
+    # Enter a parse tree produced by YQLParser#nullability.
+    def enterNullability(self, ctx:YQLParser.NullabilityContext):
         pass
 
-    # Exit a parse tree produced by YQLParser#opt_column_constraints.
-    def exitOpt_column_constraints(self, ctx:YQLParser.Opt_column_constraintsContext):
+    # Exit a parse tree produced by YQLParser#nullability.
+    def exitNullability(self, ctx:YQLParser.NullabilityContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#default_value.
+    def enterDefault_value(self, ctx:YQLParser.Default_valueContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#default_value.
+    def exitDefault_value(self, ctx:YQLParser.Default_valueContext):
         pass
 
 
@@ -3554,15 +3869,6 @@ class YQLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by YQLParser#subselect_stmt.
-    def enterSubselect_stmt(self, ctx:YQLParser.Subselect_stmtContext):
-        pass
-
-    # Exit a parse tree produced by YQLParser#subselect_stmt.
-    def exitSubselect_stmt(self, ctx:YQLParser.Subselect_stmtContext):
-        pass
-
-
     # Enter a parse tree produced by YQLParser#named_nodes_stmt.
     def enterNamed_nodes_stmt(self, ctx:YQLParser.Named_nodes_stmtContext):
         pass
@@ -3641,6 +3947,60 @@ class YQLListener(ParseTreeListener):
 
     # Exit a parse tree produced by YQLParser#show_create_table_stmt.
     def exitShow_create_table_stmt(self, ctx:YQLParser.Show_create_table_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#create_secret_stmt.
+    def enterCreate_secret_stmt(self, ctx:YQLParser.Create_secret_stmtContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#create_secret_stmt.
+    def exitCreate_secret_stmt(self, ctx:YQLParser.Create_secret_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#with_secret_settings.
+    def enterWith_secret_settings(self, ctx:YQLParser.With_secret_settingsContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#with_secret_settings.
+    def exitWith_secret_settings(self, ctx:YQLParser.With_secret_settingsContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#secret_setting_entry.
+    def enterSecret_setting_entry(self, ctx:YQLParser.Secret_setting_entryContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#secret_setting_entry.
+    def exitSecret_setting_entry(self, ctx:YQLParser.Secret_setting_entryContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#secret_setting_value.
+    def enterSecret_setting_value(self, ctx:YQLParser.Secret_setting_valueContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#secret_setting_value.
+    def exitSecret_setting_value(self, ctx:YQLParser.Secret_setting_valueContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#alter_secret_stmt.
+    def enterAlter_secret_stmt(self, ctx:YQLParser.Alter_secret_stmtContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#alter_secret_stmt.
+    def exitAlter_secret_stmt(self, ctx:YQLParser.Alter_secret_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by YQLParser#drop_secret_stmt.
+    def enterDrop_secret_stmt(self, ctx:YQLParser.Drop_secret_stmtContext):
+        pass
+
+    # Exit a parse tree produced by YQLParser#drop_secret_stmt.
+    def exitDrop_secret_stmt(self, ctx:YQLParser.Drop_secret_stmtContext):
         pass
 
 

@@ -228,6 +228,22 @@ func (v *BaseYQLVisitor) VisitJson_query(ctx *Json_queryContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseYQLVisitor) VisitSelect_subexpr(ctx *Select_subexprContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitSelect_subexpr_intersect(ctx *Select_subexpr_intersectContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitSelect_or_expr(ctx *Select_or_exprContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitTuple_or_expr(ctx *Tuple_or_exprContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseYQLVisitor) VisitSmart_parenthesis(ctx *Smart_parenthesisContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -408,6 +424,14 @@ func (v *BaseYQLVisitor) VisitType_name_callable(ctx *Type_name_callableContext)
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseYQLVisitor) VisitType_name_linear(ctx *Type_name_linearContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitType_name_dynamiclinear(ctx *Type_name_dynamiclinearContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseYQLVisitor) VisitType_name_composite(ctx *Type_name_compositeContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -476,7 +500,15 @@ func (v *BaseYQLVisitor) VisitSelect_stmt(ctx *Select_stmtContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseYQLVisitor) VisitSelect_stmt_intersect(ctx *Select_stmt_intersectContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseYQLVisitor) VisitSelect_unparenthesized_stmt(ctx *Select_unparenthesized_stmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitSelect_unparenthesized_stmt_intersect(ctx *Select_unparenthesized_stmt_intersectContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -484,7 +516,11 @@ func (v *BaseYQLVisitor) VisitSelect_kind_parenthesis(ctx *Select_kind_parenthes
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseYQLVisitor) VisitSelect_op(ctx *Select_opContext) interface{} {
+func (v *BaseYQLVisitor) VisitUnion_op(ctx *Union_opContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitIntersect_op(ctx *Intersect_opContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -760,10 +796,6 @@ func (v *BaseYQLVisitor) VisitValues_source_row(ctx *Values_source_rowContext) i
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseYQLVisitor) VisitSimple_values_source(ctx *Simple_values_sourceContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseYQLVisitor) VisitCreate_external_data_source_stmt(ctx *Create_external_data_source_stmtContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -777,6 +809,46 @@ func (v *BaseYQLVisitor) VisitAlter_external_data_source_action(ctx *Alter_exter
 }
 
 func (v *BaseYQLVisitor) VisitDrop_external_data_source_stmt(ctx *Drop_external_data_source_stmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitCreate_streaming_query_stmt(ctx *Create_streaming_query_stmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitCreate_streaming_query_features(ctx *Create_streaming_query_featuresContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitAlter_streaming_query_stmt(ctx *Alter_streaming_query_stmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitAlter_streaming_query_action(ctx *Alter_streaming_query_actionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitAlter_streaming_query_set_settings(ctx *Alter_streaming_query_set_settingsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitStreaming_query_settings(ctx *Streaming_query_settingsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitStreaming_query_setting(ctx *Streaming_query_settingContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitStreaming_query_setting_value(ctx *Streaming_query_setting_valueContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitStreaming_query_definition(ctx *Streaming_query_definitionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitDrop_streaming_query_stmt(ctx *Drop_streaming_query_stmtContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -912,6 +984,34 @@ func (v *BaseYQLVisitor) VisitAlter_database_stmt(ctx *Alter_database_stmtContex
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseYQLVisitor) VisitAlter_database_action(ctx *Alter_database_actionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitSet_database_settings(ctx *Set_database_settingsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitDatabase_settings(ctx *Database_settingsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitDatabase_setting(ctx *Database_settingContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitDatabase_setting_value(ctx *Database_setting_valueContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitTruncate_table_stmt(ctx *Truncate_table_stmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitWith_truncate_table_settings(ctx *With_truncate_table_settingsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseYQLVisitor) VisitTable_inherits(ctx *Table_inheritsContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -976,6 +1076,14 @@ func (v *BaseYQLVisitor) VisitAlter_table_alter_column_drop_not_null(ctx *Alter_
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseYQLVisitor) VisitAlter_table_alter_column_set_not_null(ctx *Alter_table_alter_column_set_not_nullContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitAlter_table_alter_column_set_compression(ctx *Alter_table_alter_column_set_compressionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseYQLVisitor) VisitAlter_table_add_column_family(ctx *Alter_table_add_column_familyContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -1032,11 +1140,43 @@ func (v *BaseYQLVisitor) VisitColumn_schema(ctx *Column_schemaContext) interface
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseYQLVisitor) VisitColumn_option_list(ctx *Column_option_listContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitColumn_option_list_space(ctx *Column_option_list_spaceContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitColumn_option_list_comma(ctx *Column_option_list_commaContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitColumn_option(ctx *Column_optionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitCompression(ctx *CompressionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitCompression_setting_entry(ctx *Compression_setting_entryContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitCompression_setting_value(ctx *Compression_setting_valueContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseYQLVisitor) VisitFamily_relation(ctx *Family_relationContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseYQLVisitor) VisitOpt_column_constraints(ctx *Opt_column_constraintsContext) interface{} {
+func (v *BaseYQLVisitor) VisitNullability(ctx *NullabilityContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitDefault_value(ctx *Default_valueContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -1584,10 +1724,6 @@ func (v *BaseYQLVisitor) VisitUse_stmt(ctx *Use_stmtContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseYQLVisitor) VisitSubselect_stmt(ctx *Subselect_stmtContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseYQLVisitor) VisitNamed_nodes_stmt(ctx *Named_nodes_stmtContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -1621,6 +1757,30 @@ func (v *BaseYQLVisitor) VisitAlter_sequence_action(ctx *Alter_sequence_actionCo
 }
 
 func (v *BaseYQLVisitor) VisitShow_create_table_stmt(ctx *Show_create_table_stmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitCreate_secret_stmt(ctx *Create_secret_stmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitWith_secret_settings(ctx *With_secret_settingsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitSecret_setting_entry(ctx *Secret_setting_entryContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitSecret_setting_value(ctx *Secret_setting_valueContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitAlter_secret_stmt(ctx *Alter_secret_stmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseYQLVisitor) VisitDrop_secret_stmt(ctx *Drop_secret_stmtContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

@@ -500,6 +500,42 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by YQLParser#select_subexpr.
+	enterSelect_subexpr(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#select_subexpr.
+	exitSelect_subexpr(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#select_subexpr_intersect.
+	enterSelect_subexpr_intersect(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#select_subexpr_intersect.
+	exitSelect_subexpr_intersect(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#select_or_expr.
+	enterSelect_or_expr(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#select_or_expr.
+	exitSelect_or_expr(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#tuple_or_expr.
+	enterTuple_or_expr(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#tuple_or_expr.
+	exitTuple_or_expr(ctx) {
+	}
+
+
 	// Enter a parse tree produced by YQLParser#smart_parenthesis.
 	enterSmart_parenthesis(ctx) {
 	}
@@ -905,6 +941,24 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by YQLParser#type_name_linear.
+	enterType_name_linear(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#type_name_linear.
+	exitType_name_linear(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#type_name_dynamiclinear.
+	enterType_name_dynamiclinear(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#type_name_dynamiclinear.
+	exitType_name_dynamiclinear(ctx) {
+	}
+
+
 	// Enter a parse tree produced by YQLParser#type_name_composite.
 	enterType_name_composite(ctx) {
 	}
@@ -1058,12 +1112,30 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by YQLParser#select_stmt_intersect.
+	enterSelect_stmt_intersect(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#select_stmt_intersect.
+	exitSelect_stmt_intersect(ctx) {
+	}
+
+
 	// Enter a parse tree produced by YQLParser#select_unparenthesized_stmt.
 	enterSelect_unparenthesized_stmt(ctx) {
 	}
 
 	// Exit a parse tree produced by YQLParser#select_unparenthesized_stmt.
 	exitSelect_unparenthesized_stmt(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#select_unparenthesized_stmt_intersect.
+	enterSelect_unparenthesized_stmt_intersect(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#select_unparenthesized_stmt_intersect.
+	exitSelect_unparenthesized_stmt_intersect(ctx) {
 	}
 
 
@@ -1076,12 +1148,21 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
-	// Enter a parse tree produced by YQLParser#select_op.
-	enterSelect_op(ctx) {
+	// Enter a parse tree produced by YQLParser#union_op.
+	enterUnion_op(ctx) {
 	}
 
-	// Exit a parse tree produced by YQLParser#select_op.
-	exitSelect_op(ctx) {
+	// Exit a parse tree produced by YQLParser#union_op.
+	exitUnion_op(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#intersect_op.
+	enterIntersect_op(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#intersect_op.
+	exitIntersect_op(ctx) {
 	}
 
 
@@ -1697,15 +1778,6 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
-	// Enter a parse tree produced by YQLParser#simple_values_source.
-	enterSimple_values_source(ctx) {
-	}
-
-	// Exit a parse tree produced by YQLParser#simple_values_source.
-	exitSimple_values_source(ctx) {
-	}
-
-
 	// Enter a parse tree produced by YQLParser#create_external_data_source_stmt.
 	enterCreate_external_data_source_stmt(ctx) {
 	}
@@ -1739,6 +1811,96 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 
 	// Exit a parse tree produced by YQLParser#drop_external_data_source_stmt.
 	exitDrop_external_data_source_stmt(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#create_streaming_query_stmt.
+	enterCreate_streaming_query_stmt(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#create_streaming_query_stmt.
+	exitCreate_streaming_query_stmt(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#create_streaming_query_features.
+	enterCreate_streaming_query_features(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#create_streaming_query_features.
+	exitCreate_streaming_query_features(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#alter_streaming_query_stmt.
+	enterAlter_streaming_query_stmt(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#alter_streaming_query_stmt.
+	exitAlter_streaming_query_stmt(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#alter_streaming_query_action.
+	enterAlter_streaming_query_action(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#alter_streaming_query_action.
+	exitAlter_streaming_query_action(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#alter_streaming_query_set_settings.
+	enterAlter_streaming_query_set_settings(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#alter_streaming_query_set_settings.
+	exitAlter_streaming_query_set_settings(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#streaming_query_settings.
+	enterStreaming_query_settings(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#streaming_query_settings.
+	exitStreaming_query_settings(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#streaming_query_setting.
+	enterStreaming_query_setting(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#streaming_query_setting.
+	exitStreaming_query_setting(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#streaming_query_setting_value.
+	enterStreaming_query_setting_value(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#streaming_query_setting_value.
+	exitStreaming_query_setting_value(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#streaming_query_definition.
+	enterStreaming_query_definition(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#streaming_query_definition.
+	exitStreaming_query_definition(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#drop_streaming_query_stmt.
+	enterDrop_streaming_query_stmt(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#drop_streaming_query_stmt.
+	exitDrop_streaming_query_stmt(ctx) {
 	}
 
 
@@ -2039,6 +2201,69 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by YQLParser#alter_database_action.
+	enterAlter_database_action(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#alter_database_action.
+	exitAlter_database_action(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#set_database_settings.
+	enterSet_database_settings(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#set_database_settings.
+	exitSet_database_settings(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#database_settings.
+	enterDatabase_settings(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#database_settings.
+	exitDatabase_settings(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#database_setting.
+	enterDatabase_setting(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#database_setting.
+	exitDatabase_setting(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#database_setting_value.
+	enterDatabase_setting_value(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#database_setting_value.
+	exitDatabase_setting_value(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#truncate_table_stmt.
+	enterTruncate_table_stmt(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#truncate_table_stmt.
+	exitTruncate_table_stmt(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#with_truncate_table_settings.
+	enterWith_truncate_table_settings(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#with_truncate_table_settings.
+	exitWith_truncate_table_settings(ctx) {
+	}
+
+
 	// Enter a parse tree produced by YQLParser#table_inherits.
 	enterTable_inherits(ctx) {
 	}
@@ -2183,6 +2408,24 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by YQLParser#alter_table_alter_column_set_not_null.
+	enterAlter_table_alter_column_set_not_null(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#alter_table_alter_column_set_not_null.
+	exitAlter_table_alter_column_set_not_null(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#alter_table_alter_column_set_compression.
+	enterAlter_table_alter_column_set_compression(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#alter_table_alter_column_set_compression.
+	exitAlter_table_alter_column_set_compression(ctx) {
+	}
+
+
 	// Enter a parse tree produced by YQLParser#alter_table_add_column_family.
 	enterAlter_table_add_column_family(ctx) {
 	}
@@ -2309,6 +2552,69 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by YQLParser#column_option_list.
+	enterColumn_option_list(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#column_option_list.
+	exitColumn_option_list(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#column_option_list_space.
+	enterColumn_option_list_space(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#column_option_list_space.
+	exitColumn_option_list_space(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#column_option_list_comma.
+	enterColumn_option_list_comma(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#column_option_list_comma.
+	exitColumn_option_list_comma(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#column_option.
+	enterColumn_option(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#column_option.
+	exitColumn_option(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#compression.
+	enterCompression(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#compression.
+	exitCompression(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#compression_setting_entry.
+	enterCompression_setting_entry(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#compression_setting_entry.
+	exitCompression_setting_entry(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#compression_setting_value.
+	enterCompression_setting_value(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#compression_setting_value.
+	exitCompression_setting_value(ctx) {
+	}
+
+
 	// Enter a parse tree produced by YQLParser#family_relation.
 	enterFamily_relation(ctx) {
 	}
@@ -2318,12 +2624,21 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
-	// Enter a parse tree produced by YQLParser#opt_column_constraints.
-	enterOpt_column_constraints(ctx) {
+	// Enter a parse tree produced by YQLParser#nullability.
+	enterNullability(ctx) {
 	}
 
-	// Exit a parse tree produced by YQLParser#opt_column_constraints.
-	exitOpt_column_constraints(ctx) {
+	// Exit a parse tree produced by YQLParser#nullability.
+	exitNullability(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#default_value.
+	enterDefault_value(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#default_value.
+	exitDefault_value(ctx) {
 	}
 
 
@@ -3551,15 +3866,6 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
-	// Enter a parse tree produced by YQLParser#subselect_stmt.
-	enterSubselect_stmt(ctx) {
-	}
-
-	// Exit a parse tree produced by YQLParser#subselect_stmt.
-	exitSubselect_stmt(ctx) {
-	}
-
-
 	// Enter a parse tree produced by YQLParser#named_nodes_stmt.
 	enterNamed_nodes_stmt(ctx) {
 	}
@@ -3638,6 +3944,60 @@ export default class YQLListener extends antlr4.tree.ParseTreeListener {
 
 	// Exit a parse tree produced by YQLParser#show_create_table_stmt.
 	exitShow_create_table_stmt(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#create_secret_stmt.
+	enterCreate_secret_stmt(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#create_secret_stmt.
+	exitCreate_secret_stmt(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#with_secret_settings.
+	enterWith_secret_settings(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#with_secret_settings.
+	exitWith_secret_settings(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#secret_setting_entry.
+	enterSecret_setting_entry(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#secret_setting_entry.
+	exitSecret_setting_entry(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#secret_setting_value.
+	enterSecret_setting_value(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#secret_setting_value.
+	exitSecret_setting_value(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#alter_secret_stmt.
+	enterAlter_secret_stmt(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#alter_secret_stmt.
+	exitAlter_secret_stmt(ctx) {
+	}
+
+
+	// Enter a parse tree produced by YQLParser#drop_secret_stmt.
+	enterDrop_secret_stmt(ctx) {
+	}
+
+	// Exit a parse tree produced by YQLParser#drop_secret_stmt.
+	exitDrop_secret_stmt(ctx) {
 	}
 
 

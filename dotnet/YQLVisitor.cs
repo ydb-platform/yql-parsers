@@ -363,6 +363,30 @@ public interface IYQLVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitJson_query([NotNull] YQLParser.Json_queryContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.select_subexpr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSelect_subexpr([NotNull] YQLParser.Select_subexprContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.select_subexpr_intersect"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSelect_subexpr_intersect([NotNull] YQLParser.Select_subexpr_intersectContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.select_or_expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSelect_or_expr([NotNull] YQLParser.Select_or_exprContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.tuple_or_expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitTuple_or_expr([NotNull] YQLParser.Tuple_or_exprContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="YQLParser.smart_parenthesis"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -633,6 +657,18 @@ public interface IYQLVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitType_name_callable([NotNull] YQLParser.Type_name_callableContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.type_name_linear"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitType_name_linear([NotNull] YQLParser.Type_name_linearContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.type_name_dynamiclinear"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitType_name_dynamiclinear([NotNull] YQLParser.Type_name_dynamiclinearContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="YQLParser.type_name_composite"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -735,11 +771,23 @@ public interface IYQLVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitSelect_stmt([NotNull] YQLParser.Select_stmtContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.select_stmt_intersect"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSelect_stmt_intersect([NotNull] YQLParser.Select_stmt_intersectContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="YQLParser.select_unparenthesized_stmt"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitSelect_unparenthesized_stmt([NotNull] YQLParser.Select_unparenthesized_stmtContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.select_unparenthesized_stmt_intersect"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSelect_unparenthesized_stmt_intersect([NotNull] YQLParser.Select_unparenthesized_stmt_intersectContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="YQLParser.select_kind_parenthesis"/>.
 	/// </summary>
@@ -747,11 +795,17 @@ public interface IYQLVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitSelect_kind_parenthesis([NotNull] YQLParser.Select_kind_parenthesisContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="YQLParser.select_op"/>.
+	/// Visit a parse tree produced by <see cref="YQLParser.union_op"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitSelect_op([NotNull] YQLParser.Select_opContext context);
+	Result VisitUnion_op([NotNull] YQLParser.Union_opContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.intersect_op"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIntersect_op([NotNull] YQLParser.Intersect_opContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="YQLParser.select_kind_partial"/>.
 	/// </summary>
@@ -1161,12 +1215,6 @@ public interface IYQLVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitValues_source_row([NotNull] YQLParser.Values_source_rowContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="YQLParser.simple_values_source"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitSimple_values_source([NotNull] YQLParser.Simple_values_sourceContext context);
-	/// <summary>
 	/// Visit a parse tree produced by <see cref="YQLParser.create_external_data_source_stmt"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -1190,6 +1238,66 @@ public interface IYQLVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitDrop_external_data_source_stmt([NotNull] YQLParser.Drop_external_data_source_stmtContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.create_streaming_query_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitCreate_streaming_query_stmt([NotNull] YQLParser.Create_streaming_query_stmtContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.create_streaming_query_features"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitCreate_streaming_query_features([NotNull] YQLParser.Create_streaming_query_featuresContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.alter_streaming_query_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAlter_streaming_query_stmt([NotNull] YQLParser.Alter_streaming_query_stmtContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.alter_streaming_query_action"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAlter_streaming_query_action([NotNull] YQLParser.Alter_streaming_query_actionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.alter_streaming_query_set_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAlter_streaming_query_set_settings([NotNull] YQLParser.Alter_streaming_query_set_settingsContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.streaming_query_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitStreaming_query_settings([NotNull] YQLParser.Streaming_query_settingsContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.streaming_query_setting"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitStreaming_query_setting([NotNull] YQLParser.Streaming_query_settingContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.streaming_query_setting_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitStreaming_query_setting_value([NotNull] YQLParser.Streaming_query_setting_valueContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.streaming_query_definition"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitStreaming_query_definition([NotNull] YQLParser.Streaming_query_definitionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.drop_streaming_query_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitDrop_streaming_query_stmt([NotNull] YQLParser.Drop_streaming_query_stmtContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="YQLParser.create_view_stmt"/>.
 	/// </summary>
@@ -1389,6 +1497,48 @@ public interface IYQLVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitAlter_database_stmt([NotNull] YQLParser.Alter_database_stmtContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.alter_database_action"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAlter_database_action([NotNull] YQLParser.Alter_database_actionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.set_database_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSet_database_settings([NotNull] YQLParser.Set_database_settingsContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.database_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitDatabase_settings([NotNull] YQLParser.Database_settingsContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.database_setting"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitDatabase_setting([NotNull] YQLParser.Database_settingContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.database_setting_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitDatabase_setting_value([NotNull] YQLParser.Database_setting_valueContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.truncate_table_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitTruncate_table_stmt([NotNull] YQLParser.Truncate_table_stmtContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.with_truncate_table_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitWith_truncate_table_settings([NotNull] YQLParser.With_truncate_table_settingsContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="YQLParser.table_inherits"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -1485,6 +1635,18 @@ public interface IYQLVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitAlter_table_alter_column_drop_not_null([NotNull] YQLParser.Alter_table_alter_column_drop_not_nullContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.alter_table_alter_column_set_not_null"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAlter_table_alter_column_set_not_null([NotNull] YQLParser.Alter_table_alter_column_set_not_nullContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.alter_table_alter_column_set_compression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAlter_table_alter_column_set_compression([NotNull] YQLParser.Alter_table_alter_column_set_compressionContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="YQLParser.alter_table_add_column_family"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -1569,17 +1731,65 @@ public interface IYQLVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitColumn_schema([NotNull] YQLParser.Column_schemaContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.column_option_list"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitColumn_option_list([NotNull] YQLParser.Column_option_listContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.column_option_list_space"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitColumn_option_list_space([NotNull] YQLParser.Column_option_list_spaceContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.column_option_list_comma"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitColumn_option_list_comma([NotNull] YQLParser.Column_option_list_commaContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.column_option"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitColumn_option([NotNull] YQLParser.Column_optionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.compression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitCompression([NotNull] YQLParser.CompressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.compression_setting_entry"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitCompression_setting_entry([NotNull] YQLParser.Compression_setting_entryContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.compression_setting_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitCompression_setting_value([NotNull] YQLParser.Compression_setting_valueContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="YQLParser.family_relation"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitFamily_relation([NotNull] YQLParser.Family_relationContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="YQLParser.opt_column_constraints"/>.
+	/// Visit a parse tree produced by <see cref="YQLParser.nullability"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOpt_column_constraints([NotNull] YQLParser.Opt_column_constraintsContext context);
+	Result VisitNullability([NotNull] YQLParser.NullabilityContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.default_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitDefault_value([NotNull] YQLParser.Default_valueContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="YQLParser.column_order_by_specification"/>.
 	/// </summary>
@@ -2397,12 +2607,6 @@ public interface IYQLVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitUse_stmt([NotNull] YQLParser.Use_stmtContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="YQLParser.subselect_stmt"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitSubselect_stmt([NotNull] YQLParser.Subselect_stmtContext context);
-	/// <summary>
 	/// Visit a parse tree produced by <see cref="YQLParser.named_nodes_stmt"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -2456,6 +2660,42 @@ public interface IYQLVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitShow_create_table_stmt([NotNull] YQLParser.Show_create_table_stmtContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.create_secret_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitCreate_secret_stmt([NotNull] YQLParser.Create_secret_stmtContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.with_secret_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitWith_secret_settings([NotNull] YQLParser.With_secret_settingsContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.secret_setting_entry"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSecret_setting_entry([NotNull] YQLParser.Secret_setting_entryContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.secret_setting_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSecret_setting_value([NotNull] YQLParser.Secret_setting_valueContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.alter_secret_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAlter_secret_stmt([NotNull] YQLParser.Alter_secret_stmtContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="YQLParser.drop_secret_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitDrop_secret_stmt([NotNull] YQLParser.Drop_secret_stmtContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="YQLParser.identifier"/>.
 	/// </summary>

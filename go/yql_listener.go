@@ -173,6 +173,18 @@ type YQLListener interface {
 	// EnterJson_query is called when entering the json_query production.
 	EnterJson_query(c *Json_queryContext)
 
+	// EnterSelect_subexpr is called when entering the select_subexpr production.
+	EnterSelect_subexpr(c *Select_subexprContext)
+
+	// EnterSelect_subexpr_intersect is called when entering the select_subexpr_intersect production.
+	EnterSelect_subexpr_intersect(c *Select_subexpr_intersectContext)
+
+	// EnterSelect_or_expr is called when entering the select_or_expr production.
+	EnterSelect_or_expr(c *Select_or_exprContext)
+
+	// EnterTuple_or_expr is called when entering the tuple_or_expr production.
+	EnterTuple_or_expr(c *Tuple_or_exprContext)
+
 	// EnterSmart_parenthesis is called when entering the smart_parenthesis production.
 	EnterSmart_parenthesis(c *Smart_parenthesisContext)
 
@@ -308,6 +320,12 @@ type YQLListener interface {
 	// EnterType_name_callable is called when entering the type_name_callable production.
 	EnterType_name_callable(c *Type_name_callableContext)
 
+	// EnterType_name_linear is called when entering the type_name_linear production.
+	EnterType_name_linear(c *Type_name_linearContext)
+
+	// EnterType_name_dynamiclinear is called when entering the type_name_dynamiclinear production.
+	EnterType_name_dynamiclinear(c *Type_name_dynamiclinearContext)
+
 	// EnterType_name_composite is called when entering the type_name_composite production.
 	EnterType_name_composite(c *Type_name_compositeContext)
 
@@ -359,14 +377,23 @@ type YQLListener interface {
 	// EnterSelect_stmt is called when entering the select_stmt production.
 	EnterSelect_stmt(c *Select_stmtContext)
 
+	// EnterSelect_stmt_intersect is called when entering the select_stmt_intersect production.
+	EnterSelect_stmt_intersect(c *Select_stmt_intersectContext)
+
 	// EnterSelect_unparenthesized_stmt is called when entering the select_unparenthesized_stmt production.
 	EnterSelect_unparenthesized_stmt(c *Select_unparenthesized_stmtContext)
+
+	// EnterSelect_unparenthesized_stmt_intersect is called when entering the select_unparenthesized_stmt_intersect production.
+	EnterSelect_unparenthesized_stmt_intersect(c *Select_unparenthesized_stmt_intersectContext)
 
 	// EnterSelect_kind_parenthesis is called when entering the select_kind_parenthesis production.
 	EnterSelect_kind_parenthesis(c *Select_kind_parenthesisContext)
 
-	// EnterSelect_op is called when entering the select_op production.
-	EnterSelect_op(c *Select_opContext)
+	// EnterUnion_op is called when entering the union_op production.
+	EnterUnion_op(c *Union_opContext)
+
+	// EnterIntersect_op is called when entering the intersect_op production.
+	EnterIntersect_op(c *Intersect_opContext)
 
 	// EnterSelect_kind_partial is called when entering the select_kind_partial production.
 	EnterSelect_kind_partial(c *Select_kind_partialContext)
@@ -572,9 +599,6 @@ type YQLListener interface {
 	// EnterValues_source_row is called when entering the values_source_row production.
 	EnterValues_source_row(c *Values_source_rowContext)
 
-	// EnterSimple_values_source is called when entering the simple_values_source production.
-	EnterSimple_values_source(c *Simple_values_sourceContext)
-
 	// EnterCreate_external_data_source_stmt is called when entering the create_external_data_source_stmt production.
 	EnterCreate_external_data_source_stmt(c *Create_external_data_source_stmtContext)
 
@@ -586,6 +610,36 @@ type YQLListener interface {
 
 	// EnterDrop_external_data_source_stmt is called when entering the drop_external_data_source_stmt production.
 	EnterDrop_external_data_source_stmt(c *Drop_external_data_source_stmtContext)
+
+	// EnterCreate_streaming_query_stmt is called when entering the create_streaming_query_stmt production.
+	EnterCreate_streaming_query_stmt(c *Create_streaming_query_stmtContext)
+
+	// EnterCreate_streaming_query_features is called when entering the create_streaming_query_features production.
+	EnterCreate_streaming_query_features(c *Create_streaming_query_featuresContext)
+
+	// EnterAlter_streaming_query_stmt is called when entering the alter_streaming_query_stmt production.
+	EnterAlter_streaming_query_stmt(c *Alter_streaming_query_stmtContext)
+
+	// EnterAlter_streaming_query_action is called when entering the alter_streaming_query_action production.
+	EnterAlter_streaming_query_action(c *Alter_streaming_query_actionContext)
+
+	// EnterAlter_streaming_query_set_settings is called when entering the alter_streaming_query_set_settings production.
+	EnterAlter_streaming_query_set_settings(c *Alter_streaming_query_set_settingsContext)
+
+	// EnterStreaming_query_settings is called when entering the streaming_query_settings production.
+	EnterStreaming_query_settings(c *Streaming_query_settingsContext)
+
+	// EnterStreaming_query_setting is called when entering the streaming_query_setting production.
+	EnterStreaming_query_setting(c *Streaming_query_settingContext)
+
+	// EnterStreaming_query_setting_value is called when entering the streaming_query_setting_value production.
+	EnterStreaming_query_setting_value(c *Streaming_query_setting_valueContext)
+
+	// EnterStreaming_query_definition is called when entering the streaming_query_definition production.
+	EnterStreaming_query_definition(c *Streaming_query_definitionContext)
+
+	// EnterDrop_streaming_query_stmt is called when entering the drop_streaming_query_stmt production.
+	EnterDrop_streaming_query_stmt(c *Drop_streaming_query_stmtContext)
 
 	// EnterCreate_view_stmt is called when entering the create_view_stmt production.
 	EnterCreate_view_stmt(c *Create_view_stmtContext)
@@ -686,6 +740,27 @@ type YQLListener interface {
 	// EnterAlter_database_stmt is called when entering the alter_database_stmt production.
 	EnterAlter_database_stmt(c *Alter_database_stmtContext)
 
+	// EnterAlter_database_action is called when entering the alter_database_action production.
+	EnterAlter_database_action(c *Alter_database_actionContext)
+
+	// EnterSet_database_settings is called when entering the set_database_settings production.
+	EnterSet_database_settings(c *Set_database_settingsContext)
+
+	// EnterDatabase_settings is called when entering the database_settings production.
+	EnterDatabase_settings(c *Database_settingsContext)
+
+	// EnterDatabase_setting is called when entering the database_setting production.
+	EnterDatabase_setting(c *Database_settingContext)
+
+	// EnterDatabase_setting_value is called when entering the database_setting_value production.
+	EnterDatabase_setting_value(c *Database_setting_valueContext)
+
+	// EnterTruncate_table_stmt is called when entering the truncate_table_stmt production.
+	EnterTruncate_table_stmt(c *Truncate_table_stmtContext)
+
+	// EnterWith_truncate_table_settings is called when entering the with_truncate_table_settings production.
+	EnterWith_truncate_table_settings(c *With_truncate_table_settingsContext)
+
 	// EnterTable_inherits is called when entering the table_inherits production.
 	EnterTable_inherits(c *Table_inheritsContext)
 
@@ -734,6 +809,12 @@ type YQLListener interface {
 	// EnterAlter_table_alter_column_drop_not_null is called when entering the alter_table_alter_column_drop_not_null production.
 	EnterAlter_table_alter_column_drop_not_null(c *Alter_table_alter_column_drop_not_nullContext)
 
+	// EnterAlter_table_alter_column_set_not_null is called when entering the alter_table_alter_column_set_not_null production.
+	EnterAlter_table_alter_column_set_not_null(c *Alter_table_alter_column_set_not_nullContext)
+
+	// EnterAlter_table_alter_column_set_compression is called when entering the alter_table_alter_column_set_compression production.
+	EnterAlter_table_alter_column_set_compression(c *Alter_table_alter_column_set_compressionContext)
+
 	// EnterAlter_table_add_column_family is called when entering the alter_table_add_column_family production.
 	EnterAlter_table_add_column_family(c *Alter_table_add_column_familyContext)
 
@@ -776,11 +857,35 @@ type YQLListener interface {
 	// EnterColumn_schema is called when entering the column_schema production.
 	EnterColumn_schema(c *Column_schemaContext)
 
+	// EnterColumn_option_list is called when entering the column_option_list production.
+	EnterColumn_option_list(c *Column_option_listContext)
+
+	// EnterColumn_option_list_space is called when entering the column_option_list_space production.
+	EnterColumn_option_list_space(c *Column_option_list_spaceContext)
+
+	// EnterColumn_option_list_comma is called when entering the column_option_list_comma production.
+	EnterColumn_option_list_comma(c *Column_option_list_commaContext)
+
+	// EnterColumn_option is called when entering the column_option production.
+	EnterColumn_option(c *Column_optionContext)
+
+	// EnterCompression is called when entering the compression production.
+	EnterCompression(c *CompressionContext)
+
+	// EnterCompression_setting_entry is called when entering the compression_setting_entry production.
+	EnterCompression_setting_entry(c *Compression_setting_entryContext)
+
+	// EnterCompression_setting_value is called when entering the compression_setting_value production.
+	EnterCompression_setting_value(c *Compression_setting_valueContext)
+
 	// EnterFamily_relation is called when entering the family_relation production.
 	EnterFamily_relation(c *Family_relationContext)
 
-	// EnterOpt_column_constraints is called when entering the opt_column_constraints production.
-	EnterOpt_column_constraints(c *Opt_column_constraintsContext)
+	// EnterNullability is called when entering the nullability production.
+	EnterNullability(c *NullabilityContext)
+
+	// EnterDefault_value is called when entering the default_value production.
+	EnterDefault_value(c *Default_valueContext)
 
 	// EnterColumn_order_by_specification is called when entering the column_order_by_specification production.
 	EnterColumn_order_by_specification(c *Column_order_by_specificationContext)
@@ -1190,9 +1295,6 @@ type YQLListener interface {
 	// EnterUse_stmt is called when entering the use_stmt production.
 	EnterUse_stmt(c *Use_stmtContext)
 
-	// EnterSubselect_stmt is called when entering the subselect_stmt production.
-	EnterSubselect_stmt(c *Subselect_stmtContext)
-
 	// EnterNamed_nodes_stmt is called when entering the named_nodes_stmt production.
 	EnterNamed_nodes_stmt(c *Named_nodes_stmtContext)
 
@@ -1219,6 +1321,24 @@ type YQLListener interface {
 
 	// EnterShow_create_table_stmt is called when entering the show_create_table_stmt production.
 	EnterShow_create_table_stmt(c *Show_create_table_stmtContext)
+
+	// EnterCreate_secret_stmt is called when entering the create_secret_stmt production.
+	EnterCreate_secret_stmt(c *Create_secret_stmtContext)
+
+	// EnterWith_secret_settings is called when entering the with_secret_settings production.
+	EnterWith_secret_settings(c *With_secret_settingsContext)
+
+	// EnterSecret_setting_entry is called when entering the secret_setting_entry production.
+	EnterSecret_setting_entry(c *Secret_setting_entryContext)
+
+	// EnterSecret_setting_value is called when entering the secret_setting_value production.
+	EnterSecret_setting_value(c *Secret_setting_valueContext)
+
+	// EnterAlter_secret_stmt is called when entering the alter_secret_stmt production.
+	EnterAlter_secret_stmt(c *Alter_secret_stmtContext)
+
+	// EnterDrop_secret_stmt is called when entering the drop_secret_stmt production.
+	EnterDrop_secret_stmt(c *Drop_secret_stmtContext)
 
 	// EnterIdentifier is called when entering the identifier production.
 	EnterIdentifier(c *IdentifierContext)
@@ -1514,6 +1634,18 @@ type YQLListener interface {
 	// ExitJson_query is called when exiting the json_query production.
 	ExitJson_query(c *Json_queryContext)
 
+	// ExitSelect_subexpr is called when exiting the select_subexpr production.
+	ExitSelect_subexpr(c *Select_subexprContext)
+
+	// ExitSelect_subexpr_intersect is called when exiting the select_subexpr_intersect production.
+	ExitSelect_subexpr_intersect(c *Select_subexpr_intersectContext)
+
+	// ExitSelect_or_expr is called when exiting the select_or_expr production.
+	ExitSelect_or_expr(c *Select_or_exprContext)
+
+	// ExitTuple_or_expr is called when exiting the tuple_or_expr production.
+	ExitTuple_or_expr(c *Tuple_or_exprContext)
+
 	// ExitSmart_parenthesis is called when exiting the smart_parenthesis production.
 	ExitSmart_parenthesis(c *Smart_parenthesisContext)
 
@@ -1649,6 +1781,12 @@ type YQLListener interface {
 	// ExitType_name_callable is called when exiting the type_name_callable production.
 	ExitType_name_callable(c *Type_name_callableContext)
 
+	// ExitType_name_linear is called when exiting the type_name_linear production.
+	ExitType_name_linear(c *Type_name_linearContext)
+
+	// ExitType_name_dynamiclinear is called when exiting the type_name_dynamiclinear production.
+	ExitType_name_dynamiclinear(c *Type_name_dynamiclinearContext)
+
 	// ExitType_name_composite is called when exiting the type_name_composite production.
 	ExitType_name_composite(c *Type_name_compositeContext)
 
@@ -1700,14 +1838,23 @@ type YQLListener interface {
 	// ExitSelect_stmt is called when exiting the select_stmt production.
 	ExitSelect_stmt(c *Select_stmtContext)
 
+	// ExitSelect_stmt_intersect is called when exiting the select_stmt_intersect production.
+	ExitSelect_stmt_intersect(c *Select_stmt_intersectContext)
+
 	// ExitSelect_unparenthesized_stmt is called when exiting the select_unparenthesized_stmt production.
 	ExitSelect_unparenthesized_stmt(c *Select_unparenthesized_stmtContext)
+
+	// ExitSelect_unparenthesized_stmt_intersect is called when exiting the select_unparenthesized_stmt_intersect production.
+	ExitSelect_unparenthesized_stmt_intersect(c *Select_unparenthesized_stmt_intersectContext)
 
 	// ExitSelect_kind_parenthesis is called when exiting the select_kind_parenthesis production.
 	ExitSelect_kind_parenthesis(c *Select_kind_parenthesisContext)
 
-	// ExitSelect_op is called when exiting the select_op production.
-	ExitSelect_op(c *Select_opContext)
+	// ExitUnion_op is called when exiting the union_op production.
+	ExitUnion_op(c *Union_opContext)
+
+	// ExitIntersect_op is called when exiting the intersect_op production.
+	ExitIntersect_op(c *Intersect_opContext)
 
 	// ExitSelect_kind_partial is called when exiting the select_kind_partial production.
 	ExitSelect_kind_partial(c *Select_kind_partialContext)
@@ -1913,9 +2060,6 @@ type YQLListener interface {
 	// ExitValues_source_row is called when exiting the values_source_row production.
 	ExitValues_source_row(c *Values_source_rowContext)
 
-	// ExitSimple_values_source is called when exiting the simple_values_source production.
-	ExitSimple_values_source(c *Simple_values_sourceContext)
-
 	// ExitCreate_external_data_source_stmt is called when exiting the create_external_data_source_stmt production.
 	ExitCreate_external_data_source_stmt(c *Create_external_data_source_stmtContext)
 
@@ -1927,6 +2071,36 @@ type YQLListener interface {
 
 	// ExitDrop_external_data_source_stmt is called when exiting the drop_external_data_source_stmt production.
 	ExitDrop_external_data_source_stmt(c *Drop_external_data_source_stmtContext)
+
+	// ExitCreate_streaming_query_stmt is called when exiting the create_streaming_query_stmt production.
+	ExitCreate_streaming_query_stmt(c *Create_streaming_query_stmtContext)
+
+	// ExitCreate_streaming_query_features is called when exiting the create_streaming_query_features production.
+	ExitCreate_streaming_query_features(c *Create_streaming_query_featuresContext)
+
+	// ExitAlter_streaming_query_stmt is called when exiting the alter_streaming_query_stmt production.
+	ExitAlter_streaming_query_stmt(c *Alter_streaming_query_stmtContext)
+
+	// ExitAlter_streaming_query_action is called when exiting the alter_streaming_query_action production.
+	ExitAlter_streaming_query_action(c *Alter_streaming_query_actionContext)
+
+	// ExitAlter_streaming_query_set_settings is called when exiting the alter_streaming_query_set_settings production.
+	ExitAlter_streaming_query_set_settings(c *Alter_streaming_query_set_settingsContext)
+
+	// ExitStreaming_query_settings is called when exiting the streaming_query_settings production.
+	ExitStreaming_query_settings(c *Streaming_query_settingsContext)
+
+	// ExitStreaming_query_setting is called when exiting the streaming_query_setting production.
+	ExitStreaming_query_setting(c *Streaming_query_settingContext)
+
+	// ExitStreaming_query_setting_value is called when exiting the streaming_query_setting_value production.
+	ExitStreaming_query_setting_value(c *Streaming_query_setting_valueContext)
+
+	// ExitStreaming_query_definition is called when exiting the streaming_query_definition production.
+	ExitStreaming_query_definition(c *Streaming_query_definitionContext)
+
+	// ExitDrop_streaming_query_stmt is called when exiting the drop_streaming_query_stmt production.
+	ExitDrop_streaming_query_stmt(c *Drop_streaming_query_stmtContext)
 
 	// ExitCreate_view_stmt is called when exiting the create_view_stmt production.
 	ExitCreate_view_stmt(c *Create_view_stmtContext)
@@ -2027,6 +2201,27 @@ type YQLListener interface {
 	// ExitAlter_database_stmt is called when exiting the alter_database_stmt production.
 	ExitAlter_database_stmt(c *Alter_database_stmtContext)
 
+	// ExitAlter_database_action is called when exiting the alter_database_action production.
+	ExitAlter_database_action(c *Alter_database_actionContext)
+
+	// ExitSet_database_settings is called when exiting the set_database_settings production.
+	ExitSet_database_settings(c *Set_database_settingsContext)
+
+	// ExitDatabase_settings is called when exiting the database_settings production.
+	ExitDatabase_settings(c *Database_settingsContext)
+
+	// ExitDatabase_setting is called when exiting the database_setting production.
+	ExitDatabase_setting(c *Database_settingContext)
+
+	// ExitDatabase_setting_value is called when exiting the database_setting_value production.
+	ExitDatabase_setting_value(c *Database_setting_valueContext)
+
+	// ExitTruncate_table_stmt is called when exiting the truncate_table_stmt production.
+	ExitTruncate_table_stmt(c *Truncate_table_stmtContext)
+
+	// ExitWith_truncate_table_settings is called when exiting the with_truncate_table_settings production.
+	ExitWith_truncate_table_settings(c *With_truncate_table_settingsContext)
+
 	// ExitTable_inherits is called when exiting the table_inherits production.
 	ExitTable_inherits(c *Table_inheritsContext)
 
@@ -2075,6 +2270,12 @@ type YQLListener interface {
 	// ExitAlter_table_alter_column_drop_not_null is called when exiting the alter_table_alter_column_drop_not_null production.
 	ExitAlter_table_alter_column_drop_not_null(c *Alter_table_alter_column_drop_not_nullContext)
 
+	// ExitAlter_table_alter_column_set_not_null is called when exiting the alter_table_alter_column_set_not_null production.
+	ExitAlter_table_alter_column_set_not_null(c *Alter_table_alter_column_set_not_nullContext)
+
+	// ExitAlter_table_alter_column_set_compression is called when exiting the alter_table_alter_column_set_compression production.
+	ExitAlter_table_alter_column_set_compression(c *Alter_table_alter_column_set_compressionContext)
+
 	// ExitAlter_table_add_column_family is called when exiting the alter_table_add_column_family production.
 	ExitAlter_table_add_column_family(c *Alter_table_add_column_familyContext)
 
@@ -2117,11 +2318,35 @@ type YQLListener interface {
 	// ExitColumn_schema is called when exiting the column_schema production.
 	ExitColumn_schema(c *Column_schemaContext)
 
+	// ExitColumn_option_list is called when exiting the column_option_list production.
+	ExitColumn_option_list(c *Column_option_listContext)
+
+	// ExitColumn_option_list_space is called when exiting the column_option_list_space production.
+	ExitColumn_option_list_space(c *Column_option_list_spaceContext)
+
+	// ExitColumn_option_list_comma is called when exiting the column_option_list_comma production.
+	ExitColumn_option_list_comma(c *Column_option_list_commaContext)
+
+	// ExitColumn_option is called when exiting the column_option production.
+	ExitColumn_option(c *Column_optionContext)
+
+	// ExitCompression is called when exiting the compression production.
+	ExitCompression(c *CompressionContext)
+
+	// ExitCompression_setting_entry is called when exiting the compression_setting_entry production.
+	ExitCompression_setting_entry(c *Compression_setting_entryContext)
+
+	// ExitCompression_setting_value is called when exiting the compression_setting_value production.
+	ExitCompression_setting_value(c *Compression_setting_valueContext)
+
 	// ExitFamily_relation is called when exiting the family_relation production.
 	ExitFamily_relation(c *Family_relationContext)
 
-	// ExitOpt_column_constraints is called when exiting the opt_column_constraints production.
-	ExitOpt_column_constraints(c *Opt_column_constraintsContext)
+	// ExitNullability is called when exiting the nullability production.
+	ExitNullability(c *NullabilityContext)
+
+	// ExitDefault_value is called when exiting the default_value production.
+	ExitDefault_value(c *Default_valueContext)
 
 	// ExitColumn_order_by_specification is called when exiting the column_order_by_specification production.
 	ExitColumn_order_by_specification(c *Column_order_by_specificationContext)
@@ -2531,9 +2756,6 @@ type YQLListener interface {
 	// ExitUse_stmt is called when exiting the use_stmt production.
 	ExitUse_stmt(c *Use_stmtContext)
 
-	// ExitSubselect_stmt is called when exiting the subselect_stmt production.
-	ExitSubselect_stmt(c *Subselect_stmtContext)
-
 	// ExitNamed_nodes_stmt is called when exiting the named_nodes_stmt production.
 	ExitNamed_nodes_stmt(c *Named_nodes_stmtContext)
 
@@ -2560,6 +2782,24 @@ type YQLListener interface {
 
 	// ExitShow_create_table_stmt is called when exiting the show_create_table_stmt production.
 	ExitShow_create_table_stmt(c *Show_create_table_stmtContext)
+
+	// ExitCreate_secret_stmt is called when exiting the create_secret_stmt production.
+	ExitCreate_secret_stmt(c *Create_secret_stmtContext)
+
+	// ExitWith_secret_settings is called when exiting the with_secret_settings production.
+	ExitWith_secret_settings(c *With_secret_settingsContext)
+
+	// ExitSecret_setting_entry is called when exiting the secret_setting_entry production.
+	ExitSecret_setting_entry(c *Secret_setting_entryContext)
+
+	// ExitSecret_setting_value is called when exiting the secret_setting_value production.
+	ExitSecret_setting_value(c *Secret_setting_valueContext)
+
+	// ExitAlter_secret_stmt is called when exiting the alter_secret_stmt production.
+	ExitAlter_secret_stmt(c *Alter_secret_stmtContext)
+
+	// ExitDrop_secret_stmt is called when exiting the drop_secret_stmt production.
+	ExitDrop_secret_stmt(c *Drop_secret_stmtContext)
 
 	// ExitIdentifier is called when exiting the identifier production.
 	ExitIdentifier(c *IdentifierContext)

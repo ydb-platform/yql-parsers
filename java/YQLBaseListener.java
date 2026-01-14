@@ -677,6 +677,54 @@ public class YQLBaseListener implements YQLListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSelect_subexpr(YQLParser.Select_subexprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSelect_subexpr(YQLParser.Select_subexprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSelect_subexpr_intersect(YQLParser.Select_subexpr_intersectContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSelect_subexpr_intersect(YQLParser.Select_subexpr_intersectContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSelect_or_expr(YQLParser.Select_or_exprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSelect_or_expr(YQLParser.Select_or_exprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTuple_or_expr(YQLParser.Tuple_or_exprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTuple_or_expr(YQLParser.Tuple_or_exprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterSmart_parenthesis(YQLParser.Smart_parenthesisContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -1217,6 +1265,30 @@ public class YQLBaseListener implements YQLListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterType_name_linear(YQLParser.Type_name_linearContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitType_name_linear(YQLParser.Type_name_linearContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterType_name_dynamiclinear(YQLParser.Type_name_dynamiclinearContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitType_name_dynamiclinear(YQLParser.Type_name_dynamiclinearContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterType_name_composite(YQLParser.Type_name_compositeContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -1421,6 +1493,18 @@ public class YQLBaseListener implements YQLListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSelect_stmt_intersect(YQLParser.Select_stmt_intersectContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSelect_stmt_intersect(YQLParser.Select_stmt_intersectContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterSelect_unparenthesized_stmt(YQLParser.Select_unparenthesized_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -1428,6 +1512,18 @@ public class YQLBaseListener implements YQLListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSelect_unparenthesized_stmt(YQLParser.Select_unparenthesized_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSelect_unparenthesized_stmt_intersect(YQLParser.Select_unparenthesized_stmt_intersectContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSelect_unparenthesized_stmt_intersect(YQLParser.Select_unparenthesized_stmt_intersectContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -1445,13 +1541,25 @@ public class YQLBaseListener implements YQLListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSelect_op(YQLParser.Select_opContext ctx) { }
+	@Override public void enterUnion_op(YQLParser.Union_opContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSelect_op(YQLParser.Select_opContext ctx) { }
+	@Override public void exitUnion_op(YQLParser.Union_opContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIntersect_op(YQLParser.Intersect_opContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIntersect_op(YQLParser.Intersect_opContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -2273,18 +2381,6 @@ public class YQLBaseListener implements YQLListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSimple_values_source(YQLParser.Simple_values_sourceContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSimple_values_source(YQLParser.Simple_values_sourceContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterCreate_external_data_source_stmt(YQLParser.Create_external_data_source_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -2328,6 +2424,126 @@ public class YQLBaseListener implements YQLListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitDrop_external_data_source_stmt(YQLParser.Drop_external_data_source_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCreate_streaming_query_stmt(YQLParser.Create_streaming_query_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCreate_streaming_query_stmt(YQLParser.Create_streaming_query_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCreate_streaming_query_features(YQLParser.Create_streaming_query_featuresContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCreate_streaming_query_features(YQLParser.Create_streaming_query_featuresContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAlter_streaming_query_stmt(YQLParser.Alter_streaming_query_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAlter_streaming_query_stmt(YQLParser.Alter_streaming_query_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAlter_streaming_query_action(YQLParser.Alter_streaming_query_actionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAlter_streaming_query_action(YQLParser.Alter_streaming_query_actionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAlter_streaming_query_set_settings(YQLParser.Alter_streaming_query_set_settingsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAlter_streaming_query_set_settings(YQLParser.Alter_streaming_query_set_settingsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStreaming_query_settings(YQLParser.Streaming_query_settingsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStreaming_query_settings(YQLParser.Streaming_query_settingsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStreaming_query_setting(YQLParser.Streaming_query_settingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStreaming_query_setting(YQLParser.Streaming_query_settingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStreaming_query_setting_value(YQLParser.Streaming_query_setting_valueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStreaming_query_setting_value(YQLParser.Streaming_query_setting_valueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStreaming_query_definition(YQLParser.Streaming_query_definitionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStreaming_query_definition(YQLParser.Streaming_query_definitionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDrop_streaming_query_stmt(YQLParser.Drop_streaming_query_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDrop_streaming_query_stmt(YQLParser.Drop_streaming_query_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -2729,6 +2945,90 @@ public class YQLBaseListener implements YQLListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAlter_database_action(YQLParser.Alter_database_actionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAlter_database_action(YQLParser.Alter_database_actionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSet_database_settings(YQLParser.Set_database_settingsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSet_database_settings(YQLParser.Set_database_settingsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDatabase_settings(YQLParser.Database_settingsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDatabase_settings(YQLParser.Database_settingsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDatabase_setting(YQLParser.Database_settingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDatabase_setting(YQLParser.Database_settingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDatabase_setting_value(YQLParser.Database_setting_valueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDatabase_setting_value(YQLParser.Database_setting_valueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTruncate_table_stmt(YQLParser.Truncate_table_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTruncate_table_stmt(YQLParser.Truncate_table_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterWith_truncate_table_settings(YQLParser.With_truncate_table_settingsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitWith_truncate_table_settings(YQLParser.With_truncate_table_settingsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterTable_inherits(YQLParser.Table_inheritsContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -2921,6 +3221,30 @@ public class YQLBaseListener implements YQLListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAlter_table_alter_column_set_not_null(YQLParser.Alter_table_alter_column_set_not_nullContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAlter_table_alter_column_set_not_null(YQLParser.Alter_table_alter_column_set_not_nullContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAlter_table_alter_column_set_compression(YQLParser.Alter_table_alter_column_set_compressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAlter_table_alter_column_set_compression(YQLParser.Alter_table_alter_column_set_compressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterAlter_table_add_column_family(YQLParser.Alter_table_add_column_familyContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -3089,6 +3413,90 @@ public class YQLBaseListener implements YQLListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterColumn_option_list(YQLParser.Column_option_listContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitColumn_option_list(YQLParser.Column_option_listContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterColumn_option_list_space(YQLParser.Column_option_list_spaceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitColumn_option_list_space(YQLParser.Column_option_list_spaceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterColumn_option_list_comma(YQLParser.Column_option_list_commaContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitColumn_option_list_comma(YQLParser.Column_option_list_commaContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterColumn_option(YQLParser.Column_optionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitColumn_option(YQLParser.Column_optionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCompression(YQLParser.CompressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCompression(YQLParser.CompressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCompression_setting_entry(YQLParser.Compression_setting_entryContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCompression_setting_entry(YQLParser.Compression_setting_entryContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCompression_setting_value(YQLParser.Compression_setting_valueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCompression_setting_value(YQLParser.Compression_setting_valueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterFamily_relation(YQLParser.Family_relationContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -3101,13 +3509,25 @@ public class YQLBaseListener implements YQLListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOpt_column_constraints(YQLParser.Opt_column_constraintsContext ctx) { }
+	@Override public void enterNullability(YQLParser.NullabilityContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOpt_column_constraints(YQLParser.Opt_column_constraintsContext ctx) { }
+	@Override public void exitNullability(YQLParser.NullabilityContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDefault_value(YQLParser.Default_valueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDefault_value(YQLParser.Default_valueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -4745,18 +5165,6 @@ public class YQLBaseListener implements YQLListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSubselect_stmt(YQLParser.Subselect_stmtContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSubselect_stmt(YQLParser.Subselect_stmtContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterNamed_nodes_stmt(YQLParser.Named_nodes_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -4860,6 +5268,78 @@ public class YQLBaseListener implements YQLListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitShow_create_table_stmt(YQLParser.Show_create_table_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCreate_secret_stmt(YQLParser.Create_secret_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCreate_secret_stmt(YQLParser.Create_secret_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterWith_secret_settings(YQLParser.With_secret_settingsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitWith_secret_settings(YQLParser.With_secret_settingsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSecret_setting_entry(YQLParser.Secret_setting_entryContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSecret_setting_entry(YQLParser.Secret_setting_entryContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSecret_setting_value(YQLParser.Secret_setting_valueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSecret_setting_value(YQLParser.Secret_setting_valueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAlter_secret_stmt(YQLParser.Alter_secret_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAlter_secret_stmt(YQLParser.Alter_secret_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDrop_secret_stmt(YQLParser.Drop_secret_stmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDrop_secret_stmt(YQLParser.Drop_secret_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

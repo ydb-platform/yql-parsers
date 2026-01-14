@@ -341,6 +341,30 @@ public interface YQLVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitJson_query(YQLParser.Json_queryContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link YQLParser#select_subexpr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSelect_subexpr(YQLParser.Select_subexprContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#select_subexpr_intersect}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSelect_subexpr_intersect(YQLParser.Select_subexpr_intersectContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#select_or_expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSelect_or_expr(YQLParser.Select_or_exprContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#tuple_or_expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTuple_or_expr(YQLParser.Tuple_or_exprContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link YQLParser#smart_parenthesis}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -611,6 +635,18 @@ public interface YQLVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitType_name_callable(YQLParser.Type_name_callableContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link YQLParser#type_name_linear}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitType_name_linear(YQLParser.Type_name_linearContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#type_name_dynamiclinear}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitType_name_dynamiclinear(YQLParser.Type_name_dynamiclinearContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link YQLParser#type_name_composite}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -713,11 +749,23 @@ public interface YQLVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSelect_stmt(YQLParser.Select_stmtContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link YQLParser#select_stmt_intersect}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSelect_stmt_intersect(YQLParser.Select_stmt_intersectContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link YQLParser#select_unparenthesized_stmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitSelect_unparenthesized_stmt(YQLParser.Select_unparenthesized_stmtContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#select_unparenthesized_stmt_intersect}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSelect_unparenthesized_stmt_intersect(YQLParser.Select_unparenthesized_stmt_intersectContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link YQLParser#select_kind_parenthesis}.
 	 * @param ctx the parse tree
@@ -725,11 +773,17 @@ public interface YQLVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSelect_kind_parenthesis(YQLParser.Select_kind_parenthesisContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link YQLParser#select_op}.
+	 * Visit a parse tree produced by {@link YQLParser#union_op}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSelect_op(YQLParser.Select_opContext ctx);
+	T visitUnion_op(YQLParser.Union_opContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#intersect_op}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIntersect_op(YQLParser.Intersect_opContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link YQLParser#select_kind_partial}.
 	 * @param ctx the parse tree
@@ -1139,12 +1193,6 @@ public interface YQLVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitValues_source_row(YQLParser.Values_source_rowContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link YQLParser#simple_values_source}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSimple_values_source(YQLParser.Simple_values_sourceContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link YQLParser#create_external_data_source_stmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -1168,6 +1216,66 @@ public interface YQLVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitDrop_external_data_source_stmt(YQLParser.Drop_external_data_source_stmtContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#create_streaming_query_stmt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCreate_streaming_query_stmt(YQLParser.Create_streaming_query_stmtContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#create_streaming_query_features}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCreate_streaming_query_features(YQLParser.Create_streaming_query_featuresContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#alter_streaming_query_stmt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAlter_streaming_query_stmt(YQLParser.Alter_streaming_query_stmtContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#alter_streaming_query_action}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAlter_streaming_query_action(YQLParser.Alter_streaming_query_actionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#alter_streaming_query_set_settings}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAlter_streaming_query_set_settings(YQLParser.Alter_streaming_query_set_settingsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#streaming_query_settings}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStreaming_query_settings(YQLParser.Streaming_query_settingsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#streaming_query_setting}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStreaming_query_setting(YQLParser.Streaming_query_settingContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#streaming_query_setting_value}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStreaming_query_setting_value(YQLParser.Streaming_query_setting_valueContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#streaming_query_definition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStreaming_query_definition(YQLParser.Streaming_query_definitionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#drop_streaming_query_stmt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDrop_streaming_query_stmt(YQLParser.Drop_streaming_query_stmtContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link YQLParser#create_view_stmt}.
 	 * @param ctx the parse tree
@@ -1367,6 +1475,48 @@ public interface YQLVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAlter_database_stmt(YQLParser.Alter_database_stmtContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link YQLParser#alter_database_action}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAlter_database_action(YQLParser.Alter_database_actionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#set_database_settings}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSet_database_settings(YQLParser.Set_database_settingsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#database_settings}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDatabase_settings(YQLParser.Database_settingsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#database_setting}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDatabase_setting(YQLParser.Database_settingContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#database_setting_value}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDatabase_setting_value(YQLParser.Database_setting_valueContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#truncate_table_stmt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTruncate_table_stmt(YQLParser.Truncate_table_stmtContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#with_truncate_table_settings}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWith_truncate_table_settings(YQLParser.With_truncate_table_settingsContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link YQLParser#table_inherits}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -1463,6 +1613,18 @@ public interface YQLVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAlter_table_alter_column_drop_not_null(YQLParser.Alter_table_alter_column_drop_not_nullContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link YQLParser#alter_table_alter_column_set_not_null}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAlter_table_alter_column_set_not_null(YQLParser.Alter_table_alter_column_set_not_nullContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#alter_table_alter_column_set_compression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAlter_table_alter_column_set_compression(YQLParser.Alter_table_alter_column_set_compressionContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link YQLParser#alter_table_add_column_family}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -1547,17 +1709,65 @@ public interface YQLVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitColumn_schema(YQLParser.Column_schemaContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link YQLParser#column_option_list}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitColumn_option_list(YQLParser.Column_option_listContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#column_option_list_space}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitColumn_option_list_space(YQLParser.Column_option_list_spaceContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#column_option_list_comma}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitColumn_option_list_comma(YQLParser.Column_option_list_commaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#column_option}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitColumn_option(YQLParser.Column_optionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#compression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCompression(YQLParser.CompressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#compression_setting_entry}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCompression_setting_entry(YQLParser.Compression_setting_entryContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#compression_setting_value}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCompression_setting_value(YQLParser.Compression_setting_valueContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link YQLParser#family_relation}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitFamily_relation(YQLParser.Family_relationContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link YQLParser#opt_column_constraints}.
+	 * Visit a parse tree produced by {@link YQLParser#nullability}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitOpt_column_constraints(YQLParser.Opt_column_constraintsContext ctx);
+	T visitNullability(YQLParser.NullabilityContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#default_value}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDefault_value(YQLParser.Default_valueContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link YQLParser#column_order_by_specification}.
 	 * @param ctx the parse tree
@@ -2375,12 +2585,6 @@ public interface YQLVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitUse_stmt(YQLParser.Use_stmtContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link YQLParser#subselect_stmt}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSubselect_stmt(YQLParser.Subselect_stmtContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link YQLParser#named_nodes_stmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -2434,6 +2638,42 @@ public interface YQLVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitShow_create_table_stmt(YQLParser.Show_create_table_stmtContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#create_secret_stmt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCreate_secret_stmt(YQLParser.Create_secret_stmtContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#with_secret_settings}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWith_secret_settings(YQLParser.With_secret_settingsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#secret_setting_entry}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSecret_setting_entry(YQLParser.Secret_setting_entryContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#secret_setting_value}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSecret_setting_value(YQLParser.Secret_setting_valueContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#alter_secret_stmt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAlter_secret_stmt(YQLParser.Alter_secret_stmtContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link YQLParser#drop_secret_stmt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDrop_secret_stmt(YQLParser.Drop_secret_stmtContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link YQLParser#identifier}.
 	 * @param ctx the parse tree

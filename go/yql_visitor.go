@@ -173,6 +173,18 @@ type YQLVisitor interface {
 	// Visit a parse tree produced by YQLParser#json_query.
 	VisitJson_query(ctx *Json_queryContext) interface{}
 
+	// Visit a parse tree produced by YQLParser#select_subexpr.
+	VisitSelect_subexpr(ctx *Select_subexprContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#select_subexpr_intersect.
+	VisitSelect_subexpr_intersect(ctx *Select_subexpr_intersectContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#select_or_expr.
+	VisitSelect_or_expr(ctx *Select_or_exprContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#tuple_or_expr.
+	VisitTuple_or_expr(ctx *Tuple_or_exprContext) interface{}
+
 	// Visit a parse tree produced by YQLParser#smart_parenthesis.
 	VisitSmart_parenthesis(ctx *Smart_parenthesisContext) interface{}
 
@@ -308,6 +320,12 @@ type YQLVisitor interface {
 	// Visit a parse tree produced by YQLParser#type_name_callable.
 	VisitType_name_callable(ctx *Type_name_callableContext) interface{}
 
+	// Visit a parse tree produced by YQLParser#type_name_linear.
+	VisitType_name_linear(ctx *Type_name_linearContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#type_name_dynamiclinear.
+	VisitType_name_dynamiclinear(ctx *Type_name_dynamiclinearContext) interface{}
+
 	// Visit a parse tree produced by YQLParser#type_name_composite.
 	VisitType_name_composite(ctx *Type_name_compositeContext) interface{}
 
@@ -359,14 +377,23 @@ type YQLVisitor interface {
 	// Visit a parse tree produced by YQLParser#select_stmt.
 	VisitSelect_stmt(ctx *Select_stmtContext) interface{}
 
+	// Visit a parse tree produced by YQLParser#select_stmt_intersect.
+	VisitSelect_stmt_intersect(ctx *Select_stmt_intersectContext) interface{}
+
 	// Visit a parse tree produced by YQLParser#select_unparenthesized_stmt.
 	VisitSelect_unparenthesized_stmt(ctx *Select_unparenthesized_stmtContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#select_unparenthesized_stmt_intersect.
+	VisitSelect_unparenthesized_stmt_intersect(ctx *Select_unparenthesized_stmt_intersectContext) interface{}
 
 	// Visit a parse tree produced by YQLParser#select_kind_parenthesis.
 	VisitSelect_kind_parenthesis(ctx *Select_kind_parenthesisContext) interface{}
 
-	// Visit a parse tree produced by YQLParser#select_op.
-	VisitSelect_op(ctx *Select_opContext) interface{}
+	// Visit a parse tree produced by YQLParser#union_op.
+	VisitUnion_op(ctx *Union_opContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#intersect_op.
+	VisitIntersect_op(ctx *Intersect_opContext) interface{}
 
 	// Visit a parse tree produced by YQLParser#select_kind_partial.
 	VisitSelect_kind_partial(ctx *Select_kind_partialContext) interface{}
@@ -572,9 +599,6 @@ type YQLVisitor interface {
 	// Visit a parse tree produced by YQLParser#values_source_row.
 	VisitValues_source_row(ctx *Values_source_rowContext) interface{}
 
-	// Visit a parse tree produced by YQLParser#simple_values_source.
-	VisitSimple_values_source(ctx *Simple_values_sourceContext) interface{}
-
 	// Visit a parse tree produced by YQLParser#create_external_data_source_stmt.
 	VisitCreate_external_data_source_stmt(ctx *Create_external_data_source_stmtContext) interface{}
 
@@ -586,6 +610,36 @@ type YQLVisitor interface {
 
 	// Visit a parse tree produced by YQLParser#drop_external_data_source_stmt.
 	VisitDrop_external_data_source_stmt(ctx *Drop_external_data_source_stmtContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#create_streaming_query_stmt.
+	VisitCreate_streaming_query_stmt(ctx *Create_streaming_query_stmtContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#create_streaming_query_features.
+	VisitCreate_streaming_query_features(ctx *Create_streaming_query_featuresContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#alter_streaming_query_stmt.
+	VisitAlter_streaming_query_stmt(ctx *Alter_streaming_query_stmtContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#alter_streaming_query_action.
+	VisitAlter_streaming_query_action(ctx *Alter_streaming_query_actionContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#alter_streaming_query_set_settings.
+	VisitAlter_streaming_query_set_settings(ctx *Alter_streaming_query_set_settingsContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#streaming_query_settings.
+	VisitStreaming_query_settings(ctx *Streaming_query_settingsContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#streaming_query_setting.
+	VisitStreaming_query_setting(ctx *Streaming_query_settingContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#streaming_query_setting_value.
+	VisitStreaming_query_setting_value(ctx *Streaming_query_setting_valueContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#streaming_query_definition.
+	VisitStreaming_query_definition(ctx *Streaming_query_definitionContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#drop_streaming_query_stmt.
+	VisitDrop_streaming_query_stmt(ctx *Drop_streaming_query_stmtContext) interface{}
 
 	// Visit a parse tree produced by YQLParser#create_view_stmt.
 	VisitCreate_view_stmt(ctx *Create_view_stmtContext) interface{}
@@ -686,6 +740,27 @@ type YQLVisitor interface {
 	// Visit a parse tree produced by YQLParser#alter_database_stmt.
 	VisitAlter_database_stmt(ctx *Alter_database_stmtContext) interface{}
 
+	// Visit a parse tree produced by YQLParser#alter_database_action.
+	VisitAlter_database_action(ctx *Alter_database_actionContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#set_database_settings.
+	VisitSet_database_settings(ctx *Set_database_settingsContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#database_settings.
+	VisitDatabase_settings(ctx *Database_settingsContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#database_setting.
+	VisitDatabase_setting(ctx *Database_settingContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#database_setting_value.
+	VisitDatabase_setting_value(ctx *Database_setting_valueContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#truncate_table_stmt.
+	VisitTruncate_table_stmt(ctx *Truncate_table_stmtContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#with_truncate_table_settings.
+	VisitWith_truncate_table_settings(ctx *With_truncate_table_settingsContext) interface{}
+
 	// Visit a parse tree produced by YQLParser#table_inherits.
 	VisitTable_inherits(ctx *Table_inheritsContext) interface{}
 
@@ -734,6 +809,12 @@ type YQLVisitor interface {
 	// Visit a parse tree produced by YQLParser#alter_table_alter_column_drop_not_null.
 	VisitAlter_table_alter_column_drop_not_null(ctx *Alter_table_alter_column_drop_not_nullContext) interface{}
 
+	// Visit a parse tree produced by YQLParser#alter_table_alter_column_set_not_null.
+	VisitAlter_table_alter_column_set_not_null(ctx *Alter_table_alter_column_set_not_nullContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#alter_table_alter_column_set_compression.
+	VisitAlter_table_alter_column_set_compression(ctx *Alter_table_alter_column_set_compressionContext) interface{}
+
 	// Visit a parse tree produced by YQLParser#alter_table_add_column_family.
 	VisitAlter_table_add_column_family(ctx *Alter_table_add_column_familyContext) interface{}
 
@@ -776,11 +857,35 @@ type YQLVisitor interface {
 	// Visit a parse tree produced by YQLParser#column_schema.
 	VisitColumn_schema(ctx *Column_schemaContext) interface{}
 
+	// Visit a parse tree produced by YQLParser#column_option_list.
+	VisitColumn_option_list(ctx *Column_option_listContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#column_option_list_space.
+	VisitColumn_option_list_space(ctx *Column_option_list_spaceContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#column_option_list_comma.
+	VisitColumn_option_list_comma(ctx *Column_option_list_commaContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#column_option.
+	VisitColumn_option(ctx *Column_optionContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#compression.
+	VisitCompression(ctx *CompressionContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#compression_setting_entry.
+	VisitCompression_setting_entry(ctx *Compression_setting_entryContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#compression_setting_value.
+	VisitCompression_setting_value(ctx *Compression_setting_valueContext) interface{}
+
 	// Visit a parse tree produced by YQLParser#family_relation.
 	VisitFamily_relation(ctx *Family_relationContext) interface{}
 
-	// Visit a parse tree produced by YQLParser#opt_column_constraints.
-	VisitOpt_column_constraints(ctx *Opt_column_constraintsContext) interface{}
+	// Visit a parse tree produced by YQLParser#nullability.
+	VisitNullability(ctx *NullabilityContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#default_value.
+	VisitDefault_value(ctx *Default_valueContext) interface{}
 
 	// Visit a parse tree produced by YQLParser#column_order_by_specification.
 	VisitColumn_order_by_specification(ctx *Column_order_by_specificationContext) interface{}
@@ -1190,9 +1295,6 @@ type YQLVisitor interface {
 	// Visit a parse tree produced by YQLParser#use_stmt.
 	VisitUse_stmt(ctx *Use_stmtContext) interface{}
 
-	// Visit a parse tree produced by YQLParser#subselect_stmt.
-	VisitSubselect_stmt(ctx *Subselect_stmtContext) interface{}
-
 	// Visit a parse tree produced by YQLParser#named_nodes_stmt.
 	VisitNamed_nodes_stmt(ctx *Named_nodes_stmtContext) interface{}
 
@@ -1219,6 +1321,24 @@ type YQLVisitor interface {
 
 	// Visit a parse tree produced by YQLParser#show_create_table_stmt.
 	VisitShow_create_table_stmt(ctx *Show_create_table_stmtContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#create_secret_stmt.
+	VisitCreate_secret_stmt(ctx *Create_secret_stmtContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#with_secret_settings.
+	VisitWith_secret_settings(ctx *With_secret_settingsContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#secret_setting_entry.
+	VisitSecret_setting_entry(ctx *Secret_setting_entryContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#secret_setting_value.
+	VisitSecret_setting_value(ctx *Secret_setting_valueContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#alter_secret_stmt.
+	VisitAlter_secret_stmt(ctx *Alter_secret_stmtContext) interface{}
+
+	// Visit a parse tree produced by YQLParser#drop_secret_stmt.
+	VisitDrop_secret_stmt(ctx *Drop_secret_stmtContext) interface{}
 
 	// Visit a parse tree produced by YQLParser#identifier.
 	VisitIdentifier(ctx *IdentifierContext) interface{}

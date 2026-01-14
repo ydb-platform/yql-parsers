@@ -582,6 +582,46 @@ public interface IYQLListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitJson_query([NotNull] YQLParser.Json_queryContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.select_subexpr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSelect_subexpr([NotNull] YQLParser.Select_subexprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.select_subexpr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSelect_subexpr([NotNull] YQLParser.Select_subexprContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.select_subexpr_intersect"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSelect_subexpr_intersect([NotNull] YQLParser.Select_subexpr_intersectContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.select_subexpr_intersect"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSelect_subexpr_intersect([NotNull] YQLParser.Select_subexpr_intersectContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.select_or_expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSelect_or_expr([NotNull] YQLParser.Select_or_exprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.select_or_expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSelect_or_expr([NotNull] YQLParser.Select_or_exprContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.tuple_or_expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterTuple_or_expr([NotNull] YQLParser.Tuple_or_exprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.tuple_or_expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitTuple_or_expr([NotNull] YQLParser.Tuple_or_exprContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.smart_parenthesis"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -1032,6 +1072,26 @@ public interface IYQLListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitType_name_callable([NotNull] YQLParser.Type_name_callableContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.type_name_linear"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterType_name_linear([NotNull] YQLParser.Type_name_linearContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.type_name_linear"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitType_name_linear([NotNull] YQLParser.Type_name_linearContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.type_name_dynamiclinear"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterType_name_dynamiclinear([NotNull] YQLParser.Type_name_dynamiclinearContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.type_name_dynamiclinear"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitType_name_dynamiclinear([NotNull] YQLParser.Type_name_dynamiclinearContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.type_name_composite"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -1202,6 +1262,16 @@ public interface IYQLListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitSelect_stmt([NotNull] YQLParser.Select_stmtContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.select_stmt_intersect"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSelect_stmt_intersect([NotNull] YQLParser.Select_stmt_intersectContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.select_stmt_intersect"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSelect_stmt_intersect([NotNull] YQLParser.Select_stmt_intersectContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.select_unparenthesized_stmt"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -1211,6 +1281,16 @@ public interface IYQLListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitSelect_unparenthesized_stmt([NotNull] YQLParser.Select_unparenthesized_stmtContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.select_unparenthesized_stmt_intersect"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSelect_unparenthesized_stmt_intersect([NotNull] YQLParser.Select_unparenthesized_stmt_intersectContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.select_unparenthesized_stmt_intersect"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSelect_unparenthesized_stmt_intersect([NotNull] YQLParser.Select_unparenthesized_stmt_intersectContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.select_kind_parenthesis"/>.
 	/// </summary>
@@ -1222,15 +1302,25 @@ public interface IYQLListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitSelect_kind_parenthesis([NotNull] YQLParser.Select_kind_parenthesisContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="YQLParser.select_op"/>.
+	/// Enter a parse tree produced by <see cref="YQLParser.union_op"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterSelect_op([NotNull] YQLParser.Select_opContext context);
+	void EnterUnion_op([NotNull] YQLParser.Union_opContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="YQLParser.select_op"/>.
+	/// Exit a parse tree produced by <see cref="YQLParser.union_op"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitSelect_op([NotNull] YQLParser.Select_opContext context);
+	void ExitUnion_op([NotNull] YQLParser.Union_opContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.intersect_op"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterIntersect_op([NotNull] YQLParser.Intersect_opContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.intersect_op"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitIntersect_op([NotNull] YQLParser.Intersect_opContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.select_kind_partial"/>.
 	/// </summary>
@@ -1912,16 +2002,6 @@ public interface IYQLListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitValues_source_row([NotNull] YQLParser.Values_source_rowContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="YQLParser.simple_values_source"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterSimple_values_source([NotNull] YQLParser.Simple_values_sourceContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="YQLParser.simple_values_source"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitSimple_values_source([NotNull] YQLParser.Simple_values_sourceContext context);
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.create_external_data_source_stmt"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -1961,6 +2041,106 @@ public interface IYQLListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitDrop_external_data_source_stmt([NotNull] YQLParser.Drop_external_data_source_stmtContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.create_streaming_query_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCreate_streaming_query_stmt([NotNull] YQLParser.Create_streaming_query_stmtContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.create_streaming_query_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCreate_streaming_query_stmt([NotNull] YQLParser.Create_streaming_query_stmtContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.create_streaming_query_features"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCreate_streaming_query_features([NotNull] YQLParser.Create_streaming_query_featuresContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.create_streaming_query_features"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCreate_streaming_query_features([NotNull] YQLParser.Create_streaming_query_featuresContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.alter_streaming_query_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAlter_streaming_query_stmt([NotNull] YQLParser.Alter_streaming_query_stmtContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.alter_streaming_query_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAlter_streaming_query_stmt([NotNull] YQLParser.Alter_streaming_query_stmtContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.alter_streaming_query_action"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAlter_streaming_query_action([NotNull] YQLParser.Alter_streaming_query_actionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.alter_streaming_query_action"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAlter_streaming_query_action([NotNull] YQLParser.Alter_streaming_query_actionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.alter_streaming_query_set_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAlter_streaming_query_set_settings([NotNull] YQLParser.Alter_streaming_query_set_settingsContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.alter_streaming_query_set_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAlter_streaming_query_set_settings([NotNull] YQLParser.Alter_streaming_query_set_settingsContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.streaming_query_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStreaming_query_settings([NotNull] YQLParser.Streaming_query_settingsContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.streaming_query_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStreaming_query_settings([NotNull] YQLParser.Streaming_query_settingsContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.streaming_query_setting"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStreaming_query_setting([NotNull] YQLParser.Streaming_query_settingContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.streaming_query_setting"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStreaming_query_setting([NotNull] YQLParser.Streaming_query_settingContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.streaming_query_setting_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStreaming_query_setting_value([NotNull] YQLParser.Streaming_query_setting_valueContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.streaming_query_setting_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStreaming_query_setting_value([NotNull] YQLParser.Streaming_query_setting_valueContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.streaming_query_definition"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStreaming_query_definition([NotNull] YQLParser.Streaming_query_definitionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.streaming_query_definition"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStreaming_query_definition([NotNull] YQLParser.Streaming_query_definitionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.drop_streaming_query_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterDrop_streaming_query_stmt([NotNull] YQLParser.Drop_streaming_query_stmtContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.drop_streaming_query_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitDrop_streaming_query_stmt([NotNull] YQLParser.Drop_streaming_query_stmtContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.create_view_stmt"/>.
 	/// </summary>
@@ -2292,6 +2472,76 @@ public interface IYQLListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitAlter_database_stmt([NotNull] YQLParser.Alter_database_stmtContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.alter_database_action"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAlter_database_action([NotNull] YQLParser.Alter_database_actionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.alter_database_action"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAlter_database_action([NotNull] YQLParser.Alter_database_actionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.set_database_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSet_database_settings([NotNull] YQLParser.Set_database_settingsContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.set_database_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSet_database_settings([NotNull] YQLParser.Set_database_settingsContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.database_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterDatabase_settings([NotNull] YQLParser.Database_settingsContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.database_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitDatabase_settings([NotNull] YQLParser.Database_settingsContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.database_setting"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterDatabase_setting([NotNull] YQLParser.Database_settingContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.database_setting"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitDatabase_setting([NotNull] YQLParser.Database_settingContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.database_setting_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterDatabase_setting_value([NotNull] YQLParser.Database_setting_valueContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.database_setting_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitDatabase_setting_value([NotNull] YQLParser.Database_setting_valueContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.truncate_table_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterTruncate_table_stmt([NotNull] YQLParser.Truncate_table_stmtContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.truncate_table_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitTruncate_table_stmt([NotNull] YQLParser.Truncate_table_stmtContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.with_truncate_table_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterWith_truncate_table_settings([NotNull] YQLParser.With_truncate_table_settingsContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.with_truncate_table_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitWith_truncate_table_settings([NotNull] YQLParser.With_truncate_table_settingsContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.table_inherits"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -2452,6 +2702,26 @@ public interface IYQLListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitAlter_table_alter_column_drop_not_null([NotNull] YQLParser.Alter_table_alter_column_drop_not_nullContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.alter_table_alter_column_set_not_null"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAlter_table_alter_column_set_not_null([NotNull] YQLParser.Alter_table_alter_column_set_not_nullContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.alter_table_alter_column_set_not_null"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAlter_table_alter_column_set_not_null([NotNull] YQLParser.Alter_table_alter_column_set_not_nullContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.alter_table_alter_column_set_compression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAlter_table_alter_column_set_compression([NotNull] YQLParser.Alter_table_alter_column_set_compressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.alter_table_alter_column_set_compression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAlter_table_alter_column_set_compression([NotNull] YQLParser.Alter_table_alter_column_set_compressionContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.alter_table_add_column_family"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -2592,6 +2862,76 @@ public interface IYQLListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitColumn_schema([NotNull] YQLParser.Column_schemaContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.column_option_list"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterColumn_option_list([NotNull] YQLParser.Column_option_listContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.column_option_list"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitColumn_option_list([NotNull] YQLParser.Column_option_listContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.column_option_list_space"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterColumn_option_list_space([NotNull] YQLParser.Column_option_list_spaceContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.column_option_list_space"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitColumn_option_list_space([NotNull] YQLParser.Column_option_list_spaceContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.column_option_list_comma"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterColumn_option_list_comma([NotNull] YQLParser.Column_option_list_commaContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.column_option_list_comma"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitColumn_option_list_comma([NotNull] YQLParser.Column_option_list_commaContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.column_option"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterColumn_option([NotNull] YQLParser.Column_optionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.column_option"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitColumn_option([NotNull] YQLParser.Column_optionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.compression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCompression([NotNull] YQLParser.CompressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.compression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCompression([NotNull] YQLParser.CompressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.compression_setting_entry"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCompression_setting_entry([NotNull] YQLParser.Compression_setting_entryContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.compression_setting_entry"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCompression_setting_entry([NotNull] YQLParser.Compression_setting_entryContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.compression_setting_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCompression_setting_value([NotNull] YQLParser.Compression_setting_valueContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.compression_setting_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCompression_setting_value([NotNull] YQLParser.Compression_setting_valueContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.family_relation"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -2602,15 +2942,25 @@ public interface IYQLListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitFamily_relation([NotNull] YQLParser.Family_relationContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="YQLParser.opt_column_constraints"/>.
+	/// Enter a parse tree produced by <see cref="YQLParser.nullability"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterOpt_column_constraints([NotNull] YQLParser.Opt_column_constraintsContext context);
+	void EnterNullability([NotNull] YQLParser.NullabilityContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="YQLParser.opt_column_constraints"/>.
+	/// Exit a parse tree produced by <see cref="YQLParser.nullability"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitOpt_column_constraints([NotNull] YQLParser.Opt_column_constraintsContext context);
+	void ExitNullability([NotNull] YQLParser.NullabilityContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.default_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterDefault_value([NotNull] YQLParser.Default_valueContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.default_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitDefault_value([NotNull] YQLParser.Default_valueContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.column_order_by_specification"/>.
 	/// </summary>
@@ -3972,16 +4322,6 @@ public interface IYQLListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitUse_stmt([NotNull] YQLParser.Use_stmtContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="YQLParser.subselect_stmt"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterSubselect_stmt([NotNull] YQLParser.Subselect_stmtContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="YQLParser.subselect_stmt"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitSubselect_stmt([NotNull] YQLParser.Subselect_stmtContext context);
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.named_nodes_stmt"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -4071,6 +4411,66 @@ public interface IYQLListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitShow_create_table_stmt([NotNull] YQLParser.Show_create_table_stmtContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.create_secret_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCreate_secret_stmt([NotNull] YQLParser.Create_secret_stmtContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.create_secret_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCreate_secret_stmt([NotNull] YQLParser.Create_secret_stmtContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.with_secret_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterWith_secret_settings([NotNull] YQLParser.With_secret_settingsContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.with_secret_settings"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitWith_secret_settings([NotNull] YQLParser.With_secret_settingsContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.secret_setting_entry"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSecret_setting_entry([NotNull] YQLParser.Secret_setting_entryContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.secret_setting_entry"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSecret_setting_entry([NotNull] YQLParser.Secret_setting_entryContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.secret_setting_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSecret_setting_value([NotNull] YQLParser.Secret_setting_valueContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.secret_setting_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSecret_setting_value([NotNull] YQLParser.Secret_setting_valueContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.alter_secret_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAlter_secret_stmt([NotNull] YQLParser.Alter_secret_stmtContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.alter_secret_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAlter_secret_stmt([NotNull] YQLParser.Alter_secret_stmtContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.drop_secret_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterDrop_secret_stmt([NotNull] YQLParser.Drop_secret_stmtContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.drop_secret_stmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitDrop_secret_stmt([NotNull] YQLParser.Drop_secret_stmtContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.identifier"/>.
 	/// </summary>
