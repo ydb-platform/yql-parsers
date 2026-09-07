@@ -342,6 +342,12 @@ export default class YQLVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
+	// Visit a parse tree produced by YQLParser#select_subexpr_core.
+	visitSelect_subexpr_core(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by YQLParser#select_subexpr_intersect.
 	visitSelect_subexpr_intersect(ctx) {
 	  return this.visitChildren(ctx);
@@ -648,6 +654,12 @@ export default class YQLVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
+	// Visit a parse tree produced by YQLParser#type_name_null.
+	visitType_name_null(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by YQLParser#type_name.
 	visitType_name(ctx) {
 	  return this.visitChildren(ctx);
@@ -738,8 +750,38 @@ export default class YQLVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
+	// Visit a parse tree produced by YQLParser#cte_with_clause.
+	visitCte_with_clause(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#cte_binding.
+	visitCte_binding(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#cte_key.
+	visitCte_key(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#cte_value.
+	visitCte_value(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by YQLParser#select_stmt.
 	visitSelect_stmt(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#select_stmt_core.
+	visitSelect_stmt_core(ctx) {
 	  return this.visitChildren(ctx);
 	}
 
@@ -752,6 +794,12 @@ export default class YQLVisitor extends antlr4.tree.ParseTreeVisitor {
 
 	// Visit a parse tree produced by YQLParser#select_unparenthesized_stmt.
 	visitSelect_unparenthesized_stmt(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#select_unparenthesized_stmt_core.
+	visitSelect_unparenthesized_stmt_core(ctx) {
 	  return this.visitChildren(ctx);
 	}
 
@@ -824,6 +872,18 @@ export default class YQLVisitor extends antlr4.tree.ParseTreeVisitor {
 
 	// Visit a parse tree produced by YQLParser#select_core.
 	visitSelect_core(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#combine_core.
+	visitCombine_core(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#materialize_stmt.
+	visitMaterialize_stmt(ctx) {
 	  return this.visitChildren(ctx);
 	}
 
@@ -1100,6 +1160,12 @@ export default class YQLVisitor extends antlr4.tree.ParseTreeVisitor {
 
 	// Visit a parse tree produced by YQLParser#named_single_source.
 	visitNamed_single_source(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#hinted_single_source.
+	visitHinted_single_source(ctx) {
 	  return this.visitChildren(ctx);
 	}
 
@@ -1662,6 +1728,18 @@ export default class YQLVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
+	// Visit a parse tree produced by YQLParser#alter_table_add_statistics.
+	visitAlter_table_add_statistics(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#alter_table_drop_statistics.
+	visitAlter_table_drop_statistics(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by YQLParser#alter_table_rename_to.
 	visitAlter_table_rename_to(ctx) {
 	  return this.visitChildren(ctx);
@@ -1698,8 +1776,38 @@ export default class YQLVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
+	// Visit a parse tree produced by YQLParser#alter_table_rebuild_index.
+	visitAlter_table_rebuild_index(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#alter_table_compact.
+	visitAlter_table_compact(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#alter_table_alter_column_set_encoding.
+	visitAlter_table_alter_column_set_encoding(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by YQLParser#column_schema.
 	visitColumn_schema(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#alter_table_alter_column_set_default.
+	visitAlter_table_alter_column_set_default(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#alter_table_alter_column_drop_default.
+	visitAlter_table_alter_column_drop_default(ctx) {
 	  return this.visitChildren(ctx);
 	}
 
@@ -1764,6 +1872,42 @@ export default class YQLVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
+	// Visit a parse tree produced by YQLParser#encoding.
+	visitEncoding(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#encoding_config.
+	visitEncoding_config(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#encoding_config_name.
+	visitEncoding_config_name(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#encoding_setting_entry.
+	visitEncoding_setting_entry(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#encoding_setting_value.
+	visitEncoding_setting_value(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#generated_always.
+	visitGenerated_always(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by YQLParser#column_order_by_specification.
 	visitColumn_order_by_specification(ctx) {
 	  return this.visitChildren(ctx);
@@ -1820,6 +1964,36 @@ export default class YQLVisitor extends antlr4.tree.ParseTreeVisitor {
 
 	// Visit a parse tree produced by YQLParser#index_setting_value.
 	visitIndex_setting_value(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#table_statistics.
+	visitTable_statistics(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#with_statistics_types.
+	visitWith_statistics_types(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#with_compact_settings.
+	visitWith_compact_settings(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#compact_setting_entry.
+	visitCompact_setting_entry(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by YQLParser#compact_setting_value.
+	visitCompact_setting_value(ctx) {
 	  return this.visitChildren(ctx);
 	}
 

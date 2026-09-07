@@ -356,6 +356,12 @@ func (s *BaseYQLListener) EnterSelect_subexpr(ctx *Select_subexprContext) {}
 // ExitSelect_subexpr is called when production select_subexpr is exited.
 func (s *BaseYQLListener) ExitSelect_subexpr(ctx *Select_subexprContext) {}
 
+// EnterSelect_subexpr_core is called when production select_subexpr_core is entered.
+func (s *BaseYQLListener) EnterSelect_subexpr_core(ctx *Select_subexpr_coreContext) {}
+
+// ExitSelect_subexpr_core is called when production select_subexpr_core is exited.
+func (s *BaseYQLListener) ExitSelect_subexpr_core(ctx *Select_subexpr_coreContext) {}
+
 // EnterSelect_subexpr_intersect is called when production select_subexpr_intersect is entered.
 func (s *BaseYQLListener) EnterSelect_subexpr_intersect(ctx *Select_subexpr_intersectContext) {}
 
@@ -662,6 +668,12 @@ func (s *BaseYQLListener) EnterType_name_composite(ctx *Type_name_compositeConte
 // ExitType_name_composite is called when production type_name_composite is exited.
 func (s *BaseYQLListener) ExitType_name_composite(ctx *Type_name_compositeContext) {}
 
+// EnterType_name_null is called when production type_name_null is entered.
+func (s *BaseYQLListener) EnterType_name_null(ctx *Type_name_nullContext) {}
+
+// ExitType_name_null is called when production type_name_null is exited.
+func (s *BaseYQLListener) ExitType_name_null(ctx *Type_name_nullContext) {}
+
 // EnterType_name is called when production type_name is entered.
 func (s *BaseYQLListener) EnterType_name(ctx *Type_nameContext) {}
 
@@ -752,11 +764,41 @@ func (s *BaseYQLListener) EnterSort_specification_list(ctx *Sort_specification_l
 // ExitSort_specification_list is called when production sort_specification_list is exited.
 func (s *BaseYQLListener) ExitSort_specification_list(ctx *Sort_specification_listContext) {}
 
+// EnterCte_with_clause is called when production cte_with_clause is entered.
+func (s *BaseYQLListener) EnterCte_with_clause(ctx *Cte_with_clauseContext) {}
+
+// ExitCte_with_clause is called when production cte_with_clause is exited.
+func (s *BaseYQLListener) ExitCte_with_clause(ctx *Cte_with_clauseContext) {}
+
+// EnterCte_binding is called when production cte_binding is entered.
+func (s *BaseYQLListener) EnterCte_binding(ctx *Cte_bindingContext) {}
+
+// ExitCte_binding is called when production cte_binding is exited.
+func (s *BaseYQLListener) ExitCte_binding(ctx *Cte_bindingContext) {}
+
+// EnterCte_key is called when production cte_key is entered.
+func (s *BaseYQLListener) EnterCte_key(ctx *Cte_keyContext) {}
+
+// ExitCte_key is called when production cte_key is exited.
+func (s *BaseYQLListener) ExitCte_key(ctx *Cte_keyContext) {}
+
+// EnterCte_value is called when production cte_value is entered.
+func (s *BaseYQLListener) EnterCte_value(ctx *Cte_valueContext) {}
+
+// ExitCte_value is called when production cte_value is exited.
+func (s *BaseYQLListener) ExitCte_value(ctx *Cte_valueContext) {}
+
 // EnterSelect_stmt is called when production select_stmt is entered.
 func (s *BaseYQLListener) EnterSelect_stmt(ctx *Select_stmtContext) {}
 
 // ExitSelect_stmt is called when production select_stmt is exited.
 func (s *BaseYQLListener) ExitSelect_stmt(ctx *Select_stmtContext) {}
+
+// EnterSelect_stmt_core is called when production select_stmt_core is entered.
+func (s *BaseYQLListener) EnterSelect_stmt_core(ctx *Select_stmt_coreContext) {}
+
+// ExitSelect_stmt_core is called when production select_stmt_core is exited.
+func (s *BaseYQLListener) ExitSelect_stmt_core(ctx *Select_stmt_coreContext) {}
 
 // EnterSelect_stmt_intersect is called when production select_stmt_intersect is entered.
 func (s *BaseYQLListener) EnterSelect_stmt_intersect(ctx *Select_stmt_intersectContext) {}
@@ -769,6 +811,12 @@ func (s *BaseYQLListener) EnterSelect_unparenthesized_stmt(ctx *Select_unparenth
 
 // ExitSelect_unparenthesized_stmt is called when production select_unparenthesized_stmt is exited.
 func (s *BaseYQLListener) ExitSelect_unparenthesized_stmt(ctx *Select_unparenthesized_stmtContext) {}
+
+// EnterSelect_unparenthesized_stmt_core is called when production select_unparenthesized_stmt_core is entered.
+func (s *BaseYQLListener) EnterSelect_unparenthesized_stmt_core(ctx *Select_unparenthesized_stmt_coreContext) {}
+
+// ExitSelect_unparenthesized_stmt_core is called when production select_unparenthesized_stmt_core is exited.
+func (s *BaseYQLListener) ExitSelect_unparenthesized_stmt_core(ctx *Select_unparenthesized_stmt_coreContext) {}
 
 // EnterSelect_unparenthesized_stmt_intersect is called when production select_unparenthesized_stmt_intersect is entered.
 func (s *BaseYQLListener) EnterSelect_unparenthesized_stmt_intersect(ctx *Select_unparenthesized_stmt_intersectContext) {}
@@ -841,6 +889,18 @@ func (s *BaseYQLListener) EnterSelect_core(ctx *Select_coreContext) {}
 
 // ExitSelect_core is called when production select_core is exited.
 func (s *BaseYQLListener) ExitSelect_core(ctx *Select_coreContext) {}
+
+// EnterCombine_core is called when production combine_core is entered.
+func (s *BaseYQLListener) EnterCombine_core(ctx *Combine_coreContext) {}
+
+// ExitCombine_core is called when production combine_core is exited.
+func (s *BaseYQLListener) ExitCombine_core(ctx *Combine_coreContext) {}
+
+// EnterMaterialize_stmt is called when production materialize_stmt is entered.
+func (s *BaseYQLListener) EnterMaterialize_stmt(ctx *Materialize_stmtContext) {}
+
+// ExitMaterialize_stmt is called when production materialize_stmt is exited.
+func (s *BaseYQLListener) ExitMaterialize_stmt(ctx *Materialize_stmtContext) {}
 
 // EnterRow_pattern_recognition_clause is called when production row_pattern_recognition_clause is entered.
 func (s *BaseYQLListener) EnterRow_pattern_recognition_clause(ctx *Row_pattern_recognition_clauseContext) {}
@@ -1117,6 +1177,12 @@ func (s *BaseYQLListener) EnterNamed_single_source(ctx *Named_single_sourceConte
 
 // ExitNamed_single_source is called when production named_single_source is exited.
 func (s *BaseYQLListener) ExitNamed_single_source(ctx *Named_single_sourceContext) {}
+
+// EnterHinted_single_source is called when production hinted_single_source is entered.
+func (s *BaseYQLListener) EnterHinted_single_source(ctx *Hinted_single_sourceContext) {}
+
+// ExitHinted_single_source is called when production hinted_single_source is exited.
+func (s *BaseYQLListener) ExitHinted_single_source(ctx *Hinted_single_sourceContext) {}
 
 // EnterSingle_source is called when production single_source is entered.
 func (s *BaseYQLListener) EnterSingle_source(ctx *Single_sourceContext) {}
@@ -1676,6 +1742,18 @@ func (s *BaseYQLListener) EnterAlter_table_drop_index(ctx *Alter_table_drop_inde
 // ExitAlter_table_drop_index is called when production alter_table_drop_index is exited.
 func (s *BaseYQLListener) ExitAlter_table_drop_index(ctx *Alter_table_drop_indexContext) {}
 
+// EnterAlter_table_add_statistics is called when production alter_table_add_statistics is entered.
+func (s *BaseYQLListener) EnterAlter_table_add_statistics(ctx *Alter_table_add_statisticsContext) {}
+
+// ExitAlter_table_add_statistics is called when production alter_table_add_statistics is exited.
+func (s *BaseYQLListener) ExitAlter_table_add_statistics(ctx *Alter_table_add_statisticsContext) {}
+
+// EnterAlter_table_drop_statistics is called when production alter_table_drop_statistics is entered.
+func (s *BaseYQLListener) EnterAlter_table_drop_statistics(ctx *Alter_table_drop_statisticsContext) {}
+
+// ExitAlter_table_drop_statistics is called when production alter_table_drop_statistics is exited.
+func (s *BaseYQLListener) ExitAlter_table_drop_statistics(ctx *Alter_table_drop_statisticsContext) {}
+
 // EnterAlter_table_rename_to is called when production alter_table_rename_to is entered.
 func (s *BaseYQLListener) EnterAlter_table_rename_to(ctx *Alter_table_rename_toContext) {}
 
@@ -1712,11 +1790,41 @@ func (s *BaseYQLListener) EnterAlter_table_alter_index(ctx *Alter_table_alter_in
 // ExitAlter_table_alter_index is called when production alter_table_alter_index is exited.
 func (s *BaseYQLListener) ExitAlter_table_alter_index(ctx *Alter_table_alter_indexContext) {}
 
+// EnterAlter_table_rebuild_index is called when production alter_table_rebuild_index is entered.
+func (s *BaseYQLListener) EnterAlter_table_rebuild_index(ctx *Alter_table_rebuild_indexContext) {}
+
+// ExitAlter_table_rebuild_index is called when production alter_table_rebuild_index is exited.
+func (s *BaseYQLListener) ExitAlter_table_rebuild_index(ctx *Alter_table_rebuild_indexContext) {}
+
+// EnterAlter_table_compact is called when production alter_table_compact is entered.
+func (s *BaseYQLListener) EnterAlter_table_compact(ctx *Alter_table_compactContext) {}
+
+// ExitAlter_table_compact is called when production alter_table_compact is exited.
+func (s *BaseYQLListener) ExitAlter_table_compact(ctx *Alter_table_compactContext) {}
+
+// EnterAlter_table_alter_column_set_encoding is called when production alter_table_alter_column_set_encoding is entered.
+func (s *BaseYQLListener) EnterAlter_table_alter_column_set_encoding(ctx *Alter_table_alter_column_set_encodingContext) {}
+
+// ExitAlter_table_alter_column_set_encoding is called when production alter_table_alter_column_set_encoding is exited.
+func (s *BaseYQLListener) ExitAlter_table_alter_column_set_encoding(ctx *Alter_table_alter_column_set_encodingContext) {}
+
 // EnterColumn_schema is called when production column_schema is entered.
 func (s *BaseYQLListener) EnterColumn_schema(ctx *Column_schemaContext) {}
 
 // ExitColumn_schema is called when production column_schema is exited.
 func (s *BaseYQLListener) ExitColumn_schema(ctx *Column_schemaContext) {}
+
+// EnterAlter_table_alter_column_set_default is called when production alter_table_alter_column_set_default is entered.
+func (s *BaseYQLListener) EnterAlter_table_alter_column_set_default(ctx *Alter_table_alter_column_set_defaultContext) {}
+
+// ExitAlter_table_alter_column_set_default is called when production alter_table_alter_column_set_default is exited.
+func (s *BaseYQLListener) ExitAlter_table_alter_column_set_default(ctx *Alter_table_alter_column_set_defaultContext) {}
+
+// EnterAlter_table_alter_column_drop_default is called when production alter_table_alter_column_drop_default is entered.
+func (s *BaseYQLListener) EnterAlter_table_alter_column_drop_default(ctx *Alter_table_alter_column_drop_defaultContext) {}
+
+// ExitAlter_table_alter_column_drop_default is called when production alter_table_alter_column_drop_default is exited.
+func (s *BaseYQLListener) ExitAlter_table_alter_column_drop_default(ctx *Alter_table_alter_column_drop_defaultContext) {}
 
 // EnterColumn_option_list is called when production column_option_list is entered.
 func (s *BaseYQLListener) EnterColumn_option_list(ctx *Column_option_listContext) {}
@@ -1778,6 +1886,42 @@ func (s *BaseYQLListener) EnterDefault_value(ctx *Default_valueContext) {}
 // ExitDefault_value is called when production default_value is exited.
 func (s *BaseYQLListener) ExitDefault_value(ctx *Default_valueContext) {}
 
+// EnterEncoding is called when production encoding is entered.
+func (s *BaseYQLListener) EnterEncoding(ctx *EncodingContext) {}
+
+// ExitEncoding is called when production encoding is exited.
+func (s *BaseYQLListener) ExitEncoding(ctx *EncodingContext) {}
+
+// EnterEncoding_config is called when production encoding_config is entered.
+func (s *BaseYQLListener) EnterEncoding_config(ctx *Encoding_configContext) {}
+
+// ExitEncoding_config is called when production encoding_config is exited.
+func (s *BaseYQLListener) ExitEncoding_config(ctx *Encoding_configContext) {}
+
+// EnterEncoding_config_name is called when production encoding_config_name is entered.
+func (s *BaseYQLListener) EnterEncoding_config_name(ctx *Encoding_config_nameContext) {}
+
+// ExitEncoding_config_name is called when production encoding_config_name is exited.
+func (s *BaseYQLListener) ExitEncoding_config_name(ctx *Encoding_config_nameContext) {}
+
+// EnterEncoding_setting_entry is called when production encoding_setting_entry is entered.
+func (s *BaseYQLListener) EnterEncoding_setting_entry(ctx *Encoding_setting_entryContext) {}
+
+// ExitEncoding_setting_entry is called when production encoding_setting_entry is exited.
+func (s *BaseYQLListener) ExitEncoding_setting_entry(ctx *Encoding_setting_entryContext) {}
+
+// EnterEncoding_setting_value is called when production encoding_setting_value is entered.
+func (s *BaseYQLListener) EnterEncoding_setting_value(ctx *Encoding_setting_valueContext) {}
+
+// ExitEncoding_setting_value is called when production encoding_setting_value is exited.
+func (s *BaseYQLListener) ExitEncoding_setting_value(ctx *Encoding_setting_valueContext) {}
+
+// EnterGenerated_always is called when production generated_always is entered.
+func (s *BaseYQLListener) EnterGenerated_always(ctx *Generated_alwaysContext) {}
+
+// ExitGenerated_always is called when production generated_always is exited.
+func (s *BaseYQLListener) ExitGenerated_always(ctx *Generated_alwaysContext) {}
+
 // EnterColumn_order_by_specification is called when production column_order_by_specification is entered.
 func (s *BaseYQLListener) EnterColumn_order_by_specification(ctx *Column_order_by_specificationContext) {}
 
@@ -1837,6 +1981,36 @@ func (s *BaseYQLListener) EnterIndex_setting_value(ctx *Index_setting_valueConte
 
 // ExitIndex_setting_value is called when production index_setting_value is exited.
 func (s *BaseYQLListener) ExitIndex_setting_value(ctx *Index_setting_valueContext) {}
+
+// EnterTable_statistics is called when production table_statistics is entered.
+func (s *BaseYQLListener) EnterTable_statistics(ctx *Table_statisticsContext) {}
+
+// ExitTable_statistics is called when production table_statistics is exited.
+func (s *BaseYQLListener) ExitTable_statistics(ctx *Table_statisticsContext) {}
+
+// EnterWith_statistics_types is called when production with_statistics_types is entered.
+func (s *BaseYQLListener) EnterWith_statistics_types(ctx *With_statistics_typesContext) {}
+
+// ExitWith_statistics_types is called when production with_statistics_types is exited.
+func (s *BaseYQLListener) ExitWith_statistics_types(ctx *With_statistics_typesContext) {}
+
+// EnterWith_compact_settings is called when production with_compact_settings is entered.
+func (s *BaseYQLListener) EnterWith_compact_settings(ctx *With_compact_settingsContext) {}
+
+// ExitWith_compact_settings is called when production with_compact_settings is exited.
+func (s *BaseYQLListener) ExitWith_compact_settings(ctx *With_compact_settingsContext) {}
+
+// EnterCompact_setting_entry is called when production compact_setting_entry is entered.
+func (s *BaseYQLListener) EnterCompact_setting_entry(ctx *Compact_setting_entryContext) {}
+
+// ExitCompact_setting_entry is called when production compact_setting_entry is exited.
+func (s *BaseYQLListener) ExitCompact_setting_entry(ctx *Compact_setting_entryContext) {}
+
+// EnterCompact_setting_value is called when production compact_setting_value is entered.
+func (s *BaseYQLListener) EnterCompact_setting_value(ctx *Compact_setting_valueContext) {}
+
+// ExitCompact_setting_value is called when production compact_setting_value is exited.
+func (s *BaseYQLListener) ExitCompact_setting_value(ctx *Compact_setting_valueContext) {}
 
 // EnterChangefeed is called when production changefeed is entered.
 func (s *BaseYQLListener) EnterChangefeed(ctx *ChangefeedContext) {}

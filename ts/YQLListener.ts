@@ -59,6 +59,7 @@ import { Json_query_wrapperContext } from "./YQLParser";
 import { Json_query_handlerContext } from "./YQLParser";
 import { Json_queryContext } from "./YQLParser";
 import { Select_subexprContext } from "./YQLParser";
+import { Select_subexpr_coreContext } from "./YQLParser";
 import { Select_subexpr_intersectContext } from "./YQLParser";
 import { Select_or_exprContext } from "./YQLParser";
 import { Tuple_or_exprContext } from "./YQLParser";
@@ -110,6 +111,7 @@ import { Type_name_callableContext } from "./YQLParser";
 import { Type_name_linearContext } from "./YQLParser";
 import { Type_name_dynamiclinearContext } from "./YQLParser";
 import { Type_name_compositeContext } from "./YQLParser";
+import { Type_name_nullContext } from "./YQLParser";
 import { Type_nameContext } from "./YQLParser";
 import { Type_name_or_bindContext } from "./YQLParser";
 import { Value_constructor_literalContext } from "./YQLParser";
@@ -125,9 +127,15 @@ import { Pragma_stmtContext } from "./YQLParser";
 import { Pragma_valueContext } from "./YQLParser";
 import { Sort_specificationContext } from "./YQLParser";
 import { Sort_specification_listContext } from "./YQLParser";
+import { Cte_with_clauseContext } from "./YQLParser";
+import { Cte_bindingContext } from "./YQLParser";
+import { Cte_keyContext } from "./YQLParser";
+import { Cte_valueContext } from "./YQLParser";
 import { Select_stmtContext } from "./YQLParser";
+import { Select_stmt_coreContext } from "./YQLParser";
 import { Select_stmt_intersectContext } from "./YQLParser";
 import { Select_unparenthesized_stmtContext } from "./YQLParser";
+import { Select_unparenthesized_stmt_coreContext } from "./YQLParser";
 import { Select_unparenthesized_stmt_intersectContext } from "./YQLParser";
 import { Select_kind_parenthesisContext } from "./YQLParser";
 import { Union_opContext } from "./YQLParser";
@@ -140,6 +148,8 @@ import { External_call_settingsContext } from "./YQLParser";
 import { Reduce_coreContext } from "./YQLParser";
 import { Opt_set_quantifierContext } from "./YQLParser";
 import { Select_coreContext } from "./YQLParser";
+import { Combine_coreContext } from "./YQLParser";
+import { Materialize_stmtContext } from "./YQLParser";
 import { Row_pattern_recognition_clauseContext } from "./YQLParser";
 import { Row_pattern_rows_per_matchContext } from "./YQLParser";
 import { Row_pattern_empty_match_handlingContext } from "./YQLParser";
@@ -186,6 +196,7 @@ import { Named_columnContext } from "./YQLParser";
 import { Flatten_by_argContext } from "./YQLParser";
 import { Flatten_sourceContext } from "./YQLParser";
 import { Named_single_sourceContext } from "./YQLParser";
+import { Hinted_single_sourceContext } from "./YQLParser";
 import { Single_sourceContext } from "./YQLParser";
 import { Sample_clauseContext } from "./YQLParser";
 import { Tablesample_clauseContext } from "./YQLParser";
@@ -279,13 +290,20 @@ import { Alter_table_set_table_setting_compatContext } from "./YQLParser";
 import { Alter_table_reset_table_settingContext } from "./YQLParser";
 import { Alter_table_add_indexContext } from "./YQLParser";
 import { Alter_table_drop_indexContext } from "./YQLParser";
+import { Alter_table_add_statisticsContext } from "./YQLParser";
+import { Alter_table_drop_statisticsContext } from "./YQLParser";
 import { Alter_table_rename_toContext } from "./YQLParser";
 import { Alter_table_rename_index_toContext } from "./YQLParser";
 import { Alter_table_add_changefeedContext } from "./YQLParser";
 import { Alter_table_alter_changefeedContext } from "./YQLParser";
 import { Alter_table_drop_changefeedContext } from "./YQLParser";
 import { Alter_table_alter_indexContext } from "./YQLParser";
+import { Alter_table_rebuild_indexContext } from "./YQLParser";
+import { Alter_table_compactContext } from "./YQLParser";
+import { Alter_table_alter_column_set_encodingContext } from "./YQLParser";
 import { Column_schemaContext } from "./YQLParser";
+import { Alter_table_alter_column_set_defaultContext } from "./YQLParser";
+import { Alter_table_alter_column_drop_defaultContext } from "./YQLParser";
 import { Column_option_listContext } from "./YQLParser";
 import { Column_option_list_spaceContext } from "./YQLParser";
 import { Column_option_list_commaContext } from "./YQLParser";
@@ -296,6 +314,12 @@ import { Compression_setting_valueContext } from "./YQLParser";
 import { Family_relationContext } from "./YQLParser";
 import { NullabilityContext } from "./YQLParser";
 import { Default_valueContext } from "./YQLParser";
+import { EncodingContext } from "./YQLParser";
+import { Encoding_configContext } from "./YQLParser";
+import { Encoding_config_nameContext } from "./YQLParser";
+import { Encoding_setting_entryContext } from "./YQLParser";
+import { Encoding_setting_valueContext } from "./YQLParser";
+import { Generated_alwaysContext } from "./YQLParser";
 import { Column_order_by_specificationContext } from "./YQLParser";
 import { Table_constraintContext } from "./YQLParser";
 import { Table_indexContext } from "./YQLParser";
@@ -306,6 +330,11 @@ import { Index_subtypeContext } from "./YQLParser";
 import { With_index_settingsContext } from "./YQLParser";
 import { Index_setting_entryContext } from "./YQLParser";
 import { Index_setting_valueContext } from "./YQLParser";
+import { Table_statisticsContext } from "./YQLParser";
+import { With_statistics_typesContext } from "./YQLParser";
+import { With_compact_settingsContext } from "./YQLParser";
+import { Compact_setting_entryContext } from "./YQLParser";
+import { Compact_setting_valueContext } from "./YQLParser";
 import { ChangefeedContext } from "./YQLParser";
 import { Changefeed_settingsContext } from "./YQLParser";
 import { Changefeed_settings_entryContext } from "./YQLParser";
@@ -1058,6 +1087,16 @@ export default class YQLListener extends ParseTreeListener {
 	 */
 	exitSelect_subexpr?: (ctx: Select_subexprContext) => void;
 	/**
+	 * Enter a parse tree produced by `YQLParser.select_subexpr_core`.
+	 * @param ctx the parse tree
+	 */
+	enterSelect_subexpr_core?: (ctx: Select_subexpr_coreContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.select_subexpr_core`.
+	 * @param ctx the parse tree
+	 */
+	exitSelect_subexpr_core?: (ctx: Select_subexpr_coreContext) => void;
+	/**
 	 * Enter a parse tree produced by `YQLParser.select_subexpr_intersect`.
 	 * @param ctx the parse tree
 	 */
@@ -1568,6 +1607,16 @@ export default class YQLListener extends ParseTreeListener {
 	 */
 	exitType_name_composite?: (ctx: Type_name_compositeContext) => void;
 	/**
+	 * Enter a parse tree produced by `YQLParser.type_name_null`.
+	 * @param ctx the parse tree
+	 */
+	enterType_name_null?: (ctx: Type_name_nullContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.type_name_null`.
+	 * @param ctx the parse tree
+	 */
+	exitType_name_null?: (ctx: Type_name_nullContext) => void;
+	/**
 	 * Enter a parse tree produced by `YQLParser.type_name`.
 	 * @param ctx the parse tree
 	 */
@@ -1718,6 +1767,46 @@ export default class YQLListener extends ParseTreeListener {
 	 */
 	exitSort_specification_list?: (ctx: Sort_specification_listContext) => void;
 	/**
+	 * Enter a parse tree produced by `YQLParser.cte_with_clause`.
+	 * @param ctx the parse tree
+	 */
+	enterCte_with_clause?: (ctx: Cte_with_clauseContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.cte_with_clause`.
+	 * @param ctx the parse tree
+	 */
+	exitCte_with_clause?: (ctx: Cte_with_clauseContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.cte_binding`.
+	 * @param ctx the parse tree
+	 */
+	enterCte_binding?: (ctx: Cte_bindingContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.cte_binding`.
+	 * @param ctx the parse tree
+	 */
+	exitCte_binding?: (ctx: Cte_bindingContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.cte_key`.
+	 * @param ctx the parse tree
+	 */
+	enterCte_key?: (ctx: Cte_keyContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.cte_key`.
+	 * @param ctx the parse tree
+	 */
+	exitCte_key?: (ctx: Cte_keyContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.cte_value`.
+	 * @param ctx the parse tree
+	 */
+	enterCte_value?: (ctx: Cte_valueContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.cte_value`.
+	 * @param ctx the parse tree
+	 */
+	exitCte_value?: (ctx: Cte_valueContext) => void;
+	/**
 	 * Enter a parse tree produced by `YQLParser.select_stmt`.
 	 * @param ctx the parse tree
 	 */
@@ -1727,6 +1816,16 @@ export default class YQLListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitSelect_stmt?: (ctx: Select_stmtContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.select_stmt_core`.
+	 * @param ctx the parse tree
+	 */
+	enterSelect_stmt_core?: (ctx: Select_stmt_coreContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.select_stmt_core`.
+	 * @param ctx the parse tree
+	 */
+	exitSelect_stmt_core?: (ctx: Select_stmt_coreContext) => void;
 	/**
 	 * Enter a parse tree produced by `YQLParser.select_stmt_intersect`.
 	 * @param ctx the parse tree
@@ -1747,6 +1846,16 @@ export default class YQLListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitSelect_unparenthesized_stmt?: (ctx: Select_unparenthesized_stmtContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.select_unparenthesized_stmt_core`.
+	 * @param ctx the parse tree
+	 */
+	enterSelect_unparenthesized_stmt_core?: (ctx: Select_unparenthesized_stmt_coreContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.select_unparenthesized_stmt_core`.
+	 * @param ctx the parse tree
+	 */
+	exitSelect_unparenthesized_stmt_core?: (ctx: Select_unparenthesized_stmt_coreContext) => void;
 	/**
 	 * Enter a parse tree produced by `YQLParser.select_unparenthesized_stmt_intersect`.
 	 * @param ctx the parse tree
@@ -1867,6 +1976,26 @@ export default class YQLListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitSelect_core?: (ctx: Select_coreContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.combine_core`.
+	 * @param ctx the parse tree
+	 */
+	enterCombine_core?: (ctx: Combine_coreContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.combine_core`.
+	 * @param ctx the parse tree
+	 */
+	exitCombine_core?: (ctx: Combine_coreContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.materialize_stmt`.
+	 * @param ctx the parse tree
+	 */
+	enterMaterialize_stmt?: (ctx: Materialize_stmtContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.materialize_stmt`.
+	 * @param ctx the parse tree
+	 */
+	exitMaterialize_stmt?: (ctx: Materialize_stmtContext) => void;
 	/**
 	 * Enter a parse tree produced by `YQLParser.row_pattern_recognition_clause`.
 	 * @param ctx the parse tree
@@ -2327,6 +2456,16 @@ export default class YQLListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitNamed_single_source?: (ctx: Named_single_sourceContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.hinted_single_source`.
+	 * @param ctx the parse tree
+	 */
+	enterHinted_single_source?: (ctx: Hinted_single_sourceContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.hinted_single_source`.
+	 * @param ctx the parse tree
+	 */
+	exitHinted_single_source?: (ctx: Hinted_single_sourceContext) => void;
 	/**
 	 * Enter a parse tree produced by `YQLParser.single_source`.
 	 * @param ctx the parse tree
@@ -3258,6 +3397,26 @@ export default class YQLListener extends ParseTreeListener {
 	 */
 	exitAlter_table_drop_index?: (ctx: Alter_table_drop_indexContext) => void;
 	/**
+	 * Enter a parse tree produced by `YQLParser.alter_table_add_statistics`.
+	 * @param ctx the parse tree
+	 */
+	enterAlter_table_add_statistics?: (ctx: Alter_table_add_statisticsContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.alter_table_add_statistics`.
+	 * @param ctx the parse tree
+	 */
+	exitAlter_table_add_statistics?: (ctx: Alter_table_add_statisticsContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.alter_table_drop_statistics`.
+	 * @param ctx the parse tree
+	 */
+	enterAlter_table_drop_statistics?: (ctx: Alter_table_drop_statisticsContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.alter_table_drop_statistics`.
+	 * @param ctx the parse tree
+	 */
+	exitAlter_table_drop_statistics?: (ctx: Alter_table_drop_statisticsContext) => void;
+	/**
 	 * Enter a parse tree produced by `YQLParser.alter_table_rename_to`.
 	 * @param ctx the parse tree
 	 */
@@ -3318,6 +3477,36 @@ export default class YQLListener extends ParseTreeListener {
 	 */
 	exitAlter_table_alter_index?: (ctx: Alter_table_alter_indexContext) => void;
 	/**
+	 * Enter a parse tree produced by `YQLParser.alter_table_rebuild_index`.
+	 * @param ctx the parse tree
+	 */
+	enterAlter_table_rebuild_index?: (ctx: Alter_table_rebuild_indexContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.alter_table_rebuild_index`.
+	 * @param ctx the parse tree
+	 */
+	exitAlter_table_rebuild_index?: (ctx: Alter_table_rebuild_indexContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.alter_table_compact`.
+	 * @param ctx the parse tree
+	 */
+	enterAlter_table_compact?: (ctx: Alter_table_compactContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.alter_table_compact`.
+	 * @param ctx the parse tree
+	 */
+	exitAlter_table_compact?: (ctx: Alter_table_compactContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.alter_table_alter_column_set_encoding`.
+	 * @param ctx the parse tree
+	 */
+	enterAlter_table_alter_column_set_encoding?: (ctx: Alter_table_alter_column_set_encodingContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.alter_table_alter_column_set_encoding`.
+	 * @param ctx the parse tree
+	 */
+	exitAlter_table_alter_column_set_encoding?: (ctx: Alter_table_alter_column_set_encodingContext) => void;
+	/**
 	 * Enter a parse tree produced by `YQLParser.column_schema`.
 	 * @param ctx the parse tree
 	 */
@@ -3327,6 +3516,26 @@ export default class YQLListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitColumn_schema?: (ctx: Column_schemaContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.alter_table_alter_column_set_default`.
+	 * @param ctx the parse tree
+	 */
+	enterAlter_table_alter_column_set_default?: (ctx: Alter_table_alter_column_set_defaultContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.alter_table_alter_column_set_default`.
+	 * @param ctx the parse tree
+	 */
+	exitAlter_table_alter_column_set_default?: (ctx: Alter_table_alter_column_set_defaultContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.alter_table_alter_column_drop_default`.
+	 * @param ctx the parse tree
+	 */
+	enterAlter_table_alter_column_drop_default?: (ctx: Alter_table_alter_column_drop_defaultContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.alter_table_alter_column_drop_default`.
+	 * @param ctx the parse tree
+	 */
+	exitAlter_table_alter_column_drop_default?: (ctx: Alter_table_alter_column_drop_defaultContext) => void;
 	/**
 	 * Enter a parse tree produced by `YQLParser.column_option_list`.
 	 * @param ctx the parse tree
@@ -3428,6 +3637,66 @@ export default class YQLListener extends ParseTreeListener {
 	 */
 	exitDefault_value?: (ctx: Default_valueContext) => void;
 	/**
+	 * Enter a parse tree produced by `YQLParser.encoding`.
+	 * @param ctx the parse tree
+	 */
+	enterEncoding?: (ctx: EncodingContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.encoding`.
+	 * @param ctx the parse tree
+	 */
+	exitEncoding?: (ctx: EncodingContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.encoding_config`.
+	 * @param ctx the parse tree
+	 */
+	enterEncoding_config?: (ctx: Encoding_configContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.encoding_config`.
+	 * @param ctx the parse tree
+	 */
+	exitEncoding_config?: (ctx: Encoding_configContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.encoding_config_name`.
+	 * @param ctx the parse tree
+	 */
+	enterEncoding_config_name?: (ctx: Encoding_config_nameContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.encoding_config_name`.
+	 * @param ctx the parse tree
+	 */
+	exitEncoding_config_name?: (ctx: Encoding_config_nameContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.encoding_setting_entry`.
+	 * @param ctx the parse tree
+	 */
+	enterEncoding_setting_entry?: (ctx: Encoding_setting_entryContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.encoding_setting_entry`.
+	 * @param ctx the parse tree
+	 */
+	exitEncoding_setting_entry?: (ctx: Encoding_setting_entryContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.encoding_setting_value`.
+	 * @param ctx the parse tree
+	 */
+	enterEncoding_setting_value?: (ctx: Encoding_setting_valueContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.encoding_setting_value`.
+	 * @param ctx the parse tree
+	 */
+	exitEncoding_setting_value?: (ctx: Encoding_setting_valueContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.generated_always`.
+	 * @param ctx the parse tree
+	 */
+	enterGenerated_always?: (ctx: Generated_alwaysContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.generated_always`.
+	 * @param ctx the parse tree
+	 */
+	exitGenerated_always?: (ctx: Generated_alwaysContext) => void;
+	/**
 	 * Enter a parse tree produced by `YQLParser.column_order_by_specification`.
 	 * @param ctx the parse tree
 	 */
@@ -3527,6 +3796,56 @@ export default class YQLListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitIndex_setting_value?: (ctx: Index_setting_valueContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.table_statistics`.
+	 * @param ctx the parse tree
+	 */
+	enterTable_statistics?: (ctx: Table_statisticsContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.table_statistics`.
+	 * @param ctx the parse tree
+	 */
+	exitTable_statistics?: (ctx: Table_statisticsContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.with_statistics_types`.
+	 * @param ctx the parse tree
+	 */
+	enterWith_statistics_types?: (ctx: With_statistics_typesContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.with_statistics_types`.
+	 * @param ctx the parse tree
+	 */
+	exitWith_statistics_types?: (ctx: With_statistics_typesContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.with_compact_settings`.
+	 * @param ctx the parse tree
+	 */
+	enterWith_compact_settings?: (ctx: With_compact_settingsContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.with_compact_settings`.
+	 * @param ctx the parse tree
+	 */
+	exitWith_compact_settings?: (ctx: With_compact_settingsContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.compact_setting_entry`.
+	 * @param ctx the parse tree
+	 */
+	enterCompact_setting_entry?: (ctx: Compact_setting_entryContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.compact_setting_entry`.
+	 * @param ctx the parse tree
+	 */
+	exitCompact_setting_entry?: (ctx: Compact_setting_entryContext) => void;
+	/**
+	 * Enter a parse tree produced by `YQLParser.compact_setting_value`.
+	 * @param ctx the parse tree
+	 */
+	enterCompact_setting_value?: (ctx: Compact_setting_valueContext) => void;
+	/**
+	 * Exit a parse tree produced by `YQLParser.compact_setting_value`.
+	 * @param ctx the parse tree
+	 */
+	exitCompact_setting_value?: (ctx: Compact_setting_valueContext) => void;
 	/**
 	 * Enter a parse tree produced by `YQLParser.changefeed`.
 	 * @param ctx the parse tree

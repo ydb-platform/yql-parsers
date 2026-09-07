@@ -176,6 +176,9 @@ type YQLListener interface {
 	// EnterSelect_subexpr is called when entering the select_subexpr production.
 	EnterSelect_subexpr(c *Select_subexprContext)
 
+	// EnterSelect_subexpr_core is called when entering the select_subexpr_core production.
+	EnterSelect_subexpr_core(c *Select_subexpr_coreContext)
+
 	// EnterSelect_subexpr_intersect is called when entering the select_subexpr_intersect production.
 	EnterSelect_subexpr_intersect(c *Select_subexpr_intersectContext)
 
@@ -329,6 +332,9 @@ type YQLListener interface {
 	// EnterType_name_composite is called when entering the type_name_composite production.
 	EnterType_name_composite(c *Type_name_compositeContext)
 
+	// EnterType_name_null is called when entering the type_name_null production.
+	EnterType_name_null(c *Type_name_nullContext)
+
 	// EnterType_name is called when entering the type_name production.
 	EnterType_name(c *Type_nameContext)
 
@@ -374,14 +380,32 @@ type YQLListener interface {
 	// EnterSort_specification_list is called when entering the sort_specification_list production.
 	EnterSort_specification_list(c *Sort_specification_listContext)
 
+	// EnterCte_with_clause is called when entering the cte_with_clause production.
+	EnterCte_with_clause(c *Cte_with_clauseContext)
+
+	// EnterCte_binding is called when entering the cte_binding production.
+	EnterCte_binding(c *Cte_bindingContext)
+
+	// EnterCte_key is called when entering the cte_key production.
+	EnterCte_key(c *Cte_keyContext)
+
+	// EnterCte_value is called when entering the cte_value production.
+	EnterCte_value(c *Cte_valueContext)
+
 	// EnterSelect_stmt is called when entering the select_stmt production.
 	EnterSelect_stmt(c *Select_stmtContext)
+
+	// EnterSelect_stmt_core is called when entering the select_stmt_core production.
+	EnterSelect_stmt_core(c *Select_stmt_coreContext)
 
 	// EnterSelect_stmt_intersect is called when entering the select_stmt_intersect production.
 	EnterSelect_stmt_intersect(c *Select_stmt_intersectContext)
 
 	// EnterSelect_unparenthesized_stmt is called when entering the select_unparenthesized_stmt production.
 	EnterSelect_unparenthesized_stmt(c *Select_unparenthesized_stmtContext)
+
+	// EnterSelect_unparenthesized_stmt_core is called when entering the select_unparenthesized_stmt_core production.
+	EnterSelect_unparenthesized_stmt_core(c *Select_unparenthesized_stmt_coreContext)
 
 	// EnterSelect_unparenthesized_stmt_intersect is called when entering the select_unparenthesized_stmt_intersect production.
 	EnterSelect_unparenthesized_stmt_intersect(c *Select_unparenthesized_stmt_intersectContext)
@@ -418,6 +442,12 @@ type YQLListener interface {
 
 	// EnterSelect_core is called when entering the select_core production.
 	EnterSelect_core(c *Select_coreContext)
+
+	// EnterCombine_core is called when entering the combine_core production.
+	EnterCombine_core(c *Combine_coreContext)
+
+	// EnterMaterialize_stmt is called when entering the materialize_stmt production.
+	EnterMaterialize_stmt(c *Materialize_stmtContext)
 
 	// EnterRow_pattern_recognition_clause is called when entering the row_pattern_recognition_clause production.
 	EnterRow_pattern_recognition_clause(c *Row_pattern_recognition_clauseContext)
@@ -556,6 +586,9 @@ type YQLListener interface {
 
 	// EnterNamed_single_source is called when entering the named_single_source production.
 	EnterNamed_single_source(c *Named_single_sourceContext)
+
+	// EnterHinted_single_source is called when entering the hinted_single_source production.
+	EnterHinted_single_source(c *Hinted_single_sourceContext)
 
 	// EnterSingle_source is called when entering the single_source production.
 	EnterSingle_source(c *Single_sourceContext)
@@ -836,6 +869,12 @@ type YQLListener interface {
 	// EnterAlter_table_drop_index is called when entering the alter_table_drop_index production.
 	EnterAlter_table_drop_index(c *Alter_table_drop_indexContext)
 
+	// EnterAlter_table_add_statistics is called when entering the alter_table_add_statistics production.
+	EnterAlter_table_add_statistics(c *Alter_table_add_statisticsContext)
+
+	// EnterAlter_table_drop_statistics is called when entering the alter_table_drop_statistics production.
+	EnterAlter_table_drop_statistics(c *Alter_table_drop_statisticsContext)
+
 	// EnterAlter_table_rename_to is called when entering the alter_table_rename_to production.
 	EnterAlter_table_rename_to(c *Alter_table_rename_toContext)
 
@@ -854,8 +893,23 @@ type YQLListener interface {
 	// EnterAlter_table_alter_index is called when entering the alter_table_alter_index production.
 	EnterAlter_table_alter_index(c *Alter_table_alter_indexContext)
 
+	// EnterAlter_table_rebuild_index is called when entering the alter_table_rebuild_index production.
+	EnterAlter_table_rebuild_index(c *Alter_table_rebuild_indexContext)
+
+	// EnterAlter_table_compact is called when entering the alter_table_compact production.
+	EnterAlter_table_compact(c *Alter_table_compactContext)
+
+	// EnterAlter_table_alter_column_set_encoding is called when entering the alter_table_alter_column_set_encoding production.
+	EnterAlter_table_alter_column_set_encoding(c *Alter_table_alter_column_set_encodingContext)
+
 	// EnterColumn_schema is called when entering the column_schema production.
 	EnterColumn_schema(c *Column_schemaContext)
+
+	// EnterAlter_table_alter_column_set_default is called when entering the alter_table_alter_column_set_default production.
+	EnterAlter_table_alter_column_set_default(c *Alter_table_alter_column_set_defaultContext)
+
+	// EnterAlter_table_alter_column_drop_default is called when entering the alter_table_alter_column_drop_default production.
+	EnterAlter_table_alter_column_drop_default(c *Alter_table_alter_column_drop_defaultContext)
 
 	// EnterColumn_option_list is called when entering the column_option_list production.
 	EnterColumn_option_list(c *Column_option_listContext)
@@ -887,6 +941,24 @@ type YQLListener interface {
 	// EnterDefault_value is called when entering the default_value production.
 	EnterDefault_value(c *Default_valueContext)
 
+	// EnterEncoding is called when entering the encoding production.
+	EnterEncoding(c *EncodingContext)
+
+	// EnterEncoding_config is called when entering the encoding_config production.
+	EnterEncoding_config(c *Encoding_configContext)
+
+	// EnterEncoding_config_name is called when entering the encoding_config_name production.
+	EnterEncoding_config_name(c *Encoding_config_nameContext)
+
+	// EnterEncoding_setting_entry is called when entering the encoding_setting_entry production.
+	EnterEncoding_setting_entry(c *Encoding_setting_entryContext)
+
+	// EnterEncoding_setting_value is called when entering the encoding_setting_value production.
+	EnterEncoding_setting_value(c *Encoding_setting_valueContext)
+
+	// EnterGenerated_always is called when entering the generated_always production.
+	EnterGenerated_always(c *Generated_alwaysContext)
+
 	// EnterColumn_order_by_specification is called when entering the column_order_by_specification production.
 	EnterColumn_order_by_specification(c *Column_order_by_specificationContext)
 
@@ -916,6 +988,21 @@ type YQLListener interface {
 
 	// EnterIndex_setting_value is called when entering the index_setting_value production.
 	EnterIndex_setting_value(c *Index_setting_valueContext)
+
+	// EnterTable_statistics is called when entering the table_statistics production.
+	EnterTable_statistics(c *Table_statisticsContext)
+
+	// EnterWith_statistics_types is called when entering the with_statistics_types production.
+	EnterWith_statistics_types(c *With_statistics_typesContext)
+
+	// EnterWith_compact_settings is called when entering the with_compact_settings production.
+	EnterWith_compact_settings(c *With_compact_settingsContext)
+
+	// EnterCompact_setting_entry is called when entering the compact_setting_entry production.
+	EnterCompact_setting_entry(c *Compact_setting_entryContext)
+
+	// EnterCompact_setting_value is called when entering the compact_setting_value production.
+	EnterCompact_setting_value(c *Compact_setting_valueContext)
 
 	// EnterChangefeed is called when entering the changefeed production.
 	EnterChangefeed(c *ChangefeedContext)
@@ -1637,6 +1724,9 @@ type YQLListener interface {
 	// ExitSelect_subexpr is called when exiting the select_subexpr production.
 	ExitSelect_subexpr(c *Select_subexprContext)
 
+	// ExitSelect_subexpr_core is called when exiting the select_subexpr_core production.
+	ExitSelect_subexpr_core(c *Select_subexpr_coreContext)
+
 	// ExitSelect_subexpr_intersect is called when exiting the select_subexpr_intersect production.
 	ExitSelect_subexpr_intersect(c *Select_subexpr_intersectContext)
 
@@ -1790,6 +1880,9 @@ type YQLListener interface {
 	// ExitType_name_composite is called when exiting the type_name_composite production.
 	ExitType_name_composite(c *Type_name_compositeContext)
 
+	// ExitType_name_null is called when exiting the type_name_null production.
+	ExitType_name_null(c *Type_name_nullContext)
+
 	// ExitType_name is called when exiting the type_name production.
 	ExitType_name(c *Type_nameContext)
 
@@ -1835,14 +1928,32 @@ type YQLListener interface {
 	// ExitSort_specification_list is called when exiting the sort_specification_list production.
 	ExitSort_specification_list(c *Sort_specification_listContext)
 
+	// ExitCte_with_clause is called when exiting the cte_with_clause production.
+	ExitCte_with_clause(c *Cte_with_clauseContext)
+
+	// ExitCte_binding is called when exiting the cte_binding production.
+	ExitCte_binding(c *Cte_bindingContext)
+
+	// ExitCte_key is called when exiting the cte_key production.
+	ExitCte_key(c *Cte_keyContext)
+
+	// ExitCte_value is called when exiting the cte_value production.
+	ExitCte_value(c *Cte_valueContext)
+
 	// ExitSelect_stmt is called when exiting the select_stmt production.
 	ExitSelect_stmt(c *Select_stmtContext)
+
+	// ExitSelect_stmt_core is called when exiting the select_stmt_core production.
+	ExitSelect_stmt_core(c *Select_stmt_coreContext)
 
 	// ExitSelect_stmt_intersect is called when exiting the select_stmt_intersect production.
 	ExitSelect_stmt_intersect(c *Select_stmt_intersectContext)
 
 	// ExitSelect_unparenthesized_stmt is called when exiting the select_unparenthesized_stmt production.
 	ExitSelect_unparenthesized_stmt(c *Select_unparenthesized_stmtContext)
+
+	// ExitSelect_unparenthesized_stmt_core is called when exiting the select_unparenthesized_stmt_core production.
+	ExitSelect_unparenthesized_stmt_core(c *Select_unparenthesized_stmt_coreContext)
 
 	// ExitSelect_unparenthesized_stmt_intersect is called when exiting the select_unparenthesized_stmt_intersect production.
 	ExitSelect_unparenthesized_stmt_intersect(c *Select_unparenthesized_stmt_intersectContext)
@@ -1879,6 +1990,12 @@ type YQLListener interface {
 
 	// ExitSelect_core is called when exiting the select_core production.
 	ExitSelect_core(c *Select_coreContext)
+
+	// ExitCombine_core is called when exiting the combine_core production.
+	ExitCombine_core(c *Combine_coreContext)
+
+	// ExitMaterialize_stmt is called when exiting the materialize_stmt production.
+	ExitMaterialize_stmt(c *Materialize_stmtContext)
 
 	// ExitRow_pattern_recognition_clause is called when exiting the row_pattern_recognition_clause production.
 	ExitRow_pattern_recognition_clause(c *Row_pattern_recognition_clauseContext)
@@ -2017,6 +2134,9 @@ type YQLListener interface {
 
 	// ExitNamed_single_source is called when exiting the named_single_source production.
 	ExitNamed_single_source(c *Named_single_sourceContext)
+
+	// ExitHinted_single_source is called when exiting the hinted_single_source production.
+	ExitHinted_single_source(c *Hinted_single_sourceContext)
 
 	// ExitSingle_source is called when exiting the single_source production.
 	ExitSingle_source(c *Single_sourceContext)
@@ -2297,6 +2417,12 @@ type YQLListener interface {
 	// ExitAlter_table_drop_index is called when exiting the alter_table_drop_index production.
 	ExitAlter_table_drop_index(c *Alter_table_drop_indexContext)
 
+	// ExitAlter_table_add_statistics is called when exiting the alter_table_add_statistics production.
+	ExitAlter_table_add_statistics(c *Alter_table_add_statisticsContext)
+
+	// ExitAlter_table_drop_statistics is called when exiting the alter_table_drop_statistics production.
+	ExitAlter_table_drop_statistics(c *Alter_table_drop_statisticsContext)
+
 	// ExitAlter_table_rename_to is called when exiting the alter_table_rename_to production.
 	ExitAlter_table_rename_to(c *Alter_table_rename_toContext)
 
@@ -2315,8 +2441,23 @@ type YQLListener interface {
 	// ExitAlter_table_alter_index is called when exiting the alter_table_alter_index production.
 	ExitAlter_table_alter_index(c *Alter_table_alter_indexContext)
 
+	// ExitAlter_table_rebuild_index is called when exiting the alter_table_rebuild_index production.
+	ExitAlter_table_rebuild_index(c *Alter_table_rebuild_indexContext)
+
+	// ExitAlter_table_compact is called when exiting the alter_table_compact production.
+	ExitAlter_table_compact(c *Alter_table_compactContext)
+
+	// ExitAlter_table_alter_column_set_encoding is called when exiting the alter_table_alter_column_set_encoding production.
+	ExitAlter_table_alter_column_set_encoding(c *Alter_table_alter_column_set_encodingContext)
+
 	// ExitColumn_schema is called when exiting the column_schema production.
 	ExitColumn_schema(c *Column_schemaContext)
+
+	// ExitAlter_table_alter_column_set_default is called when exiting the alter_table_alter_column_set_default production.
+	ExitAlter_table_alter_column_set_default(c *Alter_table_alter_column_set_defaultContext)
+
+	// ExitAlter_table_alter_column_drop_default is called when exiting the alter_table_alter_column_drop_default production.
+	ExitAlter_table_alter_column_drop_default(c *Alter_table_alter_column_drop_defaultContext)
 
 	// ExitColumn_option_list is called when exiting the column_option_list production.
 	ExitColumn_option_list(c *Column_option_listContext)
@@ -2348,6 +2489,24 @@ type YQLListener interface {
 	// ExitDefault_value is called when exiting the default_value production.
 	ExitDefault_value(c *Default_valueContext)
 
+	// ExitEncoding is called when exiting the encoding production.
+	ExitEncoding(c *EncodingContext)
+
+	// ExitEncoding_config is called when exiting the encoding_config production.
+	ExitEncoding_config(c *Encoding_configContext)
+
+	// ExitEncoding_config_name is called when exiting the encoding_config_name production.
+	ExitEncoding_config_name(c *Encoding_config_nameContext)
+
+	// ExitEncoding_setting_entry is called when exiting the encoding_setting_entry production.
+	ExitEncoding_setting_entry(c *Encoding_setting_entryContext)
+
+	// ExitEncoding_setting_value is called when exiting the encoding_setting_value production.
+	ExitEncoding_setting_value(c *Encoding_setting_valueContext)
+
+	// ExitGenerated_always is called when exiting the generated_always production.
+	ExitGenerated_always(c *Generated_alwaysContext)
+
 	// ExitColumn_order_by_specification is called when exiting the column_order_by_specification production.
 	ExitColumn_order_by_specification(c *Column_order_by_specificationContext)
 
@@ -2377,6 +2536,21 @@ type YQLListener interface {
 
 	// ExitIndex_setting_value is called when exiting the index_setting_value production.
 	ExitIndex_setting_value(c *Index_setting_valueContext)
+
+	// ExitTable_statistics is called when exiting the table_statistics production.
+	ExitTable_statistics(c *Table_statisticsContext)
+
+	// ExitWith_statistics_types is called when exiting the with_statistics_types production.
+	ExitWith_statistics_types(c *With_statistics_typesContext)
+
+	// ExitWith_compact_settings is called when exiting the with_compact_settings production.
+	ExitWith_compact_settings(c *With_compact_settingsContext)
+
+	// ExitCompact_setting_entry is called when exiting the compact_setting_entry production.
+	ExitCompact_setting_entry(c *Compact_setting_entryContext)
+
+	// ExitCompact_setting_value is called when exiting the compact_setting_value production.
+	ExitCompact_setting_value(c *Compact_setting_valueContext)
 
 	// ExitChangefeed is called when exiting the changefeed production.
 	ExitChangefeed(c *ChangefeedContext)

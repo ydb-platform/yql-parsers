@@ -709,6 +709,18 @@ public partial class YQLBaseListener : IYQLListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitSelect_subexpr([NotNull] YQLParser.Select_subexprContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.select_subexpr_core"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterSelect_subexpr_core([NotNull] YQLParser.Select_subexpr_coreContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.select_subexpr_core"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitSelect_subexpr_core([NotNull] YQLParser.Select_subexpr_coreContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.select_subexpr_intersect"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -1321,6 +1333,18 @@ public partial class YQLBaseListener : IYQLListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitType_name_composite([NotNull] YQLParser.Type_name_compositeContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.type_name_null"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterType_name_null([NotNull] YQLParser.Type_name_nullContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.type_name_null"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitType_name_null([NotNull] YQLParser.Type_name_nullContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.type_name"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -1501,6 +1525,54 @@ public partial class YQLBaseListener : IYQLListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitSort_specification_list([NotNull] YQLParser.Sort_specification_listContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.cte_with_clause"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterCte_with_clause([NotNull] YQLParser.Cte_with_clauseContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.cte_with_clause"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitCte_with_clause([NotNull] YQLParser.Cte_with_clauseContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.cte_binding"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterCte_binding([NotNull] YQLParser.Cte_bindingContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.cte_binding"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitCte_binding([NotNull] YQLParser.Cte_bindingContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.cte_key"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterCte_key([NotNull] YQLParser.Cte_keyContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.cte_key"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitCte_key([NotNull] YQLParser.Cte_keyContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.cte_value"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterCte_value([NotNull] YQLParser.Cte_valueContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.cte_value"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitCte_value([NotNull] YQLParser.Cte_valueContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.select_stmt"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -1512,6 +1584,18 @@ public partial class YQLBaseListener : IYQLListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitSelect_stmt([NotNull] YQLParser.Select_stmtContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.select_stmt_core"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterSelect_stmt_core([NotNull] YQLParser.Select_stmt_coreContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.select_stmt_core"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitSelect_stmt_core([NotNull] YQLParser.Select_stmt_coreContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.select_stmt_intersect"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -1536,6 +1620,18 @@ public partial class YQLBaseListener : IYQLListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitSelect_unparenthesized_stmt([NotNull] YQLParser.Select_unparenthesized_stmtContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.select_unparenthesized_stmt_core"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterSelect_unparenthesized_stmt_core([NotNull] YQLParser.Select_unparenthesized_stmt_coreContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.select_unparenthesized_stmt_core"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitSelect_unparenthesized_stmt_core([NotNull] YQLParser.Select_unparenthesized_stmt_coreContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.select_unparenthesized_stmt_intersect"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -1680,6 +1776,30 @@ public partial class YQLBaseListener : IYQLListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitSelect_core([NotNull] YQLParser.Select_coreContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.combine_core"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterCombine_core([NotNull] YQLParser.Combine_coreContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.combine_core"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitCombine_core([NotNull] YQLParser.Combine_coreContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.materialize_stmt"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterMaterialize_stmt([NotNull] YQLParser.Materialize_stmtContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.materialize_stmt"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitMaterialize_stmt([NotNull] YQLParser.Materialize_stmtContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.row_pattern_recognition_clause"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -2232,6 +2352,18 @@ public partial class YQLBaseListener : IYQLListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitNamed_single_source([NotNull] YQLParser.Named_single_sourceContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.hinted_single_source"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterHinted_single_source([NotNull] YQLParser.Hinted_single_sourceContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.hinted_single_source"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitHinted_single_source([NotNull] YQLParser.Hinted_single_sourceContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.single_source"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -3349,6 +3481,30 @@ public partial class YQLBaseListener : IYQLListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitAlter_table_drop_index([NotNull] YQLParser.Alter_table_drop_indexContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.alter_table_add_statistics"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAlter_table_add_statistics([NotNull] YQLParser.Alter_table_add_statisticsContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.alter_table_add_statistics"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAlter_table_add_statistics([NotNull] YQLParser.Alter_table_add_statisticsContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.alter_table_drop_statistics"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAlter_table_drop_statistics([NotNull] YQLParser.Alter_table_drop_statisticsContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.alter_table_drop_statistics"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAlter_table_drop_statistics([NotNull] YQLParser.Alter_table_drop_statisticsContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.alter_table_rename_to"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -3421,6 +3577,42 @@ public partial class YQLBaseListener : IYQLListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitAlter_table_alter_index([NotNull] YQLParser.Alter_table_alter_indexContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.alter_table_rebuild_index"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAlter_table_rebuild_index([NotNull] YQLParser.Alter_table_rebuild_indexContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.alter_table_rebuild_index"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAlter_table_rebuild_index([NotNull] YQLParser.Alter_table_rebuild_indexContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.alter_table_compact"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAlter_table_compact([NotNull] YQLParser.Alter_table_compactContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.alter_table_compact"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAlter_table_compact([NotNull] YQLParser.Alter_table_compactContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.alter_table_alter_column_set_encoding"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAlter_table_alter_column_set_encoding([NotNull] YQLParser.Alter_table_alter_column_set_encodingContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.alter_table_alter_column_set_encoding"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAlter_table_alter_column_set_encoding([NotNull] YQLParser.Alter_table_alter_column_set_encodingContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.column_schema"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -3432,6 +3624,30 @@ public partial class YQLBaseListener : IYQLListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitColumn_schema([NotNull] YQLParser.Column_schemaContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.alter_table_alter_column_set_default"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAlter_table_alter_column_set_default([NotNull] YQLParser.Alter_table_alter_column_set_defaultContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.alter_table_alter_column_set_default"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAlter_table_alter_column_set_default([NotNull] YQLParser.Alter_table_alter_column_set_defaultContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.alter_table_alter_column_drop_default"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAlter_table_alter_column_drop_default([NotNull] YQLParser.Alter_table_alter_column_drop_defaultContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.alter_table_alter_column_drop_default"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAlter_table_alter_column_drop_default([NotNull] YQLParser.Alter_table_alter_column_drop_defaultContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.column_option_list"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -3553,6 +3769,78 @@ public partial class YQLBaseListener : IYQLListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitDefault_value([NotNull] YQLParser.Default_valueContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.encoding"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterEncoding([NotNull] YQLParser.EncodingContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.encoding"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitEncoding([NotNull] YQLParser.EncodingContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.encoding_config"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterEncoding_config([NotNull] YQLParser.Encoding_configContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.encoding_config"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitEncoding_config([NotNull] YQLParser.Encoding_configContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.encoding_config_name"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterEncoding_config_name([NotNull] YQLParser.Encoding_config_nameContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.encoding_config_name"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitEncoding_config_name([NotNull] YQLParser.Encoding_config_nameContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.encoding_setting_entry"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterEncoding_setting_entry([NotNull] YQLParser.Encoding_setting_entryContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.encoding_setting_entry"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitEncoding_setting_entry([NotNull] YQLParser.Encoding_setting_entryContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.encoding_setting_value"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterEncoding_setting_value([NotNull] YQLParser.Encoding_setting_valueContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.encoding_setting_value"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitEncoding_setting_value([NotNull] YQLParser.Encoding_setting_valueContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.generated_always"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterGenerated_always([NotNull] YQLParser.Generated_alwaysContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.generated_always"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitGenerated_always([NotNull] YQLParser.Generated_alwaysContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.column_order_by_specification"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -3672,6 +3960,66 @@ public partial class YQLBaseListener : IYQLListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitIndex_setting_value([NotNull] YQLParser.Index_setting_valueContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.table_statistics"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterTable_statistics([NotNull] YQLParser.Table_statisticsContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.table_statistics"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitTable_statistics([NotNull] YQLParser.Table_statisticsContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.with_statistics_types"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterWith_statistics_types([NotNull] YQLParser.With_statistics_typesContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.with_statistics_types"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitWith_statistics_types([NotNull] YQLParser.With_statistics_typesContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.with_compact_settings"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterWith_compact_settings([NotNull] YQLParser.With_compact_settingsContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.with_compact_settings"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitWith_compact_settings([NotNull] YQLParser.With_compact_settingsContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.compact_setting_entry"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterCompact_setting_entry([NotNull] YQLParser.Compact_setting_entryContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.compact_setting_entry"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitCompact_setting_entry([NotNull] YQLParser.Compact_setting_entryContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="YQLParser.compact_setting_value"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterCompact_setting_value([NotNull] YQLParser.Compact_setting_valueContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="YQLParser.compact_setting_value"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitCompact_setting_value([NotNull] YQLParser.Compact_setting_valueContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="YQLParser.changefeed"/>.
 	/// <para>The default implementation does nothing.</para>

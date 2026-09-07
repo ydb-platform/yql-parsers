@@ -289,6 +289,11 @@ class YQLVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by YQLParser#select_subexpr_core.
+    def visitSelect_subexpr_core(self, ctx:YQLParser.Select_subexpr_coreContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by YQLParser#select_subexpr_intersect.
     def visitSelect_subexpr_intersect(self, ctx:YQLParser.Select_subexpr_intersectContext):
         return self.visitChildren(ctx)
@@ -544,6 +549,11 @@ class YQLVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by YQLParser#type_name_null.
+    def visitType_name_null(self, ctx:YQLParser.Type_name_nullContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by YQLParser#type_name.
     def visitType_name(self, ctx:YQLParser.Type_nameContext):
         return self.visitChildren(ctx)
@@ -619,8 +629,33 @@ class YQLVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by YQLParser#cte_with_clause.
+    def visitCte_with_clause(self, ctx:YQLParser.Cte_with_clauseContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#cte_binding.
+    def visitCte_binding(self, ctx:YQLParser.Cte_bindingContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#cte_key.
+    def visitCte_key(self, ctx:YQLParser.Cte_keyContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#cte_value.
+    def visitCte_value(self, ctx:YQLParser.Cte_valueContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by YQLParser#select_stmt.
     def visitSelect_stmt(self, ctx:YQLParser.Select_stmtContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#select_stmt_core.
+    def visitSelect_stmt_core(self, ctx:YQLParser.Select_stmt_coreContext):
         return self.visitChildren(ctx)
 
 
@@ -631,6 +666,11 @@ class YQLVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by YQLParser#select_unparenthesized_stmt.
     def visitSelect_unparenthesized_stmt(self, ctx:YQLParser.Select_unparenthesized_stmtContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#select_unparenthesized_stmt_core.
+    def visitSelect_unparenthesized_stmt_core(self, ctx:YQLParser.Select_unparenthesized_stmt_coreContext):
         return self.visitChildren(ctx)
 
 
@@ -691,6 +731,16 @@ class YQLVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by YQLParser#select_core.
     def visitSelect_core(self, ctx:YQLParser.Select_coreContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#combine_core.
+    def visitCombine_core(self, ctx:YQLParser.Combine_coreContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#materialize_stmt.
+    def visitMaterialize_stmt(self, ctx:YQLParser.Materialize_stmtContext):
         return self.visitChildren(ctx)
 
 
@@ -921,6 +971,11 @@ class YQLVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by YQLParser#named_single_source.
     def visitNamed_single_source(self, ctx:YQLParser.Named_single_sourceContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#hinted_single_source.
+    def visitHinted_single_source(self, ctx:YQLParser.Hinted_single_sourceContext):
         return self.visitChildren(ctx)
 
 
@@ -1389,6 +1444,16 @@ class YQLVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by YQLParser#alter_table_add_statistics.
+    def visitAlter_table_add_statistics(self, ctx:YQLParser.Alter_table_add_statisticsContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#alter_table_drop_statistics.
+    def visitAlter_table_drop_statistics(self, ctx:YQLParser.Alter_table_drop_statisticsContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by YQLParser#alter_table_rename_to.
     def visitAlter_table_rename_to(self, ctx:YQLParser.Alter_table_rename_toContext):
         return self.visitChildren(ctx)
@@ -1419,8 +1484,33 @@ class YQLVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by YQLParser#alter_table_rebuild_index.
+    def visitAlter_table_rebuild_index(self, ctx:YQLParser.Alter_table_rebuild_indexContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#alter_table_compact.
+    def visitAlter_table_compact(self, ctx:YQLParser.Alter_table_compactContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#alter_table_alter_column_set_encoding.
+    def visitAlter_table_alter_column_set_encoding(self, ctx:YQLParser.Alter_table_alter_column_set_encodingContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by YQLParser#column_schema.
     def visitColumn_schema(self, ctx:YQLParser.Column_schemaContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#alter_table_alter_column_set_default.
+    def visitAlter_table_alter_column_set_default(self, ctx:YQLParser.Alter_table_alter_column_set_defaultContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#alter_table_alter_column_drop_default.
+    def visitAlter_table_alter_column_drop_default(self, ctx:YQLParser.Alter_table_alter_column_drop_defaultContext):
         return self.visitChildren(ctx)
 
 
@@ -1474,6 +1564,36 @@ class YQLVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by YQLParser#encoding.
+    def visitEncoding(self, ctx:YQLParser.EncodingContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#encoding_config.
+    def visitEncoding_config(self, ctx:YQLParser.Encoding_configContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#encoding_config_name.
+    def visitEncoding_config_name(self, ctx:YQLParser.Encoding_config_nameContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#encoding_setting_entry.
+    def visitEncoding_setting_entry(self, ctx:YQLParser.Encoding_setting_entryContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#encoding_setting_value.
+    def visitEncoding_setting_value(self, ctx:YQLParser.Encoding_setting_valueContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#generated_always.
+    def visitGenerated_always(self, ctx:YQLParser.Generated_alwaysContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by YQLParser#column_order_by_specification.
     def visitColumn_order_by_specification(self, ctx:YQLParser.Column_order_by_specificationContext):
         return self.visitChildren(ctx)
@@ -1521,6 +1641,31 @@ class YQLVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by YQLParser#index_setting_value.
     def visitIndex_setting_value(self, ctx:YQLParser.Index_setting_valueContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#table_statistics.
+    def visitTable_statistics(self, ctx:YQLParser.Table_statisticsContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#with_statistics_types.
+    def visitWith_statistics_types(self, ctx:YQLParser.With_statistics_typesContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#with_compact_settings.
+    def visitWith_compact_settings(self, ctx:YQLParser.With_compact_settingsContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#compact_setting_entry.
+    def visitCompact_setting_entry(self, ctx:YQLParser.Compact_setting_entryContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YQLParser#compact_setting_value.
+    def visitCompact_setting_value(self, ctx:YQLParser.Compact_setting_valueContext):
         return self.visitChildren(ctx)
 
 
