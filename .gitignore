@@ -7,3 +7,6 @@ node_modules/
 ts/antlr4ng/dist/
 *.tgz
 release/
+tests/bin/
+tests/obj/
+tests/TestResults/

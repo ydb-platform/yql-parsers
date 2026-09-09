@@ -55,19 +55,7 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Run C# tests
-        run: |
-          mkdir tempTestProj
-          cd tempTestProj
-          dotnet new nunit -n TempTestProj
-          cp ../tests/*.cs .
-          cd TempTestProj
-          dotnet add package Antlr4.Runtime.Standard --version 4.10.1
-          dotnet restore
-          dotnet test --logger "trx;LogFileName=test_results.trx"
-      - name: Cleanup
-        if: always()
-        run: |
-          rm -rf "${{ github.workspace }}/tempTestProj"
+        run: dotnet test tests/YqlParser.Tests.csproj --framework "${{ matrix.dotnet-target-framework }}" --logger "trx;LogFileName=test_results.trx"
   npm:
     runs-on: ubuntu-latest
     steps:

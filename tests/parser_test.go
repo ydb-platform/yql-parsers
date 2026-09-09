@@ -9,55 +9,67 @@ import (
 	parser "github.com/ydb-platform/yql-parsers/go"
 )
 
-type treeShapeListener struct {
-	*parser.BaseYQLListener
-
-	data []string
+type syntaxErrors struct {
+	*antlr.DefaultErrorListener
+	messages []string
 }
 
-func (l *treeShapeListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
-	l.data = append(l.data, ctx.GetText())
+func (l *syntaxErrors) SyntaxError(_ antlr.Recognizer, _ interface{}, _, _ int, message string, _ antlr.RecognitionException) {
+	l.messages = append(l.messages, message)
+}
+
+type queryListener struct {
+	*parser.BaseYQLListener
+	selects  int
+	literals []string
+}
+
+func (l *queryListener) EnterSelect_core(_ *parser.Select_coreContext) {
+	l.selects++
+}
+
+func (l *queryListener) EnterLiteral_value(ctx *parser.Literal_valueContext) {
+	l.literals = append(l.literals, ctx.GetText())
 }
 
 func TestParserYQL(t *testing.T) {
-	input := antlr.NewInputStream(`SELECT 1`)
-	lexer := parser.NewYQLLexer(input)
-	stream := antlr.NewCommonTokenStream(lexer, 0)
-	parser := parser.NewYQLParser(stream)
-	parser.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
-	stmt := parser.Select_stmt()
-	listener := &treeShapeListener{}
-	antlr.NewParseTreeWalker().Walk(listener, stmt)
-	require.Equal(t,
-		[]string{
-			"SELECT1",
-			"SELECT1",
-			"SELECT1",
-			"SELECT1",
-			"SELECT1",
-			"SELECT1",
-			"SELECT1",
-			"",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"",
-		},
-		listener.data,
-	)
+	for _, tc := range []struct {
+		name     string
+		sql      string
+		selects  int
+		literals []string
+		invalid  bool
+	}{
+		{name: "select literal", sql: "SELECT 1", selects: 1, literals: []string{"1"}},
+		{name: "comments and multiple statements", sql: "-- comment\nSELECT 1; SELECT 2;", selects: 2, literals: []string{"1", "2"}},
+		{name: "missing expression", sql: "SELECT FROM orders", invalid: true},
+		{name: "invalid trailing statement", sql: "SELECT 1; SELECT", invalid: true},
+		{name: "invalid character", sql: "SELECT 1 \x00", invalid: true},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			errors := &syntaxErrors{DefaultErrorListener: antlr.NewDefaultErrorListener()}
+			lexer := parser.NewYQLLexer(antlr.NewInputStream(tc.sql))
+			lexer.RemoveErrorListeners()
+			lexer.AddErrorListener(errors)
+			stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
+			p := parser.NewYQLParser(stream)
+			p.RemoveErrorListeners()
+			p.AddErrorListener(errors)
+			query := p.Sql_query()
+			// Check full input consumption as well as reported syntax errors.
+			atEOF := stream.LA(1) == antlr.TokenEOF
+			if tc.invalid {
+				require.True(t, len(errors.messages) > 0 || !atEOF, "invalid SQL was accepted")
+				return
+			}
+			require.Empty(t, errors.messages)
+			require.True(t, atEOF, "parser must consume the complete query")
+			listener := &queryListener{BaseYQLListener: &parser.BaseYQLListener{}}
+			antlr.NewParseTreeWalker().Walk(listener, query)
+			require.Equal(t, tc.selects, listener.selects)
+			require.Equal(t, tc.literals, listener.literals)
+		})
+	}
 }
 
 // ---- generated interface checks ----

@@ -79,3 +79,20 @@ allocates the next patch version rather than replacing an existing tag or asset.
 The npm package includes built JavaScript, declarations, generated sources and
 grammar provenance. Existing generated files for other runtimes remain checked in.
 See the [package README](./ts/antlr4ng/README.md) for installation and local tests.
+
+## Parser tests
+
+```bash
+go test ./tests/...
+dotnet test tests/YqlParser.Tests.csproj --framework net6.0
+dotnet test tests/YqlParser.Tests.csproj --framework net7.0
+```
+
+The C# project compiles the checked-in `dotnet/` sources and requires the .NET SDK
+and runtimes for the selected targets. Tests check valid queries, syntax errors
+and complete input consumption. Go tests also check SELECT nodes and literals
+without depending on the grammar's intermediate tree structure.
+
+Legacy ANTLR output is marked as generated in `.gitattributes`; its whitespace is
+preserved and excluded from the release whitespace check. Handwritten files and
+the normalized `antlr4ng` sources remain checked.
