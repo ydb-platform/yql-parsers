@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"bytes"
 	"fmt"
 	"log"
 	"os"
@@ -49,17 +50,17 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to read test file %s: %v", testPath, err)
 	}
-	if regexp.MustCompile(regexp.QuoteMeta(marker)).Match(content) {
-		log.Fatalf("marker already exists in %s, aborting\n", testPath)
+	if index := bytes.Index(content, []byte(marker)); index >= 0 {
+		content = content[:index]
 	}
 
-	tf, err := os.OpenFile(testPath, os.O_APPEND|os.O_WRONLY, 0644)
+	tf, err := os.OpenFile(testPath, os.O_TRUNC|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Fatalf("failed to open test file %s for appending: %v", testPath, err)
 	}
 	defer tf.Close()
 
-	fmt.Fprintln(tf, "\n"+marker)
+	fmt.Fprintln(tf, string(bytes.TrimRight(content, "\n"))+"\n\n"+marker)
 	for _, ctx := range ctxs {
 		fmt.Fprintf(tf, "var _ antlr.RuleNode = (*parser.%s)(nil)\n", ctx)
 	}

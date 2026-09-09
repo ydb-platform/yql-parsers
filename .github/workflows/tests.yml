@@ -55,16 +55,25 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Run C# tests
+        run: dotnet test tests/YqlParser.Tests.csproj --framework "${{ matrix.dotnet-target-framework }}" --logger "trx;LogFileName=test_results.trx"
+  npm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: ts/antlr4ng/package-lock.json
+      - name: Install package build dependencies
+        run: npm ci --prefix ts/antlr4ng
+      - name: Test patch version allocation
+        run: node --test scripts/next-version.test.mjs
+      - name: Check reproducible generation
         run: |
-          mkdir tempTestProj
-          cd tempTestProj
-          dotnet new nunit -n TempTestProj
-          cp ../tests/*.cs .
-          cd TempTestProj
-          dotnet add package Antlr4.Runtime.Standard --version 4.10.1
-          dotnet restore
-          dotnet test --logger "trx;LogFileName=test_results.trx"
-      - name: Cleanup
-        if: always()
-        run: |
-          rm -rf "${{ github.workspace }}/tempTestProj"
+          make ts-ng
+          git diff --exit-code -- ts/antlr4ng
+      - name: Test the installable npm tarball
+        run: npm test --prefix ts/antlr4ng

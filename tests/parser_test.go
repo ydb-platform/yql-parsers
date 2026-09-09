@@ -9,53 +9,67 @@ import (
 	parser "github.com/ydb-platform/yql-parsers/go"
 )
 
-type treeShapeListener struct {
-	*parser.BaseYQLListener
-
-	data []string
+type syntaxErrors struct {
+	*antlr.DefaultErrorListener
+	messages []string
 }
 
-func (l *treeShapeListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
-	l.data = append(l.data, ctx.GetText())
+func (l *syntaxErrors) SyntaxError(_ antlr.Recognizer, _ interface{}, _, _ int, message string, _ antlr.RecognitionException) {
+	l.messages = append(l.messages, message)
+}
+
+type queryListener struct {
+	*parser.BaseYQLListener
+	selects  int
+	literals []string
+}
+
+func (l *queryListener) EnterSelect_core(_ *parser.Select_coreContext) {
+	l.selects++
+}
+
+func (l *queryListener) EnterLiteral_value(ctx *parser.Literal_valueContext) {
+	l.literals = append(l.literals, ctx.GetText())
 }
 
 func TestParserYQL(t *testing.T) {
-	input := antlr.NewInputStream(`SELECT 1`)
-	lexer := parser.NewYQLLexer(input)
-	stream := antlr.NewCommonTokenStream(lexer, 0)
-	parser := parser.NewYQLParser(stream)
-	parser.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
-	stmt := parser.Select_stmt()
-	listener := &treeShapeListener{}
-	antlr.NewParseTreeWalker().Walk(listener, stmt)
-	require.Equal(t,
-		[]string{
-			"SELECT1",
-			"SELECT1",
-			"SELECT1",
-			"SELECT1",
-			"SELECT1",
-			"",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"1",
-			"",
-		},
-		listener.data,
-	)
+	for _, tc := range []struct {
+		name     string
+		sql      string
+		selects  int
+		literals []string
+		invalid  bool
+	}{
+		{name: "select literal", sql: "SELECT 1", selects: 1, literals: []string{"1"}},
+		{name: "comments and multiple statements", sql: "-- comment\nSELECT 1; SELECT 2;", selects: 2, literals: []string{"1", "2"}},
+		{name: "missing expression", sql: "SELECT FROM orders", invalid: true},
+		{name: "invalid trailing statement", sql: "SELECT 1; SELECT", invalid: true},
+		{name: "invalid character", sql: "SELECT 1 \x00", invalid: true},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			errors := &syntaxErrors{DefaultErrorListener: antlr.NewDefaultErrorListener()}
+			lexer := parser.NewYQLLexer(antlr.NewInputStream(tc.sql))
+			lexer.RemoveErrorListeners()
+			lexer.AddErrorListener(errors)
+			stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
+			p := parser.NewYQLParser(stream)
+			p.RemoveErrorListeners()
+			p.AddErrorListener(errors)
+			query := p.Sql_query()
+			// Check full input consumption as well as reported syntax errors.
+			atEOF := stream.LA(1) == antlr.TokenEOF
+			if tc.invalid {
+				require.True(t, len(errors.messages) > 0 || !atEOF, "invalid SQL was accepted")
+				return
+			}
+			require.Empty(t, errors.messages)
+			require.True(t, atEOF, "parser must consume the complete query")
+			listener := &queryListener{BaseYQLListener: &parser.BaseYQLListener{}}
+			antlr.NewParseTreeWalker().Walk(listener, query)
+			require.Equal(t, tc.selects, listener.selects)
+			require.Equal(t, tc.literals, listener.literals)
+		})
+	}
 }
 
 // ---- generated interface checks ----
@@ -114,6 +128,11 @@ var _ antlr.RuleNode = (*parser.Json_existsContext)(nil)
 var _ antlr.RuleNode = (*parser.Json_query_wrapperContext)(nil)
 var _ antlr.RuleNode = (*parser.Json_query_handlerContext)(nil)
 var _ antlr.RuleNode = (*parser.Json_queryContext)(nil)
+var _ antlr.RuleNode = (*parser.Select_subexprContext)(nil)
+var _ antlr.RuleNode = (*parser.Select_subexpr_coreContext)(nil)
+var _ antlr.RuleNode = (*parser.Select_subexpr_intersectContext)(nil)
+var _ antlr.RuleNode = (*parser.Select_or_exprContext)(nil)
+var _ antlr.RuleNode = (*parser.Tuple_or_exprContext)(nil)
 var _ antlr.RuleNode = (*parser.Smart_parenthesisContext)(nil)
 var _ antlr.RuleNode = (*parser.Expr_listContext)(nil)
 var _ antlr.RuleNode = (*parser.Pure_column_listContext)(nil)
@@ -159,7 +178,10 @@ var _ antlr.RuleNode = (*parser.Type_name_enumContext)(nil)
 var _ antlr.RuleNode = (*parser.Type_name_resourceContext)(nil)
 var _ antlr.RuleNode = (*parser.Type_name_taggedContext)(nil)
 var _ antlr.RuleNode = (*parser.Type_name_callableContext)(nil)
+var _ antlr.RuleNode = (*parser.Type_name_linearContext)(nil)
+var _ antlr.RuleNode = (*parser.Type_name_dynamiclinearContext)(nil)
 var _ antlr.RuleNode = (*parser.Type_name_compositeContext)(nil)
+var _ antlr.RuleNode = (*parser.Type_name_nullContext)(nil)
 var _ antlr.RuleNode = (*parser.Type_nameContext)(nil)
 var _ antlr.RuleNode = (*parser.Type_name_or_bindContext)(nil)
 var _ antlr.RuleNode = (*parser.Value_constructor_literalContext)(nil)
@@ -175,10 +197,19 @@ var _ antlr.RuleNode = (*parser.Pragma_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.Pragma_valueContext)(nil)
 var _ antlr.RuleNode = (*parser.Sort_specificationContext)(nil)
 var _ antlr.RuleNode = (*parser.Sort_specification_listContext)(nil)
+var _ antlr.RuleNode = (*parser.Cte_with_clauseContext)(nil)
+var _ antlr.RuleNode = (*parser.Cte_bindingContext)(nil)
+var _ antlr.RuleNode = (*parser.Cte_keyContext)(nil)
+var _ antlr.RuleNode = (*parser.Cte_valueContext)(nil)
 var _ antlr.RuleNode = (*parser.Select_stmtContext)(nil)
+var _ antlr.RuleNode = (*parser.Select_stmt_coreContext)(nil)
+var _ antlr.RuleNode = (*parser.Select_stmt_intersectContext)(nil)
 var _ antlr.RuleNode = (*parser.Select_unparenthesized_stmtContext)(nil)
+var _ antlr.RuleNode = (*parser.Select_unparenthesized_stmt_coreContext)(nil)
+var _ antlr.RuleNode = (*parser.Select_unparenthesized_stmt_intersectContext)(nil)
 var _ antlr.RuleNode = (*parser.Select_kind_parenthesisContext)(nil)
-var _ antlr.RuleNode = (*parser.Select_opContext)(nil)
+var _ antlr.RuleNode = (*parser.Union_opContext)(nil)
+var _ antlr.RuleNode = (*parser.Intersect_opContext)(nil)
 var _ antlr.RuleNode = (*parser.Select_kind_partialContext)(nil)
 var _ antlr.RuleNode = (*parser.Select_kindContext)(nil)
 var _ antlr.RuleNode = (*parser.Process_coreContext)(nil)
@@ -187,6 +218,8 @@ var _ antlr.RuleNode = (*parser.External_call_settingsContext)(nil)
 var _ antlr.RuleNode = (*parser.Reduce_coreContext)(nil)
 var _ antlr.RuleNode = (*parser.Opt_set_quantifierContext)(nil)
 var _ antlr.RuleNode = (*parser.Select_coreContext)(nil)
+var _ antlr.RuleNode = (*parser.Combine_coreContext)(nil)
+var _ antlr.RuleNode = (*parser.Materialize_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.Row_pattern_recognition_clauseContext)(nil)
 var _ antlr.RuleNode = (*parser.Row_pattern_rows_per_matchContext)(nil)
 var _ antlr.RuleNode = (*parser.Row_pattern_empty_match_handlingContext)(nil)
@@ -233,6 +266,7 @@ var _ antlr.RuleNode = (*parser.Named_columnContext)(nil)
 var _ antlr.RuleNode = (*parser.Flatten_by_argContext)(nil)
 var _ antlr.RuleNode = (*parser.Flatten_sourceContext)(nil)
 var _ antlr.RuleNode = (*parser.Named_single_sourceContext)(nil)
+var _ antlr.RuleNode = (*parser.Hinted_single_sourceContext)(nil)
 var _ antlr.RuleNode = (*parser.Single_sourceContext)(nil)
 var _ antlr.RuleNode = (*parser.Sample_clauseContext)(nil)
 var _ antlr.RuleNode = (*parser.Tablesample_clauseContext)(nil)
@@ -247,11 +281,20 @@ var _ antlr.RuleNode = (*parser.Values_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.Values_sourceContext)(nil)
 var _ antlr.RuleNode = (*parser.Values_source_row_listContext)(nil)
 var _ antlr.RuleNode = (*parser.Values_source_rowContext)(nil)
-var _ antlr.RuleNode = (*parser.Simple_values_sourceContext)(nil)
 var _ antlr.RuleNode = (*parser.Create_external_data_source_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_external_data_source_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_external_data_source_actionContext)(nil)
 var _ antlr.RuleNode = (*parser.Drop_external_data_source_stmtContext)(nil)
+var _ antlr.RuleNode = (*parser.Create_streaming_query_stmtContext)(nil)
+var _ antlr.RuleNode = (*parser.Create_streaming_query_featuresContext)(nil)
+var _ antlr.RuleNode = (*parser.Alter_streaming_query_stmtContext)(nil)
+var _ antlr.RuleNode = (*parser.Alter_streaming_query_actionContext)(nil)
+var _ antlr.RuleNode = (*parser.Alter_streaming_query_set_settingsContext)(nil)
+var _ antlr.RuleNode = (*parser.Streaming_query_settingsContext)(nil)
+var _ antlr.RuleNode = (*parser.Streaming_query_settingContext)(nil)
+var _ antlr.RuleNode = (*parser.Streaming_query_setting_valueContext)(nil)
+var _ antlr.RuleNode = (*parser.Streaming_query_definitionContext)(nil)
+var _ antlr.RuleNode = (*parser.Drop_streaming_query_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.Create_view_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.Drop_view_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.Upsert_object_stmtContext)(nil)
@@ -285,6 +328,13 @@ var _ antlr.RuleNode = (*parser.Backup_collection_settings_entryContext)(nil)
 var _ antlr.RuleNode = (*parser.Backup_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.Restore_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_database_stmtContext)(nil)
+var _ antlr.RuleNode = (*parser.Alter_database_actionContext)(nil)
+var _ antlr.RuleNode = (*parser.Set_database_settingsContext)(nil)
+var _ antlr.RuleNode = (*parser.Database_settingsContext)(nil)
+var _ antlr.RuleNode = (*parser.Database_settingContext)(nil)
+var _ antlr.RuleNode = (*parser.Database_setting_valueContext)(nil)
+var _ antlr.RuleNode = (*parser.Truncate_table_stmtContext)(nil)
+var _ antlr.RuleNode = (*parser.With_truncate_table_settingsContext)(nil)
 var _ antlr.RuleNode = (*parser.Table_inheritsContext)(nil)
 var _ antlr.RuleNode = (*parser.Table_partition_byContext)(nil)
 var _ antlr.RuleNode = (*parser.With_table_settingsContext)(nil)
@@ -301,6 +351,8 @@ var _ antlr.RuleNode = (*parser.Alter_table_add_columnContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_table_drop_columnContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_table_alter_columnContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_table_alter_column_drop_not_nullContext)(nil)
+var _ antlr.RuleNode = (*parser.Alter_table_alter_column_set_not_nullContext)(nil)
+var _ antlr.RuleNode = (*parser.Alter_table_alter_column_set_compressionContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_table_add_column_familyContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_table_alter_column_familyContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_table_set_table_setting_uncompatContext)(nil)
@@ -308,15 +360,36 @@ var _ antlr.RuleNode = (*parser.Alter_table_set_table_setting_compatContext)(nil
 var _ antlr.RuleNode = (*parser.Alter_table_reset_table_settingContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_table_add_indexContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_table_drop_indexContext)(nil)
+var _ antlr.RuleNode = (*parser.Alter_table_add_statisticsContext)(nil)
+var _ antlr.RuleNode = (*parser.Alter_table_drop_statisticsContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_table_rename_toContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_table_rename_index_toContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_table_add_changefeedContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_table_alter_changefeedContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_table_drop_changefeedContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_table_alter_indexContext)(nil)
+var _ antlr.RuleNode = (*parser.Alter_table_rebuild_indexContext)(nil)
+var _ antlr.RuleNode = (*parser.Alter_table_compactContext)(nil)
+var _ antlr.RuleNode = (*parser.Alter_table_alter_column_set_encodingContext)(nil)
 var _ antlr.RuleNode = (*parser.Column_schemaContext)(nil)
+var _ antlr.RuleNode = (*parser.Alter_table_alter_column_set_defaultContext)(nil)
+var _ antlr.RuleNode = (*parser.Alter_table_alter_column_drop_defaultContext)(nil)
+var _ antlr.RuleNode = (*parser.Column_option_listContext)(nil)
+var _ antlr.RuleNode = (*parser.Column_option_list_spaceContext)(nil)
+var _ antlr.RuleNode = (*parser.Column_option_list_commaContext)(nil)
+var _ antlr.RuleNode = (*parser.Column_optionContext)(nil)
+var _ antlr.RuleNode = (*parser.CompressionContext)(nil)
+var _ antlr.RuleNode = (*parser.Compression_setting_entryContext)(nil)
+var _ antlr.RuleNode = (*parser.Compression_setting_valueContext)(nil)
 var _ antlr.RuleNode = (*parser.Family_relationContext)(nil)
-var _ antlr.RuleNode = (*parser.Opt_column_constraintsContext)(nil)
+var _ antlr.RuleNode = (*parser.NullabilityContext)(nil)
+var _ antlr.RuleNode = (*parser.Default_valueContext)(nil)
+var _ antlr.RuleNode = (*parser.EncodingContext)(nil)
+var _ antlr.RuleNode = (*parser.Encoding_configContext)(nil)
+var _ antlr.RuleNode = (*parser.Encoding_config_nameContext)(nil)
+var _ antlr.RuleNode = (*parser.Encoding_setting_entryContext)(nil)
+var _ antlr.RuleNode = (*parser.Encoding_setting_valueContext)(nil)
+var _ antlr.RuleNode = (*parser.Generated_alwaysContext)(nil)
 var _ antlr.RuleNode = (*parser.Column_order_by_specificationContext)(nil)
 var _ antlr.RuleNode = (*parser.Table_constraintContext)(nil)
 var _ antlr.RuleNode = (*parser.Table_indexContext)(nil)
@@ -327,6 +400,11 @@ var _ antlr.RuleNode = (*parser.Index_subtypeContext)(nil)
 var _ antlr.RuleNode = (*parser.With_index_settingsContext)(nil)
 var _ antlr.RuleNode = (*parser.Index_setting_entryContext)(nil)
 var _ antlr.RuleNode = (*parser.Index_setting_valueContext)(nil)
+var _ antlr.RuleNode = (*parser.Table_statisticsContext)(nil)
+var _ antlr.RuleNode = (*parser.With_statistics_typesContext)(nil)
+var _ antlr.RuleNode = (*parser.With_compact_settingsContext)(nil)
+var _ antlr.RuleNode = (*parser.Compact_setting_entryContext)(nil)
+var _ antlr.RuleNode = (*parser.Compact_setting_valueContext)(nil)
 var _ antlr.RuleNode = (*parser.ChangefeedContext)(nil)
 var _ antlr.RuleNode = (*parser.Changefeed_settingsContext)(nil)
 var _ antlr.RuleNode = (*parser.Changefeed_settings_entryContext)(nil)
@@ -453,7 +531,6 @@ var _ antlr.RuleNode = (*parser.Window_frame_betweenContext)(nil)
 var _ antlr.RuleNode = (*parser.Window_frame_boundContext)(nil)
 var _ antlr.RuleNode = (*parser.Window_frame_exclusionContext)(nil)
 var _ antlr.RuleNode = (*parser.Use_stmtContext)(nil)
-var _ antlr.RuleNode = (*parser.Subselect_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.Named_nodes_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.Commit_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.Rollback_stmtContext)(nil)
@@ -463,6 +540,12 @@ var _ antlr.RuleNode = (*parser.Analyze_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_sequence_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.Alter_sequence_actionContext)(nil)
 var _ antlr.RuleNode = (*parser.Show_create_table_stmtContext)(nil)
+var _ antlr.RuleNode = (*parser.Create_secret_stmtContext)(nil)
+var _ antlr.RuleNode = (*parser.With_secret_settingsContext)(nil)
+var _ antlr.RuleNode = (*parser.Secret_setting_entryContext)(nil)
+var _ antlr.RuleNode = (*parser.Secret_setting_valueContext)(nil)
+var _ antlr.RuleNode = (*parser.Alter_secret_stmtContext)(nil)
+var _ antlr.RuleNode = (*parser.Drop_secret_stmtContext)(nil)
 var _ antlr.RuleNode = (*parser.IdentifierContext)(nil)
 var _ antlr.RuleNode = (*parser.IdContext)(nil)
 var _ antlr.RuleNode = (*parser.Id_schemaContext)(nil)

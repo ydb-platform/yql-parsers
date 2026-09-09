@@ -1,0 +1,8 @@
+# Preserve ANTLR output verbatim; generator whitespace must not block releases.
+go/yql_*.go linguist-generated=true -whitespace
+ts/YQL*.ts linguist-generated=true -whitespace
+js/YQL*.js linguist-generated=true -whitespace
+python/YQL*.py linguist-generated=true -whitespace
+dotnet/YQL*.cs linguist-generated=true -whitespace
+java/YQL*.java linguist-generated=true -whitespace
+ts/antlr4ng/src/YQL*.ts linguist-generated=true

@@ -1,0 +1,36 @@
+{
+  "name": "@ydb-platform/yql-parser",
+  "version": "0.0.0",
+  "description": "YQL lexer and parser for antlr4ng, generated from the YDB grammar",
+  "license": "Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ydb-platform/yql-parsers.git",
+    "directory": "ts/antlr4ng"
+  },
+  "engines": {"node": ">=20"},
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {"types": "./dist/index.d.ts", "import": "./dist/index.js"},
+    "./lexer": {"types": "./dist/YQLLexer.d.ts", "import": "./dist/YQLLexer.js"},
+    "./parser": {"types": "./dist/YQLParser.d.ts", "import": "./dist/YQLParser.js"},
+    "./metadata.json": "./metadata.json"
+  },
+  "files": ["dist", "src", "YQL.g4", "metadata.json", "LICENSE"],
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build",
+    "test": "node --test test/package.test.mjs"
+  },
+  "dependencies": {"antlr4ng": "3.0.16"},
+  "devDependencies": {
+    "antlr-ng": "1.0.10",
+    "antlr4-c3": "3.4.4",
+    "esbuild": "0.25.9",
+    "typescript": "5.9.2"
+  }
+}
