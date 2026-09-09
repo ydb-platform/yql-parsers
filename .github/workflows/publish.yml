@@ -57,7 +57,7 @@ jobs:
       - name: Select next patch version
         id: version
         run: |
-          node --test scripts/next-version.test.mjs
+          node --test scripts/*.test.mjs
           version=$(node scripts/next-version.mjs)
           echo "version=$version" >> "$GITHUB_OUTPUT"
           echo "tag=v$version" >> "$GITHUB_OUTPUT"
@@ -86,12 +86,18 @@ jobs:
       - name: Test the installable npm tarball
         run: npm test --prefix ts/antlr4ng
 
+      - name: Describe the YDB grammar update
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+        run: node scripts/release-notes.mjs
+
       - name: Build release assets
         run: |
-          mkdir release
           npm pack ./ts/antlr4ng --pack-destination release
           cd release
-          sha256sum ./*.tgz > SHA256SUMS
+          shopt -s nullglob
+          sha256sum ./*.tgz ./*.diff > SHA256SUMS
 
       - name: Push release commit and tag atomically
         env:
@@ -103,5 +109,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ steps.version.outputs.tag }}
         run: |
-          gh release create "$RELEASE_TAG" release/*.tgz release/SHA256SUMS \
-            --verify-tag --title "$RELEASE_TAG" --generate-notes
+          shopt -s nullglob
+          gh release create "$RELEASE_TAG" release/*.tgz release/*.diff release/SHA256SUMS \
+            --verify-tag --title "$RELEASE_TAG" --notes-file release/notes.md
