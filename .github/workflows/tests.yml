@@ -68,3 +68,24 @@ jobs:
         if: always()
         run: |
           rm -rf "${{ github.workspace }}/tempTestProj"
+  npm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: ts/antlr4ng/package-lock.json
+      - name: Install package build dependencies
+        run: npm ci --prefix ts/antlr4ng
+      - name: Test patch version allocation
+        run: node --test scripts/next-version.test.mjs
+      - name: Check reproducible generation
+        run: |
+          make ts-ng
+          git diff --exit-code -- ts/antlr4ng
+      - name: Test the installable npm tarball
+        run: npm test --prefix ts/antlr4ng

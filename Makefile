@@ -4,9 +4,9 @@ CURRENT_DIR := $(shell pwd)
 ANTLR_VERSION = 4.13.1
 COMMIT_HASH ?= d9544073fd13d17b30f609fa4fe7b034cd28ba02
 
-.PHONY: build-image clean go ts js python dotnet java all go_clean py_clean interface_checks
+.PHONY: build-image clean go ts js python dotnet java ts-ng all go_clean py_clean interface_checks
 
-all: go ts js python dotnet java
+all: go ts js python dotnet java ts-ng
 
 go: build-image
 	docker run --rm -v "$(CURRENT_DIR)/go":/workspace/go $(IMAGE_NAME) \
@@ -15,6 +15,10 @@ go: build-image
 ts: build-image
 	docker run --rm -v "$(CURRENT_DIR)/ts":/workspace/ts $(IMAGE_NAME) \
 		java -jar /antlr-${ANTLR_VERSION}-complete.jar -visitor -Dlanguage=TypeScript -package yql_antlr4_parser -o ts YQL.g4
+
+ts-ng: build-image
+	docker run --rm $(IMAGE_NAME) cat YQL.g4 > ts/antlr4ng/YQL.g4
+	COMMIT_HASH=$(COMMIT_HASH) npm --prefix ts/antlr4ng run generate
 
 js: build-image
 	docker run --rm -v "$(CURRENT_DIR)/js":/workspace/js $(IMAGE_NAME) \

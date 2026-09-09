@@ -1,0 +1,15 @@
+{
+  "grammarRepository": "https://github.com/ydb-platform/ydb",
+  "grammarRevision": "d9544073fd13d17b30f609fa4fe7b034cd28ba02",
+  "grammarPath": "yql/essentials/sql/v1/SQLv1Antlr4.g.in",
+  "grammarSha256": "f97624e276dca43409c657fa62c3a07596c590038995ae0ff01425aadd1c3c8a",
+  "preprocessing": "Repository Dockerfile: rename grammar and expand the three grammar templates; retain hidden comments.",
+  "generator": {
+    "name": "antlr-ng",
+    "version": "1.0.10"
+  },
+  "runtime": {
+    "name": "antlr4ng",
+    "version": "3.0.16"
+  }
+}

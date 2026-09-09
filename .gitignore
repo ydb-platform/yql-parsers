@@ -3,3 +3,7 @@
 .vscode/*
 */*.tokens
 */*.interp
+node_modules/
+ts/antlr4ng/dist/
+*.tgz
+release/
