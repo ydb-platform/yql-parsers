@@ -1,6 +1,6 @@
 {
   "name": "@ydb-platform/yql-parser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "YQL lexer and parser for antlr4ng, generated from the YDB grammar",
   "license": "Apache-2.0",
   "type": "module",
