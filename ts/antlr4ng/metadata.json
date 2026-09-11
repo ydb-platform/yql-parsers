@@ -1,6 +1,6 @@
 {
   "grammarRepository": "https://github.com/ydb-platform/ydb",
-  "grammarRevision": "4b60dd53f2e01dfb40879347abccb12fc6baa805",
+  "grammarRevision": "cbe2241f76750ecfae21a3fc82ff85deebc77cb2",
   "grammarPath": "yql/essentials/sql/v1/SQLv1Antlr4.g.in",
   "grammarSha256": "f97624e276dca43409c657fa62c3a07596c590038995ae0ff01425aadd1c3c8a",
   "preprocessing": "Repository Dockerfile: rename grammar and expand the three grammar templates; retain hidden comments.",
